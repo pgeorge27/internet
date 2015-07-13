@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<values>
+<row key="05001" value="Medellín"/>
+<row key="05002" value="Abejorral"/>
+<row key="05004" value="Abriaquí"/>
+<row key="05021" value="Alejandría"/>
+<row key="05030" value="Amagá"/>
+<row key="05031" value="Amalfi"/>
+<row key="05034" value="Andes"/>
+<row key="05036" value="Angelópolis"/>
+<row key="05038" value="Angostura"/>
+<row key="05040" value="Anorí"/>
+<row key="05042" value="Antioquia"/>
+<row key="05044" value="Anza"/>
+<row key="05045" value="Apartadó"/>
+<row key="05051" value="Arboletes"/>
+<row key="05055" value="Argelia"/>
+<row key="05059" value="Armenia"/>
+<row key="05079" value="Barbosa"/>
+<row key="05086" value="Belmira"/>
+<row key="05088" value="Bello"/>
+<row key="05091" value="Betania"/>
+<row key="05093" value="Betulia"/>
+<row key="05101" value="Bolívar"/>
+<row key="05107" value="Briceño"/>
+<row key="05113" value="Buriticá"/>
+<row key="05120" value="Cáceres"/>
+<row key="05125" value="Caicedo"/>
+<row key="05129" value="Caldas"/>
+<row key="05134" value="Campamento"/>
+<row key="05138" value="Cañasgordas"/>
+<row key="05142" value="Caracolí"/>
+<row key="05145" value="Caramanta"/>
+<row key="05147" value="Carepa"/>
+<row key="05148" value="Carmen de Viboral"/>
+<row key="05150" value="Carolina"/>
+<row key="05154" value="Caucasia"/>
+<row key="05172" value="Chigorodó"/>
+<row key="05190" value="Cisneros"/>
+<row key="05197" value="Cocorná"/>
+<row key="05206" value="Concepción"/>
+<row key="05209" value="Concordia"/>
+<row key="05212" value="Copacabana"/>
+<row key="05234" value="Dabeiba"/>
+<row key="05237" value="Don Matías"/>
+<row key="05240" value="Ebéjico"/>
+<row key="05250" value="El Bagre"/>
+<row key="05264" value="Entrerrios"/>
+<row key="05266" value="Envigado"/>
+<row key="05282" value="Fredonia"/>
+<row key="05284" value="Frontino"/>
+<row key="05306" value="Giraldo"/>
+<row key="05308" value="Girardota"/>
+<row key="05310" value="Gómez Plata"/>
+<row key="05313" value="Granada"/>
+<row key="05315" value="Guadalupe"/>
+<row key="05318" value="Guarne"/>
+<row key="05321" value="Guatape"/>
+<row key="05347" value="Heliconia"/>
+<row key="05353" value="Hispania"/>
+<row key="05360" value="Itagui"/>
+<row key="05361" value="Ituango"/>
+<row key="05364" value="Jardín"/>
+<row key="05368" value="Jericó"/>
+<row key="05376" value="La Ceja"/>
+<row key="05380" value="La Estrella"/>
+<row key="05390" value="La Pintada"/>
+<row key="05400" value="La Unión"/>
+<row key="05411" value="Liborina"/>
+<row key="05425" value="Maceo"/>
+<row key="05440" value="Marinilla"/>
+<row key="05467" value="Montebello"/>
+<row key="05475" value="Murindó"/>
+<row key="05480" value="Mutatá"/>
+<row key="05483" value="Nariño"/>
+<row key="05490" value="Necoclí"/>
+<row key="05495" value="Nechí"/>
+<row key="05501" value="Olaya"/>
+<row key="05541" value="Peñol"/>
+<row key="05543" value="Peque"/>
+<row key="05576" value="Pueblorrico"/>
+<row key="05579" value="Puerto Berrio"/>
+<row key="05585" value="Puerto Nare"/>
+<row key="05591" value="Puerto Triunfo"/>
+<row key="05604" value="Remedios"/>
+<row key="05607" value="Retiro"/>
+<row key="05615" value="Rionegro"/>
+<row key="05628" value="Sabanalarga"/>
+<row key="05631" value="Sabaneta"/>
+<row key="05642" value="Salgar"/>
+<row key="05647" value="San Andrés"/>
+<row key="05649" value="San Carlos"/>
+<row key="05652" value="San Francisco"/>
+<row key="05656" value="San Jerónimo"/>
+<row key="05658" value="San José de la Montaña"/>
+<row key="05659" value="San Juan de Uraba"/>
+<row key="05660" value="San Luis"/>
+<row key="05664" value="San Pedro"/>
+<row key="05665" value="San Pedro de Uraba"/>
+<row key="05667" value="San Rafael"/>
+<row key="05670" value="San Roque"/>
+<row key="05674" value="San Vicente"/>
+<row key="05679" value="Santa Bárbara"/>
+<row key="05686" value="Santa Rosa de Osos"/>
+<row key="05690" value="Santo Domingo"/>
+<row key="05697" value="El Santuario"/>
+<row key="05736" value="Segovia"/>
+<row key="05756" value="Sonsón"/>
+<row key="05761" value="Sopetrán"/>
+<row key="05789" value="Támesis"/>
+<row key="05790" value="Tarazá"/>
+<row key="05792" value="Tarso"/>
+<row key="05809" value="Titiribí"/>
+<row key="05819" value="Toledo"/>
+<row key="05837" value="Turbo"/>
+<row key="05842" value="Uramita"/>
+<row key="05847" value="Urrao"/>
+<row key="05854" value="Valdivia"/>
+<row key="05856" value="Valparaíso"/>
+<row key="05858" value="Vegachí"/>
+<row key="05861" value="Venecia"/>
+<row key="05873" value="Vigía del Fuerte"/>
+<row key="05885" value="Yalí"/>
+<row key="05887" value="Yarumal"/>
+<row key="05890" value="Yolombó"/>
+<row key="05893" value="Yondó"/>
+<row key="05895" value="Zaragoza"/>
+<row key="08001" value="Barranquilla"/>
+<row key="08078" value="Baranoa"/>
+<row key="08137" value="Campo de la Cruz"/>
+<row key="08141" value="Candelaria"/>
+<row key="08296" value="Galapa"/>
+<row key="08372" value="Juan de  Acosta"/>
+<row key="08421" value="Luruaco"/>
+<row key="08433" value="Malambo"/>
+<row key="08436" value="Manatí"/>
+<row key="08520" value="Palmar de Varela"/>
+<row key="08549" value="Piojó"/>
+<row key="08558" value="Polo Nuevo"/>
+<row key="08560" value="Ponedera"/>
+<row key="08573" value="Puerto Colombia"/>
+<row key="08606" value="Repelón"/>
+<row key="08634" value="Sabanagrande"/>
+<row key="08638" value="Sabanalarga"/>
+<row key="08675" value="Santa Lucía"/>
+<row key="08685" value="Santo Tomás"/>
+<row key="08758" value="Soledad"/>
+<row key="08770" value="Suan"/>
+<row key="08832" value="Tubará"/>
+<row key="08849" value="Usiacurí"/>
+<row key="11001" value="Bogotá"/>
+<row key="13001" value="Cartagena"/>
+<row key="13006" value="Achí"/>
+<row key="13030" value="Altos del Rosario"/>
+<row key="13042" value="Arenal"/>
+<row key="13052" value="Arjona"/>
+<row key="13062" value="Arroyohondo"/>
+<row key="13074" value="Barranco de Loba"/>
+<row key="13140" value="Calamar"/>
+<row key="13160" value="Cantagallo"/>
+<row key="13188" value="Cicuco"/>
+<row key="13212" value="Córdoba"/>
+<row key="13222" value="Clemencia"/>
+<row key="13244" value="Carmen de Bolívar"/>
+<row key="13248" value="El Guamo"/>
+<row key="13268" value="El Peñon"/>
+<row key="13300" value="Hatillo de Loba"/>
+<row key="13430" value="Magangue"/>
+<row key="13433" value="Mahates"/>
+<row key="13440" value="Margarita"/>
+<row key="13442" value="María la Baja"/>
+<row key="13458" value="Montecristo"/>
+<row key="13468" value="Mompos"/>
+<row key="13473" value="Morales"/>
+<row key="13549" value="Pinillos"/>
+<row key="13580" value="Regidor"/>
+<row key="13600" value="Río Viejo"/>
+<row key="13620" value="San Cristóbal"/>
+<row key="13647" value="San Estanislao"/>
+<row key="13650" value="San Fernando"/>
+<row key="13654" value="San Jacinto"/>
+<row key="13655" value="San Jacinto del Cauca"/>
+<row key="13657" value="San Juan Nepomuceno"/>
+<row key="13667" value="San Martín Loba"/>
+<row key="13670" value="San Pablo"/>
+<row key="13673" value="Sta Catalina"/>
+<row key="13683" value="Santa Rosa"/>
+<row key="13688" value="Sta Rosa Sur"/>
+<row key="13744" value="Simiti"/>
+<row key="13760" value="Soplaviento"/>
+<row key="13780" value="Talaigua Nuevo"/>
+<row key="13810" value="Tiquisio (Puerto Rico)"/>
+<row key="13836" value="Turbaco"/>
+<row key="13838" value="Turbaná"/>
+<row key="13873" value="Villanueva"/>
+<row key="13894" value="Zambrano"/>
+<row key="15001" value="Tunja"/>
+<row key="15022" value="Almeida"/>
+<row key="15047" value="Aquitania"/>
+<row key="15051" value="Arcabuco"/>
+<row key="15087" value="Belén"/>
+<row key="15090" value="Berbeo"/>
+<row key="15092" value="Betéitiva"/>
+<row key="15097" value="Boavita"/>
+<row key="15104" value="Boyacá"/>
+<row key="15106" value="Briceño"/>
+<row key="15109" value="Buenavista"/>
+<row key="15114" value="Busbanza"/>
+<row key="15131" value="Caldas"/>
+<row key="15135" value="Campohermoso"/>
+<row key="15162" value="Cerinza"/>
+<row key="15172" value="Chinavita"/>
+<row key="15176" value="Chiquinquirá"/>
+<row key="15180" value="Chiscas"/>
+<row key="15183" value="Chita"/>
+<row key="15185" value="Chitaraque"/>
+<row key="15187" value="Chivatá"/>
+<row key="15189" value="Ciénega"/>
+<row key="15204" value="Cómbita"/>
+<row key="15212" value="Coper"/>
+<row key="15215" value="Corrales"/>
+<row key="15218" value="Covarachía"/>
+<row key="15223" value="Cubará"/>
+<row key="15224" value="Cucaita"/>
+<row key="15226" value="Cuítiva"/>
+<row key="15232" value="Chíquiza"/>
+<row key="15236" value="Chivor"/>
+<row key="15238" value="Duitama"/>
+<row key="15244" value="El Cocuy"/>
+<row key="15248" value="El Espino"/>
+<row key="15272" value="Firavitoba"/>
+<row key="15276" value="Floresta"/>
+<row key="15293" value="Gachantivá"/>
+<row key="15296" value="Gameza"/>
+<row key="15299" value="Garagoa"/>
+<row key="15317" value="Guacamayas"/>
+<row key="15322" value="Guateque"/>
+<row key="15325" value="Guayatá"/>
+<row key="15332" value="Guican"/>
+<row key="15362" value="Iza"/>
+<row key="15367" value="Jenesano"/>
+<row key="15368" value="Jericó"/>
+<row key="15377" value="Labranzagrande"/>
+<row key="15380" value="La Capilla"/>
+<row key="15401" value="La Victoria"/>
+<row key="15403" value="La Uvita"/>
+<row key="15407" value="Villa de Leyva"/>
+<row key="15425" value="Macanal"/>
+<row key="15442" value="Maripí"/>
+<row key="15455" value="Miraflores"/>
+<row key="15464" value="Mongua"/>
+<row key="15466" value="Monguí"/>
+<row key="15469" value="Moniquirá"/>
+<row key="15476" value="Motavita"/>
+<row key="15480" value="Muzo"/>
+<row key="15491" value="Nobsa"/>
+<row key="15494" value="Nuevo Colón"/>
+<row key="15500" value="Oicatá"/>
+<row key="15507" value="Otanche"/>
+<row key="15511" value="Pachavita"/>
+<row key="15514" value="Páez"/>
+<row key="15516" value="Paipa"/>
+<row key="15518" value="Pajarito"/>
+<row key="15522" value="Panqueba"/>
+<row key="15531" value="Pauna"/>
+<row key="15533" value="Paya"/>
+<row key="15537" value="Paz de Río"/>
+<row key="15542" value="Pesca"/>
+<row key="15550" value="Pisba"/>
+<row key="15572" value="Puerto Boyacá"/>
+<row key="15580" value="Quípama"/>
+<row key="15599" value="Ramiriquí"/>
+<row key="15600" value="Ráquira"/>
+<row key="15621" value="Rondón"/>
+<row key="15632" value="Saboyá"/>
+<row key="15638" value="Sáchica"/>
+<row key="15646" value="Samacá"/>
+<row key="15660" value="San Eduardo"/>
+<row key="15664" value="San  José de Pare"/>
+<row key="15667" value="San Luis de Gaceno"/>
+<row key="15673" value="San Mateo"/>
+<row key="15676" value="San Miguel de Sema"/>
+<row key="15681" value="San Pablo de Borbur"/>
+<row key="15686" value="Santana"/>
+<row key="15690" value="Santa María"/>
+<row key="15693" value="Santa Rosa de  Viterbo"/>
+<row key="15696" value="Santa Sofía"/>
+<row key="15720" value="Sativanorte"/>
+<row key="15723" value="Sativasur"/>
+<row key="15740" value="Siachoque"/>
+<row key="15753" value="Soata"/>
+<row key="15755" value="Socota"/>
+<row key="15757" value="Socha"/>
+<row key="15759" value="Sogamoso"/>
+<row key="15761" value="Somondoco"/>
+<row key="15762" value="Sora"/>
+<row key="15763" value="Sotaquirá"/>
+<row key="15764" value="Soracá"/>
+<row key="15774" value="Susacón"/>
+<row key="15776" value="Sutamarchán"/>
+<row key="15778" value="Sutatenza"/>
+<row key="15790" value="Tasco"/>
+<row key="15798" value="Tenza"/>
+<row key="15804" value="Tibaná"/>
+<row key="15806" value="Tibasosa"/>
+<row key="15808" value="Tinjacá"/>
+<row key="15810" value="Tipacoque"/>
+<row key="15814" value="Toca"/>
+<row key="15816" value="Togui"/>
+<row key="15820" value="Tópaga"/>
+<row key="15822" value="Tota"/>
+<row key="15832" value="Tununguá"/>
+<row key="15835" value="Turmequé"/>
+<row key="15837" value="Tuta"/>
+<row key="15839" value="Tutazá"/>
+<row key="15842" value="Umbita"/>
+<row key="15861" value="Ventaquemada"/>
+<row key="15879" value="Viracachá"/>
+<row key="15897" value="Zetaquira"/>
+<row key="17001" value="Manizales"/>
+<row key="17013" value="Aguadas"/>
+<row key="17042" value="Anserma"/>
+<row key="17050" value="Aranzazu"/>
+<row key="17088" value="Belalcázar"/>
+<row key="17174" value="Chinchiná"/>
+<row key="17272" value="Filadelfia"/>
+<row key="17380" value="La Dorada"/>
+<row key="17388" value="La Merced"/>
+<row key="17433" value="Manzanares"/>
+<row key="17442" value="Marmato"/>
+<row key="17444" value="Marquetalia"/>
+<row key="17446" value="Marulanda"/>
+<row key="17486" value="Neira"/>
+<row key="17495" value="Norcasia"/>
+<row key="17513" value="Pácora"/>
+<row key="17524" value="Palestina"/>
+<row key="17541" value="Pensilvania"/>
+<row key="17614" value="Riosucio"/>
+<row key="17616" value="Risaralda"/>
+<row key="17653" value="Salamina"/>
+<row key="17662" value="Samaná"/>
+<row key="17665" value="San José"/>
+<row key="17777" value="Supía"/>
+<row key="17867" value="Victoria"/>
+<row key="17873" value="Villamaría"/>
+<row key="17877" value="Viterbo"/>
+<row key="18001" value="Florencia"/>
+<row key="18029" value="Albania"/>
+<row key="18094" value="Belén de los Andaquies"/>
+<row key="18150" value="Cartagena del Chairá"/>
+<row key="18205" value="Curillo"/>
+<row key="18247" value="El Doncello"/>
+<row key="18256" value="El Paujil"/>
+<row key="18410" value="La Montañita"/>
+<row key="18460" value="Milán"/>
+<row key="18479" value="Morelia"/>
+<row key="18592" value="Puerto Rico"/>
+<row key="18610" value="San José del Fragua"/>
+<row key="18753" value="San Vicente del Caguán"/>
+<row key="18756" value="Solano"/>
+<row key="18785" value="Solita"/>
+<row key="18860" value="Valparaíso"/>
+<row key="19001" value="Popayán"/>
+<row key="19022" value="Almaguer"/>
+<row key="19050" value="Argelia"/>
+<row key="19075" value="Balboa"/>
+<row key="19100" value="Bolívar"/>
+<row key="19110" value="Buenos Aires"/>
+<row key="19130" value="Cajibío"/>
+<row key="19137" value="Caldono"/>
+<row key="19142" value="Caloto"/>
+<row key="19212" value="Corinto"/>
+<row key="19256" value="El Tambo"/>
+<row key="19290" value="Florencia"/>
+<row key="19318" value="Guapi"/>
+<row key="19355" value="Inzá"/>
+<row key="19364" value="Jambaló"/>
+<row key="19392" value="La Sierra"/>
+<row key="19397" value="La Vega"/>
+<row key="19418" value="López de Micay"/>
+<row key="19450" value="Mercaderes"/>
+<row key="19455" value="Miranda"/>
+<row key="19473" value="Morales"/>
+<row key="19513" value="Padilla"/>
+<row key="19517" value="Páez"/>
+<row key="19532" value="Patía"/>
+<row key="19533" value="Piamonte"/>
+<row key="19548" value="Piéndamo"/>
+<row key="19573" value="Puerto Tejada"/>
+<row key="19585" value="Puracé"/>
+<row key="19622" value="Rosas"/>
+<row key="19693" value="San Sebastián"/>
+<row key="19698" value="Santander de Quilichao"/>
+<row key="19701" value="Santa Rosa"/>
+<row key="19743" value="Silvia"/>
+<row key="19760" value="Sotara"/>
+<row key="19780" value="Suárez"/>
+<row key="19785" value="Sucre"/>
+<row key="19807" value="Timbío"/>
+<row key="19809" value="Timbiquí"/>
+<row key="19821" value="Toribio"/>
+<row key="19824" value="Totoró"/>
+<row key="19845" value="Villa Rica"/>
+<row key="20001" value="Valledupar"/>
+<row key="20011" value="Aguachica"/>
+<row key="20013" value="Agustín Codazzi"/>
+<row key="20032" value="Astrea"/>
+<row key="20045" value="Becerril"/>
+<row key="20060" value="Bosconia"/>
+<row key="20175" value="Chimichagua"/>
+<row key="20178" value="Chiriguaná"/>
+<row key="20228" value="Curumaní"/>
+<row key="20238" value="El Copey"/>
+<row key="20250" value="El Paso"/>
+<row key="20295" value="Gamarra"/>
+<row key="20310" value="González"/>
+<row key="20383" value="La Gloria"/>
+<row key="20400" value="La Jagua de Ibirico"/>
+<row key="20443" value="Manaure Balcón Cesar"/>
+<row key="20517" value="Pailitas"/>
+<row key="20550" value="Pelaya"/>
+<row key="20570" value="Pueblo Bello"/>
+<row key="20614" value="Río de Oro"/>
+<row key="20621" value="La Paz"/>
+<row key="20710" value="San Alberto"/>
+<row key="20750" value="San Diego"/>
+<row key="20770" value="San Martín"/>
+<row key="20787" value="Tamalameque"/>
+<row key="23001" value="Montería"/>
+<row key="23068" value="Ayapel"/>
+<row key="23079" value="Buenavista"/>
+<row key="23090" value="Canalete"/>
+<row key="23162" value="Cereté"/>
+<row key="23168" value="Chimá"/>
+<row key="23182" value="Chinú"/>
+<row key="23189" value="Ciénaga de Oro"/>
+<row key="23300" value="Cotorra"/>
+<row key="23350" value="La Apartada"/>
+<row key="23417" value="Lorica"/>
+<row key="23419" value="Los Córdobas"/>
+<row key="23464" value="Momil"/>
+<row key="23466" value="Montelíbano"/>
+<row key="23500" value="Moñitos"/>
+<row key="23555" value="Planeta Rica"/>
+<row key="23570" value="Pueblo Nuevo"/>
+<row key="23574" value="Puerto Escondido"/>
+<row key="23580" value="Puerto Libertador"/>
+<row key="23586" value="Purísima"/>
+<row key="23660" value="Sahagún"/>
+<row key="23670" value="San Andrés Sotavento"/>
+<row key="23672" value="San Antero"/>
+<row key="23675" value="San  Bernardo del Viento"/>
+<row key="23678" value="San Carlos"/>
+<row key="23686" value="San Pelayo"/>
+<row key="23807" value="Tierralta"/>
+<row key="23855" value="Valencia"/>
+<row key="25001" value="Agua de Dios"/>
+<row key="25019" value="Albán"/>
+<row key="25035" value="Anapoima"/>
+<row key="25040" value="Anolaima"/>
+<row key="25053" value="Arbeláez"/>
+<row key="25086" value="Beltrán"/>
+<row key="25095" value="Bituima"/>
+<row key="25099" value="Bojacá"/>
+<row key="25120" value="Cabrera"/>
+<row key="25123" value="Cachipay"/>
+<row key="25126" value="Cajicá"/>
+<row key="25148" value="Caparrapí"/>
+<row key="25151" value="Caqueza"/>
+<row key="25154" value="Carmen de Carupa"/>
+<row key="25168" value="Chaguaní"/>
+<row key="25175" value="Chía"/>
+<row key="25178" value="Chipaque"/>
+<row key="25181" value="Choachí"/>
+<row key="25183" value="Chocontá"/>
+<row key="25200" value="Cogua"/>
+<row key="25214" value="Cota"/>
+<row key="25224" value="Cucunubá"/>
+<row key="25245" value="El Colegio"/>
+<row key="25258" value="El Peñon"/>
+<row key="25260" value="El Rosal"/>
+<row key="25269" value="Facatativá"/>
+<row key="25279" value="Fomeque"/>
+<row key="25281" value="Fosca"/>
+<row key="25286" value="Funza"/>
+<row key="25288" value="Fúquene"/>
+<row key="25290" value="Fusagasugá"/>
+<row key="25293" value="Gachala"/>
+<row key="25295" value="Gachancipá"/>
+<row key="25297" value="Gachetá"/>
+<row key="25299" value="Gama"/>
+<row key="25307" value="Girardot"/>
+<row key="25312" value="Granada"/>
+<row key="25317" value="Guachetá"/>
+<row key="25320" value="Guaduas"/>
+<row key="25322" value="Guasca"/>
+<row key="25324" value="Guataquí"/>
+<row key="25326" value="Guatavita"/>
+<row key="25328" value="Guayabal de Siquima"/>
+<row key="25335" value="Guayabetal"/>
+<row key="25339" value="Gutiérreza"/>
+<row key="25368" value="Jerusalén"/>
+<row key="25372" value="Junín"/>
+<row key="25377" value="La Calera"/>
+<row key="25386" value="La Mesa"/>
+<row key="25394" value="La Palma"/>
+<row key="25398" value="La Peña"/>
+<row key="25402" value="La Vega"/>
+<row key="25407" value="Lenguazaque"/>
+<row key="25426" value="Macheta"/>
+<row key="25430" value="Madrid"/>
+<row key="25436" value="Manta"/>
+<row key="25438" value="Medina"/>
+<row key="25473" value="Mosquera"/>
+<row key="25483" value="Nariño"/>
+<row key="25486" value="Nemocón"/>
+<row key="25488" value="Nilo"/>
+<row key="25489" value="Nimaima"/>
+<row key="25491" value="Nocaima"/>
+<row key="25506" value="Venecia Ospina Pérez"/>
+<row key="25513" value="Pacho"/>
+<row key="25518" value="Paime"/>
+<row key="25524" value="Pandi"/>
+<row key="25530" value="Paratebueno"/>
+<row key="25535" value="Pasca"/>
+<row key="25572" value="Puerto Salgar"/>
+<row key="25580" value="Pulí"/>
+<row key="25592" value="Quebradanegra"/>
+<row key="25594" value="Quetame"/>
+<row key="25596" value="Quipile"/>
+<row key="25599" value="Apulo"/>
+<row key="25612" value="Ricaurte"/>
+<row key="25645" value="San Antonio de Tequendama"/>
+<row key="25649" value="San Bernardo"/>
+<row key="25653" value="San Cayetano"/>
+<row key="25658" value="San Francisco"/>
+<row key="25662" value="San Juan de Rioseco"/>
+<row key="25718" value="Sasaima"/>
+<row key="25736" value="Sesquilé"/>
+<row key="25740" value="Sibaté"/>
+<row key="25743" value="Silvania"/>
+<row key="25745" value="Simijaca"/>
+<row key="25754" value="Soacha"/>
+<row key="25758" value="Sopó"/>
+<row key="25769" value="Subachoque"/>
+<row key="25772" value="Suesca"/>
+<row key="25777" value="Supatá"/>
+<row key="25779" value="Susa"/>
+<row key="25781" value="Sutatausa"/>
+<row key="25785" value="Tabio"/>
+<row key="25793" value="Tausa"/>
+<row key="25797" value="Tena"/>
+<row key="25799" value="Tenjo"/>
+<row key="25805" value="Tibacuy"/>
+<row key="25807" value="Tibiritá"/>
+<row key="25815" value="Tocaima"/>
+<row key="25817" value="Tocancipá"/>
+<row key="25823" value="Topaipi"/>
+<row key="25839" value="Ubalá"/>
+<row key="25841" value="Ubaque"/>
+<row key="25843" value="Villa de San Diego de Ubate"/>
+<row key="25845" value="Une"/>
+<row key="25851" value="Útica"/>
+<row key="25862" value="Vergara"/>
+<row key="25867" value="Vianí"/>
+<row key="25871" value="Villagómez"/>
+<row key="25873" value="Villa Pinzón"/>
+<row key="25875" value="Villeta"/>
+<row key="25878" value="Viotá"/>
+<row key="25885" value="Yacopí"/>
+<row key="25898" value="Zipacón"/>
+<row key="25899" value="Zipaquirá"/>
+<row key="27001" value="Quibdó"/>
+<row key="27006" value="Acandí"/>
+<row key="27025" value="Alto Baudó"/>
+<row key="27050" value="Atrato Yuto"/>
+<row key="27073" value="Bagadó"/>
+<row key="27075" value="Bahía Solano"/>
+<row key="27077" value="Bajo Baudó Pizarro"/>
+<row key="27086" value="Belén de Bajirá"/>
+<row key="27099" value="Bellavista"/>
+<row key="27135" value="Cantón del San Pablo"/>
+<row key="27150" value="Carmen del Darién"/>
+<row key="27160" value="Cértegui"/>
+<row key="27205" value="Condoto"/>
+<row key="27245" value="El Carmen de Atrato"/>
+<row key="27250" value="El Litoral del San Juan"/>
+<row key="27361" value="Istmina"/>
+<row key="27372" value="Juradó"/>
+<row key="27413" value="Lloró"/>
+<row key="27425" value="El Carmen de Atrato"/>
+<row key="27430" value="Medio Baudó"/>
+<row key="27450" value="Medio San Juan"/>
+<row key="27491" value="Novita"/>
+<row key="27495" value="Nuquí"/>
+<row key="27580" value="Río Iro"/>
+<row key="27600" value="Río Quito"/>
+<row key="27615" value="Riosucio"/>
+<row key="27660" value="San José del Palmar"/>
+<row key="27745" value="Sipí"/>
+<row key="27787" value="Tadó"/>
+<row key="27800" value="Unguía"/>
+<row key="27810" value="Unión Panamericana"/>
+<row key="41001" value="Neiva"/>
+<row key="41006" value="Acevedo"/>
+<row key="41013" value="Agrado"/>
+<row key="41016" value="Aipe"/>
+<row key="41020" value="Algeciras"/>
+<row key="41026" value="Altamira"/>
+<row key="41078" value="Baraya"/>
+<row key="41132" value="Campoalegre"/>
+<row key="41206" value="Colombia"/>
+<row key="41244" value="Elías"/>
+<row key="41298" value="Garzón"/>
+<row key="41306" value="Gigante"/>
+<row key="41319" value="Guadalupe"/>
+<row key="41349" value="Hobo"/>
+<row key="41357" value="Íquira"/>
+<row key="41359" value="Isnos"/>
+<row key="41378" value="La Argentina"/>
+<row key="41396" value="La Plata"/>
+<row key="41483" value="Nátaga"/>
+<row key="41503" value="Oporapa"/>
+<row key="41518" value="Paicol"/>
+<row key="41524" value="Palermo"/>
+<row key="41530" value="Palestina"/>
+<row key="41548" value="Pital"/>
+<row key="41551" value="Pitalito"/>
+<row key="41615" value="Rivera"/>
+<row key="41660" value="Saladoblanco"/>
+<row key="41668" value="San Agustín"/>
+<row key="41676" value="Santa María"/>
+<row key="41770" value="Suaza"/>
+<row key="41791" value="Tarqui"/>
+<row key="41797" value="Tesalia"/>
+<row key="41799" value="Tello"/>
+<row key="41801" value="Teruel"/>
+<row key="41807" value="Timaná"/>
+<row key="41872" value="Villavieja"/>
+<row key="41885" value="Yaguará"/>
+<row key="44001" value="Riohacha"/>
+<row key="44035" value="Albania"/>
+<row key="44078" value="Barrancas"/>
+<row key="44090" value="Dibulla"/>
+<row key="44098" value="Distracción"/>
+<row key="44110" value="El Molino"/>
+<row key="44279" value="Fonseca"/>
+<row key="44378" value="Hatonuevo"/>
+<row key="44420" value="La Jagua del Pilar"/>
+<row key="44430" value="Maicao"/>
+<row key="44560" value="Manaure"/>
+<row key="44650" value="San Juan del Cesar"/>
+<row key="44847" value="Uribia"/>
+<row key="44855" value="Urumita"/>
+<row key="44874" value="Villanueva"/>
+<row key="47001" value="Santa Marta"/>
+<row key="47030" value="Algarrobo"/>
+<row key="47053" value="Aracataca"/>
+<row key="47058" value="Ariguaní El Díficil"/>
+<row key="47161" value="Cerro San Antonio"/>
+<row key="47170" value="Chibolo"/>
+<row key="47189" value="Ciénaga"/>
+<row key="47205" value="Concordia"/>
+<row key="47245" value="El Banco"/>
+<row key="47258" value="El Piñon"/>
+<row key="47268" value="El Retén"/>
+<row key="47288" value="Fundación"/>
+<row key="47318" value="Guamal"/>
+<row key="47460" value="Nueva Granada"/>
+<row key="47541" value="Pedraza"/>
+<row key="47545" value="Pijiño del Carmen"/>
+<row key="47551" value="Pivijay"/>
+<row key="47555" value="Plato"/>
+<row key="47570" value="Puebloviejo"/>
+<row key="47605" value="Remolino"/>
+<row key="47660" value="Sabanas de San Angel"/>
+<row key="47675" value="Salamina"/>
+<row key="47692" value="San Sebastián de Buenavista"/>
+<row key="47703" value="San Zenón"/>
+<row key="47707" value="Santa Ana"/>
+<row key="47720" value="Santa Bárbara Pinto"/>
+<row key="47745" value="Sitionuevo"/>
+<row key="47798" value="Tenerife"/>
+<row key="47960" value="Zapayán"/>
+<row key="47980" value="Zona Bananera"/>
+<row key="50001" value="Villavicencio"/>
+<row key="50006" value="Acacías"/>
+<row key="50110" value="Barranca de Upía"/>
+<row key="50124" value="Cabuyaro"/>
+<row key="50150" value="Castilla la Nueva"/>
+<row key="50223" value="Cubarral"/>
+<row key="50226" value="Cumaral"/>
+<row key="50245" value="El Calvario"/>
+<row key="50251" value="El Castillo"/>
+<row key="50270" value="El Dorado"/>
+<row key="50287" value="Fuente de Oro"/>
+<row key="50313" value="Granada"/>
+<row key="50318" value="Guamal"/>
+<row key="50325" value="Mapiripán"/>
+<row key="50330" value="Mesetas"/>
+<row key="50350" value="La Macarena"/>
+<row key="50370" value="La Uribe"/>
+<row key="50400" value="Lejanías"/>
+<row key="50450" value="Puerto Concordia"/>
+<row key="50568" value="Puerto Gaitán"/>
+<row key="50573" value="Puerto López"/>
+<row key="50577" value="Puerto Lleras"/>
+<row key="50590" value="Puerto Rico"/>
+<row key="50606" value="Restrepo"/>
+<row key="50680" value="San Carlos de Guaroa"/>
+<row key="50683" value="San Juan de Arama"/>
+<row key="50686" value="San Juanito"/>
+<row key="50689" value="San Martín"/>
+<row key="50711" value="Vistahermosa"/>
+<row key="52001" value="Pasto"/>
+<row key="52019" value="Albán San José"/>
+<row key="52022" value="Aldana"/>
+<row key="52036" value="Ancuyá"/>
+<row key="52051" value="Arboleda Berruecos"/>
+<row key="52079" value="Barbacoas"/>
+<row key="52083" value="Belén"/>
+<row key="52110" value="Buesaco"/>
+<row key="52203" value="Colón Genova"/>
+<row key="52207" value="Consacá"/>
+<row key="52210" value="Contadero"/>
+<row key="52215" value="Córdoba"/>
+<row key="52224" value="Cuaspud Carlosama"/>
+<row key="52227" value="Cumbal"/>
+<row key="52233" value="Cumbitara"/>
+<row key="52240" value="Chachaguí"/>
+<row key="52250" value="El Charco"/>
+<row key="52254" value="El Peñol"/>
+<row key="52256" value="El Rosario"/>
+<row key="52258" value="El Tablón de Gómez"/>
+<row key="52260" value="El Tambo"/>
+<row key="52287" value="Funes"/>
+<row key="52317" value="Guachucal"/>
+<row key="52320" value="Guaitarilla"/>
+<row key="52323" value="Gualmatán"/>
+<row key="52352" value="Iles"/>
+<row key="52354" value="Imués"/>
+<row key="52356" value="Ipiales"/>
+<row key="52378" value="La Cruz"/>
+<row key="52381" value="La Florida"/>
+<row key="52385" value="La Llanada"/>
+<row key="52390" value="La Tola"/>
+<row key="52399" value="La Unión"/>
+<row key="52405" value="Leiva"/>
+<row key="52411" value="Linares"/>
+<row key="52418" value="Sotomayor"/>
+<row key="52427" value="Payan"/>
+<row key="52435" value="Piedrancha"/>
+<row key="52473" value="Mosquera"/>
+<row key="52480" value="Nariño"/>
+<row key="52490" value="Olaya Herrera"/>
+<row key="52506" value="Ospina"/>
+<row key="52520" value="Francisco Pizarro"/>
+<row key="52540" value="Policarpa"/>
+<row key="52560" value="Potosí"/>
+<row key="52565" value="Providencia"/>
+<row key="52573" value="Puerres"/>
+<row key="52585" value="Pupiales"/>
+<row key="52612" value="Ricaurte"/>
+<row key="52621" value="Roberto Payán (San José )"/>
+<row key="52678" value="Samaniego"/>
+<row key="52683" value="Sandoná"/>
+<row key="52685" value="San Bernardo"/>
+<row key="52687" value="San Lorenzo"/>
+<row key="52693" value="San Pablo"/>
+<row key="52694" value="San Pedro de Cartago"/>
+<row key="52696" value="Santa Bárbara (Iscuande)"/>
+<row key="52699" value="Guachaves"/>
+<row key="52720" value="Sapuyes"/>
+<row key="52786" value="Taminango"/>
+<row key="52788" value="Tangua"/>
+<row key="52835" value="Tumaco"/>
+<row key="52838" value="Túquerres"/>
+<row key="52885" value="Yacuanquer"/>
+<row key="54001" value="Cúcuta"/>
+<row key="54003" value="Abrego"/>
+<row key="54051" value="Arboledas"/>
+<row key="54099" value="Bochalema"/>
+<row key="54109" value="Bucarasica"/>
+<row key="54125" value="Cácota"/>
+<row key="54128" value="Cachira"/>
+<row key="54172" value="Chinácota"/>
+<row key="54174" value="Chitagá"/>
+<row key="54206" value="Convención"/>
+<row key="54223" value="Cucutilla"/>
+<row key="54239" value="Durania"/>
+<row key="54245" value="El Carmen"/>
+<row key="54250" value="El Tarra"/>
+<row key="54261" value="El Zulia"/>
+<row key="54313" value="Gramalote"/>
+<row key="54344" value="Hacarí"/>
+<row key="54347" value="Herrán"/>
+<row key="54377" value="Labateca"/>
+<row key="54385" value="La Esperanza"/>
+<row key="54398" value="La Playa"/>
+<row key="54405" value="Los Patios"/>
+<row key="54418" value="Lourdes"/>
+<row key="54480" value="Mutiscua"/>
+<row key="54498" value="Ocaña"/>
+<row key="54518" value="Pamplona"/>
+<row key="54520" value="Pamplonita"/>
+<row key="54553" value="Puerto Santander"/>
+<row key="54599" value="Ragonvalia"/>
+<row key="54660" value="Salazar"/>
+<row key="54670" value="San Calixto"/>
+<row key="54673" value="San Cayetano"/>
+<row key="54680" value="Santiago"/>
+<row key="54720" value="Sardinata"/>
+<row key="54743" value="Silos"/>
+<row key="54800" value="Teorama"/>
+<row key="54810" value="Tibú"/>
+<row key="54820" value="Toledo"/>
+<row key="54871" value="Villa Caro"/>
+<row key="54874" value="Villa Rosario"/>
+<row key="63001" value="Armenia"/>
+<row key="63111" value="Buenavista"/>
+<row key="63130" value="Calarca"/>
+<row key="63190" value="Circasia"/>
+<row key="63212" value="Córdoba"/>
+<row key="63272" value="Filandia"/>
+<row key="63302" value="Génova"/>
+<row key="63401" value="La Tebaida"/>
+<row key="63470" value="Montenegro"/>
+<row key="63548" value="Pijao"/>
+<row key="63594" value="Quimbaya"/>
+<row key="63690" value="Salento"/>
+<row key="66001" value="Pereira"/>
+<row key="66045" value="Apía"/>
+<row key="66075" value="Balboa"/>
+<row key="66088" value="Belén de Umbría"/>
+<row key="66170" value="Dosquebradas"/>
+<row key="66318" value="Guática"/>
+<row key="66383" value="La Celia"/>
+<row key="66400" value="La Virginia"/>
+<row key="66440" value="Marsella"/>
+<row key="66456" value="Mistrató"/>
+<row key="66572" value="Pueblo Rico"/>
+<row key="66594" value="Quinchía"/>
+<row key="66682" value="Santa Rosa de Cabal"/>
+<row key="66687" value="Santuario"/>
+<row key="68001" value="Bucaramanga"/>
+<row key="68013" value="Aguada"/>
+<row key="68020" value="Albania"/>
+<row key="68051" value="Aratoca"/>
+<row key="68077" value="Barbosa"/>
+<row key="68079" value="Barichara"/>
+<row key="68081" value="Barrancabermeja"/>
+<row key="68092" value="Betulia"/>
+<row key="68101" value="Bolívar"/>
+<row key="68121" value="Cabrera"/>
+<row key="68132" value="California"/>
+<row key="68147" value="Capitanejo"/>
+<row key="68152" value="Carcasí"/>
+<row key="68160" value="Cepitá"/>
+<row key="68162" value="Cerrito"/>
+<row key="68167" value="Charalá"/>
+<row key="68169" value="Charta"/>
+<row key="68176" value="Chima"/>
+<row key="68179" value="Chipatá"/>
+<row key="68190" value="Cimitarra"/>
+<row key="68207" value="Concepción"/>
+<row key="68209" value="Confines"/>
+<row key="68211" value="Contratación"/>
+<row key="68217" value="Coromoro"/>
+<row key="68229" value="Curití"/>
+<row key="68235" value="El Carmen de Chucurí"/>
+<row key="68245" value="El Guacamayo"/>
+<row key="68250" value="El Peñón"/>
+<row key="68255" value="El Playón"/>
+<row key="68264" value="Encino"/>
+<row key="68266" value="Enciso"/>
+<row key="68271" value="Florián"/>
+<row key="68276" value="Floridablanca"/>
+<row key="68296" value="Galán"/>
+<row key="68298" value="Gambita"/>
+<row key="68307" value="Girón"/>
+<row key="68318" value="Guaca"/>
+<row key="68320" value="Guadalupe"/>
+<row key="68322" value="Guapotá"/>
+<row key="68324" value="Guavatá"/>
+<row key="68327" value="Guepsa"/>
+<row key="68344" value="Hato"/>
+<row key="68368" value="Jesús María"/>
+<row key="68370" value="Jordán"/>
+<row key="68377" value="La Belleza"/>
+<row key="68385" value="Landázuri"/>
+<row key="68397" value="La Paz"/>
+<row key="68406" value="Lebríja"/>
+<row key="68418" value="Los Santos"/>
+<row key="68425" value="Macaravita"/>
+<row key="68432" value="Málaga"/>
+<row key="68444" value="Matanza"/>
+<row key="68464" value="Mogotes"/>
+<row key="68468" value="Molagavita"/>
+<row key="68498" value="Ocamonte"/>
+<row key="68500" value="Oiba"/>
+<row key="68502" value="Onzaga"/>
+<row key="68522" value="Palmar"/>
+<row key="68524" value="Palmas del Socorro"/>
+<row key="68533" value="Páramo"/>
+<row key="68547" value="Piedecuesta"/>
+<row key="68549" value="Pinchote"/>
+<row key="68572" value="Puente Nacional"/>
+<row key="68573" value="Puerto Parra"/>
+<row key="68575" value="Puerto Wilches"/>
+<row key="68615" value="Rionegro"/>
+<row key="68655" value="Sabana de Torres"/>
+<row key="68669" value="San Andrés"/>
+<row key="68673" value="San Benito"/>
+<row key="68679" value="San Gil"/>
+<row key="68682" value="San Joaquín"/>
+<row key="68684" value="San José de Miranda"/>
+<row key="68686" value="San Miguel"/>
+<row key="68689" value="San Vicente de Chucuri"/>
+<row key="68705" value="Santa Bárbara"/>
+<row key="68720" value="Santa Helena del Opón"/>
+<row key="68745" value="Simacota"/>
+<row key="68755" value="Socorro"/>
+<row key="68770" value="Suaita"/>
+<row key="68773" value="Sucre"/>
+<row key="68780" value="Suratá"/>
+<row key="68820" value="Tona"/>
+<row key="68855" value="Valle de San José"/>
+<row key="68861" value="Vélez"/>
+<row key="68867" value="Vetas"/>
+<row key="68872" value="Villanueva"/>
+<row key="68895" value="Zapatoca"/>
+<row key="70001" value="Sincelejo"/>
+<row key="70110" value="Buenavista"/>
+<row key="70124" value="Caimito"/>
+<row key="70204" value="Coloso Ricaurte"/>
+<row key="70215" value="Corozal"/>
+<row key="70221" value="Coveñas"/>
+<row key="70230" value="Chalán"/>
+<row key="70233" value="El Roble"/>
+<row key="70235" value="Galeras Nueva Granada"/>
+<row key="70265" value="Guaranda"/>
+<row key="70400" value="La Unión"/>
+<row key="70418" value="Los Palmitos"/>
+<row key="70429" value="Majagual"/>
+<row key="70473" value="Morroa"/>
+<row key="70508" value="Ovejas"/>
+<row key="70523" value="Palmito"/>
+<row key="70670" value="Sampués"/>
+<row key="70678" value="San Benito Abad"/>
+<row key="70702" value="San Juan de Betulia"/>
+<row key="70708" value="San Marcos"/>
+<row key="70713" value="San Onofre"/>
+<row key="70717" value="San Pedro"/>
+<row key="70742" value="Sincé"/>
+<row key="70771" value="Sucre"/>
+<row key="70820" value="Santiago de Tolú"/>
+<row key="70823" value="Toluviejo"/>
+<row key="73001" value="Ibagué"/>
+<row key="73024" value="Alpujarra"/>
+<row key="73026" value="Alvarado"/>
+<row key="73030" value="Ambalema"/>
+<row key="73043" value="Anzoátegui"/>
+<row key="73055" value="Armero Guayabal"/>
+<row key="73067" value="Ataco"/>
+<row key="73124" value="Cajamarca"/>
+<row key="73148" value="Carmen de Apicalá"/>
+<row key="73152" value="Casabianca"/>
+<row key="73168" value="Chaparral"/>
+<row key="73200" value="Coello"/>
+<row key="73217" value="Coyaima"/>
+<row key="73226" value="Cunday"/>
+<row key="73236" value="Dolores"/>
+<row key="73268" value="Espinal"/>
+<row key="73270" value="Falan"/>
+<row key="73275" value="Flandes"/>
+<row key="73283" value="Fresno"/>
+<row key="73319" value="Guamo"/>
+<row key="73347" value="Herveo"/>
+<row key="73349" value="Honda"/>
+<row key="73352" value="Icononzo"/>
+<row key="73408" value="Lérida"/>
+<row key="73411" value="Líbano"/>
+<row key="73443" value="Mariquita"/>
+<row key="73449" value="Melgar"/>
+<row key="73461" value="Murillo"/>
+<row key="73483" value="Natagaima"/>
+<row key="73504" value="Ortega"/>
+<row key="73520" value="Palocabildo"/>
+<row key="73547" value="Piedras"/>
+<row key="73555" value="Planadas"/>
+<row key="73563" value="Prado"/>
+<row key="73585" value="Purificación"/>
+<row key="73616" value="Rioblanco"/>
+<row key="73622" value="Roncesvalles"/>
+<row key="73624" value="Rovira"/>
+<row key="73671" value="Saldaña"/>
+<row key="73675" value="San Antonio"/>
+<row key="73678" value="San Luis"/>
+<row key="73686" value="Santa Isabel"/>
+<row key="73770" value="Suárez"/>
+<row key="73854" value="Valle de San Juan"/>
+<row key="73861" value="Venadillo"/>
+<row key="73870" value="Villahermosa"/>
+<row key="73873" value="Villarrica"/>
+<row key="76001" value="Cali"/>
+<row key="76020" value="Alcalá"/>
+<row key="76036" value="Andalucía"/>
+<row key="76041" value="Ansermanuevo"/>
+<row key="76054" value="Argelia"/>
+<row key="76100" value="Bolívar"/>
+<row key="76109" value="Buenaventura"/>
+<row key="76111" value="Guadalajara de Buga"/>
+<row key="76113" value="Bugalagrande"/>
+<row key="76122" value="Caicedonia"/>
+<row key="76126" value="Calima Darién"/>
+<row key="76130" value="Candelaria"/>
+<row key="76147" value="Cartago"/>
+<row key="76233" value="Dagua"/>
+<row key="76243" value="El Águila"/>
+<row key="76246" value="El Cairo"/>
+<row key="76248" value="El Cerrito"/>
+<row key="76250" value="El Dovio"/>
+<row key="76275" value="Florida"/>
+<row key="76306" value="Ginebra"/>
+<row key="76318" value="Guacarí"/>
+<row key="76364" value="Jamundí"/>
+<row key="76377" value="La Cumbre"/>
+<row key="76400" value="La Unión"/>
+<row key="76403" value="La Victoria"/>
+<row key="76497" value="Obando"/>
+<row key="76520" value="Palmira"/>
+<row key="76563" value="Pradera"/>
+<row key="76606" value="Restrepo"/>
+<row key="76616" value="Riofrio"/>
+<row key="76622" value="Roldanillo"/>
+<row key="76670" value="San Pedro"/>
+<row key="76736" value="Sevilla"/>
+<row key="76823" value="Toro"/>
+<row key="76828" value="Trujillo"/>
+<row key="76834" value="Tulúa"/>
+<row key="76845" value="Ulloa"/>
+<row key="76863" value="Versalles"/>
+<row key="76869" value="Vijes"/>
+<row key="76890" value="Yotoco"/>
+<row key="76892" value="Yumbo"/>
+<row key="76895" value="Zarzal"/>
+<row key="81001" value="Arauca"/>
+<row key="81065" value="Arauquita"/>
+<row key="81220" value="Cravo Norte"/>
+<row key="81300" value="Fortul"/>
+<row key="81591" value="Puerto Rondón"/>
+<row key="81736" value="Saravena"/>
+<row key="81794" value="Tame"/>
+<row key="85001" value="Yopal"/>
+<row key="85010" value="Aguazul"/>
+<row key="85015" value="Chameza"/>
+<row key="85125" value="Hato Corozal"/>
+<row key="85136" value="La Salina"/>
+<row key="85139" value="Maní"/>
+<row key="85162" value="Monterrey"/>
+<row key="85225" value="Nunchía"/>
+<row key="85230" value="Orocué"/>
+<row key="85250" value="Paz de Ariporo"/>
+<row key="85263" value="Pore"/>
+<row key="85279" value="Recetor"/>
+<row key="85300" value="Sabanalarga"/>
+<row key="85315" value="Sácama"/>
+<row key="85325" value="San Luis de Palenque"/>
+<row key="85400" value="Támara"/>
+<row key="85410" value="Tauramena"/>
+<row key="85430" value="Trinidad"/>
+<row key="85440" value="Villa Nueva"/>
+<row key="86001" value="Mocoa"/>
+<row key="86219" value="Colón"/>
+<row key="86320" value="Orito"/>
+<row key="86568" value="Puerto Asís"/>
+<row key="86569" value="Puerto Caicedo"/>
+<row key="86571" value="Puerto Guzmán"/>
+<row key="86573" value="Puerto Leguizámo"/>
+<row key="86749" value="Sibundoy"/>
+<row key="86755" value="San Francisco"/>
+<row key="86757" value="San Miguel"/>
+<row key="86760" value="Santiago"/>
+<row key="86865" value="Valle del Guamuez (La Hormiga)"/>
+<row key="86885" value="Villagarzón"/>
+<row key="88001" value="San Andrés"/>
+<row key="88564" value="Providencia"/>
+<row key="91001" value="Leticia"/>
+<row key="91263" value="El Encanto"/>
+<row key="91263" value="El Encanto"/>
+<row key="91405" value="La Chorrera"/>
+<row key="91405" value="La Chorrera"/>
+<row key="91407" value="La Pedrera"/>
+<row key="91407" value="La Pedrera"/>
+<row key="91430" value="La Victoria"/>
+<row key="91430" value="La Victoria"/>
+<row key="91460" value="Miriti Paraná"/>
+<row key="91460" value="Mirití-Paraná"/>
+<row key="91530" value="Puerto Alegría"/>
+<row key="91530" value="Puerto Alegría"/>
+<row key="91536" value="Puerto Arica"/>
+<row key="91536" value="Puerto Arica"/>
+<row key="91540" value="Puerto Nariño"/>
+<row key="91669" value="Puerto Santander"/>
+<row key="91669" value="Puerto Santander"/>
+<row key="91798" value="Tarapacá"/>
+<row key="91798" value="Tarapacá"/>
+<row key="94001" value="Inírida"/>
+<row key="94343" value="Barranco Minas"/>
+<row key="94343" value="Guaviare (Barranco Minas)"/>
+<row key="94663" value="Mapiripana"/>
+<row key="94883" value="San Felipe"/>
+<row key="94884" value="Puerto Colombia"/>
+<row key="94885" value="La Guadalupe"/>
+<row key="94886" value="Cacahual"/>
+<row key="94887" value="Pana Pana (Campo Alegre)"/>
+<row key="94888" value="Morichal Nuevo"/>
+<row key="95001" value="San José del Guaviare"/>
+<row key="95015" value="Calamar"/>
+<row key="95025" value="El Retorno"/>
+<row key="95200" value="Miraflores"/>
+<row key="97001" value="Mitú"/>
+<row key="97161" value="Caruru"/>
+<row key="97511" value="Pacoa"/>
+<row key="97666" value="Taraira"/>
+<row key="97777" value="Papunaua (Morichal)"/>
+<row key="97889" value="Yavaraté"/>
+<row key="99001" value="Puerto Carreño"/>
+<row key="99524" value="Primavera"/>
+<row key="99624" value="Santa Rosalia"/>
+<row key="99773" value="Cumaribo"/>
+</values>

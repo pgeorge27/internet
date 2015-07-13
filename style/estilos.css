@@ -1,0 +1,351 @@
+BODY {
+	BACKGROUND-COLOR: WHITE;
+	LEFT: 0px;
+	MARGIN: 0px;
+	TOP: 0px;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 10px;
+	COLOR: black;
+}
+p {
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 13px;
+}
+
+H1 {
+	Color: black;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: large;
+}
+
+H4.textoRequerido {
+	COLOR: #000000;
+	FONT-FAMILY: Verdana;
+	FONT-WEIGHT: bold;
+	VERTICAL-ALIGN: bottom;
+}
+
+.txt {
+	font-family: verdana, arial;
+	color: #214D73;
+	font-size: 10px;
+}
+
+.Normal {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 11px;
+	COLOR: black;
+	FONT-FAMILY: verdana, arial;
+}
+
+.NormalBold {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	COLOR: black;
+	FONT-FAMILY: verdana, arial;
+}
+
+.Stripe0 {
+	BACKGROUND-COLOR: #ffffff
+}
+
+.Stripe1 {
+	BACKGROUND-COLOR: #E96B10
+}
+
+.Separador {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: black;
+	BACKGROUND-COLOR: #e0dfdf;
+	FONT-FAMILY: verdana, arial;
+}
+
+.Separador2 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	COLOR: black;
+	BACKGROUND-COLOR: #e0dfdf;
+	BORDER-BOTTOM: 1px solid black;
+	FONT-FAMILY: verdana, arial;
+}
+
+a.mnu {
+	font-family: verdana, arial;
+	color: #004284;
+	font-size: 8pt;
+	text-decoration: none;
+}
+
+a.mnu:visited {
+	font-family: verdana, arial;
+	color: #004284;
+	font-size: 8pt;
+	text-decoration: none;
+}
+
+a.mnu:hover {
+	font-family: verdana, arial;
+	color: #004284;
+	font-size: 8pt;
+	text-decoration: underline;
+}
+
+A.menu {
+	COLOR: #ffffff;
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: x-small;
+}
+
+A.menu2 {
+	COLOR: black;
+	text-decoration: none;
+	FONT-FAMILY: Arial;
+}
+
+A.menu2 :visited {
+	COLOR: black;
+	text-decoration: underline;
+	FONT-FAMILY: Arial;
+}
+
+A:visited {
+	COLOR: #c0c0c0;
+}
+
+
+TABLE.Consulta {
+	Left: 1cm;
+	Position: relative;
+}
+
+TABLE.small {
+	Left: 2cm;
+	Max-Width: 430;
+	Position: relative;
+	WIDTH: 430px;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 13px;
+}
+
+TABLE.small TD.1 {
+	Max-Width: 160;
+	Min-Width: 160;
+	TEXT-ALIGN: left;
+	WIDTH: 160px;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 13px;
+}
+
+TABLE.medium {
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 13px;
+	Left: 2cm;
+	Position: relative;
+	WIDTH: 460px;
+}
+
+TABLE.large {
+	Left: 2cm;
+	Position: relative;
+	WIDTH: 580px;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 13px;
+}
+
+TABLE.banner {
+	HEIGHT: 48px;
+	WIDTH: 228px;
+}
+
+H2.tituloArea {
+	COLOR: #ff2b2b;
+	FONT-FAMILY: Verdana, Arial;
+	FONT-SIZE: small;
+}
+
+HR.separadorArea {
+	COLOR: #800000;
+}
+
+TD.bullet {
+	BACKGROUND-IMAGE: url(../images/bull-1.gif);
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 4px;
+	WIDTH: 4px;
+}
+
+BODY.encabezado {
+	MARGIN: 0px;
+}
+
+SMALL.etiquetas {
+	COLOR: #000000;
+}
+
+STRONG.textoRequerido {
+	COLOR: #000000;
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: x-small;
+}
+
+TD.agrupador {
+	BACKGROUND-COLOR: #DEDFE6;
+	COLOR: #000000;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	FONT-SIZE: x-small;
+	FONT-WEIGHT: bolder;
+}
+
+INPUT.monto {
+	WIDTH: 125px;
+}
+
+INPUT.nombre {
+	WIDTH: 190px;
+}
+
+TD.etiquetaReporte {
+	Background-Color: #DEDFE6;
+	Color: #000000;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 12px;
+	FONT-WEIGHT: bolder;
+}
+
+TH.etiquetaReporte {
+	Background-Color: #DEDFE6;
+	Color: #000000;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: small;
+	FONT-WEIGHT: bolder;
+}
+
+TD.valorReporte {
+	Color: #000000;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: 12px;
+}
+
+TABLE.error {
+	Text-Align: center;
+	Width: 100%;
+}
+
+TD.errorImg {
+	Background-Image: url("../images/internet banking_256.gif");
+	Empty-Cells: Show;
+	Height: 18;
+	Width: 24;
+}
+
+TD.errorTxt {
+	Width: 100%;
+}
+
+H1.error {
+	Font-Family: 'Times New Roman', Arial;
+	Font-Style: Italic;
+}
+
+H1.ib {
+	Font-Family: Verdana, Arial;
+	Font-Size: x-large;
+	Text-Align: center;
+}
+
+TABLE.calculo TD.calculo {
+	Background-Color: #DEDFE6;
+	Border-Bottom: 1px solid #C0C0C0;
+	Border-Left: 1px solid #C0C0C0;
+	Border-Right: 1px solid #C0C0C0;
+	Border-Top: 1px solid #C0C0C0;
+	Color: #000000;
+	Font-Size: small;
+	Width: 100px;
+	Cursor: hand;
+}
+
+TABLE.calculo TD.calculo1 {
+	Border-Bottom: 1px solid #C0C0C0;
+	Border-Left: 1px solid #C0C0C0;
+	Border-Right: 1px solid #C0C0C0;
+	Border-Top: 1px solid #C0C0C0;
+	Color: #000000;
+	Font-Size: small;
+	Width: 100px;
+	Cursor: hand;
+}
+
+TABLE.calculo TD.calculo2 {
+	Border: 1px solid #C0C0C0;
+	Color: #000000;
+	Font-Size: small;
+	Font-Weight: bold;
+	Width: 100px;
+}
+
+TABLE.calculo {
+	BORDER: black solid 2px;
+	Width :   500px;
+	Left: 2cm;
+	Position: relative;
+}
+
+TD.over {
+	Background-Color: #CCCCFF;
+	Color: #000066;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: small;
+	FONT-WEIGHT: bolder;
+}
+
+TD.down {
+	Background-Color: #CCCCFF;
+	Color: #000066;
+	Font-Family: Arial, Helvetica, Sans-serif;
+	Font-Size: small;
+	Font-Style: italic;
+	FONT-WEIGHT: bolder;
+}
+
+TD.out {
+	color: black;
+	Background-Color: white;
+	font-Style: normal;
+}
+
+TD.requerido {
+	BACKGROUND-IMAGE: url(../images/req.gif);
+	BACKGROUND-POSITION: 50% bottom;
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 14px;
+	WIDTH: 14px;
+}
+
+
+.readonly {
+	COLOR: gray;
+}
+.textbox {
+	height: 20px;
+	border: #004284 solid 1px;
+	width: 250px;
+	font-weight: bold;
+}
+
+.textbox2 {
+	height: 60px;
+	border: #004284 solid 1px;
+	width: 300px;
+	font-weight: bold;
+	overflow: auto;
+}
+
+.calendar2 {
+	BORDER: 1px solid #336699;
+	BACKGROUND-IMAGE: url(../images/calendar.gif);
+	COLOR: #ffffff;
+	HEIGHT: 22px;
+	WIDTH: 27px;
+}

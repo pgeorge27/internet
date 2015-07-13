@@ -1,0 +1,312 @@
+CREATE OR REPLACE PROCEDURE /*IDVERSION0001*/ gi_p_carga_trans_masivas (
+   gn_codigo_empresa                  INTEGER,
+   gn_lote                            NUMBER,
+   gn_cantidad_errores       IN OUT   NUMBER,
+   gn_registros_leidos       IN OUT   NUMBER,
+   gn_registros_procesados   IN OUT   NUMBER,
+   gv_mensaje_error          IN OUT   VARCHAR2
+)
+IS
+   IDVERSION0001   NUMBER;
+
+Ln_CtaOrdenante     NUMBER(10);
+Ld_FechaValor       VARCHAR2(10);--DATE;
+Ln_CodMoneda        NUMBER(2);
+Ln_Monto            NUMBER(18,2);
+Lv_CtaBancoInter    VARCHAR2(34);
+Lv_SwAbaOtro        VARCHAR2(11);
+Lv_BancoBen         VARCHAR2(100);
+Lv_DirBancoBen      VARCHAR2(200);
+Lv_CiudadBancoBen   VARCHAR2(100);
+Lv_PaisBancoBen     VARCHAR2(100);
+Lv_SwAbaOtroInter   VARCHAR2(100);
+Lv_NombBenef        VARCHAR2(150);
+Ln_CtaBenef         NUMBER(34);
+Lv_DirBenef         VARCHAR2(200);
+Lv_CiudadBenef      VARCHAR2(50);
+Lv_PaisBenef        VARCHAR2(50);
+Lv_Detalle          VARCHAR2(130);
+
+Lv_separador        VARCHAR2(1);
+Ln_numproceso       NUMBER(2);
+Lv_nombretrama      VARCHAR2(30);
+lv_cod_aplic_proc   VARCHAR2(30);
+Ln_UltCampo         NUMBER;
+Lv_TramaTemp        mg_trama_temp.trama%type;
+Lv_ValorTemp        mg_trama_temp.trama%type;
+
+Ln_ClienteOrd       mg_clientes.codigo_cliente%type;
+Ln_Agencta          mg_cuentas.codigo_agencia%type;
+Lv_Apliccta         mg_cuentas.codigo_aplicacion%type;
+Ln_Subaplcta        mg_cuentas.codigo_sub_aplicacion%type;
+Ln_CodAgenBGI       gi_giros_transferencias.codigo_agencia%type;
+Ln_CodSubApBGI      gi_giros_transferencias.codigo_sub_aplicacion%type;
+Ln_NroDocBGI        gi_giros_transferencias.numero_documento%type;
+Lv_menFueraHorario  VARCHAR2(200);
+Lv_tipoMens         VARCHAR2(2);
+Lv_PosicionMens     VARCHAR2(1);
+Lv_error            VARCHAR2(250);
+Ln_NroRegistro      NUMBER := 0;
+Ld_FechaHoy         DATE;
+Lv_Usuario          VARCHAR2(10);
+ln_cod_trama        NUMBER(3);
+ln_cod_proceso      NUMBER(2);
+
+CURSOR c_trama
+   IS
+      SELECT   codigo_empresa, codigo_agencia, codigo_trama, numero_proceso,
+               lote, numero_registro, trama, nombre_archivo
+          FROM mg_trama_temp
+         WHERE lote = gn_lote
+           AND codigo_aplicacion = lv_cod_aplic_proc--'BMG'
+           AND codigo_trama = ln_cod_trama
+           AND control is null
+      ORDER BY numero_registro;
+
+   CURSOR c_campos_trama
+   IS
+      SELECT   a.codigo_empresa, a.codigo_trama, a.codigo_registro,
+               a.nombre_campo, a.posicion_inicial, a.largo
+          FROM mg_campos_x_trama a
+         WHERE a.codigo_trama = ln_cod_trama
+      ORDER BY a.posicion_inicial;
+BEGIN
+   gn_cantidad_errores := 0;
+   MG_K_Maneja_Log.MsgLog_On;
+
+   lv_cod_aplic_proc := nvl(mg_k_parametros_dinamicos.mg_f_devuelve_valor ('BMG','COD_APLIC_MULTIPAGO_BGI'),'BMG');
+   ln_cod_proceso := mg_k_parametros_dinamicos.mg_f_devuelve_valor ('BMG','COD_PROCESO_MULTIPAGO_BGI');
+   ln_cod_trama := mg_k_parametros_dinamicos.mg_f_devuelve_valor ('BMG','COD_TRAMA_MULTIPAGO_BGI');
+   BEGIN
+       SELECT NVL (separador, '|'), numero_proceso, descripcion
+         INTO Lv_separador, Ln_numproceso, Lv_nombretrama
+         FROM mg_tipo_tramas
+        WHERE codigo_empresa = gn_codigo_empresa
+          AND codigo_trama = ln_cod_trama; --66
+   EXCEPTION
+       WHEN OTHERS
+       THEN
+          gv_mensaje_error :=
+             mg_k_ctrl_error.mg_f_armar_codigo_error(00000,
+             'Error al Leer Tipo de Trama. GI_P_CARGA_TRANS_MASIVAS ',SQLERRM);
+          RETURN;
+   END;
+
+   BEGIN
+      SELECT   max(a.posicion_inicial)
+          INTO Ln_UltCampo
+          FROM mg_campos_x_trama a
+         WHERE a.codigo_trama = ln_cod_trama; --66
+   EXCEPTION
+    WHEN OTHERS THEN
+     Ln_UltCampo := 1;
+   END;
+
+   Ld_FechaHoy := MG_F_FECHA_CALENDARIO(gn_codigo_empresa, lv_cod_aplic_proc/*'BMG'*/);
+
+   Lv_TramaTemp := NULL;
+   Ln_NroRegistro := 0;
+   FOR i IN c_trama LOOP
+      Ln_NroRegistro := nvl(Ln_NroRegistro, 0) + 1;
+      gn_registros_leidos := Ln_NroRegistro;
+
+      Lv_TramaTemp := i.trama;
+      Ln_CtaOrdenante    := NULL;
+      Ld_FechaValor      := NULL;
+      Ln_CodMoneda       := NULL;
+      Ln_Monto           := NULL;
+      Lv_CtaBancoInter   := NULL;
+      Lv_SwAbaOtro       := NULL;
+      Lv_BancoBen        := NULL;
+      Lv_DirBancoBen     := NULL;
+      Lv_CiudadBancoBen  := NULL;
+      Lv_PaisBancoBen    := NULL;
+      Lv_SwAbaOtroInter  := NULL;
+      Lv_NombBenef       := NULL;
+      Ln_CtaBenef        := NULL;
+      Lv_DirBenef        := NULL;
+      Lv_CiudadBenef     := NULL;
+      Lv_PaisBenef       := NULL;
+      Lv_Detalle         := NULL;
+      ln_agencta         := NULL;
+      Ln_ClienteOrd      := NULL;
+      lv_apliccta        := NULL;
+      ln_subaplcta       := NULL;
+      gv_mensaje_error   := NULL;
+      Ln_CodAgenBGI       := NULL;
+      Ln_CodSubApBGI      := NULL;
+      Ln_NroDocBGI        := NULL;
+      IF Lv_TramaTemp IS NOT NULL THEN
+        FOR j IN c_campos_trama LOOP
+          BEGIN
+            IF j.posicion_inicial != Ln_UltCampo THEN
+              Lv_ValorTemp := substr(Lv_TramaTemp,1,instr(Lv_TramaTemp,Lv_separador)-1);
+              Lv_TramaTemp := substr(Lv_TramaTemp,instr(Lv_TramaTemp,Lv_separador)+1);
+            ELSE
+              Lv_ValorTemp := Lv_TramaTemp;
+              Lv_TramaTemp := NULL;
+            END IF;
+
+            --dbms_output.put_line('j.nombre_campo:'||j.nombre_campo);
+
+            IF Lv_ValorTemp IS NOT NULL THEN
+              IF    j.nombre_campo = 'CUENTA_ORD'       THEN
+                Ln_CtaOrdenante := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'FECHA_VALOR'      THEN
+                Ld_FechaValor   := substr(Lv_ValorTemp,0,j.largo);--to_date(Lv_ValorTemp,'YYYYMMDD');
+               -- dbms_output.put_line('FECHA_VALOR:'||Ld_FechaValor);
+              ELSIF j.nombre_campo = 'COD_MONEDA'       THEN
+                Ln_CodMoneda    := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'MONTO'            THEN
+                Ln_Monto        := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'CTA_INTERMED'     THEN
+                Lv_CtaBancoInter := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'SW_ABA_OTROS'     THEN
+                Lv_SwAbaOtro     := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'BANCO_BENEF'      THEN
+                Lv_BancoBen      := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'DIR_BANCO_BEN'    THEN
+                Lv_DirBancoBen   := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'CIUDAD_BANCO_BEN' THEN
+                Lv_CiudadBancoBen := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'PAIS_BANCO_BEN'   THEN
+                Lv_PaisBancoBen   := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'SW_ABA_INTERMED'  THEN
+                Lv_SwAbaOtroInter := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'NOMBRE_BENEF'      THEN
+                Lv_NombBenef      := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'CTA_BENEFICIARIO' THEN
+                Ln_CtaBenef       := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'DIR_BENEFICIARIO' THEN
+                Lv_DirBenef       := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'CIUDAD_BENEF'     THEN
+                Lv_CiudadBenef    := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'PAIS_BENEF'       THEN
+                Lv_PaisBenef      := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'DET_PAGO'         THEN
+                Lv_Detalle        := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'COD_USUARIO'      THEN  --Campos agregados por virtual -----
+                --El primero en la trama es el codigo del usuario
+                Lv_Usuario   := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'COD_CLIENTE'      THEN
+                --El segundo en la trama es el codigo del cliente ordenante
+                Ln_ClienteOrd := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'COD_APL_CTA'      THEN
+                --El tercer valor en la trama es la aplicacion de la cuenta
+                Lv_Apliccta := substr(Lv_ValorTemp,0,j.largo);
+              ELSIF j.nombre_campo = 'COD_AGEN_CTA'     THEN
+                --El cuarto campo es la agencia de la cuenta
+                Ln_Agencta := to_number(substr(Lv_ValorTemp,0,j.largo));
+              ELSIF j.nombre_campo = 'COD_SUBAP_CTA'    THEN
+                --El quinto campo es el de la sub aplicacion de la cuenta
+                Ln_SubAplCta := to_number(substr(Lv_ValorTemp,0,j.largo));
+              END IF;
+            END IF;
+          EXCEPTION
+            WHEN OTHERS THEN
+              --dbms_output.put_line(DBMS_UTILITY.format_error_backtrace);
+              gv_mensaje_error := MG_K_CTRL_ERROR.MG_F_ARMAR_CODIGO_ERROR(00000,
+              'Definición Incorrecta de Archivo 0.2:'||Lv_ValorTemp||' '||j.nombre_campo,SqlErrm);
+              EXIT;
+          END;
+
+          Lv_ValorTemp := NULL;
+        END LOOP;
+
+        IF gv_mensaje_error IS NULL THEN
+          BEGIN
+            BE_K_GIROS_TRANSFERENCIAS.BE_P_CARGA_OPERACION(
+                                   gn_codigo_empresa,
+                                   Ln_CodAgenBGI,
+                                   Ln_CodSubApBGI,
+                                   Ln_NroDocBGI,
+                                   ln_agencta,      --PN_CODIGO_AGENCIA_CLTE        NUMBER,
+                                   ln_subaplcta,    --PN_CODIGO_SUB_APLICACION_CLTE NUMBER,
+                                   ln_ctaordenante, --PN_NUMERO_CUENTA_CLTE         NUMBER,
+                                   lv_apliccta,     --PV_APLICACION_CTA_CLTE        VARCHAR2,
+                                   Ln_CodMoneda,
+                                   Ld_FechaValor,
+                                   nvl( Lv_Usuario, USER),   ------
+                                   Ln_Monto,
+                                   NULL, --PN_CODIGO_ACREDITAR
+                                   Lv_SwAbaOtro,
+                                   Lv_NombBenef,
+                                   Lv_DirBenef,
+                                   Lv_CiudadBenef,
+                                   Lv_PaisBenef,
+                                   Ln_CtaBenef, --PV_NUMERO_CUENTA_BENEFICIARIO
+                                   NULL, --PV_INFORMACION_REMITENTE
+                                   Ln_ClienteOrd, --PN_CODIGO_CLIENTE_ORDENANTE
+                                   Lv_SwAbaOtroInter,
+                                   NULL, --PV_PLANTILLA
+                                   Lv_BancoBen,
+                                   Lv_Detalle,
+                                   Lv_CtaBancoInter,
+                                   Lv_BancoBen,
+                                   Lv_DirBancoBen,
+                                   Lv_CiudadBancoBen,
+                                   Lv_PaisBancoBen,
+                                   Lv_menFueraHorario,
+                                   gv_mensaje_error);
+            IF gv_mensaje_error IS NULL THEN
+
+              INSERT INTO gi_documentos_x_lote
+                   VALUES (gn_lote, 
+				           ld_fechahoy, 
+						   SYSDATE,
+                           NVL (i.numero_registro, ln_nroregistro), 
+						   gn_codigo_empresa,
+                           'BGI', 
+						   ln_codagenbgi, 
+						   ln_codsubapbgi, 
+						   ln_nrodocbgi,
+                           to_date(Ld_FechaValor,'YYYYMMDD'),
+						   'P', 
+						   ln_monto, 
+						   i.nombre_archivo,
+						   Lv_Usuario);
+              /*BE_K_GIROS_TRANSFERENCIAS.BE_P_APRUEBA_TRANSFERENCIA(
+                                         gn_codigo_empresa,
+                                         Ln_CodAgenBGI,
+                                         Ln_CodSubApBGI,
+                                         Ln_NroDocBGI,
+                                         gv_mensaje_error);*/
+              UPDATE mg_trama_temp
+                 SET control = 'S'
+               WHERE codigo_empresa = gn_codigo_empresa
+                 AND lote = gn_lote
+                 AND numero_registro = NVL (i.numero_registro, ln_nroregistro);
+            END IF;
+          EXCEPTION WHEN OTHERS THEN
+             --dbms_output.put_line(DBMS_UTILITY.format_error_backtrace);
+             gv_mensaje_error := MG_K_CTRL_ERROR.MG_F_ARMAR_CODIGO_ERROR(00000,
+                      '1Error en  GI_P_CARGA_TRANS_MASIVAS',to_char(SqlCode)||SqlErrm);
+          END;
+        END IF;
+
+        IF gv_mensaje_error IS NOT NULL THEN
+          mg_k_ctrl_error.MG_P_MENSAJE_ERROR(gv_mensaje_error,
+                                             1,
+                                             Lv_error,
+                                             Lv_tipoMens,
+                                             Lv_PosicionMens);
+
+          MG_K_Maneja_Log.HostMsg (gn_codigo_empresa,
+                                   lv_cod_aplic_proc,--'BMG',
+                                   ln_cod_proceso,--66,
+                                   'Lote '||gn_lote||' Linea '||nvl(i.numero_registro,Ln_NroRegistro)||':'||Lv_error);
+          gn_cantidad_errores := gn_cantidad_errores + 1;
+        END IF;
+      END IF;
+   END LOOP;
+
+   MG_K_Maneja_Log.MsgLog_Off;
+   gn_registros_procesados := nvl(gn_registros_leidos,0) - nvl(gn_cantidad_errores,0);
+
+EXCEPTION
+  WHEN OTHERS THEN
+     --dbms_output.put_line(DBMS_UTILITY.format_error_backtrace);
+     gv_mensaje_error := MG_K_CTRL_ERROR.MG_F_ARMAR_CODIGO_ERROR(00000,
+              'Error en  GI_P_CARGA_TRANS_MASIVAS',to_char(SqlCode)||SqlErrm);
+     Return;
+END;

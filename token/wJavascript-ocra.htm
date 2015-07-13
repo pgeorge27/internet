@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Optical transmission - Javascript</title>
+
+    <script type="text/javascript" src="./optical-ocra/encoding-ocra_BCom.js"></script>
+    <script type="text/javascript" src="./optical-ocra/optical-ocra-embed.js"></script>
+    <script type="text/javascript">
+        var setChallengeCallback = opener.setChallengeCallback;
+        var getDataOrderCallback = opener.getDataOrderCallback;
+
+        if (opener.document.getElementById("currency-id"))                      sCurrency = opener.document.getElementById("currency-id").value;
+        if (opener.document.getElementById("amount-id"))            sTransactionAmount = opener.document.getElementById("amount-id").value;
+        if (opener.document.getElementById("account-id"))                          sAccountNumber = opener.document.getElementById("account-id").value;
+        if (opener.document.getElementById("from-account-id"))                     sFromAccountNumber = opener.document.getElementById("from-account-id").value;
+        if (opener.document.getElementById("to-account-id"))                       sToAccountNumber = opener.document.getElementById("to-account-id").value;
+        if (opener.document.getElementById("quantity-id"))                      sQuantity = opener.document.getElementById("quantity-id").value;
+        if (opener.document.getElementById("reference-id"))                     sReference = opener.document.getElementById("reference-id").value;
+        if (opener.document.getElementById("folio-id"))                     	sFolio = opener.document.getElementById("folio-id").value;
+
+		function executeOnLoad() {
+			try {
+				getWindowSize();
+				createTransmissionArea();
+			} catch (e) {
+				handleException(e)
+			}
+		}
+
+		function executeOnUnload() {
+			try {
+				getWindowSize2();
+				saveWindowSize();
+			} catch (e) {
+				handleException(e)
+			}
+		}
+
+		function executeOnResize() {
+			try {
+				resizeTransmissionArea();
+			} catch (e) {
+				handleException(e)
+			}
+		}
+
+		function handleException(e) {
+			// this function should be customized by the integrator
+			alert("An error occured. Error: " + e);
+		}
+    </script>
+  </head>
+
+  <body style="margin:0; background-color:#848484; text-align:center;" onload="executeOnLoad()" onunload="executeOnUnload()" onresize="executeOnResize()">
+
+    <div style="display:block;height:40px;overflow:hidden;margin:5px 0 20px 0; text-align:left;">
+<table style="height:45px;"><tr>
+  <td style="width:35px;height:34px;"><img style="float:left;margin:0px;width:35px;height:34px;" name ="smaller" id="smaller" src="./resize_down.gif" alt="Disminuir el tamaño de la Pantalla hasta que la imagen del Token sea igual a la del Token real" onclick="biggerButton(-10);"/></td>
+  <td style="width:35px;height:34px;"><img style="float:left;margin:0px;width:35px;height:34px;" name ="bigger" id="bigger" src="./resize_up.gif" alt="Aumentar el tamaño de la Pantalla hasta que la imagen del Token sea igual a la del Token real" onclick="biggerButton(10);" /></td>
+  <td style="display:block;font-family:arial;font-size:14px;font-weight:bold;color:#fff;text-align:left;vertical-align:middle;">CAMBIAR EL TAMAÑO DE LA VENTANA AQUI</td>
+</tr></table>
+</div>
+
+ <div style="height:55px">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>
+          <div name="captorsTransmissionZone" id="captorsTransmissionZone">
+
+          </div>
+
+        </td>
+      </tr>
+      <tr><td>
+      </td></tr>
+
+    </table>
+ </div>
+    <div style="margin:0 0 0 0;">
+<img name ="reader" id="reader" src="./opticalreader3.jpg" alt="Imagen del Lector Optico" width="100%" />
+
+</div>
+    <img style="float:left;margin:0px;" name ="exit" id="exit" src="./salida.gif" alt="Cerrar la Ventana de Transmisión" onclick="window.close();"/>
+
+  </body>
+
+</html>

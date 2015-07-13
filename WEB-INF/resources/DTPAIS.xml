@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<values>
+<row key="13" value="Afganistan"/>
+<row key="17" value="Albania"/>
+<row key="23" value="Alemania"/>
+<row key="37" value="Andorra"/>
+<row key="40" value="Angola"/>
+<row key="41" value="Anguilla"/>
+<row key="43" value="Antigua Y Barbuda"/>
+<row key="47" value="Antillas Holandesas"/>
+<row key="53" value="Arabia Saudita"/>
+<row key="59" value="Argelia"/>
+<row key="63" value="Argentina"/>
+<row key="26" value="Armenia"/>
+<row key="27" value="Aruba"/>
+<row key="69" value="Australia"/>
+<row key="72" value="Austria"/>
+<row key="74" value="Azerbaijan"/>
+<row key="77" value="Bahamas"/>
+<row key="80" value="Bahrein"/>
+<row key="81" value="Bangladesh"/>
+<row key="83" value="Barbados"/>
+<row key="87" value="Belgica"/>
+<row key="88" value="Belice"/>
+<row key="91" value="Belorus"/>
+<row key="229" value="Benin"/>
+<row key="90" value="Bermudas"/>
+<row key="93" value="Birmania (Myanmar)"/>
+<row key="97" value="Bolivia"/>
+<row key="29" value="Bosnia-Herzegovina"/>
+<row key="101" value="Botswana"/>
+<row key="105" value="Brasil"/>
+<row key="108" value="Brunei Darussalam"/>
+<row key="111" value="Bulgaria"/>
+<row key="31" value="Burkina Fasso"/>
+<row key="115" value="Burundi"/>
+<row key="119" value="Butan"/>
+<row key="127" value="Cabo Verde"/>
+<row key="137" value="Caiman, Islas"/>
+<row key="145" value="Camerun, Republica U"/>
+<row key="149" value="Canada"/>
+<row key="155" value="Canal(Normandas),Isl"/>
+<row key="157" value="Canton Enderbury,Isl"/>
+<row key="203" value="Chad"/>
+<row key="211" value="Chile"/>
+<row key="215" value="China"/>
+<row key="221" value="Chipre"/>
+<row key="159" value="Ciudad Del Vaticano"/>
+<row key="165" value="Cocos (Keeling), Isl"/>
+<row key="169" value="Colombia"/>
+<row key="173" value="Comoras"/>
+<row key="998" value="Comunidad Europea"/>
+<row key="177" value="Congo"/>
+<row key="183" value="Cook, Islas"/>
+<row key="187" value="Corea Del Norte,Repu"/>
+<row key="190" value="Corea Del Sur, Repub"/>
+<row key="193" value="Costa De Marfil"/>
+<row key="196" value="Costa Rica"/>
+<row key="198" value="Croacia"/>
+<row key="199" value="Cuba"/>
+<row key="232" value="Dinamarca"/>
+<row key="783" value="Djibouti"/>
+<row key="235" value="Dominica"/>
+<row key="239" value="Ecuador"/>
+<row key="240" value="Egipto"/>
+<row key="242" value="El Salvador"/>
+<row key="244" value="Emiratos Arabes Unid"/>
+<row key="243" value="Eritrea"/>
+<row key="246" value="Eslovaquia"/>
+<row key="247" value="Eslovenia"/>
+<row key="245" value="España"/>
+<row key="249" value="Estados Unidos"/>
+<row key="251" value="Estonia"/>
+<row key="253" value="Etiopia"/>
+<row key="259" value="Feroe, Islas"/>
+<row key="870" value="Fiji"/>
+<row key="267" value="Filipinas"/>
+<row key="271" value="Finlandia"/>
+<row key="275" value="Francia"/>
+<row key="281" value="Gabon"/>
+<row key="285" value="Gambia"/>
+<row key="286" value="Gaza Y Jerico"/>
+<row key="287" value="Georgia"/>
+<row key="289" value="Ghana"/>
+<row key="293" value="Gibraltar"/>
+<row key="297" value="Granada"/>
+<row key="301" value="Grecia"/>
+<row key="305" value="Groenlandia"/>
+<row key="309" value="Guadalupe"/>
+<row key="313" value="Guam"/>
+<row key="317" value="Guatemala"/>
+<row key="325" value="Guayana Francesa"/>
+<row key="329" value="Guinea"/>
+<row key="334" value="Guinea - Bissau"/>
+<row key="331" value="Guinea Ecuatorial"/>
+<row key="337" value="Guyana"/>
+<row key="341" value="Haiti"/>
+<row key="345" value="Honduras"/>
+<row key="351" value="Hong Kong"/>
+<row key="355" value="Hungria"/>
+<row key="361" value="India"/>
+<row key="365" value="Indonesia"/>
+<row key="369" value="Irak"/>
+<row key="372" value="Iran, Republica Isla"/>
+<row key="375" value="Irlanda (Eire)"/>
+<row key="379" value="Islandia"/>
+<row key="383" value="Israel"/>
+<row key="386" value="Italia"/>
+<row key="391" value="Jamaica"/>
+<row key="399" value="Japon"/>
+<row key="395" value="Johnston,Isla"/>
+<row key="403" value="Jordania"/>
+<row key="141" value="Kampuchea (Camboya)"/>
+<row key="406" value="Kazajstan"/>
+<row key="410" value="Kenya"/>
+<row key="412" value="Kirguizistan"/>
+<row key="411" value="Kiribati"/>
+<row key="413" value="Kuwait"/>
+<row key="420" value="Laos,Republica Popul"/>
+<row key="426" value="Lesotho"/>
+<row key="429" value="Letonia"/>
+<row key="431" value="Libano"/>
+<row key="434" value="Liberia"/>
+<row key="438" value="Libia(Incluye Fezzan"/>
+<row key="440" value="Liechtenstein"/>
+<row key="443" value="Lituania"/>
+<row key="445" value="Luxemburgo"/>
+<row key="447" value="Macao"/>
+<row key="448" value="Macedonia"/>
+<row key="450" value="Madagascar"/>
+<row key="455" value="Malasia"/>
+<row key="458" value="Malawi"/>
+<row key="461" value="Maldivas"/>
+<row key="464" value="Mali"/>
+<row key="467" value="Malta"/>
+<row key="469" value="Marianas Del Norte,I"/>
+<row key="474" value="Marruecos"/>
+<row key="472" value="Marshall, Islas"/>
+<row key="477" value="Martinica"/>
+<row key="485" value="Mauricio"/>
+<row key="488" value="Mauritania"/>
+<row key="493" value="Mexico"/>
+<row key="494" value="Micronesia,Estados F"/>
+<row key="495" value="Midway, Islas"/>
+<row key="496" value="Moldavia"/>
+<row key="498" value="Monaco"/>
+<row key="497" value="Mongolia"/>
+<row key="501" value="Monserrat, Isla"/>
+<row key="505" value="Mozambique"/>
+<row key="507" value="Namibia"/>
+<row key="508" value="Nauru"/>
+<row key="511" value="Navidad (Christmas)"/>
+<row key="517" value="Nepal"/>
+<row key="521" value="Nicaragua"/>
+<row key="525" value="Niger"/>
+<row key="528" value="Nigeria"/>
+<row key="531" value="Niue, Isla"/>
+<row key="1" value="Nive Isla"/>
+<row key="999" value="No Declarados"/>
+<row key="535" value="Norfolk, Isla"/>
+<row key="538" value="Noruega"/>
+<row key="542" value="Nueva Caledonia"/>
+<row key="548" value="Nueva Zelandia"/>
+<row key="556" value="Oman"/>
+<row key="566" value="Pacifico, Islas Del"/>
+<row key="573" value="Paises Bajos(Holanda"/>
+<row key="576" value="Pakistan"/>
+<row key="578" value="Palau, Islas"/>
+<row key="580" value="Panama"/>
+<row key="545" value="Papuasia Nuev Guinea"/>
+<row key="586" value="Paraguay"/>
+<row key="589" value="Peru"/>
+<row key="593" value="Pitcairn, Isla"/>
+<row key="599" value="Polinesia Francesa"/>
+<row key="603" value="Polonia"/>
+<row key="607" value="Portugal"/>
+<row key="611" value="Puerto Rico"/>
+<row key="618" value="Qatar"/>
+<row key="628" value="Reino Unido"/>
+<row key="640" value="Republica Centroafri"/>
+<row key="644" value="Republica Checa"/>
+<row key="647" value="Republica Dominicana"/>
+<row key="660" value="Reunion"/>
+<row key="670" value="Rumania"/>
+<row key="676" value="Rusia"/>
+<row key="675" value="Rwanda"/>
+<row key="685" value="Sahara Occidental"/>
+<row key="677" value="Salomsn, Islas"/>
+<row key="687" value="Samoa"/>
+<row key="690" value="Samoa Norteamericana"/>
+<row key="695" value="San Cristobal  Nieve"/>
+<row key="697" value="San Marino"/>
+<row key="700" value="San Pedro Y Miguelon"/>
+<row key="705" value="San Vicente Y Las Gr"/>
+<row key="710" value="Santa Elena"/>
+<row key="715" value="Santa Lucia"/>
+<row key="720" value="Santo Tome Y Princip"/>
+<row key="728" value="Senegal"/>
+<row key="731" value="Seychelles"/>
+<row key="735" value="Sierra Leona"/>
+<row key="741" value="Singapur"/>
+<row key="744" value="Siria,Republica Arab"/>
+<row key="748" value="Somalia"/>
+<row key="750" value="Sri Lanka"/>
+<row key="756" value="Sudafrica,Republica"/>
+<row key="759" value="Sudan"/>
+<row key="764" value="Suecia"/>
+<row key="767" value="Suiza"/>
+<row key="770" value="Surinam"/>
+<row key="773" value="Swazilandia"/>
+<row key="774" value="Tadjikistan"/>
+<row key="776" value="Tailandia"/>
+<row key="218" value="Taiwan (Formosa)"/>
+<row key="780" value="Tanzania,Republica U"/>
+<row key="786" value="Terri Antartico Brit"/>
+<row key="787" value="Territori Britanico"/>
+<row key="788" value="Timor Del Este"/>
+<row key="800" value="Togo"/>
+<row key="805" value="Tokelau"/>
+<row key="810" value="Tonga"/>
+<row key="815" value="Trinidad Y Tobago"/>
+<row key="820" value="Tunicia"/>
+<row key="823" value="Turcas Y Caicos,Isla"/>
+<row key="825" value="Turkmenistan"/>
+<row key="827" value="Turquia"/>
+<row key="828" value="Tuvalu"/>
+<row key="830" value="Ucrania"/>
+<row key="833" value="Uganda"/>
+<row key="845" value="Uruguay"/>
+<row key="847" value="Uzbekistan"/>
+<row key="551" value="Vanuatu"/>
+<row key="850" value="Venezuela"/>
+<row key="855" value="Vietnam"/>
+<row key="863" value="Virgenes,Islas(Brita"/>
+<row key="866" value="Virgenes,Islas(Norte"/>
+<row key="873" value="Wake, Isla"/>
+<row key="875" value="Wallis Y Fortuna,Isl"/>
+<row key="880" value="Yemen"/>
+<row key="885" value="Yugoslavia"/>
+<row key="888" value="Zaire"/>
+<row key="890" value="Zambia"/>
+<row key="665" value="Zimbabwe"/>
+<row key="895" value="Zona Canal De Panama"/>
+<row key="897" value="Zona Neutral(Palesta)"/>
+
+</values>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="cimportacion">
+		<xs:annotation>
+			<xs:documentation>Elemento que encapsula la información del formulario 1059 versión 7 INFORME DE DATOS DE DECLARACIÓN DE CAMBIO POR IMPORTACIÓN DE BIENES - FORMULARIO NO 1</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="desOp" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="docImpo" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="tinf" use="required">
+				<xs:annotation>
+					<xs:documentation>Tipo informante</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="top" use="required">
+				<xs:annotation>
+					<xs:documentation>Tipo de operación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ccom" use="optional">
+				<xs:annotation>
+					<xs:documentation>Código cuenta compensación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:long">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="fdec" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Fecha declaración de cambio</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ndec" use="required">
+				<xs:annotation>
+					<xs:documentation>Número declaración cambio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="5"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="fdeca" type="xs:date" use="optional">
+				<xs:annotation>
+					<xs:documentation>Fecha declaración cambio anterior</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ndeca" use="optional">
+				<xs:annotation>
+					<xs:documentation>Número declaración cambio anterior</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="5"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="tdoc" use="optional">
+				<xs:annotation>
+					<xs:documentation>Tipo de Identificación del importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="99"/>
+						<xs:enumeration value="11"/>
+						<xs:enumeration value="12"/>
+						<xs:enumeration value="13"/>
+						<xs:enumeration value="21"/>
+						<xs:enumeration value="22"/>
+						<xs:enumeration value="31"/>
+						<xs:enumeration value="41"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nid" use="optional">
+				<xs:annotation>
+					<xs:documentation>Numero identificación importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="dv" use="optional">
+				<xs:annotation>
+					<xs:documentation>DV importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="apl1" use="optional">
+				<xs:annotation>
+					<xs:documentation>Primer apellido del importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="apl2" use="optional">
+				<xs:annotation>
+					<xs:documentation>Segundo apellido del importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nom1" use="optional">
+				<xs:annotation>
+					<xs:documentation>Primer nombre del importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nom2" use="optional">
+				<xs:annotation>
+					<xs:documentation>Otros nombres del importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="raz" use="optional">
+				<xs:annotation>
+					<xs:documentation>Razón social importador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="450"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="cpag" use="required">
+				<xs:annotation>
+					<xs:documentation>Condiciones de pago</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="cdes" use="required">
+				<xs:annotation>
+					<xs:documentation>Condiciones de despacho mercancía </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="obs" use="required">
+				<xs:annotation>
+					<xs:documentation>Observaciones</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mas">
+		<xs:annotation>
+			<xs:documentation>Elemento raiz del xml de carga masiva</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Cab" type="CabType"/>
+				<xs:element ref="cimportacion" maxOccurs="5000"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CabType">
+		<xs:sequence>
+			<xs:element name="Ano" type="xs:gYear" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Año de envio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodCpt" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Concepto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Formato" fixed="1059">
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Version" type="xs:positiveInteger" fixed="7"/>
+			<xs:element name="NumEnvio">
+				<xs:annotation>
+					<xs:documentation>Numero de envio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="8"/>
+						<xs:maxInclusive value="99999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FecEnvio" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Fecha de envio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FecInicial" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Fecha inicial</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FecFinal" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Fecha Final</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValorTotal" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Valor Total</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CantReg">
+				<xs:annotation>
+					<xs:documentation>Cantidad de registros</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="4"/>
+						<xs:maxInclusive value="9999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="desOp">
+		<xs:annotation>
+			<xs:documentation>Descripción de la Operación</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="mon" use="optional">
+				<xs:annotation>
+					<xs:documentation>Código moneda de giro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="cam" use="optional">
+				<xs:annotation>
+					<xs:documentation>Tipo de cambio a USD</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="11"/>
+						<xs:fractionDigits value="6"/>
+						<xs:maxInclusive value="99999.999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="num" use="required">
+				<xs:annotation>
+					<xs:documentation>Numeral</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999"/>
+						<xs:enumeration value="2014"/>
+						<xs:enumeration value="2015"/>
+						<xs:enumeration value="2016"/>
+						<xs:enumeration value="2017"/>
+						<xs:enumeration value="2019"/>
+						<xs:enumeration value="2060"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vmon" use="optional">
+				<xs:annotation>
+					<xs:documentation>Valor moneda de giro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="2"/>
+						<xs:totalDigits value="22"/>
+						<xs:maxInclusive value="99999999999999999999.99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vusd" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor USD</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22"/>
+						<xs:fractionDigits value="2"/>
+						<xs:maxInclusive value="99999999999999999999.99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="docImpo">
+		<xs:annotation>
+			<xs:documentation>Información de los Documentos de Importación</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="adec" use="optional">
+				<xs:annotation>
+					<xs:documentation>Año declaración importación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ndeci" use="optional">
+				<xs:annotation>
+					<xs:documentation>Número declaración importación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="16"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vusdi" use="optional">
+				<xs:annotation>
+					<xs:documentation>Valor USD declaración importación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22"/>
+						<xs:fractionDigits value="2"/>
+						<xs:maxInclusive value="99999999999999999999.99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ftra" type="xs:date" use="optional">
+				<xs:annotation>
+					<xs:documentation>Fecha documento de transporte</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ntra" use="optional">
+				<xs:annotation>
+					<xs:documentation>Número documento de transporte</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

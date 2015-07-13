@@ -1,0 +1,528 @@
+<style type="text/css">
+.info  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: black;
+	font-size: 9px;
+	font-weight: normal;
+	letter-spacing : 0px;
+}
+
+.submenu  {
+	background-image: url(generales/submenu.gif);
+	font-size : 11px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+	line-height : 30px;
+	text-align : justify;
+}
+
+.naranja {
+	background-image: url(generales/naranja.gif);
+	font-size : 12px;
+	line-height : 26px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+}
+
+.mundo {
+	background-image: url(generales/cuadritos.gif);
+	font-size : 12px;
+	line-height : 26px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+}
+
+.formCheck{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+	letter-spacing : 0.5px;
+}
+.form{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+	letter-spacing : 0.5px;
+	border: #004080 1px solid;
+}
+.formLabel{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+	letter-spacing : 0.5px;
+	border: black 1px solid;
+}
+.menuinferior {
+	background-image: url(generales/menu_inferior.gif);
+	font-size : 12px;
+	line-height : 26px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+}
+
+.textotabla{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #004080;
+	line-height : 26px;
+}
+
+.bordetabla {
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.next{
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #8e181c;
+	line-height : 26px;
+}
+
+.titulogris{
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #004080;
+	line-height : 26px;
+}
+
+.titulo{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #000033;
+	font-weight:bolder;
+}
+
+.fondo {
+	background-color: #1F4053;
+	font-size : 12px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+}
+
+
+
+.small  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #B6C6D2;
+	font-size: 9px;
+	line-height : 26px;
+	font-weight: normal;
+	letter-spacing : 0px;
+}
+
+.txt  {
+	font-size : 9px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+	text-align : left;
+}
+
+
+.txt2  {
+	font-size : 9px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : black;
+}
+
+.titulos  {
+	font-size : 12px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #004080;
+}
+
+
+/*	Redefinicion de Comandos HTML */
+
+p  {
+	font-size : 9px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : normal;
+	font-style : normal;
+	color : White;
+	line-height : 30px;
+	text-align : justify;
+}
+
+
+h3  {
+	font-size : 10px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #FFFFE6;
+	text-decoration : none;
+	letter-spacing: 1px;
+}
+
+h2  {
+	font-size : 14px;
+	font-family : Verdana, Arial, Helvetica, sans-serif
+	font-weight : normal;
+	font-style : normal;
+	color : #3085CC;
+	text-decoration : none;
+}
+
+h1  {
+	font-size : 16px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #3085CC;
+	text-decoration : none;
+}
+
+legend{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+}
+a  {
+	font-size : 11px;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : black;
+	text-decoration : none;
+	letter-spacing: 1px;
+}
+
+
+
+a:visited  {
+	font-size : 11px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : black;
+	text-decoration : none;
+	letter-spacing: 1px;
+}
+
+a:active  {
+	font-size : 11px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : black;
+	text-decoration : none;
+	letter-spacing: 1px;
+}
+
+a:hover  {
+	font-size : 11px;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-weight : bold;
+	font-style : normal;
+	color : #8e181c;
+	text-decoration : underline;
+	letter-spacing: 1px;
+}
+
+body {
+	background-color : white;
+	margin-bottom: 0px;
+	margin-top: 5px;
+	margin-left : 10px;
+	margin-right : 0px;
+
+}
+.ConsultaLabel
+{
+	background-color: transparent;
+	color:#004080;
+	font-weight:bolder;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ConsultaValue
+{
+ background-color:transparent;
+ color:black;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+}
+.movhover
+{
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ color : White;
+ text-align : justify;
+ background-color:#666666;
+}
+.mov
+{
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ background-color:#BCDCFF;
+ color:#666666;
+ color:black;
+}
+
+a.chklink{
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+a.chklink:visited  {
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+
+a.chklink:active  {
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+
+a.chklink:hover  {
+	color : #8e181c;
+    font-weight : normal;
+    font-style : normal;   
+	text-decoration : underline;
+}
+
+a.link{
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+a.link:visited  {
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+
+a.link:active  {
+    color:black;
+    font-weight : normal;
+    font-style : normal;
+    text-decoration : underline;
+}
+
+a.link:hover  {
+	color : #8e181c;
+    font-weight : normal;
+    font-style : normal;   
+	text-decoration : underline;
+}
+ .level0
+  {
+       font-size: 12px;
+       color: #000033;
+       font-weight: bolder;
+  }
+  .level1
+  {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+	   font-size: 12px;
+	   color: #000033;
+       font-weight: bolder;
+  }
+  .level2
+  {
+       font-size: 12px;
+       color: #666666;
+       border-bottom:solid 1px #f3f3dd; 
+  }  
+  .level3
+  {
+       font-size: 12px;
+       color: #666666;
+  }
+  .head
+  {
+     background-color:transparent;
+	 color:#CC9900;
+	 font-family: Verdana, Arial, Helvetica, sans-serif;
+	 font-size: 12px;
+	 font-weight:bold;
+  }
+  .item0
+  {
+        background-color: #CCCCCC;
+		color:black;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 12px;
+  }
+  .item1
+  {
+	    background-color:#f3f3f3;        
+        color : black;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 12px;
+  }
+  
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #004080;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #004080;
+}
+.style4 {
+	color: #004080;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.style5 {color: #004080}
+.style11 {
+	color: #004080;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}  
+
+
+TD.consultason{
+	BACKGROUND-IMAGE : url(Images/consulta.jpg)! important;
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #E7FF4A;
+		HEIGHT : 64px! important;
+	WIDTH : 84px! important;
+    Cursor: hand ! important;
+	}
+TD.consultas{
+   BACKGROUND-IMAGE : url(Images/consulta.jpg)! important;
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #000008
+		HEIGHT : 64px! important;
+	WIDTH : 84px! important;
+	
+        Cursor: hand ! important;
+	}       
+TD.util-salir{
+	HEIGHT : 64x! important;
+	WIDTH : 84x! important;
+	Cursor: hand ! important;
+
+	}
+
+
+TD.util-salir-on{
+	
+	HEIGHT : 64x! important;
+	WIDTH : 84x! important;
+	Cursor: hand ! important;
+
+	}
+
+TD.util-calculo {
+   BACKGROUND-IMAGE : url(Images/mas.jpg)! important;
+	HEIGHT : 63px! important;
+	WIDTH : 50px! important;
+	Cursor: hand ! important;
+	}
+
+
+TD.util-calculoon{
+   BACKGROUND-IMAGE : url(Images/mas.jpg)! important;
+	HEIGHT : 63px! important;
+	WIDTH : 50px! important;
+	Cursor: hand ! important;
+
+	}
+TD.transferencias{
+	
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #000008;
+	HEIGHT : 19px! important;
+	WIDTH : 165px! important;
+        Cursor: hand ! important;
+	}
+TD.transferenciason{
+	
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #E7FF4A;
+	HEIGHT : 19px! important;
+	WIDTH : 165px! important;
+        Cursor: hand ! important;
+	}    
+TD.pagos{
+
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #000008;
+	HEIGHT : 19px! important;
+	WIDTH : 165px! important;
+        Cursor: hand ! important;
+	}     
+TABLE.menuPrincipal{
+	Background-Color : #FFFFFF ! important;
+	Border : 0 ! important;
+	Cellpadding : 0 ! important;
+	Cellspacing : 0 ! important;
+	Hspace : 0 ! important;
+	Vspace : 0 ! important;
+	Left: 2cm ! important;
+      	Position : relative ! important;
+	WIDTH : 580px! important;
+	}     
+
+TD.util-info{
+   BACKGROUND-IMAGE : url(Images/clave.jpg)! important;
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #000008;
+	HEIGHT : 64px! important;
+	WIDTH : 135px! important;
+        Cursor: hand ! important;
+	}
+
+
+TD.util-info-on{
+   BACKGROUND-IMAGE : url(Images/clave.jpg)! important;
+	Background-Position : center ! important;
+	Background-Repeat : no-repeat ! important;
+        Color: #E7FF4A;
+	HEIGHT : 64px! important;
+	WIDTH : 135px! important;
+        Cursor: hand ! important;
+	}  
+</style>

@@ -1,0 +1,38 @@
+.cuadro {
+	background-color: #FCFCFC;
+	border: 1px solid #666666;
+}
+.txtTitulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #202020;
+	text-transform: uppercase;
+}
+.txtTexto {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+.txtTextoV {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color:#FFE8E8;
+	border: 1px solid #999999;
+}
+.lstbox {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 250px;
+	border: 1px solid #999999;
+}
+.cmdBoton {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000033;
+	background-color: #F0F0F0;
+	border: 1px solid #666666;
+}

@@ -1,0 +1,2730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="recibo" NAME="forward0"
+  PATH="/dian/elaborar/recibo.jsp" SHAPE="32,17,0,0" TARGET="page0"
+  TITLE="recibo" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="custodia" NAME="forward1"
+  PATH="/custodia/seleccion.jsp" SHAPE="32,241,0,0" TARGET="page1"
+  TITLE="custodia" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="plantilla" NAME="forward2"
+  PATH="/compensacion/plantilla.jsp" SHAPE="32,465,0,0" TARGET="page2"
+  TITLE="plantilla" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="reprocesof10" NAME="forward3"
+  PATH="/compensacion/formulario10/seleccionReproceso.jsp"
+  SHAPE="32,2305,0,0" TARGET="page3" TITLE="reprocesof10" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="seleccionsinMov" NAME="forward4"
+  PATH="/compensacion/seleccionsinMovimiento.jsp" SHAPE="32,2529,0,0"
+  TARGET="page4" TITLE="seleccionsinMov" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1070" NAME="forward5"
+  PATH="/dian/elaborar/edit/1070.jsp" SHAPE="32,2753,0,0" TARGET="page5"
+  TITLE="edit-1070" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1070" NAME="forward6"
+  PATH="/dian/elaborar/1070.jsp" SHAPE="32,4817,0,0" TARGET="page6"
+  TITLE="elab-1070" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1121" NAME="forward7"
+  PATH="/dian/elaborar/edit/1121.jsp" SHAPE="32,3585,0,0" TARGET="page7"
+  TITLE="edit-1121" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1064" NAME="forward8"
+  PATH="/dian/elaborar/edit/1064.jsp" SHAPE="32,3809,0,0" TARGET="page8"
+  TITLE="edit-1064" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1066" NAME="forward9"
+  PATH="/dian/elaborar/1066.jsp" SHAPE="32,5985,0,0" TARGET="page9"
+  TITLE="elab-1066" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1066" NAME="forward10"
+  PATH="/dian/elaborar/edit/1066.jsp" SHAPE="32,4145,0,0"
+  TARGET="page10" TITLE="edit-1066" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="autorizacion-multiple" NAME="forward11"
+  PATH="/compensacion/autorizar2.jsp" SHAPE="32,9185,0,0"
+  TARGET="page11" TITLE="autorizacion-multiple" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1067" NAME="forward12"
+  PATH="/dian/elaborar/1067.jsp" SHAPE="32,6097,0,0" TARGET="page12"
+  TITLE="elab-1067" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1067" NAME="forward13"
+  PATH="/dian/elaborar/edit/1067.jsp" SHAPE="32,4369,0,0"
+  TARGET="page13" TITLE="edit-1067" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1064" NAME="forward14"
+  PATH="/dian/elaborar/1064.jsp" SHAPE="32,6209,0,0" TARGET="page14"
+  TITLE="elab-1064" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1062" NAME="forward15"
+  PATH="/dian/elaborar/1062.jsp" SHAPE="32,6321,0,0" TARGET="page15"
+  TITLE="elab-1062" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1063" NAME="forward16"
+  PATH="/dian/elaborar/1063.jsp" SHAPE="32,6433,0,0" TARGET="page16"
+  TITLE="elab-1063" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundariomodificar" NAME="forward17"
+  PATH="/dian/modificar/1059.jsp" SHAPE="32,9409,0,0" TARGET="page17"
+  TITLE="diansecundariomodificar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="estadisticas" NAME="forward18"
+  PATH="/estadisticas/seleccion.jsp" SHAPE="32,13441,0,0"
+  TARGET="page18" TITLE="estadisticas" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="decla" NAME="forward19"
+  PATH="/compensacion/declaracion2.jsp" SHAPE="32,13665,0,0"
+  TARGET="page19" TITLE="decla" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundarioreproceso" NAME="forward20"
+  PATH="/dian/reproceso/1059.jsp" SHAPE="32,14001,0,0" TARGET="page20"
+  TITLE="diansecundarioreproceso" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="movimiento" NAME="forward21"
+  PATH="/compensacion/movimiento.jsp" SHAPE="32,17393,0,0"
+  TARGET="page21" TITLE="movimiento" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="custodiaConsulta" NAME="forward22"
+  PATH="/custodia/consulta.jsp" SHAPE="32,17393,0,0" TARGET="page22"
+  TITLE="custodiaConsulta" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="estadocuenta" NAME="forward23"
+  PATH="/consulta/estadoctacc.jsp" SHAPE="32,17393,0,0" TARGET="page23"
+  TITLE="estadocuenta" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="multicash" NAME="forward24"
+  PATH="/compensacion/multicash.jsp" SHAPE="32,17393,0,0"
+  TARGET="page24" TITLE="multicash" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1067-1" NAME="forward25"
+  PATH="/dian/elaborar/secundario/1067-1.jsp" SHAPE="32,7393,0,0"
+  TARGET="page25" TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1067-2" NAME="forward26"
+  PATH="/dian/elaborar/secundario/1067-2.jsp" SHAPE="32,7617,0,0"
+  TARGET="page26" TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="gen" NAME="forward27"
+  PATH="/dian/elaborar/GenerarXML.jsp" SHAPE="32,17393,0,0"
+  TARGET="page27" TITLE="gen" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1100" NAME="forward28"
+  PATH="/dian/elaborar/1100.jsp" SHAPE="32,5537,0,0" TARGET="page28"
+  TITLE="elab-1100" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="parametro" NAME="forward29"
+  PATH="/compensacion/parametro.jsp" SHAPE="32,17393,0,0"
+  TARGET="page29" TITLE="parametro" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="resumen-reproceso" NAME="forward30"
+  PATH="/dian/reproceso/Resumen.jsp" SHAPE="32,16273,0,0"
+  TARGET="page30" TITLE="resumen-reproceso" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundarioaprobar" NAME="forward31"
+  PATH="/dian/aprobar/1059.jsp" SHAPE="32,17393,0,0" TARGET="page31"
+  TITLE="diansecundarioaprobar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="insersionanticipada" NAME="forward32"
+  PATH="/vencimientos/exportacionAnticipos.jsp" SHAPE="32,17393,0,0"
+  TARGET="page32" TITLE="insersionanticipada" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1066-1" NAME="forward33"
+  PATH="/dian/elaborar/secundario/1066-1.jsp" SHAPE="32,7953,0,0"
+  TARGET="page33" TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1066-2" NAME="forward34"
+  PATH="/dian/elaborar/secundario/1066-2.jsp" SHAPE="32,8065,0,0"
+  TARGET="page34" TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1066-3" NAME="forward35"
+  PATH="/dian/elaborar/secundario/1066-3.jsp" SHAPE="32,8177,0,0"
+  TARGET="page35" TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="formulario10-nohabilitado" NAME="forward36"
+  PATH="/compensacion/formulario10/mensaje.jsp" SHAPE="32,17393,0,0"
+  TARGET="page36" TITLE="formulario10-nohabilitado" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1066-4" NAME="forward37"
+  PATH="/dian/elaborar/secundario/1066-4.jsp" SHAPE="32,8289,0,0"
+  TARGET="page37" TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="insercionimportacion" NAME="forward38"
+  PATH="/vencimientos/importacion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page38" TITLE="insercionimportacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1059-1" NAME="forward39"
+  PATH="/dian/elaborar/secundario/1059-1.jsp" SHAPE="32,8401,0,0"
+  TARGET="page39" TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1059-2" NAME="forward40"
+  PATH="/dian/elaborar/secundario/1059-2.jsp" SHAPE="32,8513,0,0"
+  TARGET="page40" TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="representante" NAME="forward41"
+  PATH="/compensacion/representante.jsp" SHAPE="32,1617,0,0"
+  TARGET="page41" TITLE="representante" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="motivo-rechazo-compensacion" NAME="forward42"
+  PATH="/compensacion/motivo.jsp" SHAPE="32,17393,0,0" TARGET="page42"
+  TITLE="motivo-rechazo-compensacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="start" NAME="forward43" PATH="/start.jsp"
+  SHAPE="32,17393,0,0" TARGET="page43" TITLE="start" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundarioconsultar" NAME="forward44"
+  PATH="/dian/consultar/1059.jsp" SHAPE="32,17393,0,0" TARGET="page44"
+  TITLE="diansecundarioconsultar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="repro" NAME="forward45"
+  PATH="/compensacion/reproceso2.jsp" SHAPE="32,17393,0,0"
+  TARGET="page45" TITLE="repro" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="seleccion" NAME="forward46"
+  PATH="/compensacion/seleccion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page46" TITLE="seleccion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consultavencimiento" NAME="forward47"
+  PATH="/vencimientos/reportes.jsp" SHAPE="32,17393,0,0" TARGET="page47"
+  TITLE="consultavencimiento" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="legal" NAME="forward48"
+  PATH="/compensacion/seleccionLegalizacion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page48" TITLE="legal" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="cambioPsw" NAME="forward49"
+  PATH="/ib/cambioClave.jsp" SHAPE="32,17393,0,0" TARGET="page49"
+  TITLE="cambioPsw" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1061-2" NAME="forward50"
+  PATH="/dian/elaborar/secundario/1061-2.jsp" SHAPE="32,7505,0,0"
+  TARGET="page50" TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundario" NAME="forward51"
+  PATH="/dian/elaborar/1059.jsp" SHAPE="32,6545,0,0" TARGET="page51"
+  TITLE="diansecundario" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1061-1" NAME="forward52"
+  PATH="/dian/elaborar/secundario/1061-1.jsp" SHAPE="32,7729,0,0"
+  TARGET="page52" TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1100" NAME="forward53"
+  PATH="/dian/elaborar/edit/1100.jsp" SHAPE="32,3361,0,0"
+  TARGET="page53" TITLE="edit-1100" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1060-1" NAME="forward54"
+  PATH="/dian/elaborar/secundario/1060-1.jsp" SHAPE="32,7841,0,0"
+  TARGET="page54" TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="estadisticas2" NAME="forward55"
+  PATH="/estadisticas/seleccionControl.jsp" SHAPE="32,17393,0,0"
+  TARGET="page55" TITLE="estadisticas2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="sele" NAME="forward56"
+  PATH="/dian/elabora/seleccion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page56" TITLE="sele" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="estadisticas1" NAME="forward57"
+  PATH="/estadisticas/reporte.jsp" SHAPE="32,17393,0,0" TARGET="page57"
+  TITLE="estadisticas1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="reprocesoFormulario3" NAME="forward58"
+  PATH="/compensacion/formulario10/formulario3.jsp" SHAPE="32,17393,0,0"
+  TARGET="page58" TITLE="reprocesoFormulario3" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="modificacionvencimiento" NAME="forward59"
+  PATH="/vencimientos/modificacion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page59" TITLE="modificacionvencimiento" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="motivo-rechazo" NAME="forward60"
+  PATH="/dian/aprobar/motivo.jsp" SHAPE="32,17393,0,0" TARGET="page60"
+  TITLE="motivo-rechazo" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1064-1" NAME="forward61"
+  PATH="/dian/elaborar/secundario/1064-1.jsp" SHAPE="32,8849,0,0"
+  TARGET="page61" TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="plantillas" NAME="forward62"
+  PATH="/compensacion/plantillas.jsp" SHAPE="32,1009,0,0"
+  TARGET="page62" TITLE="plantillas" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1121" NAME="forward63"
+  PATH="/dian/elaborar/1121.jsp" SHAPE="32,5425,0,0" TARGET="page63"
+  TITLE="elab-1121" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="resumen-exportar" NAME="forward64"
+  PATH="/dian/exportar/Resumen.jsp" SHAPE="32,17169,0,0" TARGET="page64"
+  TITLE="resumen-exportar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="multicashs" NAME="forward65"
+  PATH="/compensacion/multicashs.jsp" SHAPE="32,17393,0,0"
+  TARGET="page65" TITLE="multicashs" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consultaEstado" NAME="forward66"
+  PATH="/compensacion/consulta.jsp" SHAPE="32,17393,0,0" TARGET="page66"
+  TITLE="consultaEstado" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1059" NAME="forward67"
+  PATH="/dian/elaborar/edit/1059.jsp" SHAPE="32,3473,0,0"
+  TARGET="page67" TITLE="edit-1059" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1061" NAME="forward68"
+  PATH="/dian/elaborar/1061.jsp" SHAPE="32,5649,0,0" TARGET="page68"
+  TITLE="elab-1061" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="resumen" NAME="forward69"
+  PATH="/dian/elaborar/Resumen.jsp" SHAPE="32,4929,0,0" TARGET="page69"
+  TITLE="resumen" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1060" NAME="forward70"
+  PATH="/dian/elaborar/1060.jsp" SHAPE="32,5761,0,0" TARGET="page70"
+  TITLE="elab-1060" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1099" NAME="forward71"
+  PATH="/dian/elaborar/1099.jsp" SHAPE="32,5873,0,0" TARGET="page71"
+  TITLE="elab-1099" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1060" NAME="forward72"
+  PATH="/dian/elaborar/edit/1060.jsp" SHAPE="32,3697,0,0"
+  TARGET="page72" TITLE="edit-1060" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1061" NAME="forward73"
+  PATH="/dian/elaborar/edit/1061.jsp" SHAPE="32,3921,0,0"
+  TARGET="page73" TITLE="edit-1061" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="seleccionvencmiento" NAME="forward74"
+  PATH="/vencimientos/seleccion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page74" TITLE="seleccionvencmiento" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consultaEstado1" NAME="forward75"
+  PATH="/compensacion/declaracion1.jsp" SHAPE="32,18017,0,0"
+  TARGET="page75" TITLE="consultaEstado1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1062" NAME="forward76"
+  PATH="/dian/elaborar/edit/1062.jsp" SHAPE="32,4033,0,0"
+  TARGET="page76" TITLE="edit-1062" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consultaEstado2" NAME="forward77"
+  PATH="/compensacion/declaracion.jsp" SHAPE="32,17393,0,0"
+  TARGET="page77" TITLE="consultaEstado2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1063" NAME="forward78"
+  PATH="/dian/elaborar/edit/1063.jsp" SHAPE="32,4257,0,0"
+  TARGET="page78" TITLE="edit-1063" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="edit-1099" NAME="forward79"
+  PATH="/dian/elaborar/edit/1099.jsp" SHAPE="32,4481,0,0"
+  TARGET="page79" TITLE="edit-1099" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1062-1" NAME="forward80"
+  PATH="/dian/elaborar/secundario/1062-1.jsp" SHAPE="32,8625,0,0"
+  TARGET="page80" TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="inserccionordinaria" NAME="forward81"
+  PATH="/vencimientos/exportacionOrdinaria.jsp" SHAPE="32,17393,0,0"
+  TARGET="page81" TITLE="inserccionordinaria" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1063-1" NAME="forward82"
+  PATH="/dian/elaborar/secundario/1063-1.jsp" SHAPE="32,8737,0,0"
+  TARGET="page82" TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="contrato2" NAME="forward83"
+  PATH="/compensacion/contrato.jsp" SHAPE="32,17393,0,0" TARGET="page83"
+  TITLE="contrato2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1059" NAME="forward84"
+  PATH="/dian/elaborar/1059.jsp" SHAPE="32,6657,0,0" TARGET="page51"
+  TITLE="elab-1059" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1063-3" NAME="forward85"
+  PATH="/dian/elaborar/secundario/1063-3.jsp" SHAPE="32,8961,0,0"
+  TARGET="page84" TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="elab-1063-2" NAME="forward86"
+  PATH="/dian/elaborar/secundario/1063-2.jsp" SHAPE="32,9073,0,0"
+  TARGET="page85" TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consultaEstado3" NAME="forward87"
+  PATH="/compensacion/declaracion2.jsp" SHAPE="32,13777,0,0"
+  TARGET="page19" TITLE="consultaEstado3" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="mensajeError" NAME="forward88"
+  PATH="/ib/mensajeAdvertencia.jsp" SHAPE="32,17393,0,0" TARGET="page86"
+  TITLE="mensajeError" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansele" NAME="forward89"
+  PATH="/dian/elaborar/seleccion.jsp" SHAPE="32,4593,0,0"
+  TARGET="page87" TITLE="diansele" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="diansecundariogenerar" NAME="forward90"
+  PATH="/dian/generar/1059.jsp" SHAPE="32,17393,0,0" TARGET="page88"
+  TITLE="diansecundariogenerar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#mant#parametro" NAME="action0"
+  PATH="/mant/parametro" SHAPE="288,2033,0,0" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="parametro"
+   TARGET="page89" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/parametros.jsp" TARGET="page90" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#cuenta" NAME="action1" PATH="/mant/cuenta"
+  SHAPE="32,17393,0,0" TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/seleccion.jsp" TARGET="page46" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#est#seleccion" NAME="action2" PATH="/est/seleccion"
+  SHAPE="32,13553,0,0" TITLE="estadisticasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/estadisticas/seleccion.jsp" TARGET="page18" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario#read-only" NAME="action3"
+  PATH="/consultar/formulario/read-only" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario.jsp" TARGET="page91" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@readonly" NAME="forward1" PATH="true"
+   TARGET="page92" TITLE="@readonly" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar#seleccion" NAME="action4"
+  PATH="/dian/modificar/seleccion" SHAPE="32,10705,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/modificar/seleccion.jsp" TARGET="page93" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#recibo" NAME="action5" PATH="/dian/recibo"
+  SHAPE="32,129,0,0" TITLE="genForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/elaborar/recibo.jsp" TARGET="page0" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#multicash" NAME="action6" PATH="/multicash"
+  SHAPE="32,17393,0,0" TITLE="multicashForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="multicash"
+   TARGET="page94" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/multicash.jsp" TARGET="page24" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#edit#parametro" NAME="action7"
+  PATH="/edit/parametro" SHAPE="32,17393,0,0" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/parametro.jsp" TARGET="page29" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#aceptacion" NAME="action8"
+  PATH="/compensacion/aceptacion" SHAPE="32,17393,0,0"
+  TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/compensacion/consulta/estado.do" TARGET="action79"
+   TITLE="autorizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="ok"
+   TARGET="page96" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/compensacion/contrato.jsp" TARGET="page83" TITLE="contrato"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#modificacion#seleccion" NAME="action9"
+  PATH="/vencimiento/modificacion/seleccion" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/modificacion.jsp" TARGET="page59" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#aprobar#aceptacion" NAME="action10"
+  PATH="/dian/aprobar/aceptacion" SHAPE="32,17393,0,0"
+  TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/dian/aprobar/seleccion.do" TARGET="action64" TITLE="autorizar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="ok"
+   TARGET="page96" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/dian/aprobar/contrato.jsp" TARGET="page97" TITLE="contrato"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario#reprocesar" NAME="action11"
+  PATH="/consultar/formulario/reprocesar" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario6.jsp" TARGET="page98" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#generar#seleccion" NAME="action12"
+  PATH="/dian/generar/seleccion" SHAPE="32,17393,0,0"
+  TITLE="movimientoFormXML" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/generar/seleccion.jsp" TARGET="page99" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#importacion" NAME="action13"
+  PATH="/vencimiento/importacion" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="errorMensaje" NAME="forward0"
+   PATH="/vencimientos/mensajeError.jsp" TARGET="page100"
+   TITLE="errorMensaje" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/vencimientos/mensajes.jsp" TARGET="page101" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#delete#plantilla" NAME="action14"
+  PATH="/delete/plantilla" SHAPE="32,721,0,0" TITLE="eliminarForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="plantilla"
+   TARGET="page102" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/transferencias/eliminacionOK.jsp" TARGET="page103"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#consultar#formulario" NAME="action15"
+  PATH="/dian/consultar/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario.jsp" TARGET="page91" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#reproceso" NAME="action16"
+  PATH="/dian/reproceso" SHAPE="32,14113,0,0" TITLE="movimientoFormXML"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/reproceso/1121.jsp" TARGET="page104" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/reproceso/1100.jsp" TARGET="page105" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/reproceso/1070.jsp" TARGET="page106" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward3"
+   PATH="/dian/reproceso/1061.jsp" TARGET="page107" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward4"
+   PATH="/dian/reproceso/1060.jsp" TARGET="page108" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward5"
+   PATH="/dian/reproceso/1099.jsp" TARGET="page109" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward6"
+   PATH="/dian/reproceso/1066.jsp" TARGET="page110" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward7"
+   PATH="/dian/reproceso/1067.jsp" TARGET="page111" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward8"
+   PATH="/dian/reproceso/1064.jsp" TARGET="page112" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward9"
+   PATH="/dian/reproceso/1062.jsp" TARGET="page113" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward10"
+   PATH="/dian/reproceso/1063.jsp" TARGET="page114" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward11"
+   PATH="/dian/reproceso/1059.jsp" TARGET="page20" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/reproceso/Resumen.jsp" TARGET="page30" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accions" NAME="forward13"
+   PATH="/dian/reproceso/mensajeAdvertencia.jsp" TARGET="page115"
+   TITLE="@accions" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar#guardar" NAME="action17"
+  PATH="/dian/modificar/guardar" SHAPE="32,17393,0,0"
+  TITLE="formulario-dian" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/modificar/mensajeguardar.jsp" TARGET="page116"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#generar#secundarios" NAME="action18"
+  PATH="/dian/generar/secundarios" SHAPE="32,17393,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/generar/secundario/1067-1.jsp" TARGET="page117"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/generar/secundario/1061-2.jsp" TARGET="page118"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/generar/secundario/1067-2.jsp" TARGET="page119"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/generar/secundario/1061-1.jsp" TARGET="page120"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/generar/secundario/1060-1.jsp" TARGET="page121"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/generar/secundario/1066-1.jsp" TARGET="page122"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/generar/secundario/1066-2.jsp" TARGET="page123"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/generar/secundario/1066-3.jsp" TARGET="page124"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/generar/secundario/1066-4.jsp" TARGET="page125"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/generar/secundario/1059-1.jsp" TARGET="page126"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/generar/secundario/1059-2.jsp" TARGET="page127"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/generar/secundario/1062-1.jsp" TARGET="page128"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/generar/secundario/1063-1.jsp" TARGET="page129"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/generar/secundario/1064-1.jsp" TARGET="page130"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/generar/secundario/1063-3.jsp" TARGET="page131"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/generar/secundario/1063-2.jsp" TARGET="page132"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/generar/1059.jsp" TARGET="page88" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#multicash#links" NAME="action19"
+  PATH="/multicash/links" SHAPE="32,17393,0,0" TITLE="multicashForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="multicashs"
+   TARGET="page133" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/multicashs.jsp" TARGET="page65" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#plusSpecial" NAME="action20" PATH="/plusSpecial"
+  SHAPE="32,17393,0,0" TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="estadocuenta"
+   TARGET="page134" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/consulta/AnalisisCta.jsp" TARGET="page135" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#reprocesar#formulario" NAME="action21"
+  PATH="/formulario10/reprocesar/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/formulario3.jsp" TARGET="page58"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario#read-only#rechazados"
+  NAME="action22" PATH="/consultar/formulario/read-only/rechazados"
+  SHAPE="32,17393,0,0" TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario6.jsp" TARGET="page98" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#grabar#representante" NAME="action23"
+  PATH="/grabar/representante" SHAPE="32,1297,0,0"
+  TITLE="parametroRepresentanteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="preguntar" NAME="forward0"
+   PATH="/preguntar.do" TARGET="action123" TITLE="preguntar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward1" PATH="representante"
+   TARGET="page136" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/mant/representante.do" TARGET="action102" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#change#psw" NAME="action24" PATH="/change/psw"
+  SHAPE="32,17393,0,0" TITLE="UsuarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/ib/cambioExitoso.jsp" TARGET="page137" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar#editar" NAME="action25"
+  PATH="/dian/modificar/editar" SHAPE="32,10817,0,0"
+  TITLE="formulario-dian" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="edit-1100" NAME="forward0"
+   PATH="/dian/modificar/edit/1100.jsp" TARGET="page138"
+   TITLE="edit-1100" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1070" NAME="forward1"
+   PATH="/dian/modificar/edit/1070.jsp" TARGET="page139"
+   TITLE="edit-1070" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1059" NAME="forward2"
+   PATH="/dian/modificar/edit/1059.jsp" TARGET="page140"
+   TITLE="edit-1059" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1121" NAME="forward3"
+   PATH="/dian/modificar/edit/1121.jsp" TARGET="page141"
+   TITLE="edit-1121" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1060" NAME="forward4"
+   PATH="/dian/modificar/edit/1060.jsp" TARGET="page142"
+   TITLE="edit-1060" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1064" NAME="forward5"
+   PATH="/dian/modificar/edit/1064.jsp" TARGET="page143"
+   TITLE="edit-1064" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1061" NAME="forward6"
+   PATH="/dian/modificar/edit/1061.jsp" TARGET="page144"
+   TITLE="edit-1061" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1062" NAME="forward7"
+   PATH="/dian/modificar/edit/1062.jsp" TARGET="page145"
+   TITLE="edit-1062" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1066" NAME="forward8"
+   PATH="/dian/modificar/edit/1066.jsp" TARGET="page146"
+   TITLE="edit-1066" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1063" NAME="forward9"
+   PATH="/dian/modificar/edit/1063.jsp" TARGET="page147"
+   TITLE="edit-1063" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1067" NAME="forward10"
+   PATH="/dian/modificar/edit/1067.jsp" TARGET="page148"
+   TITLE="edit-1067" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1099" NAME="forward11"
+   PATH="/dian/modificar/edit/1099.jsp" TARGET="page149"
+   TITLE="edit-1099" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/modificar/seleccion.jsp" TARGET="page93" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#est#seleccion#control" NAME="action26"
+  PATH="/est/seleccion/control" SHAPE="32,17393,0,0"
+  TITLE="estadisticasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/estadisticas/seleccionControl.jsp" TARGET="page55"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#elaborar#secundarios" NAME="action27"
+  PATH="/dian/elaborar/secundarios" SHAPE="32,6769,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/elaborar/secundario/1067-1.jsp" TARGET="page25"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/elaborar/secundario/1061-2.jsp" TARGET="page50"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/elaborar/secundario/1067-2.jsp" TARGET="page26"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/elaborar/secundario/1061-1.jsp" TARGET="page52"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/elaborar/secundario/1060-1.jsp" TARGET="page54"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/elaborar/secundario/1066-1.jsp" TARGET="page33"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/elaborar/secundario/1066-2.jsp" TARGET="page34"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/elaborar/secundario/1066-3.jsp" TARGET="page35"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/elaborar/secundario/1066-4.jsp" TARGET="page37"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/elaborar/secundario/1059-1.jsp" TARGET="page39"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/elaborar/secundario/1059-2.jsp" TARGET="page40"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/elaborar/secundario/1062-1.jsp" TARGET="page80"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/elaborar/secundario/1063-1.jsp" TARGET="page82"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/elaborar/secundario/1064-1.jsp" TARGET="page61"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/elaborar/secundario/1063-3.jsp" TARGET="page84"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/elaborar/secundario/1063-2.jsp" TARGET="page85"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/elaborar/1059.jsp" TARGET="page51" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#modificar" NAME="action28"
+  PATH="/mant/modificar" SHAPE="32,17393,0,0" TITLE="consultaEstadoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/modificar.jsp" TARGET="page150" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#asociar" NAME="action29"
+  PATH="/formulario10/asociar" SHAPE="32,17393,0,0"
+  TITLE="modificarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/declaracion.jsp" TARGET="page151"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#enviar#aprobar" NAME="action30"
+  PATH="/dian/enviar/aprobar" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/elaborar/mensaje.jsp" TARGET="page152" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#elaborar#guardar" NAME="action31"
+  PATH="/dian/elaborar/guardar" SHAPE="32,17393,0,0"
+  TITLE="formulario-dian" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/elaborar/mensajeguardar.jsp" TARGET="page153"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#delete#parametro" NAME="action32"
+  PATH="/delete/parametro" SHAPE="32,2193,0,0" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/mant/parametro.do" TARGET="action0" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta" NAME="action33"
+  PATH="/formulario10/consulta" SHAPE="32,17393,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0"
+   PATH="/compensacion/formulario10/mensajeAdvertencia.jsp"
+   TARGET="page154" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/formulario10/declaracion.jsp" TARGET="page151"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario" NAME="action34"
+  PATH="/consultar/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario11.jsp" TARGET="page155"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#edit#representante" NAME="action35"
+  PATH="/edit/representante" SHAPE="32,1473,0,0"
+  TITLE="parametroRepresentanteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="representante"
+   TARGET="page136" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/representante.jsp" TARGET="page41"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#elaborar#formulario" NAME="action36"
+  PATH="/formulario10/elaborar/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/formulario2.jsp" TARGET="page156"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#consultar#seleccion" NAME="action37"
+  PATH="/dian/consultar/seleccion" SHAPE="32,17393,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/consultar/seleccion.jsp" TARGET="page157" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#seleccion#estado" NAME="action38"
+  PATH="/seleccion/estado" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/consulta.jsp" TARGET="page66" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#plantilla" NAME="action39"
+  PATH="/mant/plantilla" SHAPE="32,865,0,0" TITLE="listaPlantillaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="plantilla"
+   TARGET="page102" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/plantillas.jsp" TARGET="page62" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consultar#formulario" NAME="action40"
+  PATH="/formulario10/consultar/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/formulario.jsp" TARGET="page158"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta#generar#xml" NAME="action41"
+  PATH="/formulario10/consulta/generar/xml" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/exportXML2.jsp" TARGET="page159"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formularioActual" NAME="action42"
+  PATH="/consultar/formularioActual" SHAPE="32,17393,0,0"
+  TITLE="formularioForm2" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario9.jsp" TARGET="page160" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#ejecutar#rechazar" NAME="action43"
+  PATH="/dian/ejecutar/rechazar" SHAPE="32,17393,0,0"
+  TITLE="rechazoMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/aprobar/mensaje-rechazo.jsp" TARGET="page161"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#modificacion#consulta" NAME="action44"
+  PATH="/vencimiento/modificacion/consulta" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="update" NAME="forward0" PATH="true"
+   TARGET="page92" TITLE="update" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/vencimientos/consulta-modificacion.jsp" TARGET="page162"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#reprocesar2" NAME="action45"
+  PATH="/mant/reprocesar2" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/consulta2.jsp" TARGET="page163" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#elaborar#seleccion" NAME="action46"
+  PATH="/dian/elaborar/seleccion" SHAPE="32,4705,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/elaborar/seleccion.jsp" TARGET="page87" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta" NAME="action47" PATH="/consulta"
+  SHAPE="32,18017,0,0" TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/movimiento.jsp" TARGET="page21" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accions" NAME="forward1"
+   PATH="/compensacion/mensajeAdvertencia.jsp" TARGET="page164"
+   TITLE="@accions" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reporte#control" NAME="action48"
+  PATH="/reporte/control" SHAPE="32,17393,0,0" TITLE="estadisticasForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/estadisticas/reportesControl.jsp" TARGET="page165"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#compensacion#contrato" NAME="action49"
+  PATH="/formulario10/compensacion/contrato" SHAPE="32,17393,0,0"
+  TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/formulario10/compensacion/consulta/estado.do"
+   TARGET="action130" TITLE="autorizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="forward"
+   TARGET="page166" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/compensacion/formulario10/contrato.jsp" TARGET="page167"
+   TITLE="contrato" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#cuenta1" NAME="action50" PATH="/mant/cuenta1"
+  SHAPE="32,2641,0,0" TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/seleccionsinMovimiento.jsp" TARGET="page4"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#reprocesar1" NAME="action51"
+  PATH="/mant/reprocesar1" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/reprocesoSelec.jsp" TARGET="page168"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#detalles#movimiento" NAME="action52"
+  PATH="/detalles/movimiento" SHAPE="32,17393,0,0" TITLE="contratoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/detalleMov.jsp" TARGET="page169" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#reprocesar" NAME="action53"
+  PATH="/mant/reprocesar" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/reproceso.jsp" TARGET="page170" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#reproceso#seleccion" NAME="action54"
+  PATH="/dian/reproceso/seleccion" SHAPE="32,17393,0,0"
+  TITLE="movimientoFormXML" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/reproceso/seleccion.jsp" TARGET="page171" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#general#xml" NAME="action55"
+  PATH="/formulario10/general/xml" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/exportXML.jsp" TARGET="page172"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado#reproceso" NAME="action56"
+  PATH="/consulta/estado/reproceso" SHAPE="32,17393,0,0"
+  TITLE="formularioForm2" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/reprocesoConsulta1.jsp" TARGET="page173"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado" NAME="action57"
+  PATH="/consulta/estado" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success2" NAME="forward0"
+   PATH="/compensacion/consultaRechazo.jsp" TARGET="page174"
+   TITLE="success2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/consulta2.jsp" TARGET="page163" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#aprobar#secundarios" NAME="action58"
+  PATH="/dian/aprobar/secundarios" SHAPE="32,17393,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/aprobar/secundario/1067-1.jsp" TARGET="page175"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/aprobar/secundario/1061-2.jsp" TARGET="page176"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/aprobar/secundario/1067-2.jsp" TARGET="page177"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/aprobar/secundario/1061-1.jsp" TARGET="page178"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/aprobar/secundario/1060-1.jsp" TARGET="page179"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/aprobar/secundario/1066-1.jsp" TARGET="page180"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/aprobar/secundario/1066-2.jsp" TARGET="page181"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/aprobar/secundario/1066-3.jsp" TARGET="page182"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/aprobar/secundario/1066-4.jsp" TARGET="page183"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/aprobar/secundario/1059-1.jsp" TARGET="page184"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/aprobar/secundario/1059-2.jsp" TARGET="page185"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/aprobar/secundario/1062-1.jsp" TARGET="page186"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/aprobar/secundario/1063-1.jsp" TARGET="page187"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/aprobar/secundario/1064-1.jsp" TARGET="page188"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/aprobar/secundario/1063-3.jsp" TARGET="page189"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/aprobar/secundario/1063-2.jsp" TARGET="page190"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/aprobar/1059.jsp" TARGET="page31" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#reproceso#xml" NAME="action59"
+  PATH="/dian/reproceso/xml" SHAPE="32,17393,0,0" TITLE="genForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/reproceso/GenerarXML.jsp" TARGET="page191"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#reproceso" NAME="action60"
+  PATH="/consultar/reproceso" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario8.jsp" TARGET="page192" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#edit#plantilla" NAME="action61"
+  PATH="/edit/plantilla" SHAPE="32,577,0,0" TITLE="plantillaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="plantilla"
+   TARGET="page102" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/plantilla.jsp" TARGET="page2" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#elaborar#editar" NAME="action62"
+  PATH="/dian/elaborar/editar" SHAPE="32,2865,0,0"
+  TITLE="formulario-dian" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="edit-1100" NAME="forward0"
+   PATH="/dian/elaborar/edit/1100.jsp" TARGET="page53" TITLE="edit-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1070" NAME="forward1"
+   PATH="/dian/elaborar/edit/1070.jsp" TARGET="page5" TITLE="edit-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1059" NAME="forward2"
+   PATH="/dian/elaborar/edit/1059.jsp" TARGET="page67" TITLE="edit-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1121" NAME="forward3"
+   PATH="/dian/elaborar/edit/1121.jsp" TARGET="page7" TITLE="edit-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1060" NAME="forward4"
+   PATH="/dian/elaborar/edit/1060.jsp" TARGET="page72" TITLE="edit-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1064" NAME="forward5"
+   PATH="/dian/elaborar/edit/1064.jsp" TARGET="page8" TITLE="edit-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1061" NAME="forward6"
+   PATH="/dian/elaborar/edit/1061.jsp" TARGET="page73" TITLE="edit-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1062" NAME="forward7"
+   PATH="/dian/elaborar/edit/1062.jsp" TARGET="page76" TITLE="edit-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1066" NAME="forward8"
+   PATH="/dian/elaborar/edit/1066.jsp" TARGET="page10" TITLE="edit-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1063" NAME="forward9"
+   PATH="/dian/elaborar/edit/1063.jsp" TARGET="page78" TITLE="edit-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1067" NAME="forward10"
+   PATH="/dian/elaborar/edit/1067.jsp" TARGET="page13" TITLE="edit-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit-1099" NAME="forward11"
+   PATH="/dian/elaborar/edit/1099.jsp" TARGET="page79" TITLE="edit-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/elaborar/seleccion.jsp" TARGET="page87" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#definir#motivo" NAME="action63"
+  PATH="/compensacion/definir/motivo" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/motivo.jsp" TARGET="page42" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#aprobar#seleccion" NAME="action64"
+  PATH="/dian/aprobar/seleccion" SHAPE="304,17409,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/aprobar/seleccion.jsp" TARGET="page193" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#grabar#parametro" NAME="action65"
+  PATH="/grabar/parametro" SHAPE="32,2017,0,0" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="preguntar" NAME="forward0"
+   PATH="/preguntar.do" TARGET="action123" TITLE="preguntar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward1" PATH="parametro"
+   TARGET="page89" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/mant/parametro.do" TARGET="action0" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#mant#reproceso" NAME="action66"
+  PATH="/formulario10/mant/reproceso" SHAPE="32,2417,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/seleccionReproceso.jsp"
+   TARGET="page3" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#create#representante" NAME="action67"
+  PATH="/create/representante" SHAPE="32,1729,0,0"
+  TITLE="parametroRepresentanteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0"
+   PATH="create-representante" TARGET="page194" TITLE="@accion"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/representante.jsp" TARGET="page41"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualiza#control" NAME="action68"
+  PATH="/actualiza/control" SHAPE="32,17393,0,0" TITLE="vencimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0" PATH="/start.jsp"
+   TARGET="page43" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#generar#xml" NAME="action69"
+  PATH="/consulta/generar/xml" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/exportXML2.jsp" TARGET="page195" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#delete#representante" NAME="action70"
+  PATH="/delete/representante" SHAPE="32,1873,0,0"
+  TITLE="parametroRepresentanteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="representante"
+   TARGET="page136" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/mant/representante.do" TARGET="action102" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado#reprocesar" NAME="action71"
+  PATH="/consulta/estado/reprocesar" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/reproceso2.jsp" TARGET="page45" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#custodia#consultas" NAME="action72"
+  PATH="/custodia/consultas" SHAPE="32,17393,0,0" TITLE="movimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/custodia/consulta.jsp" TARGET="page22" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#custodia#seleccion" NAME="action73"
+  PATH="/custodia/seleccion" SHAPE="32,353,0,0" TITLE="movimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/custodia/seleccion.jsp" TARGET="page1" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#compensacion#aceptacion"
+  NAME="action74" PATH="/formulario10/compensacion/aceptacion"
+  SHAPE="32,17393,0,0" TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/formulario10/compensacion/consulta/estado.do"
+   TARGET="action130" TITLE="autorizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="ok"
+   TARGET="page96" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/compensacion/formulario10/contrato.jsp" TARGET="page167"
+   TITLE="contrato" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#selec#legalizaciones" NAME="action75"
+  PATH="/selec/legalizaciones" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/seleccionLegalizacion.jsp" TARGET="page48"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#declaracion#formulario1" NAME="action76"
+  PATH="/declaracion/formulario1" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario3.jsp" TARGET="page196" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#seleccion" NAME="action77"
+  PATH="/vencimiento/seleccion" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/seleccion.jsp" TARGET="page74" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#ejecutar#rechazar" NAME="action78"
+  PATH="/compensacion/ejecutar/rechazar" SHAPE="32,17393,0,0"
+  TITLE="rechazoMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/mensajeRechazo.jsp" TARGET="page197"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#consulta#estado" NAME="action79"
+  PATH="/compensacion/consulta/estado" SHAPE="304,17409,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/autorizar.jsp" TARGET="page198" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#general#xml" NAME="action80" PATH="/general/xml"
+  SHAPE="32,17393,0,0" TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/exportXML.jsp" TARGET="page199" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#insercion#exportacion#anticipada"
+  NAME="action81" PATH="/vencimiento/insercion/exportacion/anticipada"
+  SHAPE="32,17393,0,0" TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/exportacionAnticipos.jsp" TARGET="page32"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#reproceso#secundarios" NAME="action82"
+  PATH="/dian/reproceso/secundarios" SHAPE="32,14641,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/reproceso/secundario/1067-1.jsp" TARGET="page200"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/reproceso/secundario/1061-2.jsp" TARGET="page201"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/reproceso/secundario/1067-2.jsp" TARGET="page202"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/reproceso/secundario/1061-1.jsp" TARGET="page203"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/reproceso/secundario/1060-1.jsp" TARGET="page204"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/reproceso/secundario/1066-1.jsp" TARGET="page205"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/reproceso/secundario/1066-2.jsp" TARGET="page206"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/reproceso/secundario/1066-3.jsp" TARGET="page207"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/reproceso/secundario/1066-4.jsp" TARGET="page208"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/reproceso/secundario/1059-1.jsp" TARGET="page209"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/reproceso/secundario/1059-2.jsp" TARGET="page210"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/reproceso/secundario/1062-1.jsp" TARGET="page211"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/reproceso/secundario/1063-1.jsp" TARGET="page212"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/reproceso/secundario/1064-1.jsp" TARGET="page213"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/reproceso/secundario/1063-3.jsp" TARGET="page214"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/reproceso/secundario/1063-2.jsp" TARGET="page215"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/reproceso/1059.jsp" TARGET="page20" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#consultar#secundarios" NAME="action83"
+  PATH="/dian/consultar/secundarios" SHAPE="32,17393,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/consultar/secundario/1067-1.jsp" TARGET="page216"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/consultar/secundario/1061-2.jsp" TARGET="page217"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/consultar/secundario/1067-2.jsp" TARGET="page218"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/consultar/secundario/1061-1.jsp" TARGET="page219"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/consultar/secundario/1060-1.jsp" TARGET="page220"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/consultar/secundario/1066-1.jsp" TARGET="page221"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/consultar/secundario/1066-2.jsp" TARGET="page222"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/consultar/secundario/1066-3.jsp" TARGET="page223"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/consultar/secundario/1066-4.jsp" TARGET="page224"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/consultar/secundario/1059-1.jsp" TARGET="page225"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/consultar/secundario/1059-2.jsp" TARGET="page226"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/consultar/secundario/1062-1.jsp" TARGET="page227"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/consultar/secundario/1063-1.jsp" TARGET="page228"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/consultar/secundario/1064-1.jsp" TARGET="page229"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/consultar/secundario/1063-3.jsp" TARGET="page230"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/consultar/secundario/1063-2.jsp" TARGET="page231"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/consultar/1059.jsp" TARGET="page44" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#aprobar#contrato" NAME="action84"
+  PATH="/dian/aprobar/contrato" SHAPE="32,17393,0,0"
+  TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/dian/aprobar/seleccion.do" TARGET="action64" TITLE="autorizar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="forward"
+   TARGET="page166" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/dian/aprobar/contrato.jsp" TARGET="page97" TITLE="contrato"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#generar" NAME="action85" PATH="/dian/generar"
+  SHAPE="32,17393,0,0" TITLE="movimientoFormXML" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/generar/1121.jsp" TARGET="page232" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/generar/1100.jsp" TARGET="page233" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/generar/1070.jsp" TARGET="page234" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward3"
+   PATH="/dian/generar/1061.jsp" TARGET="page235" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward4"
+   PATH="/dian/generar/1060.jsp" TARGET="page236" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward5"
+   PATH="/dian/generar/1099.jsp" TARGET="page237" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward6"
+   PATH="/dian/generar/1066.jsp" TARGET="page238" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward7"
+   PATH="/dian/generar/1067.jsp" TARGET="page239" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward8"
+   PATH="/dian/generar/1064.jsp" TARGET="page240" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward9"
+   PATH="/dian/generar/1062.jsp" TARGET="page241" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward10"
+   PATH="/dian/generar/1063.jsp" TARGET="page242" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward11"
+   PATH="/dian/generar/1059.jsp" TARGET="page88" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/generar/Resumen.jsp" TARGET="page243" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accions" NAME="forward13"
+   PATH="/dian/generar/mensajeAdvertencia.jsp" TARGET="page244"
+   TITLE="@accions" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#insercion#exportacion#ordinaria"
+  NAME="action86" PATH="/vencimiento/insercion/exportacion/ordinaria"
+  SHAPE="32,17393,0,0" TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/exportacionOrdinaria.jsp" TARGET="page81"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#mant#modificar" NAME="action87"
+  PATH="/formulario10/mant/modificar" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/modificar.jsp" TARGET="page245"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#exportacion#anticipos" NAME="action88"
+  PATH="/vencimiento/exportacion/anticipos" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="errorMensaje" NAME="forward0"
+   PATH="/vencimientos/mensajeError.jsp" TARGET="page100"
+   TITLE="errorMensaje" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/vencimientos/mensajes.jsp" TARGET="page101" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#grabar#plantilla" NAME="action89"
+  PATH="/grabar/plantilla" SHAPE="32,1121,0,0" TITLE="plantillaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="preguntar" NAME="forward0"
+   PATH="/preguntar.do" TARGET="action123" TITLE="preguntar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward1" PATH="plantilla"
+   TARGET="page102" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/transferencias/edicionOK.jsp" TARGET="page246" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar#secundarios" NAME="action90"
+  PATH="/dian/modificar/secundarios" SHAPE="32,9521,0,0"
+  TITLE="secundarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-1" NAME="forward0"
+   PATH="/dian/modificar/secundario/1067-1.jsp" TARGET="page247"
+   TITLE="elab-1067-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-2" NAME="forward1"
+   PATH="/dian/modificar/secundario/1061-2.jsp" TARGET="page248"
+   TITLE="elab-1061-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067-2" NAME="forward2"
+   PATH="/dian/modificar/secundario/1067-2.jsp" TARGET="page249"
+   TITLE="elab-1067-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061-1" NAME="forward3"
+   PATH="/dian/modificar/secundario/1061-1.jsp" TARGET="page250"
+   TITLE="elab-1061-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060-1" NAME="forward4"
+   PATH="/dian/modificar/secundario/1060-1.jsp" TARGET="page251"
+   TITLE="elab-1060-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-1" NAME="forward5"
+   PATH="/dian/modificar/secundario/1066-1.jsp" TARGET="page252"
+   TITLE="elab-1066-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-2" NAME="forward6"
+   PATH="/dian/modificar/secundario/1066-2.jsp" TARGET="page253"
+   TITLE="elab-1066-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-3" NAME="forward7"
+   PATH="/dian/modificar/secundario/1066-3.jsp" TARGET="page254"
+   TITLE="elab-1066-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066-4" NAME="forward8"
+   PATH="/dian/modificar/secundario/1066-4.jsp" TARGET="page255"
+   TITLE="elab-1066-4" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-1" NAME="forward9"
+   PATH="/dian/modificar/secundario/1059-1.jsp" TARGET="page256"
+   TITLE="elab-1059-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059-2" NAME="forward10"
+   PATH="/dian/modificar/secundario/1059-2.jsp" TARGET="page257"
+   TITLE="elab-1059-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062-1" NAME="forward11"
+   PATH="/dian/modificar/secundario/1062-1.jsp" TARGET="page258"
+   TITLE="elab-1062-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-1" NAME="forward12"
+   PATH="/dian/modificar/secundario/1063-1.jsp" TARGET="page259"
+   TITLE="elab-1063-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064-1" NAME="forward13"
+   PATH="/dian/modificar/secundario/1064-1.jsp" TARGET="page260"
+   TITLE="elab-1064-1" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-3" NAME="forward14"
+   PATH="/dian/modificar/secundario/1063-3.jsp" TARGET="page261"
+   TITLE="elab-1063-3" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063-2" NAME="forward15"
+   PATH="/dian/modificar/secundario/1063-2.jsp" TARGET="page262"
+   TITLE="elab-1063-2" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward16"
+   PATH="/dian/modificar/1059.jsp" TARGET="page17" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#est#reporte" NAME="action91" PATH="/est/reporte"
+  SHAPE="32,17393,0,0" TITLE="estadisticasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/estadisticas/reporte.jsp" TARGET="page57" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar#aprobar" NAME="action92"
+  PATH="/dian/modificar/aprobar" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/modificar/mensaje.jsp" TARGET="page263" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#legalizaciones" NAME="action93"
+  PATH="/consulta/legalizaciones" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/consultaLegalizacion.jsp" TARGET="page264"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado#modificar" NAME="action94"
+  PATH="/consulta/estado/modificar" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/modificar2.jsp" TARGET="page265" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#autorizar#multiple" NAME="action95"
+  PATH="/compensacion/autorizar/multiple" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/mensaje.jsp" TARGET="page266" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success2" NAME="forward1"
+   PATH="/compensacion/mensaje2.jsp" TARGET="page268" TITLE="success2"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#exportar#seleccion" NAME="action96"
+  PATH="/dian/exportar/seleccion" SHAPE="32,17393,0,0"
+  TITLE="movimientoFormXML" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/exportar/seleccion.jsp" TARGET="page267" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta#estado#reprocesar"
+  NAME="action98" PATH="/formulario10/consulta/estado/reprocesar"
+  SHAPE="32,17393,0,0" TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/modificarReproceso.jsp"
+   TARGET="page269" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#ejecutar#aprobar" NAME="action99"
+  PATH="/dian/ejecutar/aprobar" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/aprobar/mensaje.jsp" TARGET="page270" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#declaracion#formulario" NAME="action100"
+  PATH="/declaracion/formulario" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario8.jsp" TARGET="page192" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta#estado#autorizar"
+  NAME="action101" PATH="/formulario10/consulta/estado/autorizar"
+  SHAPE="32,17393,0,0" TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/autorizar2.jsp" TARGET="page271"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mant#representante" NAME="action102"
+  PATH="/mant/representante" SHAPE="288,1889,0,0"
+  TITLE="parametroRepresentanteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="representante"
+   TARGET="page136" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/representantes.jsp" TARGET="page272"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reproceso" NAME="action103" PATH="/reproceso"
+  SHAPE="32,13889,0,0" TITLE="formularioForm4" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/declaracion2.jsp" TARGET="page19" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#legalizaciones" NAME="action104"
+  PATH="/legalizaciones" SHAPE="32,17393,0,0" TITLE="formularioForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10.jsp" TARGET="page273"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#seleccion#estado" NAME="action105"
+  PATH="/formulario10/seleccion/estado" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/consulta.jsp" TARGET="page274"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#aprobar" NAME="action106" PATH="/dian/aprobar"
+  SHAPE="32,17393,0,0" TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/aprobar/1121.jsp" TARGET="page275" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/aprobar/1100.jsp" TARGET="page276" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/aprobar/1070.jsp" TARGET="page277" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward3"
+   PATH="/dian/aprobar/1061.jsp" TARGET="page278" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward4"
+   PATH="/dian/aprobar/1060.jsp" TARGET="page279" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward5"
+   PATH="/dian/aprobar/1099.jsp" TARGET="page280" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward6"
+   PATH="/dian/aprobar/1066.jsp" TARGET="page281" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward7"
+   PATH="/dian/aprobar/1067.jsp" TARGET="page282" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward8"
+   PATH="/dian/aprobar/1064.jsp" TARGET="page283" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward9"
+   PATH="/dian/aprobar/1062.jsp" TARGET="page284" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward10"
+   PATH="/dian/aprobar/1063.jsp" TARGET="page285" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward11"
+   PATH="/dian/aprobar/1059.jsp" TARGET="page31" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/aprobar/Resumen.jsp" TARGET="page286" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta#estado#modificar"
+  NAME="action107" PATH="/formulario10/consulta/estado/modificar"
+  SHAPE="32,17393,0,0" TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/modificar2.jsp" TARGET="page287"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#modificacion#edicion" NAME="action108"
+  PATH="/vencimiento/modificacion/edicion" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="exportacion-ordinaria" NAME="forward0"
+   PATH="/vencimientos/exportacionOrdinaria.jsp" TARGET="page81"
+   TITLE="exportacion-ordinaria" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="importacion" NAME="forward1"
+   PATH="/vencimientos/importacion.jsp" TARGET="page38"
+   TITLE="importacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="exportacion-anticipada" NAME="forward2"
+   PATH="/vencimientos/exportacionAnticipos.jsp" TARGET="page32"
+   TITLE="exportacion-anticipada" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#compensacion#contrato" NAME="action109"
+  PATH="/compensacion/contrato" SHAPE="32,17393,0,0"
+  TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="autorizar" NAME="forward0"
+   PATH="/compensacion/consulta/estado.do" TARGET="action79"
+   TITLE="autorizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@attribute" NAME="forward1"
+   PATH="contrato.compensacion.aprobado" TARGET="page95"
+   TITLE="@attribute" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward2" PATH="forward"
+   TARGET="page166" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="contrato" NAME="forward3"
+   PATH="/compensacion/contrato.jsp" TARGET="page83" TITLE="contrato"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#insercion#importacion" NAME="action110"
+  PATH="/vencimiento/insercion/importacion" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/importacion.jsp" TARGET="page38" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#elaborar" NAME="action111"
+  PATH="/dian/elaborar" SHAPE="32,4929,0,0" TITLE="movimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/elaborar/1121.jsp" TARGET="page63" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/elaborar/1100.jsp" TARGET="page28" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/elaborar/1070.jsp" TARGET="page6" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward3"
+   PATH="/dian/elaborar/1061.jsp" TARGET="page68" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward4"
+   PATH="/dian/elaborar/1060.jsp" TARGET="page70" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward5"
+   PATH="/dian/elaborar/1099.jsp" TARGET="page71" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward6"
+   PATH="/dian/elaborar/1066.jsp" TARGET="page9" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward7"
+   PATH="/dian/elaborar/1067.jsp" TARGET="page12" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward8"
+   PATH="/dian/elaborar/1064.jsp" TARGET="page14" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward9"
+   PATH="/dian/elaborar/1062.jsp" TARGET="page15" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward10"
+   PATH="/dian/elaborar/1063.jsp" TARGET="page16" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward11"
+   PATH="/dian/elaborar/1059.jsp" TARGET="page51" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/elaborar/Resumen.jsp" TARGET="page69" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#declaracion#formulario"
+  NAME="action112" PATH="/formulario10/declaracion/formulario"
+  SHAPE="32,17393,0,0" TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/formulario3.jsp" TARGET="page58"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario1" NAME="action113"
+  PATH="/consultar/formulario1" SHAPE="32,17393,0,0"
+  TITLE="formulariosinmovForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario.jsp" TARGET="page91" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado#reprocesar1" NAME="action114"
+  PATH="/consulta/estado/reprocesar1" SHAPE="32,17393,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/reprocesoConsulta.jsp" TARGET="page288"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#asociar" NAME="action115" PATH="/asociar"
+  SHAPE="32,17393,0,0" TITLE="modificarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/declaracion.jsp" TARGET="page77" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#exportacion#ordinaria" NAME="action116"
+  PATH="/vencimiento/exportacion/ordinaria" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="errorMensaje" NAME="forward0"
+   PATH="/vencimientos/mensajeError.jsp" TARGET="page100"
+   TITLE="errorMensaje" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/vencimientos/mensajes.jsp" TARGET="page101" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consultar#formulario#reprocesado" NAME="action117"
+  PATH="/consultar/formulario/reprocesado" SHAPE="32,17393,0,0"
+  TITLE="formularioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10.jsp" TARGET="page273"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#consultar" NAME="action118"
+  PATH="/dian/consultar" SHAPE="32,17393,0,0" TITLE="movimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/consultar/1121.jsp" TARGET="page289" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/consultar/1100.jsp" TARGET="page290" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/consultar/1070.jsp" TARGET="page291" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward3"
+   PATH="/dian/consultar/1061.jsp" TARGET="page292" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward4"
+   PATH="/dian/consultar/1060.jsp" TARGET="page293" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward5"
+   PATH="/dian/consultar/1099.jsp" TARGET="page294" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward6"
+   PATH="/dian/consultar/1066.jsp" TARGET="page295" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward7"
+   PATH="/dian/consultar/1067.jsp" TARGET="page296" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward8"
+   PATH="/dian/consultar/1064.jsp" TARGET="page297" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward9"
+   PATH="/dian/consultar/1062.jsp" TARGET="page298" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward10"
+   PATH="/dian/consultar/1063.jsp" TARGET="page299" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward11"
+   PATH="/dian/consultar/1059.jsp" TARGET="page44" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward12"
+   PATH="/dian/consultar/Resumen.jsp" TARGET="page300" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#definir#motivo" NAME="action119"
+  PATH="/dian/definir/motivo" SHAPE="32,17393,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/motivo.jsp" TARGET="page42" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#estado#autorizar" NAME="action120"
+  PATH="/consulta/estado/autorizar" SHAPE="32,9297,0,0"
+  TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/autorizar2.jsp" TARGET="page11" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#create#parametro" NAME="action121"
+  PATH="/create/parametro" SHAPE="32,17393,0,0" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0"
+   PATH="create-parametro" TARGET="page301" TITLE="@accion"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/parametro.jsp" TARGET="page29" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#mant#cuenta" NAME="action122"
+  PATH="/formulario10/mant/cuenta" SHAPE="32,17393,0,0"
+  TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/seleccion.jsp" TARGET="page302"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#preguntar" NAME="action123" PATH="/preguntar"
+  SHAPE="288,1137,0,0" SUBTYPE="parameter" TITLE="parametroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action123"
+   PATH="/compensacion/mensajeparam.jsp" TARGET="page303"
+   TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#consulta#estado#formulario"
+  NAME="action124" PATH="/formulario10/consulta/estado/formulario"
+  SHAPE="32,17393,0,0" TITLE="consultaEstadoForm10" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/consulta2.jsp" TARGET="page304"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta1" NAME="action125" PATH="/consulta1"
+  SHAPE="32,18017,0,0" TITLE="movimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/declaracion1.jsp" TARGET="page75" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accions" NAME="forward1"
+   PATH="/compensacion/mensajeAdvertencia.jsp" TARGET="page164"
+   TITLE="@accions" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#modificar" NAME="action126"
+  PATH="/dian/modificar" SHAPE="32,10145,0,0" TITLE="movimientoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1121" NAME="forward0"
+   PATH="/dian/modificar/1121.jsp" TARGET="page305" TITLE="elab-1121"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1100" NAME="forward1"
+   PATH="/dian/modificar/1100.jsp" TARGET="page306" TITLE="elab-1100"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1070" NAME="forward2"
+   PATH="/dian/modificar/1070.jsp" TARGET="page307" TITLE="elab-1070"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="resumen" NAME="forward3"
+   PATH="/dian/modificar/Resumen.jsp" TARGET="page308" TITLE="resumen"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward4"
+   PATH="/dian/modificar/1061.jsp" TARGET="page309" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward5"
+   PATH="/dian/modificar/1060.jsp" TARGET="page310" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1099" NAME="forward6"
+   PATH="/dian/modificar/1099.jsp" TARGET="page311" TITLE="elab-1099"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward7"
+   PATH="/dian/modificar/1066.jsp" TARGET="page312" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward8"
+   PATH="/dian/modificar/1067.jsp" TARGET="page313" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1064" NAME="forward9"
+   PATH="/dian/modificar/1064.jsp" TARGET="page314" TITLE="elab-1064"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward10"
+   PATH="/dian/modificar/1062.jsp" TARGET="page315" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1063" NAME="forward11"
+   PATH="/dian/modificar/1063.jsp" TARGET="page316" TITLE="elab-1063"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward12"
+   PATH="/dian/modificar/1059.jsp" TARGET="page17" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward13"
+   PATH="/dian/modificar/Resumen.jsp" TARGET="page308" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="diansele" NAME="forward14"
+   PATH="/dian/modificar/seleccion.jsp" TARGET="page93" TITLE="diansele"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#exportar" NAME="action127"
+  PATH="/dian/exportar" SHAPE="32,16385,0,0" TITLE="movimientoFormXML"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="elab-1066" NAME="forward0"
+   PATH="/dian/exportar/1066.jsp" TARGET="page317" TITLE="elab-1066"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1067" NAME="forward1"
+   PATH="/dian/exportar/1067.jsp" TARGET="page318" TITLE="elab-1067"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1062" NAME="forward2"
+   PATH="/dian/exportar/1062.jsp" TARGET="page319" TITLE="elab-1062"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1059" NAME="forward3"
+   PATH="/dian/exportar/1059.jsp" TARGET="page320" TITLE="elab-1059"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward4"
+   PATH="/dian/exportar/Resumen.jsp" TARGET="page64" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@accions" NAME="forward5"
+   PATH="/dian/reproceso/mensajeAdvertencia.jsp" TARGET="page115"
+   TITLE="@accions" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1061" NAME="forward6"
+   PATH="/dian/exportar/1061.jsp" TARGET="page321" TITLE="elab-1061"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="elab-1060" NAME="forward7"
+   PATH="/dian/exportar/1060.jsp" TARGET="page322" TITLE="elab-1060"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#exportar#excel" NAME="action128"
+  PATH="/dian/exportar/excel" SHAPE="32,17393,0,0" TITLE="genForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/exportar/reciboExcel.jsp" TARGET="page323"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#vencimiento#seleccion#consulta" NAME="action129"
+  PATH="/vencimiento/seleccion/consulta" SHAPE="32,17393,0,0"
+  TITLE="vencimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/vencimientos/reportes.jsp" TARGET="page47" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formulario10#compensacion#consulta#estado"
+  NAME="action130" PATH="/formulario10/compensacion/consulta/estado"
+  SHAPE="304,17409,0,0" TITLE="consultaEstadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/autorizar.jsp" TARGET="page324"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#generar#xml" NAME="action131"
+  PATH="/dian/generar/xml" SHAPE="32,17393,0,0" TITLE="genForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/dian/generar/GenerarXML.jsp" TARGET="page325" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/dian/elaborar/recibo.jsp"
+  SHAPE="256,34,0,0" SUBTYPE="jsp" TITLE="recibo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/custodia/seleccion.jsp"
+  SHAPE="256,258,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2" PATH="/compensacion/plantilla.jsp"
+  SHAPE="288,482,0,0" SUBTYPE="jsp" TITLE="plantilla.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3"
+  PATH="/compensacion/formulario10/seleccionReproceso.jsp"
+  SHAPE="256,2322,0,0" SUBTYPE="jsp" TITLE="seleccionReproceso.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4"
+  PATH="/compensacion/seleccionsinMovimiento.jsp" SHAPE="256,2546,0,0"
+  SUBTYPE="jsp" TITLE="seleccionsinMovimiento.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5" PATH="/dian/elaborar/edit/1070.jsp"
+  SHAPE="304,2770,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6" PATH="/dian/elaborar/1070.jsp"
+  SHAPE="304,4834,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page7" PATH="/dian/elaborar/edit/1121.jsp"
+  SHAPE="304,3490,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8" PATH="/dian/elaborar/edit/1064.jsp"
+  SHAPE="304,3714,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page9" PATH="/dian/elaborar/1066.jsp"
+  SHAPE="304,5890,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page10" PATH="/dian/elaborar/edit/1066.jsp"
+  SHAPE="304,4050,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page11" PATH="/compensacion/autorizar2.jsp"
+  SHAPE="256,9202,0,0" SUBTYPE="jsp" TITLE="autorizar2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page12" PATH="/dian/elaborar/1067.jsp"
+  SHAPE="304,6002,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page13" PATH="/dian/elaborar/edit/1067.jsp"
+  SHAPE="304,4274,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page14" PATH="/dian/elaborar/1064.jsp"
+  SHAPE="304,6114,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page15" PATH="/dian/elaborar/1062.jsp"
+  SHAPE="304,6226,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page16" PATH="/dian/elaborar/1063.jsp"
+  SHAPE="304,6338,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page17" PATH="/dian/modificar/1059.jsp"
+  SHAPE="304,9426,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page18" PATH="/estadisticas/seleccion.jsp"
+  SHAPE="256,13458,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page19" PATH="/compensacion/declaracion2.jsp"
+  SHAPE="272,13682,0,0" SUBTYPE="jsp" TITLE="declaracion2.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page20" PATH="/dian/reproceso/1059.jsp"
+  SHAPE="304,14018,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page21" PATH="/compensacion/movimiento.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="movimiento.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page22" PATH="/custodia/consulta.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page23" PATH="/consulta/estadoctacc.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="estadoctacc.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page24" PATH="/compensacion/multicash.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="multicash.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25" PATH="/dian/elaborar/secundario/1067-1.jsp"
+  SHAPE="304,6786,0,0" SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page26" PATH="/dian/elaborar/secundario/1067-2.jsp"
+  SHAPE="304,6674,0,0" SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page27" PATH="/dian/elaborar/GenerarXML.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="GenerarXML.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page28" PATH="/dian/elaborar/1100.jsp"
+  SHAPE="304,5442,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page29" PATH="/compensacion/parametro.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="parametro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page30" PATH="/dian/reproceso/Resumen.jsp"
+  SHAPE="304,16290,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page31" PATH="/dian/aprobar/1059.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page32"
+  PATH="/vencimientos/exportacionAnticipos.jsp" SHAPE="272,17410,0,0"
+  SUBTYPE="jsp" TITLE="exportacionAnticipos.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page33" PATH="/dian/elaborar/secundario/1066-1.jsp"
+  SHAPE="304,7634,0,0" SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page34" PATH="/dian/elaborar/secundario/1066-2.jsp"
+  SHAPE="304,7746,0,0" SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page35" PATH="/dian/elaborar/secundario/1066-3.jsp"
+  SHAPE="304,7858,0,0" SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36"
+  PATH="/compensacion/formulario10/mensaje.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page37" PATH="/dian/elaborar/secundario/1066-4.jsp"
+  SHAPE="304,7970,0,0" SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page38" PATH="/vencimientos/importacion.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="importacion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page39" PATH="/dian/elaborar/secundario/1059-1.jsp"
+  SHAPE="304,8082,0,0" SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page40" PATH="/dian/elaborar/secundario/1059-2.jsp"
+  SHAPE="304,8194,0,0" SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page41" PATH="/compensacion/representante.jsp"
+  SHAPE="288,1490,0,0" SUBTYPE="jsp" TITLE="representante.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page42" PATH="/compensacion/motivo.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="motivo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page43" PATH="/start.jsp" SHAPE="256,17410,0,0"
+  SUBTYPE="jsp" TITLE="start.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page44" PATH="/dian/consultar/1059.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page45" PATH="/compensacion/reproceso2.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="reproceso2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page46" PATH="/compensacion/seleccion.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page47" PATH="/vencimientos/reportes.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="reportes.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page48"
+  PATH="/compensacion/seleccionLegalizacion.jsp" SHAPE="256,17410,0,0"
+  SUBTYPE="jsp" TITLE="seleccionLegalizacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page49" PATH="/ib/cambioClave.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="cambioClave.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page50" PATH="/dian/elaborar/secundario/1061-2.jsp"
+  SHAPE="304,7410,0,0" SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page51" PATH="/dian/elaborar/1059.jsp"
+  SHAPE="304,6450,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page52" PATH="/dian/elaborar/secundario/1061-1.jsp"
+  SHAPE="304,7522,0,0" SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page53" PATH="/dian/elaborar/edit/1100.jsp"
+  SHAPE="304,2882,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page54" PATH="/dian/elaborar/secundario/1060-1.jsp"
+  SHAPE="304,6562,0,0" SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page55" PATH="/estadisticas/seleccionControl.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="seleccionControl.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page56" PATH="/dian/elabora/seleccion.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page57" PATH="/estadisticas/reporte.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="reporte.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page58"
+  PATH="/compensacion/formulario10/formulario3.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="formulario3.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page59" PATH="/vencimientos/modificacion.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="modificacion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page60" PATH="/dian/aprobar/motivo.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="motivo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page61" PATH="/dian/elaborar/secundario/1064-1.jsp"
+  SHAPE="304,8530,0,0" SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page62" PATH="/compensacion/plantillas.jsp"
+  SHAPE="288,882,0,0" SUBTYPE="jsp" TITLE="plantillas.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page63" PATH="/dian/elaborar/1121.jsp"
+  SHAPE="304,4946,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page64" PATH="/dian/exportar/Resumen.jsp"
+  SHAPE="304,17186,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page65" PATH="/compensacion/multicashs.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="multicashs.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page66" PATH="/compensacion/consulta.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page67" PATH="/dian/elaborar/edit/1059.jsp"
+  SHAPE="304,3378,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page68" PATH="/dian/elaborar/1061.jsp"
+  SHAPE="304,5554,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page69" PATH="/dian/elaborar/Resumen.jsp"
+  SHAPE="304,4946,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page70" PATH="/dian/elaborar/1060.jsp"
+  SHAPE="304,5666,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page71" PATH="/dian/elaborar/1099.jsp"
+  SHAPE="304,5778,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page72" PATH="/dian/elaborar/edit/1060.jsp"
+  SHAPE="304,3602,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page73" PATH="/dian/elaborar/edit/1061.jsp"
+  SHAPE="304,3826,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page74" PATH="/vencimientos/seleccion.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page75" PATH="/compensacion/declaracion1.jsp"
+  SHAPE="256,18034,0,0" SUBTYPE="jsp" TITLE="declaracion1.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page76" PATH="/dian/elaborar/edit/1062.jsp"
+  SHAPE="304,3938,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page77" PATH="/compensacion/declaracion.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="declaracion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page78" PATH="/dian/elaborar/edit/1063.jsp"
+  SHAPE="304,4162,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page79" PATH="/dian/elaborar/edit/1099.jsp"
+  SHAPE="304,4386,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page80" PATH="/dian/elaborar/secundario/1062-1.jsp"
+  SHAPE="304,8306,0,0" SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page81"
+  PATH="/vencimientos/exportacionOrdinaria.jsp" SHAPE="272,17410,0,0"
+  SUBTYPE="jsp" TITLE="exportacionOrdinaria.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page82" PATH="/dian/elaborar/secundario/1063-1.jsp"
+  SHAPE="304,8418,0,0" SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page83" PATH="/compensacion/contrato.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="contrato.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page84" PATH="/dian/elaborar/secundario/1063-3.jsp"
+  SHAPE="304,8642,0,0" SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page85" PATH="/dian/elaborar/secundario/1063-2.jsp"
+  SHAPE="304,8754,0,0" SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page86" PATH="/ib/mensajeAdvertencia.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page87" PATH="/dian/elaborar/seleccion.jsp"
+  SHAPE="304,4498,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page88" PATH="/dian/generar/1059.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page89" PATH="parametro" SHAPE="544,2018,0,0"
+  SUBTYPE="tile" TITLE="parametro" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page90" PATH="/compensacion/parametros.jsp"
+  SHAPE="544,2194,0,0" SUBTYPE="jsp" TITLE="parametros.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page91" PATH="/compensacion/formulario.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="formulario.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page92" PATH="true" SHAPE="272,17410,0,0"
+  SUBTYPE="tile" TITLE="true" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page93" PATH="/dian/modificar/seleccion.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page94" PATH="multicash" SHAPE="256,17410,0,0"
+  SUBTYPE="tile" TITLE="multicash" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page95" PATH="contrato.compensacion.aprobado"
+  SHAPE="304,17410,0,0" SUBTYPE="tile"
+  TITLE="contrato.compensacion.aprobado" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page96" PATH="ok" SHAPE="304,17410,0,0"
+  SUBTYPE="tile" TITLE="ok" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page97" PATH="/dian/aprobar/contrato.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="contrato.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page98" PATH="/compensacion/formulario6.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="formulario6.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page99" PATH="/dian/generar/seleccion.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page100" PATH="/vencimientos/mensajeError.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="mensajeError.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page101" PATH="/vencimientos/mensajes.jsp"
+  SHAPE="272,17410,0,0" SUBTYPE="jsp" TITLE="mensajes.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page102" PATH="plantilla" SHAPE="288,594,0,0"
+  SUBTYPE="tile" TITLE="plantilla" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page103" PATH="/transferencias/eliminacionOK.jsp"
+  SHAPE="288,738,0,0" SUBTYPE="jsp" TITLE="eliminacionOK.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page104" PATH="/dian/reproceso/1121.jsp"
+  SHAPE="304,14130,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page105" PATH="/dian/reproceso/1100.jsp"
+  SHAPE="304,14658,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page106" PATH="/dian/reproceso/1070.jsp"
+  SHAPE="304,15282,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page107" PATH="/dian/reproceso/1061.jsp"
+  SHAPE="304,15394,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page108" PATH="/dian/reproceso/1060.jsp"
+  SHAPE="304,15506,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page109" PATH="/dian/reproceso/1099.jsp"
+  SHAPE="304,15618,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page110" PATH="/dian/reproceso/1066.jsp"
+  SHAPE="304,15730,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page111" PATH="/dian/reproceso/1067.jsp"
+  SHAPE="304,15842,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page112" PATH="/dian/reproceso/1064.jsp"
+  SHAPE="304,15954,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page113" PATH="/dian/reproceso/1062.jsp"
+  SHAPE="304,16066,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page114" PATH="/dian/reproceso/1063.jsp"
+  SHAPE="304,16178,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page115"
+  PATH="/dian/reproceso/mensajeAdvertencia.jsp" SHAPE="304,16402,0,0"
+  SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page116" PATH="/dian/modificar/mensajeguardar.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensajeguardar.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page117" PATH="/dian/generar/secundario/1067-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page118" PATH="/dian/generar/secundario/1061-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page119" PATH="/dian/generar/secundario/1067-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page120" PATH="/dian/generar/secundario/1061-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page121" PATH="/dian/generar/secundario/1060-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page122" PATH="/dian/generar/secundario/1066-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page123" PATH="/dian/generar/secundario/1066-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page124" PATH="/dian/generar/secundario/1066-3.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page125" PATH="/dian/generar/secundario/1066-4.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page126" PATH="/dian/generar/secundario/1059-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page127" PATH="/dian/generar/secundario/1059-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page128" PATH="/dian/generar/secundario/1062-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page129" PATH="/dian/generar/secundario/1063-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page130" PATH="/dian/generar/secundario/1064-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page131" PATH="/dian/generar/secundario/1063-3.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page132" PATH="/dian/generar/secundario/1063-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page133" PATH="multicashs" SHAPE="256,17410,0,0"
+  SUBTYPE="tile" TITLE="multicashs" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page134" PATH="estadocuenta" SHAPE="256,17410,0,0"
+  SUBTYPE="tile" TITLE="estadocuenta" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page135" PATH="/consulta/AnalisisCta.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="AnalisisCta.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page136" PATH="representante" SHAPE="544,1298,0,0"
+  SUBTYPE="tile" TITLE="representante" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page137" PATH="/ib/cambioExitoso.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="cambioExitoso.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page138" PATH="/dian/modificar/edit/1100.jsp"
+  SHAPE="304,13234,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page139" PATH="/dian/modificar/edit/1070.jsp"
+  SHAPE="304,13346,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page140" PATH="/dian/modificar/edit/1059.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page141" PATH="/dian/modificar/edit/1121.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page142" PATH="/dian/modificar/edit/1060.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page143" PATH="/dian/modificar/edit/1064.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page144" PATH="/dian/modificar/edit/1061.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page145" PATH="/dian/modificar/edit/1062.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page146" PATH="/dian/modificar/edit/1066.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page147" PATH="/dian/modificar/edit/1063.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page148" PATH="/dian/modificar/edit/1067.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page149" PATH="/dian/modificar/edit/1099.jsp"
+  SHAPE="304,10834,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page150" PATH="/compensacion/modificar.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="modificar.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page151"
+  PATH="/compensacion/formulario10/declaracion.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="declaracion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page152" PATH="/dian/elaborar/mensaje.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page153" PATH="/dian/elaborar/mensajeguardar.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensajeguardar.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page154"
+  PATH="/compensacion/formulario10/mensajeAdvertencia.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page155" PATH="/compensacion/formulario11.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="formulario11.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page156"
+  PATH="/compensacion/formulario10/formulario2.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="formulario2.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page157" PATH="/dian/consultar/seleccion.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page158"
+  PATH="/compensacion/formulario10/formulario.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="formulario.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page159"
+  PATH="/compensacion/formulario10/exportXML2.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="exportXML2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page160" PATH="/compensacion/formulario9.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="formulario9.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page161" PATH="/dian/aprobar/mensaje-rechazo.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje-rechazo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page162"
+  PATH="/vencimientos/consulta-modificacion.jsp" SHAPE="272,17410,0,0"
+  SUBTYPE="jsp" TITLE="consulta-modificacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page163" PATH="/compensacion/consulta2.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="consulta2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page164"
+  PATH="/compensacion/mensajeAdvertencia.jsp" SHAPE="256,18034,0,0"
+  SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page165" PATH="/estadisticas/reportesControl.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="reportesControl.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page166" PATH="forward" SHAPE="304,17410,0,0"
+  SUBTYPE="tile" TITLE="forward" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page167"
+  PATH="/compensacion/formulario10/contrato.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="contrato.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page168" PATH="/compensacion/reprocesoSelec.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="reprocesoSelec.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page169" PATH="/compensacion/detalleMov.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="detalleMov.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page170" PATH="/compensacion/reproceso.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="reproceso.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page171" PATH="/dian/reproceso/seleccion.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page172"
+  PATH="/compensacion/formulario10/exportXML.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="exportXML.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page173"
+  PATH="/compensacion/reprocesoConsulta1.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="reprocesoConsulta1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page174" PATH="/compensacion/consultaRechazo.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="consultaRechazo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page175" PATH="/dian/aprobar/secundario/1067-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page176" PATH="/dian/aprobar/secundario/1061-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page177" PATH="/dian/aprobar/secundario/1067-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page178" PATH="/dian/aprobar/secundario/1061-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page179" PATH="/dian/aprobar/secundario/1060-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page180" PATH="/dian/aprobar/secundario/1066-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page181" PATH="/dian/aprobar/secundario/1066-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page182" PATH="/dian/aprobar/secundario/1066-3.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page183" PATH="/dian/aprobar/secundario/1066-4.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page184" PATH="/dian/aprobar/secundario/1059-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page185" PATH="/dian/aprobar/secundario/1059-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page186" PATH="/dian/aprobar/secundario/1062-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page187" PATH="/dian/aprobar/secundario/1063-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page188" PATH="/dian/aprobar/secundario/1064-1.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page189" PATH="/dian/aprobar/secundario/1063-3.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page190" PATH="/dian/aprobar/secundario/1063-2.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page191" PATH="/dian/reproceso/GenerarXML.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="GenerarXML.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page192" PATH="/compensacion/formulario8.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="formulario8.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page193" PATH="/dian/aprobar/seleccion.jsp"
+  SHAPE="512,18018,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page194" PATH="create-representante"
+  SHAPE="288,1746,0,0" SUBTYPE="tile" TITLE="create-representante"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page195" PATH="/compensacion/exportXML2.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="exportXML2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page196" PATH="/compensacion/formulario3.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="formulario3.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page197" PATH="/compensacion/mensajeRechazo.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensajeRechazo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page198" PATH="/compensacion/autorizar.jsp"
+  SHAPE="512,17394,0,0" SUBTYPE="jsp" TITLE="autorizar.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page199" PATH="/compensacion/exportXML.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="exportXML.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page200"
+  PATH="/dian/reproceso/secundario/1067-1.jsp" SHAPE="304,18034,0,0"
+  SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page201"
+  PATH="/dian/reproceso/secundario/1061-2.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page202"
+  PATH="/dian/reproceso/secundario/1067-2.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page203"
+  PATH="/dian/reproceso/secundario/1061-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page204"
+  PATH="/dian/reproceso/secundario/1060-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page205"
+  PATH="/dian/reproceso/secundario/1066-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page206"
+  PATH="/dian/reproceso/secundario/1066-2.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page207"
+  PATH="/dian/reproceso/secundario/1066-3.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page208"
+  PATH="/dian/reproceso/secundario/1066-4.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page209"
+  PATH="/dian/reproceso/secundario/1059-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page210"
+  PATH="/dian/reproceso/secundario/1059-2.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page211"
+  PATH="/dian/reproceso/secundario/1062-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page212"
+  PATH="/dian/reproceso/secundario/1063-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page213"
+  PATH="/dian/reproceso/secundario/1064-1.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page214"
+  PATH="/dian/reproceso/secundario/1063-3.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page215"
+  PATH="/dian/reproceso/secundario/1063-2.jsp" SHAPE="304,14658,0,0"
+  SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page216"
+  PATH="/dian/consultar/secundario/1067-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page217"
+  PATH="/dian/consultar/secundario/1061-2.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page218"
+  PATH="/dian/consultar/secundario/1067-2.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page219"
+  PATH="/dian/consultar/secundario/1061-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page220"
+  PATH="/dian/consultar/secundario/1060-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page221"
+  PATH="/dian/consultar/secundario/1066-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page222"
+  PATH="/dian/consultar/secundario/1066-2.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page223"
+  PATH="/dian/consultar/secundario/1066-3.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page224"
+  PATH="/dian/consultar/secundario/1066-4.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page225"
+  PATH="/dian/consultar/secundario/1059-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page226"
+  PATH="/dian/consultar/secundario/1059-2.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page227"
+  PATH="/dian/consultar/secundario/1062-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page228"
+  PATH="/dian/consultar/secundario/1063-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page229"
+  PATH="/dian/consultar/secundario/1064-1.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page230"
+  PATH="/dian/consultar/secundario/1063-3.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page231"
+  PATH="/dian/consultar/secundario/1063-2.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page232" PATH="/dian/generar/1121.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page233" PATH="/dian/generar/1100.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page234" PATH="/dian/generar/1070.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page235" PATH="/dian/generar/1061.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page236" PATH="/dian/generar/1060.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page237" PATH="/dian/generar/1099.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page238" PATH="/dian/generar/1066.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page239" PATH="/dian/generar/1067.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page240" PATH="/dian/generar/1064.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page241" PATH="/dian/generar/1062.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page242" PATH="/dian/generar/1063.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page243" PATH="/dian/generar/Resumen.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page244"
+  PATH="/dian/generar/mensajeAdvertencia.jsp" SHAPE="304,17410,0,0"
+  SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page245"
+  PATH="/compensacion/formulario10/modificar.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="modificar.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page246" PATH="/transferencias/edicionOK.jsp"
+  SHAPE="288,1314,0,0" SUBTYPE="jsp" TITLE="edicionOK.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page247"
+  PATH="/dian/modificar/secundario/1067-1.jsp" SHAPE="304,9538,0,0"
+  SUBTYPE="jsp" TITLE="1067-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page248"
+  PATH="/dian/modificar/secundario/1061-2.jsp" SHAPE="304,10162,0,0"
+  SUBTYPE="jsp" TITLE="1061-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page249"
+  PATH="/dian/modificar/secundario/1067-2.jsp" SHAPE="304,10722,0,0"
+  SUBTYPE="jsp" TITLE="1067-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page250"
+  PATH="/dian/modificar/secundario/1061-1.jsp" SHAPE="304,10834,0,0"
+  SUBTYPE="jsp" TITLE="1061-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page251"
+  PATH="/dian/modificar/secundario/1060-1.jsp" SHAPE="304,11330,0,0"
+  SUBTYPE="jsp" TITLE="1060-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page252"
+  PATH="/dian/modificar/secundario/1066-1.jsp" SHAPE="304,11442,0,0"
+  SUBTYPE="jsp" TITLE="1066-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page253"
+  PATH="/dian/modificar/secundario/1066-2.jsp" SHAPE="304,11554,0,0"
+  SUBTYPE="jsp" TITLE="1066-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page254"
+  PATH="/dian/modificar/secundario/1066-3.jsp" SHAPE="304,11666,0,0"
+  SUBTYPE="jsp" TITLE="1066-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page255"
+  PATH="/dian/modificar/secundario/1066-4.jsp" SHAPE="304,11778,0,0"
+  SUBTYPE="jsp" TITLE="1066-4.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page256"
+  PATH="/dian/modificar/secundario/1059-1.jsp" SHAPE="304,11890,0,0"
+  SUBTYPE="jsp" TITLE="1059-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page257"
+  PATH="/dian/modificar/secundario/1059-2.jsp" SHAPE="304,12002,0,0"
+  SUBTYPE="jsp" TITLE="1059-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page258"
+  PATH="/dian/modificar/secundario/1062-1.jsp" SHAPE="304,12114,0,0"
+  SUBTYPE="jsp" TITLE="1062-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page259"
+  PATH="/dian/modificar/secundario/1063-1.jsp" SHAPE="304,12226,0,0"
+  SUBTYPE="jsp" TITLE="1063-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page260"
+  PATH="/dian/modificar/secundario/1064-1.jsp" SHAPE="304,12338,0,0"
+  SUBTYPE="jsp" TITLE="1064-1.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page261"
+  PATH="/dian/modificar/secundario/1063-3.jsp" SHAPE="304,12450,0,0"
+  SUBTYPE="jsp" TITLE="1063-3.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page262"
+  PATH="/dian/modificar/secundario/1063-2.jsp" SHAPE="304,12562,0,0"
+  SUBTYPE="jsp" TITLE="1063-2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page263" PATH="/dian/modificar/mensaje.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page264"
+  PATH="/compensacion/consultaLegalizacion.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="consultaLegalizacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page265" PATH="/compensacion/modificar2.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="modificar2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page266" PATH="/compensacion/mensaje.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page267" PATH="/dian/exportar/seleccion.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page268" PATH="/compensacion/mensaje2.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page269"
+  PATH="/compensacion/formulario10/modificarReproceso.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="modificarReproceso.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page270" PATH="/dian/aprobar/mensaje.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page271"
+  PATH="/compensacion/formulario10/autorizar2.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="autorizar2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page272" PATH="/compensacion/representantes.jsp"
+  SHAPE="544,1874,0,0" SUBTYPE="jsp" TITLE="representantes.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page273" PATH="/compensacion/formulario10.jsp"
+  SHAPE="256,17410,0,0" SUBTYPE="jsp" TITLE="formulario10.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page274"
+  PATH="/compensacion/formulario10/consulta.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page275" PATH="/dian/aprobar/1121.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page276" PATH="/dian/aprobar/1100.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page277" PATH="/dian/aprobar/1070.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page278" PATH="/dian/aprobar/1061.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page279" PATH="/dian/aprobar/1060.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page280" PATH="/dian/aprobar/1099.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page281" PATH="/dian/aprobar/1066.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page282" PATH="/dian/aprobar/1067.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page283" PATH="/dian/aprobar/1064.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page284" PATH="/dian/aprobar/1062.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page285" PATH="/dian/aprobar/1063.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page286" PATH="/dian/aprobar/Resumen.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page287"
+  PATH="/compensacion/formulario10/modificar2.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="modificar2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page288" PATH="/compensacion/reprocesoConsulta.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="reprocesoConsulta.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page289" PATH="/dian/consultar/1121.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page290" PATH="/dian/consultar/1100.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page291" PATH="/dian/consultar/1070.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page292" PATH="/dian/consultar/1061.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page293" PATH="/dian/consultar/1060.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page294" PATH="/dian/consultar/1099.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page295" PATH="/dian/consultar/1066.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page296" PATH="/dian/consultar/1067.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page297" PATH="/dian/consultar/1064.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page298" PATH="/dian/consultar/1062.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page299" PATH="/dian/consultar/1063.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page300" PATH="/dian/consultar/Resumen.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page301" PATH="create-parametro"
+  SHAPE="272,17410,0,0" SUBTYPE="tile" TITLE="create-parametro"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page302"
+  PATH="/compensacion/formulario10/seleccion.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page303" PATH="/compensacion/mensajeparam.jsp"
+  SHAPE="544,1122,0,0" SUBTYPE="jsp" TITLE="mensajeparam.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page304"
+  PATH="/compensacion/formulario10/consulta2.jsp" SHAPE="240,17410,0,0"
+  SUBTYPE="jsp" TITLE="consulta2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page305" PATH="/dian/modificar/1121.jsp"
+  SHAPE="304,12674,0,0" SUBTYPE="jsp" TITLE="1121.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page306" PATH="/dian/modificar/1100.jsp"
+  SHAPE="304,12786,0,0" SUBTYPE="jsp" TITLE="1100.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page307" PATH="/dian/modificar/1070.jsp"
+  SHAPE="304,12898,0,0" SUBTYPE="jsp" TITLE="1070.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page308" PATH="/dian/modificar/Resumen.jsp"
+  SHAPE="304,13010,0,0" SUBTYPE="jsp" TITLE="Resumen.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page309" PATH="/dian/modificar/1061.jsp"
+  SHAPE="304,13122,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page310" PATH="/dian/modificar/1060.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page311" PATH="/dian/modificar/1099.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1099.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page312" PATH="/dian/modificar/1066.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page313" PATH="/dian/modificar/1067.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page314" PATH="/dian/modificar/1064.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1064.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page315" PATH="/dian/modificar/1062.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page316" PATH="/dian/modificar/1063.jsp"
+  SHAPE="304,10162,0,0" SUBTYPE="jsp" TITLE="1063.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page317" PATH="/dian/exportar/1066.jsp"
+  SHAPE="304,16738,0,0" SUBTYPE="jsp" TITLE="1066.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page318" PATH="/dian/exportar/1067.jsp"
+  SHAPE="304,16850,0,0" SUBTYPE="jsp" TITLE="1067.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page319" PATH="/dian/exportar/1062.jsp"
+  SHAPE="304,16962,0,0" SUBTYPE="jsp" TITLE="1062.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page320" PATH="/dian/exportar/1059.jsp"
+  SHAPE="304,17074,0,0" SUBTYPE="jsp" TITLE="1059.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page321" PATH="/dian/exportar/1061.jsp"
+  SHAPE="304,17298,0,0" SUBTYPE="jsp" TITLE="1061.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page322" PATH="/dian/exportar/1060.jsp"
+  SHAPE="304,17410,0,0" SUBTYPE="jsp" TITLE="1060.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page323" PATH="/dian/exportar/reciboExcel.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="reciboExcel.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page324"
+  PATH="/compensacion/formulario10/autorizar.jsp" SHAPE="512,17394,0,0"
+  SUBTYPE="jsp" TITLE="autorizar.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page325" PATH="/dian/generar/GenerarXML.jsp"
+  SHAPE="240,17410,0,0" SUBTYPE="jsp" TITLE="GenerarXML.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#compensacion#legalizacion#multiple" NAME="action97"
+  PATH="/compensacion/legalizacion/multiple" SHAPE="32,16241,0,0"
+  TITLE="autorizacionMultipleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success2" NAME="forward0"
+   PATH="/compensacion/mensaje2.jsp" TARGET="page268" TITLE="success2"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/mensaje.jsp" TARGET="page266" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page326"
+  PATH="/compensacion/formulario10/generarXML/consulta.jsp"
+  SHAPE="448,16241,0,0" SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#formulario10#generar#xml#consulta" NAME="action133"
+  PATH="/formulario10/generar/xml/consulta" SHAPE="240,16369,0,0"
+  TITLE="generarXML3_4_10Form" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/compensacion/formulario10/generarXML/consulta.jsp"
+   TARGET="page326" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="generacionXMLBanRep" NAME="forward91"
+  PATH="/compensacion/formulario10/generarXML/consulta.jsp"
+  SHAPE="240,16369,0,0" TARGET="page326" TITLE="generacionXMLBanRep"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#formulario10#generar#xml3_4_10" NAME="action132"
+  PATH="/formulario10/generar/xml3_4_10" SHAPE="32,16241,0,0"
+  TITLE="generarXML3_4_10Form" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="noAprobado" NAME="forward0"
+   PATH="/compensacion/formulario10/generarXML/mensajeAdvertencia.jsp"
+   TARGET="page327" TITLE="noAprobado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/compensacion/formulario10/generarXML/consulta.jsp"
+   TARGET="page326" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="generaXML" NAME="forward2"
+   PATH="/compensacion/formulario10/generarXML/generateXML.jsp"
+   TARGET="page328" TITLE="generaXML" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="errorAPI" NAME="forward3"
+   PATH="/error/error.jsp" TARGET="page330" TITLE="errorAPI"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page327"
+  PATH="/compensacion/formulario10/generarXML/mensajeAdvertencia.jsp"
+  SHAPE="272,16258,0,0" SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="noAprobado" NAME="forward92"
+  PATH="/compensacion/formulario10/generarXML/mensajeAdvertencia.jsp"
+  SHAPE="240,16369,0,0" TARGET="page327" TITLE="noAprobado"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page328"
+  PATH="/compensacion/formulario10/generarXML/generateXML.jsp"
+  SHAPE="240,16465,0,0" SUBTYPE="jsp" TITLE="generateXML.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page330" PATH="/error/error.jsp"
+  SHAPE="656,16241,0,0" SUBTYPE="jsp" TITLE="error.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

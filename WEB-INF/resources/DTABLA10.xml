@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<values>
+<row key="2" value="Arrendamiento financiero"/>
+<row key="3" value="Exportaciones"/>
+<row key="7" value="Titularización"/>
+<row key="8" value="Anticipo de exportaciones de utilización inmediata"/>
+<row key="11" value="Bienes de utilización inmediata"/>
+<row key="12" value="Bienes de capital"/>
+<row key="13" value="Giros financiados anticipados de bienes de utilización inmediata e intermedios"/>
+<row key="14" value="Prefinanciación exportaciones - café"/>
+<row key="15" value="Prefinanciación exportaciones - bienes"/>
+<row key="16" value="Compra bienes de capital"/>
+<row key="17" value="Compra bienes de utilización inmediata"/>
+<row key="18" value="Anticipo de exportaciones de bienes de capital"/>
+<row key="19" value="Giros financiados anticipados de bienes de capital"/>
+
+</values>

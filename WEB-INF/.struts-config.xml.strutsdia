@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="recibo" NAME="forward0"
+  PATH="/transferencias/recibo.jsp" SHAPE="240,33,0,0" TARGET="page0"
+  TITLE="recibo" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="users" NAME="forward1" PATH="/mant/users.jsp"
+  SHAPE="32,561,0,0" TARGET="page1" TITLE="users" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="systemdb" NAME="forward2" PATH="/systemdb.jsp"
+  SHAPE="32,673,0,0" TARGET="page2" TITLE="systemdb" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="modificacion" NAME="forward3"
+  PATH="/transferencias/modificacion.jsp" SHAPE="32,897,0,0"
+  TARGET="page3" TITLE="modificacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="firstLogin" NAME="forward4" PATH="/firstLogIn.jsp"
+  SHAPE="32,1009,0,0" TARGET="page4" TITLE="firstLogin" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="preguntasecreta" NAME="forward5"
+  PATH="/preguntas.jsp" SHAPE="32,1121,0,0" TARGET="page5"
+  TITLE="preguntasecreta" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="contrato" NAME="forward6"
+  PATH="/transferencias/contrato.jsp" SHAPE="32,1233,0,0" TARGET="page6"
+  TITLE="contrato" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="busqueda" NAME="forward7"
+  PATH="/servicios/transferencias.jsp" SHAPE="32,1345,0,0"
+  TARGET="page7" TITLE="busqueda" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="resultado" NAME="forward8"
+  PATH="/transferencias/aprobacion2.jsp" SHAPE="32,1457,0,0"
+  TARGET="page8" TITLE="resultado" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="ingresaClave" NAME="forward9"
+  PATH="/transferencias/clave.jsp" SHAPE="32,1569,0,0" TARGET="page9"
+  TITLE="ingresaClave" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="swift-consulta" NAME="forward10"
+  PATH="/swift/consulta.jsp" SHAPE="32,1681,0,0" TARGET="page10"
+  TITLE="swift-consulta" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="autorizar" NAME="forward11"
+  PATH="/servicios/aprobacion.jsp" SHAPE="32,1905,0,0" TARGET="page11"
+  TITLE="autorizar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="transfer" NAME="forward12"
+  PATH="/transferencias/transferencia.jsp" SHAPE="240,353,0,0"
+  TARGET="page12" TITLE="transfer" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="index" NAME="forward13" PATH="/index2.jsp"
+  SHAPE="32,2017,0,0" TARGET="page13" TITLE="index" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="aprobacion" NAME="forward14"
+  PATH="/transferencias/aprobacion.jsp" SHAPE="32,2129,0,0"
+  TARGET="page14" TITLE="aprobacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="error" NAME="forward15" PATH="/ib/systemError2.jsp"
+  SHAPE="32,2241,0,0" TARGET="page15" TITLE="error" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="swift-seleccion" NAME="forward16"
+  PATH="/swift/seleccion.jsp" SHAPE="32,2353,0,0" TARGET="page16"
+  TITLE="swift-seleccion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="modifica" NAME="forward17"
+  PATH="/transfer.do?mode=update" SHAPE="32,129,0,0" TARGET="action17"
+  TITLE="modifica" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="consulta" NAME="forward18"
+  PATH="/transferencias/consulta.jsp" SHAPE="32,2577,0,0"
+  TARGET="page17" TITLE="consulta" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="preguntaError" NAME="forward19"
+  PATH="/preguntasError.jsp" SHAPE="32,2689,0,0" TARGET="page18"
+  TITLE="preguntaError" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="aprobarContrato" NAME="forward20"
+  PATH="/transferencia.do" SHAPE="32,2801,0,0" TARGET="action8"
+  TITLE="aprobarContrato" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="motivoRechazo" NAME="forward21"
+  PATH="/transferencias/motivo.jsp" SHAPE="32,2913,0,0" TARGET="page19"
+  TITLE="motivoRechazo" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="logout" NAME="forward22" PATH="/logout.jsp"
+  SHAPE="32,3025,0,0" TARGET="page20" TITLE="logout" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="motivoModificacion" NAME="forward23"
+  PATH="/transferencias/motivo2.jsp" SHAPE="32,3137,0,0" TARGET="page21"
+  TITLE="motivoModificacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="start" NAME="forward24" PATH="/start.jsp"
+  SHAPE="32,3249,0,0" TARGET="page22" TITLE="start" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="errorAction" NAME="forward25" PATH="/systemdb.jsp"
+  SHAPE="32,785,0,0" TARGET="page2" TITLE="errorAction" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="unauthorized" NAME="forward26"
+  PATH="/ib/outservice.jsp" SHAPE="32,3361,0,0" TARGET="page23"
+  TITLE="unauthorized" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="persona" NAME="forward27"
+  PATH="/actualizacion/persona.jsp" SHAPE="32,3473,0,0" TARGET="page24"
+  TITLE="persona" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="mensajeError" NAME="forward28"
+  PATH="/ib/mensajeAdvertencia.jsp" SHAPE="32,3729,0,0" TARGET="page25"
+  TITLE="mensajeError" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#query3" NAME="action0" PATH="/query3"
+  SHAPE="32,3841,0,0" TITLE="consultaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="modificacion"
+   TARGET="page26" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@page" NAME="forward1" PATH="modificacion"
+   TARGET="page26" TITLE="@page" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#save#persona#juridica" NAME="action1"
+  PATH="/save/persona/juridica" SHAPE="32,3985,0,0" TITLE="frmPersona"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/actualizacion/resultado.jsp" TARGET="page27" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#query2" NAME="action2" PATH="/query2"
+  SHAPE="32,4209,0,0" TITLE="consultaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="aprobacion"
+   TARGET="page28" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@page" NAME="forward1" PATH="aprobacion"
+   TARGET="page28" TITLE="@page" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#populate#persona" NAME="action3"
+  PATH="/populate/persona" SHAPE="32,3585,0,0" TITLE="frmPersona"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="empresa" NAME="forward0"
+   PATH="/actualizacion/empresa.jsp" TARGET="page29" TITLE="empresa"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="persona" NAME="forward1"
+   PATH="/actualizacion/persona.jsp" TARGET="page24" TITLE="persona"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#login" NAME="action4" PATH="/login"
+  SHAPE="32,4833,0,0" TITLE="LoginForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#autoriza" NAME="action5" PATH="/autoriza"
+  SHAPE="32,4353,0,0" TITLE="autorizarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@page" NAME="forward0" PATH="resultado"
+   TARGET="page30" TITLE="@page" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#save#persona#natural" NAME="action6"
+  PATH="/save/persona/natural" SHAPE="32,4097,0,0" TITLE="frmPersona"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/actualizacion/resultado.jsp" TARGET="page27" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consulta#swift" NAME="action7"
+  PATH="/consulta/swift" SHAPE="32,1793,0,0" TITLE="swiftForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/swift/consulta.jsp" TARGET="page10" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#transferencia" NAME="action8" PATH="/transferencia"
+  SHAPE="240,2817,0,0" TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="forward"
+   TARGET="page31" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#dian#recibo" NAME="action9" PATH="/dian/recibo"
+  SHAPE="240,465,0,0" TITLE="geneForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@type" NAME="forward0" PATH="recibo"
+   TARGET="page32" TITLE="@type" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#update" NAME="action10" PATH="/update"
+  SHAPE="240,4849,0,0" TITLE="modificarForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#preguntas" NAME="action11" PATH="/preguntas"
+  SHAPE="448,4833,0,0" TITLE="preguntasForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#user" NAME="action12" PATH="/user"
+  SHAPE="656,4849,0,0" TITLE="userForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#query" NAME="action13" PATH="/query"
+  SHAPE="32,4465,0,0" TITLE="consultaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="consulta"
+   TARGET="page33" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@page" NAME="forward1" PATH="consulta"
+   TARGET="page33" TITLE="@page" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#clave" NAME="action14" PATH="/clave"
+  SHAPE="32,4552,100,41" TITLE="claveForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="ok"
+   TARGET="page34" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mensaje#swift" NAME="action15" PATH="/mensaje/swift"
+  SHAPE="32,2465,0,0" TITLE="swiftForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/swift/seleccion.jsp" TARGET="page16" TITLE="success"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#aceptacion" NAME="action16" PATH="/aceptacion"
+  SHAPE="16,4720,113,41" TITLE="contratoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="ok"
+   TARGET="page34" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#transfer" NAME="action17" PATH="/transfer"
+  SHAPE="240,145,0,0" TITLE="transferForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="recibo" NAME="forward0"
+   PATH="/transferencias/recibo.jsp" TARGET="page0" TITLE="recibo"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="form" NAME="forward1"
+   PATH="/transferencias/transferencia.jsp" TARGET="page12" TITLE="form"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@type" NAME="forward2"
+   PATH="com.arango.internet.banking.TransferenciaInternacional"
+   TARGET="page35" TITLE="@type" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="@page" NAME="forward3" PATH="recibo"
+   TARGET="page32" TITLE="@page" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/transferencias/recibo.jsp"
+  SHAPE="496,18,0,0" SUBTYPE="jsp" TITLE="recibo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/mant/users.jsp" SHAPE="240,578,0,0"
+  SUBTYPE="jsp" TITLE="users.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2" PATH="/systemdb.jsp" SHAPE="256,690,0,0"
+  SUBTYPE="jsp" TITLE="systemdb.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3" PATH="/transferencias/modificacion.jsp"
+  SHAPE="240,914,0,0" SUBTYPE="jsp" TITLE="modificacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4" PATH="/firstLogIn.jsp" SHAPE="240,1026,0,0"
+  SUBTYPE="jsp" TITLE="firstLogIn.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5" PATH="/preguntas.jsp" SHAPE="240,1138,0,0"
+  SUBTYPE="jsp" TITLE="preguntas.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6" PATH="/transferencias/contrato.jsp"
+  SHAPE="240,1250,0,0" SUBTYPE="jsp" TITLE="contrato.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page7" PATH="/servicios/transferencias.jsp"
+  SHAPE="240,1362,0,0" SUBTYPE="jsp" TITLE="transferencias.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8" PATH="/transferencias/aprobacion2.jsp"
+  SHAPE="240,1474,0,0" SUBTYPE="jsp" TITLE="aprobacion2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page9" PATH="/transferencias/clave.jsp"
+  SHAPE="240,1586,0,0" SUBTYPE="jsp" TITLE="clave.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page10" PATH="/swift/consulta.jsp"
+  SHAPE="256,1698,0,0" SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page11" PATH="/servicios/aprobacion.jsp"
+  SHAPE="240,1922,0,0" SUBTYPE="jsp" TITLE="aprobacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page12" PATH="/transferencias/transferencia.jsp"
+  SHAPE="496,130,0,0" SUBTYPE="jsp" TITLE="transferencia.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page13" PATH="/index2.jsp" SHAPE="240,2034,0,0"
+  SUBTYPE="jsp" TITLE="index2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page14" PATH="/transferencias/aprobacion.jsp"
+  SHAPE="240,2146,0,0" SUBTYPE="jsp" TITLE="aprobacion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page15" PATH="/ib/systemError2.jsp"
+  SHAPE="240,2258,0,0" SUBTYPE="jsp" TITLE="systemError2.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page16" PATH="/swift/seleccion.jsp"
+  SHAPE="256,2370,0,0" SUBTYPE="jsp" TITLE="seleccion.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page17" PATH="/transferencias/consulta.jsp"
+  SHAPE="240,2594,0,0" SUBTYPE="jsp" TITLE="consulta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page18" PATH="/preguntasError.jsp"
+  SHAPE="240,2706,0,0" SUBTYPE="jsp" TITLE="preguntasError.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page19" PATH="/transferencias/motivo.jsp"
+  SHAPE="240,2930,0,0" SUBTYPE="jsp" TITLE="motivo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page20" PATH="/logout.jsp" SHAPE="240,3042,0,0"
+  SUBTYPE="jsp" TITLE="logout.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page21" PATH="/transferencias/motivo2.jsp"
+  SHAPE="240,3154,0,0" SUBTYPE="jsp" TITLE="motivo2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page22" PATH="/start.jsp" SHAPE="240,3266,0,0"
+  SUBTYPE="jsp" TITLE="start.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page23" PATH="/ib/outservice.jsp"
+  SHAPE="240,3378,0,0" SUBTYPE="jsp" TITLE="outservice.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page24" PATH="/actualizacion/persona.jsp"
+  SHAPE="256,3490,0,0" SUBTYPE="jsp" TITLE="persona.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25" PATH="/ib/mensajeAdvertencia.jsp"
+  SHAPE="240,3746,0,0" SUBTYPE="jsp" TITLE="mensajeAdvertencia.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page26" PATH="modificacion" SHAPE="256,3858,0,0"
+  SUBTYPE="tile" TITLE="modificacion" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page27" PATH="/actualizacion/resultado.jsp"
+  SHAPE="256,4002,0,0" SUBTYPE="jsp" TITLE="resultado.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page28" PATH="aprobacion" SHAPE="256,4226,0,0"
+  SUBTYPE="tile" TITLE="aprobacion" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page29" PATH="/actualizacion/empresa.jsp"
+  SHAPE="256,3602,0,0" SUBTYPE="jsp" TITLE="empresa.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page30" PATH="resultado" SHAPE="240,4370,0,0"
+  SUBTYPE="tile" TITLE="resultado" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page31" PATH="forward" SHAPE="448,2802,0,0"
+  SUBTYPE="tile" TITLE="forward" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page32" PATH="recibo" SHAPE="496,450,0,0"
+  SUBTYPE="tile" TITLE="recibo" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page33" PATH="consulta" SHAPE="256,4482,0,0"
+  SUBTYPE="tile" TITLE="consulta" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page34" PATH="ok" SHAPE="256,4648,50,25"
+  SUBTYPE="tile" TITLE="ok" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page35"
+  PATH="com.arango.internet.banking.TransferenciaInternacional"
+  SHAPE="496,338,0,0" SUBTYPE="tile"
+  TITLE="com.arango.internet.banking.TransferenciaInternacional"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="admPreguntaSecretas" NAME="forward29"
+  PATH="/mant/pregsecretas.jsp" SHAPE="32,5057,0,0" TARGET="page37"
+  TITLE="admPreguntaSecretas" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page37" PATH="/mant/pregsecretas.jsp"
+  SHAPE="240,5169,0,0" SUBTYPE="jsp" TITLE="pregsecretas.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#claveToken" NAME="action18" PATH="/claveToken"
+  SHAPE="32,4632,100,41" TITLE="claveForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="@accion" NAME="forward0" PATH="ok"
+   TARGET="page34" TITLE="@accion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="ingresaClaveToken" NAME="forward30"
+  PATH="/token/claveToken.jsp" SHAPE="32,5505,0,0" TARGET="page36"
+  TITLE="ingresaClaveToken" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36" PATH="/token/claveToken.jsp"
+  SHAPE="240,5522,0,0" SUBTYPE="jsp" TITLE="claveToken.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="nuevoBeneficiario" NAME="forward31"
+  PATH="/token/autorizarBeneficiarioToken.jsp" SHAPE="32,5841,0,0"
+  TARGET="page39" TITLE="nuevoBeneficiario" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page39"
+  PATH="/token/autorizarBeneficiarioToken.jsp" SHAPE="240,5953,0,0"
+  SUBTYPE="jsp" TITLE="autorizarBeneficiarioToken.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="firmaTransaccion" NAME="forward32"
+  PATH="/token/firmaTransaccionToken.jsp" SHAPE="32,6289,0,0"
+  TARGET="page38" TITLE="firmaTransaccion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page38" PATH="/token/firmaTransaccionToken.jsp"
+  SHAPE="240,6306,0,0" SUBTYPE="jsp" TITLE="firmaTransaccionToken.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

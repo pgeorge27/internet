@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+	<global />
+	<formset>
+	
+	
+		<form name="claveForm">
+			<field property="clave" depends="required">
+				<arg0 key="tit.title.cambio.clave.especial"/>
+			</field>
+		</form>	
+		<form name="modificarForm">
+			<field property="indice" depends="required">
+				<arg0 key="lbl.transf.inter.seleccionar.transferencia"/>
+			</field>
+		</form>		
+		<form name="autorizarForm">
+			<field property="indice" depends="required">
+				<arg0 key="lbl.transf.inter.seleccionar.transferencia"/>
+			</field>						   
+		    <field property="tipo">
+				<arg0 key="lbl.transf.inter.seleccionar.transferencia"/>
+			</field>
+		</form>
+		<form name="consultaForm">
+			<field property="cliente" depends="required">
+				<arg0 key="lbl.transf.inter.cliente"/>
+			</field>					
+		   
+		    <field property="estado">
+				<arg0 key="lbl.transf.inter.estado"/>
+			</field>
+		</form>
+	
+		<form name="transferForm">
+		<!-- Head -->
+			<field property="plantilla">
+				<arg0 key="lbl.transf.inter.plantilla"/>
+			</field>
+			<field property="fecha">
+				<arg0 key="lbl.transf.inter.fecha"/>
+			</field>
+			<field property="guardaOperacionFrecuente">
+				<arg0 key="lbl.transf.inter.guardar.frecuente"/>
+			</field>
+		<!-- Head -->
+		
+		<!-- Emisor -->			
+			<field property="nombreEmisor">
+				<arg0 key="lbl.transf.inter.nombreEmisor"/>
+			</field>					
+		    <field property="cuentaDb" depends="required">
+				<arg0 key="lbl.transf.inter.cuenta"/>
+			</field>					
+		   				
+		    <field property="cantidad" depends="required, integer">
+				<arg0 key="lbl.transf.inter.cantidad"/>
+			</field>					
+		    <field property="centavos" depends="integer">
+				<arg0 key="lbl.transf.inter.centavos"/>
+			</field>					
+		    <field property="moneda" depends="required">
+				<arg0 key="lbl.transf.inter.moneda"/>
+			</field>	
+			<field property="descMoneda">
+				<arg0 key="lbl.transf.inter.moneda"/>
+			</field>
+		<!-- Emisor -->	
+		
+		<!-- Beneficiario -->					
+		    <field property="nombreBeneficiario" depends="required,mask">
+		    	<msg
+			        name="mask"
+			        key="lbl.transf.inter.nombreBeneficiario.formato"/>
+				<arg0 key="lbl.transf.inter.nombreBeneficiario"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9 .;,\-/']*$</var-value>
+			    </var>
+			</field>					
+		    <field property="cuentaBeneficiario" depends="required,mask">
+		    	<msg
+			        name="mask"
+			        key="lbl.transf.inter.cuentaBeneficiario.formato"/>
+				<arg0 key="lbl.transf.inter.cuentaBeneficiario"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9]*$</var-value>
+			    </var>
+			</field>					
+		    <field property="direccionBeneficiario" depends="mask">
+		    	<msg
+			        name="mask"
+			        key="lbl.transf.inter.direccionBeneficiario.formato"/>
+				<arg0 key="lbl.transf.inter.direccionBeneficiario"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9 .\n;,\-/']*$</var-value>
+			    </var>
+			</field>					
+		    <field property="ciudadBeneficiario" depends="mask">
+		    	<msg
+			        name="mask"
+			        key="lbl.transf.inter.ciudadBeneficiario.formato"/>
+				<arg0 key="lbl.transf.inter.ciudadBeneficiario"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9 .\n;,\-/']*$</var-value>
+			    </var>
+			</field>					
+		    <field property="paisBeneficiario">
+				<arg0 key="lbl.transf.inter.paisBeneficiario"/>
+			</field>	
+		<!-- Beneficiario -->
+		
+		<!-- Banco Beneficiario -->
+		    <field property="bancoBeneficiario">
+				<arg0 key="lbl.transf.inter.bancoBeneficiario"/>
+			</field>	
+			<field property="tipoSWIFTBeneficiario">
+				<arg0 key="lbl.transf.inter.swiftBeneficiario"/>
+			</field>
+		    <field property="swiftBeneficiario">
+				<arg0 key="lbl.transf.inter.swiftBeneficiario"/>
+			</field>
+		    <field property="direccionBancoBeneficiario">
+				<arg0 key="lbl.transf.inter.direccionBancoBeneficiario"/>
+			</field>				
+		    <field property="ciudadBancoBeneficiario">
+				<arg0 key="lbl.transf.inter.ciudadBancoBeneficiario"/>
+			</field>					
+		    <field property="paisBancoBeneficiario">
+				<arg0 key="lbl.transf.inter.paisBancoBeneficiario"/>
+			</field>
+		<!-- Banco Beneficiario -->
+		
+		<!-- Banco Intermediario -->
+		    <field property="nombreBancoIntermediario">
+				<arg0 key="lbl.transf.inter.nombreBancoIntermediario"/>
+			</field>	
+			<field property="tipoSWIFTIntermediario">
+				<arg0 key="lbl.transf.inter.swiftBancoIntermediario"/>
+			</field>
+		    <field property="swiftBancoIntermediario">
+				<arg0 key="lbl.transf.inter.swiftBancoIntermediario"/>				
+			</field>					
+		    <field property="direccionBancoIntermediario">
+				<arg0 key="lbl.transf.inter.direccionBancoIntermediario"/>
+			</field>					
+		    <field property="cuentaBancoIntermediario">
+				<arg0 key="lbl.transf.inter.cuentaBancoIntermediario"/>
+			</field>					
+		    <field property="ciudadBancoIntermediario">
+				<arg0 key="lbl.transf.inter.ciudadBancoIntermediario"/>
+			</field>					
+		    <field property="paisBancoIntermediario">
+				<arg0 key="lbl.transf.inter.paisBancoIntermediario"/>
+			</field>					
+		<!-- Banco Intermediario -->    
+		    
+		<!-- Detalle de Pago -->
+			<field property="instrucciones" depends="mask">
+		    	<msg
+			        name="mask"
+			        key="lbl.transf.inter.detalle.pago.formato"/>
+				<arg0 key="lbl.transf.inter.instrucciones"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9 .\n;,\-/']*$</var-value>
+			    </var>
+			</field>					
+		    <field property="detallePago" depends="mask">
+				<arg0 key="lbl.transf.inter.detalle"/>
+				<var>
+			        <var-name>mask</var-name>
+			        <var-value>^[a-zA-Z0-9 .\n;,\-/']*$</var-value>
+			    </var>
+			</field>						    
+			<!-- Detalle de Pago -->
+		</form>
+		<form name="autorizacionMultipleForm">
+			<field property="indice" depends="required">
+				<arg0 key="lbl.compensacion.autorizar.seleccionar.indice"/>
+			</field>
+		</form>	
+		
+		<form name="rechazoMultipleForm">
+			<field property="indice" depends="required">
+				<arg0 key="lbl.compensacion.autorizar.seleccionar.indice"/>
+			</field>
+			<field property="motivo" depends="required">
+				<arg0 key="Motivo del rechazo" resource="false"/>
+			</field>
+		</form>	
+		
+		<!-- Parametros de la Cuenta y Datos del Representante -->
+		
+		<form name="parametroForm">
+			<field property="cuenta" depends="required">
+				<arg0 key="lbl.compensacion.parametro.cuenta"/>
+			</field>
+			<field property="cliente">
+				<arg0 key="lbl.compensacion.parametro.cliente"/>
+			</field>
+			<field property="tipoNumeracion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.tipo.numeracion"/>
+			</field>
+			<field property="formulario" depends="required">
+				<arg0 key="lbl.compensacion.parametro.formulario"/>
+			</field>
+			<field property="tipoPeriodo" depends="required">
+				<arg0 key="lbl.compensacion.parametro.tipo.periodo"/>
+			</field>
+			<field property="secuenciaInicial">
+				<arg0 key="lbl.compensacion.parametro.secuencia.inicial"/>
+			</field>
+			<field property="secuencia" depends="required">
+				<arg0 key="lbl.compensacion.parametro.secuencia.inicial"/>
+			</field>
+			<field property="diasAviso" depends="required">
+				<arg0 key="Dias para Aviso Banco de la República" resource="false"/>
+			</field>
+			<field property="diasAvisoDian" depends="required">
+				<arg0 key="Dias para Aviso Dian" resource="false"/>
+			</field>
+			<field property="ctaCompensacion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.cuenta.compensacion"/>
+			</field>
+			<!-- <field property="nombre" depends="required">
+				<arg0 key="lbl.compensacion.parametro.nombre" />
+			</field>  
+			<field property="identificacion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.identificacion" />
+			</field> 
+			<field property="tipoIdentificacion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.tipo.identificacion" />
+			</field> 
+			<field property="direccion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.direccion" />
+			</field> 
+			<field property="ciu" depends="required">
+				<arg0 key="lbl.compensacion.parametro.ciu" />
+			</field> 
+			<field property="ciudad" depends="required">
+				<arg0 key="lbl.compensacion.parametro.ciudad" />
+			</field> 
+			<field property="telefono" depends="required">
+				<arg0 key="lbl.compensacion.parametro.telefono" />
+			</field> 
+			<field property="email" depends="required, email">
+				<arg0 key="lbl.compensacion.parametro.email" />
+			</field> -->
+		</form>	
+		<form name="parametroRepresentanteForm">
+			<field property="cuenta" depends="required">
+				<arg0 key="lbl.compensacion.parametro.cuenta"/>
+			</field>		
+			<field property="nombre" depends="required">
+				<arg0 key="lbl.compensacion.parametro.nombre" />
+			</field>  
+			<field property="identificacion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.identificacion" />
+			</field> 
+			<field property="tipoIdentificacion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.tipo.identificacion" />
+			</field> 
+			<field property="direccion" depends="required">
+				<arg0 key="lbl.compensacion.parametro.direccion" />
+			</field> 
+			<field property="ciudad" depends="required">
+				<arg0 key="lbl.compensacion.parametro.ciudad" />
+			</field> 
+			<field property="telefono" depends="required">
+				<arg0 key="lbl.compensacion.parametro.telefono" />
+			</field> 
+			<field property="email" depends="required, email">
+				<arg0 key="lbl.compensacion.parametro.email" />
+			</field> 
+		</form>	
+		<form name="consultaEstadoForm">
+			<field property="cuenta" depends="required">
+				<arg0 key="lbl.cuentas"/>
+			</field>	
+			<field property="desde" depends="required">
+				<arg0 key="lbl.desde"/>
+			</field>
+			<field property="hasta" depends="required">
+				<arg0 key="lbl.hasta"/>
+			</field>
+		</form>
+		<form name="consultaEstadoForm10">
+			<field property="cuenta" depends="required">
+				<arg0 key="lbl.cuentas"/>
+			</field>
+			<field property="estado" depends="required">
+				<arg0 key="lbl.compensacion.consulta.estado"/>
+			</field>				
+		</form>
+		<form name="estadisticasForm">
+				
+			<field property="numeral" depends="required">
+				<arg0 key="lbl.numeral"/>
+			</field>
+			<field property="doc" depends="required">
+			 	<arg0 key="lbl.clase.documento"/>
+			</field>
+			<field property="desde" depends="required">
+				<arg0 key="lbl.desde"/>
+			</field>
+			<field property="hasta" depends="required">
+				<arg0 key="lbl.hasta"/>
+			</field>
+		</form>
+		<form name="consultaEstado2Form">
+			<field property="cuenta" depends="required">
+				<arg0 key="lbl.cuentas"/>
+			</field>	
+			<field property="desde" depends="required">
+				<arg0 key="lbl.desde"/>
+			</field>
+			<field property="hasta" depends="required">
+				<arg0 key="lbl.hasta"/>
+			</field>
+		</form>
+		
+	</formset>
+</form-validation>

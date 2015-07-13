@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config 
+	PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <data-sources>
+  </data-sources>
+  <form-beans>
+    <form-bean name="transferForm" type="com.arango.internet.banking.TransferenciaInternacional" />	
+    <form-bean name="consultaForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="cliente" type="java.lang.String" />
+	    <form-property name="estado" type="java.lang.String" />
+		<form-property name="tipo" type="java.lang.Integer" />
+		<form-property name="desde" type="java.lang.String" />
+	    <form-property name="hasta" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="autorizarForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="indice" type="java.lang.Integer" />
+	    <form-property name="tipo" type="java.lang.String" />
+	    <form-property name="motivo" type="java.lang.String" />	    
+	    <form-property name="a" type="java.lang.String" />
+	    <form-property name="r" type="java.lang.String" />
+	    <form-property name="clave" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="modificarForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="indice" type="java.lang.Integer" />
+	    
+	    <form-property name="ruta" type="java.lang.String" />
+	    <form-property name="cuenta" type="java.lang.String" />
+    </form-bean>  
+    <form-bean name="contratoForm" type="org.apache.struts.validator.DynaValidatorForm">	
+       <form-property name="foo" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="claveForm" type="org.apache.struts.validator.DynaValidatorForm">	
+       <form-property name="claveToken" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="preguntasForm" type="org.apache.struts.validator.DynaValidatorForm">
+    	 <form-property name="respuesta" type="java.lang.String" />
+    	  <form-property name="secuencia" type="java.lang.Long" />
+    	  <form-property name="indice" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="userForm" type="org.apache.struts.validator.DynaValidatorForm">	
+       <form-property name="username" type="java.lang.String" />
+       <form-property name="action" type="java.lang.String" />
+    </form-bean>    
+    
+    <form-bean name="LoginForm" type="org.apache.struts.validator.DynaValidatorForm">	
+       <form-property name="usuario" type="java.lang.String" />
+       <form-property name="clave" type="java.lang.String" />
+       <form-property name="servicio" type="java.lang.String" />
+    </form-bean>   
+   
+   
+    <form-bean name="swiftForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="cuenta" type="java.lang.String" />
+		<form-property name="tipoMensaje" type="java.lang.Integer" />
+		<form-property name="tipo" type="java.lang.Integer" />
+		<form-property name="desde" type="java.lang.String" />
+	    <form-property name="hasta" type="java.lang.String" />
+    </form-bean>
+  <!-- formulrios de actualizacion -->
+  	<form-bean name="frmPersona" type="com.arango.internet.controller.actions.form.PersonaForm"/>
+	<form-bean name="firstLoginToken" 		type="com.arango.internet.controller.form.token.FirstLoginTokenForm"/>
+	<form-bean name="cambioUsuarioToken" 	type="com.arango.internet.controller.form.token.CambioUsuarioTokenForm"/>
+	<!-- form bean para el formulario de cambio de imagen Edgar Sucre => 03/04/2012 -->
+	<form-bean name="cambioImagenToken" 	type="com.arango.internet.controller.form.token.CambioImagenTokenForm"/>
+	<form-bean name="activarPinToken" 		type="com.arango.internet.controller.form.token.ActivarPinTokenForm"/>
+	<form-bean name="preguntasSeguridad" 	type="com.arango.internet.controller.form.token.PreguntasSeguridadTokenForm"/>
+	
+	<!-- form bean para cambio de pregunta de seguridad Edgar Sucre => 10/04/21012 -->
+	<form-bean name="preguntaSeguridad" 	type="com.arango.internet.controller.form.token.PreguntaSeguridadTokenForm"/>
+	
+	<!-- form bean para el flujo de autenticacion robusta -->
+	<form-bean name="autenticacionRobusta" 		type="com.arango.internet.controller.form.autenticacion.AutenticacionRobustaForm"/>
+
+	<form-bean name="claveAcceso" type="org.apache.struts.validator.DynaValidatorForm" >
+	    <form-property name="oldPassw" type="java.lang.String" />
+	    <form-property name="newPassw" type="java.lang.String" />
+	    <form-property name="confirmPassw" type="java.lang.String" />	        
+  	</form-bean>
+  	
+  	<form-bean name="personalizarUsuario" type="com.arango.internet.controller.form.autenticacion.PersonalizarUsuarioForm"></form-bean>
+  	<form-bean name="seleccionImagen" type="com.arango.internet.controller.form.autenticacion.SeleccionImagenForm" />
+  	
+  	<!-- agrego formbean para el reporte de beneficiarios -->
+  	<form-bean name="listaPlantillaForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="cliente" type="java.lang.String" />
+    </form-bean>
+	
+ <form-bean name="cargaArchivo" type="com.arango.internet.controller.actions.multipagos.CargaArchivoForm">
+	 </form-bean>
+
+	 <form-bean name="consultaMultipago" type="com.arango.internet.controller.actions.multipagos.CargaArchivoForm">
+	      <form-property name="cliente" type="java.lang.String" />
+		 <form-property name="estado" type="java.lang.String" />
+		<form-property name="tipo" type="java.lang.Integer" />
+		<form-property name="desde" type="java.lang.String" />
+	    <form-property name="hasta" type="java.lang.String" />
+	 </form-bean>
+
+	<form-bean name="loginUsuariosF4" 		
+				type="com.arango.internet.controller.form.token.FirstLoginTokenForm"/>
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+    <forward name="recibo" path="/transferencias/recibo.jsp" redirect="false" />
+    <forward name="transfer" path="/transferencias/transferencia.jsp" redirect="false" />
+    <forward name="logout" path="/logout.jsp" redirect="false"/>
+    <forward name="error" path="/ib/systemError2.jsp" redirect="false" />
+    <forward name="unauthorized" path="/ib/outservice.jsp" redirect="false" />
+    <forward name="consulta" path="/transferencias/consulta.jsp" redirect="false" />    	
+    <forward name="busqueda" path="/servicios/transferencias.jsp" redirect="false" />
+    <forward name="aprobacion" path="/transferencias/aprobacion.jsp" redirect="false" />
+    <forward name="modificacion" path="/transferencias/modificacion.jsp" redirect="false" />
+    <forward name="resultado" path="/transferencias/aprobacion2.jsp" redirect="false" />
+    <forward name="contrato" path="/transferencias/contrato.jsp" redirect="false" />
+    <forward name="autorizar" path="/servicios/aprobacion.jsp" redirect="false" />
+    <forward name="ingresaClave" path="/transferencias/clave.jsp" redirect="false" /> 
+    <forward name="aprobarContrato" path="/transferencia.do" redirect="false" />
+    <forward name="admPreguntaSecretas" path="/mant/pregsecretas.jsp" redirect="false" />    
+    <forward name="motivoRechazo" path="/transferencias/motivo.jsp" redirect="false" />        
+    <forward name="motivoModificacion" path="/transferencias/motivo2.jsp" redirect="false" />        
+    <forward name="users" path="/mant/users.jsp" redirect="false" />      
+    <forward name="modifica" path="/transfer.do?mode=update" redirect="false" />      
+    <forward name="start" path="/start.jsp" redirect="false" />
+    <forward name="firstLogin" path="/firstLogIn.jsp" redirect="false" />
+    <forward name="index" path="/index2.jsp" redirect="false" />
+    <forward name="systemdb" path="/systemdb.jsp" redirect="false" />
+    <forward name="errorAction" path="/systemdb.jsp" redirect="false" />
+    <forward name="mensajeError" path="/ib/mensajeAdvertencia.jsp" redirect="false"/>
+    <forward name="recibo" path="/dian/elaborar/recibo.jsp" redirect="false"/>
+    <forward name="preguntasecreta" path="/preguntas.jsp" redirect="false"/>
+    <forward name="preguntaError" path="/preguntasError.jsp" redirect="false"/>
+    <forward name="swift-consulta" path="/swift/consulta.jsp" redirect="false"/>
+    <forward name="swift-seleccion" path="/swift/seleccion.jsp" redirect="false"/>
+    <!-- Forward Token -->
+    <forward name="ingresaClaveToken" path="/token/claveToken.jsp" redirect="false" />
+    <forward name="nuevoBeneficiario" path="/token/autorizarBeneficiarioToken.jsp" redirect="false" />
+    <forward name="firmaTransaccion" path="/token/firmaTransaccionToken.jsp" redirect="false" />
+    <forward name="errorToken" path="/token/errorToken.jsp" redirect="false" />
+    
+    <!-- añado forward para aprobacion masiva -->
+    <forward name="aprobacionMasiva" path="/transferencias/aprobacionMasiva.jsp" redirect="false" />
+
+    <!-- añado forward para aprobacion masiva -->
+    <forward name="resultadoMasivo" path="/transferencias/aprobacion2Masiva.jsp" redirect="false" />
+
+<!--     añado forward para nueva pantalla de aprobacion masiva -->
+    <forward name="nuevoBeneficiarioMasivo" path="/token/autorizarBeneficiarioTokenMasivo.jsp" redirect="false" />
+
+<!--     añado forward para nueva pantalla de aprobacion masiva -->    
+    <forward name="firmaTransaccionMasivo" path="/token/firmaTransaccionTokenMasivo.jsp" redirect="false" />
+    
+ 
+  <!-- formulrios de actualizacion -->
+  	<forward name="persona" path="/actualizacion/persona.jsp" />
+	<!--forwar de autorizacion de multipagos -->
+	
+	<forward name="AutorizaMultipagos" path="/multipagos/aprobacion.jsp" />
+    <forward name="nuevoBeneficiarioMasivoMultipago" path="/multipagos/autorizarBeneficiarioTokenMasivo.jsp" redirect="false" />
+    <forward name="nuevoBeneficiarioMultipago" path="/multipagos/autorizarBeneficiarioToken.jsp" redirect="false" />
+	<forward name="resultadoMasivoMultipago" path="/multipagos/aprobacion2Masiva.jsp" redirect="false" />
+	<forward name="firmaTransaccionMasivoMultipago" path="/multipagos/firmaTransaccionTokenMasivo.jsp" redirect="false" />
+    <forward name="firmaTransaccionMultipago" path="/multipagos/firmaTransaccionToken.jsp" redirect="false" />
+    <forward name="motivoRechazoMultipago" path="/multipagos/motivo.jsp" redirect="false" />        
+    <forward name="motivoModificacionMultipago" path="/multipagos/motivo2.jsp" redirect="false" />        
+    <forward name="resultadoMultipago" path="/multipagos/aprobacion2.jsp" redirect="false" />
+	<!--fin  de autorizacion de multipagos -->
+ 
+  </global-forwards>
+  
+  <action-mappings>
+	<action path="/mensaje/swift" name="swiftForm" 
+    		type="com.arango.internet.controller.actions.PopulateSWIFTLinkAction" 
+    		scope="request" input="swift-seleccion">
+      <forward name="success" path="/swift/seleccion.jsp" />
+    </action>	
+		
+    <action path="/consulta/swift" name="swiftForm" 
+    		type="com.arango.internet.controller.actions.SWIFTLinkAction" 
+    		scope="request" input="swift-seleccion">
+      <forward name="success" path="/swift/consulta.jsp" />
+    </action>
+    		
+  	<action path="/login" name="LoginForm" type="com.arango.internet.controller.actions.SignonAction" scope="request" input="index">
+    </action>
+    
+    <action path="/user" name="userForm" type="com.arango.internet.controller.actions.HabilitarAction" scope="request" input="users">
+    </action>  
+    <action path="/transfer" name="transferForm" type="com.arango.internet.controller.actions.TransferInternacionalAction" scope="request" input="transfer">
+      <forward name="form" path="/transferencias/transferencia.jsp" />
+      <forward name="@type" path="com.arango.internet.banking.TransferenciaInternacional" />      
+	  <forward name="recibo" path="/transferencias/recibo.jsp" />
+      <forward name="@page" path="recibo" />
+       <forward name="newPlantilla" path="/transferencias/creacionOK.jsp" />
+    </action>
+    
+    <action path="/query" name="consultaForm" type="com.arango.internet.controller.actions.ConsultaTransferenciaAction" scope="request" input="busqueda">
+      <forward name="@page" path="consulta" />
+      <forward name="@accion" path="consulta" />
+    </action>
+    
+    <action path="/update" name="modificarForm" type="com.arango.internet.controller.actions.ModificacionAction" scope="request" input="modificacion">
+    </action>
+    
+    <action path="/preguntas" name="preguntasForm" type="com.arango.internet.controller.actions.ValidarPreguntasAction" scope="request" input="preguntasForm">
+    </action>
+    
+  	<action path="/query2" name="consultaForm" type="com.arango.internet.controller.actions.ConsultaTransferenciaAction" scope="request" input="autorizar">
+      <forward name="@page" path="aprobacion" />
+      <forward name="@accion" path="aprobacion" />
+    </action>
+    
+    <action path="/query3" name="consultaForm" type="com.arango.internet.controller.actions.ConsultaTransferenciaAction" scope="request" input="autorizar">
+      <forward name="@page" path="modificacion" />
+      <forward name="@accion" path="modificacion" />
+    </action>
+    
+  	<action path="/autoriza" name="autorizarForm" type="com.arango.internet.controller.actions.AutorizadorAction" scope="request" input="aprobacion">
+      <forward name="@page" path="resultado" />
+    </action>
+    
+  	<action path="/transferencia" name="contratoForm" type="com.arango.internet.controller.actions.ContratoAction" scope="request" input="contrato">
+  	   <forward name="@accion" path="forward" />
+    </action>
+    	
+    <action path="/aceptacion" name="contratoForm" type="com.arango.internet.controller.actions.ContratoAction" scope="request" input="contrato">
+    	<forward name="@accion" path="ok" />
+    </action>
+    <action path="/clave" name="claveForm" type="com.arango.internet.controller.actions.IngresaClaveAction" scope="request" input="ingresaClave" validate="false">
+    	<forward name="@accion" path="ok" />
+    </action>  
+    
+    <action path="/claveToken" name="claveForm" type="com.arango.internet.controller.actions.IngresaClaveTokenAction" scope="request" validate="false" input="ingresaClaveToken">
+    	<forward name="@accion" path="ok" />
+    </action>    
+    
+    <action path="/dian/recibo" name="geneForm" type="com.arango.internet.controller.actions.compensacion.dian.MuestraMensajeAction" scope="request" input="recibo">
+    <forward name="@type" path="recibo"/>
+    </action>
+    <!-- formulrios de actualizacion -->
+    <action name="frmPersona" path="/populate/persona" scope="request" 
+    		type="com.arango.internet.controller.actions.PopulatePersonaAction">
+		<forward name="persona" path="/actualizacion/persona.jsp" />
+		<forward name="empresa" path="/actualizacion/empresa.jsp" />
+	</action>
+	<action name="frmPersona" path="/save/persona/natural" scope="request" input="/actualizacion/persona.jsp"
+			type="com.arango.internet.controller.actions.SavePersonaNaturalAction">
+		<forward name="success" path="/actualizacion/resultado.jsp" />
+	</action>
+	<action name="frmPersona" path="/save/persona/juridica" scope="request" input="/actualizacion/empresa.jsp"
+			type="com.arango.internet.controller.actions.SavePersonaJuridicaAction">
+		<forward name="success" path="/actualizacion/resultado.jsp" />
+	</action>
+	 
+    <action name="firstLoginToken"  path="/firstLoginToken"  scope="session" type="com.arango.internet.controller.actions.token.FirstLoginToken" validate="false" input="">
+    	<forward name="cambioUsuario" 		path="/token/firstLogin/cambioUsuario.jsp"/>
+    	<forward name="cambioImagen" 		path="/token/firstLogin/cambioImagen.jsp"/>
+    	<forward name="activarPin" 			path="/token/firstLogin/activarPinSeguridad.jsp"/>
+    	<forward name="activarDispositivo" 	path="/token/activarDispositivo.jsp"/>
+    	<forward name="preguntasSeguridad" 	path="/token/firstLogin/preguntasSeguridad.jsp"/>
+    	<forward name="cargaInformacion" 	path="/cargaInformacion.do"/>
+    </action>
+     
+    <action name="cambioUsuarioToken"  			path="/cambioUsuarioToken"  scope="session" type="com.arango.internet.controller.actions.token.CambioUsuarioTokenAction" validate="false" input="">
+    	<forward name="cambioUsuario" 			path="/token/firstLogin/cambioUsuario.jsp"/>
+    	<forward name="cambioUsuarioForm" 		path="/token/firstLogin/cambioUsuarioForm.jsp"/>
+    	<forward name="cambioUsuarioSuccess"	path="/token/firstLogin/cambioUsuarioSuccess.jsp"/>
+    </action>
+    
+    <action name="cambioImagenToken"  			path="/cambioImagenToken"  scope="session" type="com.arango.internet.controller.actions.token.CambioImagenTokenAction" validate="false" input="">
+    	<forward name="cambioImagen" 			path="/token/firstLogin/cambioImagen.jsp"/>
+    	<forward name="cambioImagenSeleccion" 	path="/token/firstLogin/cambioImagenSeleccion.jsp"/>
+    	<forward name="cambioImagenNombre"		path="/token/firstLogin/cambioImagenNombre.jsp"/>
+    	<forward name="cambioImagenSuccess"		path="/token/firstLogin/cambioImagenSuccess.jsp"/>
+    </action>
+    <action name="activarPinToken"  					path="/activarPinToken"  scope="session" type="com.arango.internet.controller.actions.token.ActivarPinTokenAction" validate="false" input="">
+    	<forward name="activarPinSeguridad" 			path="/token/firstLogin/activarPinSeguridad.jsp"/>
+    	<forward name="primeraActivacionDispositivo" 	path="/token/activarDispositivo.jsp"/>
+    	<forward name="marcaAgua" 						path="/token/firstLogin/ConfirImgToken.jsp"/>
+    	
+    </action>
+    <action name="preguntaSeguridad"  					path="/preguntaSeguridad"  scope="session" type="com.arango.internet.controller.actions.token.PreguntaSeguridadTokenAction" validate="false" input="">
+    	<forward name="preguntasSeguridad" 				path="/token/firstLogin/preguntasSeguridad.jsp"/>
+    	<forward name="preguntasSeguridadForm" 			path="/token/firstLogin/preguntasSeguridadForm.jsp"/>
+   		<forward name="perfilActualizado" 				path="/token/perfilActualizado.jsp"/>
+    	<forward name="showLogout" 						path="/token/showLogout.jsp"/>
+    	<forward name="cargaInformacion"				path="/cargaInformacion.do"/>
+    	
+    </action>
+    
+    <action name="frmPersona" 							path="/cargaInformacion" scope="request" type="com.arango.internet.controller.actions.token.CargaInformacionTokenAction" validate="false">
+    	<forward name="informacionPersona"				path="/token/firstLogin/informacionPersona.jsp"/>
+    	<forward name="informacionEmpresa"				path="/token/firstLogin/informacionEmpresa.jsp"/>
+    	<forward name="informacionPersonaAdm"			path="/token/informacionPersonaAdm.jsp"/>
+    	<forward name="informacionEmpresaAdm"			path="/token/informacionEmpresaAdm.jsp"/>
+    	<forward name="welcome"							path="/token/updateWelcome.jsp"/>
+    </action> 
+        
+   	<action name="frmPersona" path="/salvaInformacionPersona" scope="request" type="com.arango.internet.controller.actions.SavePersonaNaturalAction" input="/token/firstLogin/informacionPersona.jsp">
+		<forward name="cargaInformacion" path="/ib/cambioExitoso.jsp"/>
+		<forward name="success" path="/preguntaSeguridad.do"/>
+	</action>
+	<action name="frmPersona" path="/salvaInformacionEmpresa" scope="request" type="com.arango.internet.controller.actions.SavePersonaJuridicaAction" input="/token/firstLogin/informacionEmpresa.jsp">
+		<forward name="cargaInformacion" path="/ib/cambioExitoso.jsp"/>
+		<forward name="success" path="/preguntaSeguridad.do"/>
+	</action>
+	
+    <action name="autenticacionRobusta" 			path="/autenticacionRobusta" scope="session" type="com.arango.internet.controller.actions.autenticacion.AutenticacionRobustaAction" validate="false">
+    	<forward name="introduccion" 				path="/token/autenticacionRobusta/introduccion.jsp"/>
+    	<forward name="claveAcceso" 				path="/token/autenticacionRobusta/claveAcceso.jsp" />
+    	<forward name="askPersonalizarUsuario" 		path="/token/autenticacionRobusta/askPersonalizarUsuario.jsp" />
+    	<forward name="seleccionImagen" 			path="/token/autenticacionRobusta/seleccionImagen.jsp" />
+    	<forward name="activarPin" 					path="/token/autenticacionRobusta/activarPinSeguridad.jsp"/>
+    	<forward name="registroDispositivo" 		path="/token/activarDispositivo.jsp" />
+    	<forward name="preguntasSeguridad" 			path="/token/autenticacionRobusta/preguntasSeguridadForm.jsp"/>
+    	<forward name="cargaInformacion" 			path="/cargaInformacion.do"/>
+    </action>
+    
+    <action name="claveAcceso" 						path="/claveAcceso" scope="session" type="com.arango.internet.controller.actions.autenticacion.ClaveAccesoAction" validate="false">
+    	<forward name="claveAcceso" 				path="/token/autenticacionRobusta/claveAcceso.jsp" />
+    	<forward name="success" 					path="/token/autenticacionRobusta/claveAccesoSuccess.jsp" />
+    	<forward name="reseted" 					path="/firstLoginOk.jsp" />
+    	<forward name="LGF4" 						path="/token/LGF4/claveAccesoSuccess.jsp" />
+    </action>
+
+    
+    
+    <action name="personalizarUsuario" 				path="/personalizarUsuario" scope="session" type="com.arango.internet.controller.actions.autenticacion.PersonalizarUsuarioAction" validate="false">
+    	<forward name="askPersonalizarUsuario" 		path="/token/autenticacionRobusta/askPersonalizarUsuario.jsp" />
+    	<forward name="personalizarUsuario" 		path="/token/autenticacionRobusta/personalizarUsuario.jsp" />    	
+    	<forward name="seleccionImagen" 			path="/token/autenticacionRobusta/seleccionImagen.jsp" />
+    	<forward name="success" 					path="/token/autenticacionRobusta/personalizarUsuarioSuccess.jsp" />
+   		<forward name="askPersonalizarUsuarioLGF4"	path="/token/LGF4/askPersonalizarUsuario.jsp" />
+   		<forward name="seleccionImagenLGF4" 		path="/token/LGF4/seleccionImagen.jsp" />
+   		<forward name="personalizarUsuarioLGF4" 	path="/token/LGF4/personalizarUsuario.jsp" />    	
+    	<forward name="successLGF4" 				path="/token/LGF4/personalizarUsuarioSuccess.jsp" />
+     </action> 
+
+    
+    <action name="seleccionImagen" 				path="/seleccionImagen" scope="session" type="com.arango.internet.controller.actions.autenticacion.SeleccionImagenAction" validate="false">
+    	<forward name="seleccionImagen" 		path="/token/autenticacionRobusta/seleccionImagen.jsp" />
+    	<forward name="confirmar" 				path="/token/autenticacionRobusta/confirmarImagen.jsp" />
+    	<forward name="success" 				path="/token/autenticacionRobusta/seleccionImagenSuccess.jsp" />
+   		<forward name="seleccionImagenLGF4" 	path="/token/LGF4/seleccionImagen.jsp" />
+    	<forward name="confirmarLGF4" 			path="/token/LGF4/confirmarImagen.jsp" />
+    	<forward name="successLGF4" 			path="/token/LGF4/seleccionImagenSuccess.jsp" />
+    </action>
+    
+    <action name="activarPinToken" 						path="/activarPin" scope="session" type="com.arango.internet.controller.actions.autenticacion.ActivarPinAutenticacionAction" validate="false">
+    	<forward name="activarPin" 						path="/token/autenticacionRobusta/activarPinSeguridad.jsp"/>
+    	<forward name="primeraActivacionDispositivo" 	path="/token/activarDispositivo.jsp"/>
+		<forward name="preguntasSeguridad" 				path="/token/autenticacionRobusta/preguntasSeguridadForm.jsp"/>
+    </action>
+    
+<!--     <action name="activarPinToken" 					path="/registroDispositivo" scope="session" type="com.arango.internet.controller.actions.autenticacion.ActivarPinAutenticacionAction" validate="false"> -->
+<!--     	<forward name="activarPin" 						path="/token/autenticacionRobusta/activarPinSeguridad.jsp"/> -->
+<!--     	<forward name="primeraActivacionDispositivo" 	path="/token/autenticacionRobusta/activarToken.jsp"/> -->
+<!--     	<forward name="segundaActivacionDispositivo"	path="/token/autenticacionRobusta/activarToken2.jsp"/>		 -->
+<!--     </action> -->
+    
+    
+    <action name="preguntaSeguridad"  					path="/preguntaSeguridadAutenticacion"  scope="session" type="com.arango.internet.controller.actions.token.PreguntaSeguridadAutenticacionAction" validate="false" input="">
+    	<forward name="preguntasSeguridad" 				path="/token/autenticacionRobusta/preguntasSeguridadForm.jsp"/>    	
+    	<forward name="perfilActualizado" 				path="/token/perfilActualizado.jsp"/>
+    	<forward name="showLogout" 						path="/token/showLogout.jsp"/>
+    </action> 
+    
+    <!-- flujo para reactivacion de pin del token -->
+    
+    <action name="activarPinToken" path="/reactivaPinToken" scope="session" type="com.arango.internet.controller.actions.token.RectivarPinTokenAction" validate="false" input="">
+    	<forward name="reactivar" 						path="/token/reactivarPinSeguridad.jsp"/>
+    	<forward name="perfilActualizado" 				path="/token/perfilActualizado.jsp"/>
+    	<forward name="showLogout" 						path="/token/showLogout.jsp"/>
+    </action>
+    
+    <!-- flujo para reactivacion de pregunta de seguridad-->
+    
+    <action name="preguntaSeguridad" path="/reactivaPreguntasSeguridad" scope="session" type="com.arango.internet.controller.actions.token.ReactivarPreguntaSeguridadTokenAction" validate="false" input="">
+    	<forward name="preguntasSeguridad" 				path="/token/firstLogin/preguntasSeguridadForm.jsp"/>
+    </action>
+    
+   <!-- agrego action para llenar la lista de clientes para el reporte de beneficiarios aprobados -->
+   <action name="listaPlantillaForm" path="/consultaAprovados"
+    		type="com.arango.internet.controller.actions.compensacion.ConsultaAprovadosAction" 
+    		validate="false"  scope="request" input="">
+    	<forward name="report" path="/do.reporteBeneficiariosAprobados"/>
+    	<forward name="success" path="/token/listClientes.jsp"/>
+    </action>
+     
+    <action name="seleccionImagen"  			path="/cambioImagenAdm"  scope="session" type="com.arango.internet.controller.actions.CambioImagenAdmAction" validate="false" input="">
+    	<forward name="cambioImagenSeleccionAdm" 	path="/mant/AdminIMG.jsp"/>
+    </action>
+ <!--    <action path="/firstLoginToken" forward="/token/firstLogin/cambioUsuario.jsp"/>-->
+    
+    <!-- Agrego paso en el flujo basico para el cambio de usuario -->
+    <action name="cambioUsuarioToken"  			path="/cambioUsuarioBasico"  scope="session" type="com.arango.internet.controller.actions.token.CambioUsuarioBasicoAction" validate="false" input="">
+    	<forward name="cambioUsuario" 			path="/cambioUsuario.jsp"/>
+    	<forward name="cambioUsuarioForm" 		path="/cambioUsuarioForm.jsp"/>
+    	<forward name="cambioUsuarioSuccess"	path="/cambioUsuarioSuccess.jsp"/>
+    	<forward name="cambioImagen"			path="/firstLogInSC.jsp"/>
+    </action>
+		<!-- Parte de Multipagos -->
+     <action name="cargaArchivo"  		path="/multipagos/verificacionArchivo"  scope="session" 
+			type="com.arango.internet.controller.actions.multipagos.CargaArchivoMultiPagos" validate="false" input="">
+			<forward name="success"	path="/multipagos/verificacionXLote.jsp"/>
+			<forward name="ErrorPage"  path="/multipagos/CargaArchivo.jsp"/>
+    </action>
+	<action name="cargaArchivo"  		path="/multipagos/cargaArchivo"  scope="session" 
+			type="com.arango.internet.controller.actions.multipagos.CargaArchivoAbanks" validate="false" input="">
+			<forward name="success"	path="/multipagos/mensaje.jsp"/>
+			<forward name="errorPage"	path="/multipagos/mensaje2.jsp"/>
+    </action>
+	
+	<action name="consultaForm"  		path="/multipagos/Consulta/autorizaciones"  scope="session" 
+			type="com.arango.internet.controller.actions.multipagos.ConsultaTranferenciasMultipago" validate="false" input="">
+			<forward name="aprobacion"	path="/multipagos/aprobacion.jsp"/>
+			<forward name="consulta"	path="/multipagos/rconsultaMultipagos.jsp"/>
+    </action>
+	<action name="consultaForm"  		path="/multipagos/autorizacion"  scope="session" 
+			type="com.arango.internet.controller.actions.multipagos.ConsultaTranferenciasMultipago" validate="false" input="">
+			<forward name="aprobacion"	path="/multipagos/aprobacion.jsp"/>
+			<forward name="consulta"	path="/multipagos/rconsultaMultipagos.jsp"/>
+    </action>
+	
+	<action path="/multipago/autoriza" name="autorizarForm" scope="request" input="aprobacion"
+			type="com.arango.internet.controller.actions.multipagos.AutorizacionTranferenciasMultipagos" >
+      <forward name="@page" path="resultado" />
+    </action>
+    <!-- fin parte multipagos  -->
+	<!-- flujo 4 login -->    
+     <action name="loginUsuariosF4"  path="/loginUsuariosF4"  scope="session" type="com.arango.internet.controller.actions.token.FirstLoginToken" validate="false" input="">
+    	<forward name="cambioclave" 		path="/token/LGF4/claveAcceso.jsp"/>
+    	<forward name="cambioUsuario" 		path="/token/LGF4/cambioUsuario.jsp"/>
+    	<forward name="cambioImagen" 		path="/token/LGF4/seleccionImagen.jsp"/>
+    	<forward name="preguntasSeguridad" 	path="/token/LGF4/preguntasSeguridadForm.jsp"/>
+   </action>
+		
+
+  </action-mappings>
+  
+  <controller contentType="text/html; charset=ISO-8859-1">
+    <set-property property="inputForward" value="true" />
+  </controller>
+  
+  <message-resources parameter="com.arango.common.util.i18n.MessagesBundle"  null="false"/>
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml" />
+  </plug-in>
+</struts-config>

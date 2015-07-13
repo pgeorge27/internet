@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport  name="DeclaracionImport" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="10" rightMargin="10" topMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="REGISTROS" class="java.lang.String"/>
+	<field name="CAMPO1" class="java.lang.String"/>
+	<field name="CAMPO2" class="java.lang.String"/>
+	<field name="CAMPO3" class="java.lang.String"/>
+	<field name="CAMPO4" class="java.lang.String"/>
+	<field name="CAMPO5" class="java.lang.String"/>
+	<title>
+		<band height="69" >
+			<staticText>
+				<reportElement x="116" y="3" width="356" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[INFORMACION POR DECLARACION DE IMPORTACION]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="3" width="80" height="50"/>
+				<imageExpression><![CDATA["../../images/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16" >
+			<staticText>
+				<reportElement x="1" y="2" width="91" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Fecha Formulario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="2" width="82" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No. Consecutivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="2" width="153" height="13"/>
+				<textElement/>
+				<text><![CDATA[No. Declaración de Importación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="2" width="85" height="13"/>
+				<textElement/>
+				<text><![CDATA[Año Declaración]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="2" width="68" height="13"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Valor USD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" >
+			<textField>
+				<reportElement x="116" y="2" width="82" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CAMPO2} != null ? $F{CAMPO2} : "-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="1" width="85" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CAMPO4} != null ? $F{CAMPO4} : "-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="1" width="79" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{CAMPO5} != null ? $F{CAMPO5} : "-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="2" width="153" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CAMPO3} != null ? $F{CAMPO3} : "-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="2" width="91" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CAMPO1} != null ? $F{CAMPO1} : "-"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="31" >
+			<staticText>
+				<reportElement x="349" y="11" width="113" height="16"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Cantidad de Registros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="472" y="11" width="100" height="16"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{REGISTROS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

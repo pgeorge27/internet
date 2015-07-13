@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<values>
+<row key="AFA" value="Afganistán"/>
+<row key="THB" value="Baht de Tailandia"/>
+<row key="PAB" value="Balboa de Panamá"/>
+<row key="ETB" value="Birr de Etiopia"/>
+<row key="VEB" value="Bolívar de Venezuela"/>
+<row key="BOB" value="Boliviano de Bolivia"/>
+<row key="GHC" value="Cedi de Ghana"/>
+<row key="KES" value="Chelín de Kenya"/>
+<row key="SOS" value="Chelín de Somalia"/>
+<row key="TZS" value="Chelín de Tanzania"/>
+<row key="UGX" value="Chelín de Uganda"/>
+<row key="CRC" value="Colon de Costa Rica"/>
+<row key="SVC" value="Colon de El Salvador"/>
+<row key="NIO" value="Córdoba de Nicaragua"/>
+<row key="DKK" value="Corona Danesa"/>
+<row key="EEK" value="Corona de Estonia"/>
+<row key="SKK" value="Corona Eslovaca"/>
+<row key="ISK" value="Corona Islandesa"/>
+<row key="NOK" value="Corona Noruega"/>
+<row key="SEK" value="Corona Sueca"/>
+<row key="GMD" value="Dalasi de Gambia"/>
+<row key="DZD" value="Dinar de Algeria"/>
+<row key="BHD" value="Dinar de Barein"/>
+<row key="BAM" value="Dinar de Bosnia-Herzogovinia"/>
+<row key="HRK" value="Dinar de Croacia"/>
+<row key="JOD" value="Dinar de Jordania"/>
+<row key="KWD" value="Dinar de Kuwait"/>
+<row key="MKD" value="Dinar de Macedonia"/>
+<row key="SDD" value="Dinar de Sudan"/>
+<row key="TND" value="Dinar de Tunicia"/>
+<row key="IQD" value="Dinar Iraqui"/>
+<row key="LYD" value="Dinar Libio"/>
+<row key="CSD" value="Dinar Servio"/>
+<row key="AED" value="Dirham de los Emiratos Arabes Unidos"/>
+<row key="MAD" value="Dirham Marroquí"/>
+<row key="AUD" value="Dólar Australiano"/>
+<row key="CAD" value="Dólar Canadiense"/>
+<row key="BSD" value="Dólar de Bahamas"/>
+<row key="BBD" value="Dólar de Barbados"/>
+<row key="BZD" value="Dólar de Belice"/>
+<row key="BMD" value="Dólar de Bermudas"/>
+<row key="BND" value="Dólar de Brunei"/>
+<row key="FJD" value="Dólar de Fiji"/>
+<row key="HKD" value="Dólar de Hong Kong"/>
+<row key="JMD" value="Dólar de Jamaica"/>
+<row key="KYD" value="Dólar de las Islas Caimán"/>
+<row key="SBD" value="Dólar de las Islas Salomón"/>
+<row key="LRD" value="Dólar de Liberia"/>
+<row key="USD" value="Dólar de los Estados Unidos de América"/>
+<row key="NAD" value="Dólar de Namibia"/>
+<row key="NZD" value="Dólar de Nueva Zelanda"/>
+<row key="SGD" value="Dólar de Singapur"/>
+<row key="SRD" value="Dólar de Surinam"/>
+<row key="TTD" value="Dólar de Trinidad y Tobago"/>
+<row key="TVD" value="Dólar de Tuvalu"/>
+<row key="GYD" value="Dólar Guayanes"/>
+<row key="TWD" value="Dólar Nuevo de Taiwan"/>
+<row key="VND" value="Dong de Vietnam"/>
+<row key="AMD" value="Dram Armenio"/>
+<row key="CVE" value="Escudo de Cabo Verde"/>
+<row key="HUF" value="Florín Húngaro"/>
+<row key="CDF" value="Franco Congolenio"/>
+<row key="BIF" value="Franco de Burundi"/>
+<row key="KMF" value="Franco de Comoros"/>
+<row key="DJF" value="Franco de Djibouti"/>
+<row key="GNF" value="Franco de Guinea"/>
+<row key="MGA" value="Franco de Madagascar"/>
+<row key="RWF" value="Franco de Rwanda"/>
+<row key="CHF" value="Franco Suizo"/>
+<row key="HTG" value="Gourde de Haití"/>
+<row key="PYG" value="Guarani de Paraguay"/>
+<row key="ANG" value="Guilder de Antillas holandesas"/>
+<row key="AWG" value="Guilder de Aruba"/>
+<row key="UAH" value="karbowanez de Ucrania"/>
+<row key="PGK" value="Kina de Papua Nueva Guinea"/>
+<row key="LAK" value="Kip de Letonia"/>
+<row key="CZK" value="Krona Checa"/>
+<row key="MWK" value="Kwacha de Malawi"/>
+<row key="AOA" value="Kwanza Angoles"/>
+<row key="MMK" value="Kyats de Birmania"/>
+<row key="GEL" value="Lari de Georgia"/>
+<row key="LVL" value="Lat Latonia"/>
+<row key="MDL" value="Lei de Moldavia"/>
+<row key="ROL" value="Lei de Rumania"/>
+<row key="ALL" value="Lek Albanes"/>
+<row key="HNL" value="Lempira de Honduras"/>
+<row key="BGN" value="Lev Búlgaro"/>
+<row key="GBP" value="Libra Británica"/>
+<row key="CYP" value="Libra de Chipre"/>
+<row key="FKP" value="Libra de Falkland"/>
+<row key="GIP" value="Libra de Gibraltar"/>
+<row key="GGP" value="Libra de Guernsey"/>
+<row key="SYP" value="Libra de Siria"/>
+<row key="SHP" value="Libra de St. Helena"/>
+<row key="EGP" value="Libra Egipcia"/>
+<row key="IMP" value="Libra Isla del Hombre"/>
+<row key="LBP" value="Libra Libanesa"/>
+<row key="SZL" value="Lilangeni de Swaziland"/>
+<row key="MTL" value="Lira de Malta"/>
+<row key="TRL" value="Lira de Turquía"/>
+<row key="LTL" value="Lita de Lituania"/>
+<row key="LSL" value="Loti de Lesotho"/>
+<row key="AZM" value="Manat de Azerbaijan"/>
+<row key="TMM" value="Manat de Turkmenistan"/>
+<row key="MZM" value="Metical de Mozambique"/>
+<row key="EUR" value="Moneda Unica Europea. Moneda de los estados miembros de la Unión Europea EU (EURO) "/>
+<row key="NGN" value="Naira de Nigeria"/>
+<row key="ERN" value="Nakfa de Eritrea"/>
+<row key="BTN" value="Ngultrun de Butan"/>
+<row key="MRO" value="Ouguiya de Mauritania"/>
+<row key="TOP" value="Pa`anga de Tonga"/>
+<row key="MOP" value="Pataca de Macao"/>
+<row key="ARS" value="Peso Argentino"/>
+<row key="CLP" value="Peso Chileno"/>
+<row key="CUP" value="Peso Cubano"/>
+<row key="COP" value="Peso de Colombia"/>
+<row key="DOP" value="Peso Dominicano"/>
+<row key="PHP" value="Peso Filipino"/>
+<row key="MXN" value="Peso Mexicano"/>
+<row key="UYU" value="Pesos Uruguayos"/>
+<row key="BWP" value="Pula de Botswana"/>
+<row key="GTQ" value="Quetzal de Guatemala"/>
+<row key="BRL" value="Real de Brasil"/>
+<row key="OMR" value="Rial de Omán"/>
+<row key="IRR" value="Rial Iraní"/>
+<row key="KHR" value="Riel de Camboya"/>
+<row key="MYR" value="Ringgit de Malaysia"/>
+<row key="SAR" value="Riyal de Arabia Saudi"/>
+<row key="QAR" value="Riyal de Qatar"/>
+<row key="BYR" value="Rublo de Belorusia"/>
+<row key="RUR" value="Rublo Ruso"/>
+<row key="MVR" value="Rufia de Maldivas"/>
+<row key="LKR" value="Rupia de Ceilán"/>
+<row key="MUR" value="Rupia de Mauritius"/>
+<row key="NPR" value="Rupia de Nepal"/>
+<row key="PKR" value="Rupia de Pakistán"/>
+<row key="INR" value="Rupia India"/>
+<row key="IDR" value="Rupia Indonesia"/>
+<row key="SCR" value="Rupias de Seychelles"/>
+<row key="STD" value="Sao Tome / Príncipe Dobra"/>
+<row key="ILS" value="Scheckel Israelí"/>
+<row key="SLL" value="Sierra León"/>
+<row key="PEN" value="Sol de Perú - Nuevo"/>
+<row key="KGS" value="Som de Kirghizstan"/>
+<row key="UZS" value="Som de Uzbekistan"/>
+<row key="BDT" value="Taka de Bangladesh"/>
+<row key="WST" value="Tala de Samoa"/>
+<row key="KZT" value="Tenge de Kazakhstan"/>
+<row key="SIT" value="Tolar de Eslovenia"/>
+<row key="MNT" value="Tugrik de Mongolia"/>
+<row key="VUV" value="Vatu de Vanuatu"/>
+<row key="KPW" value="Won de Corea del Norte"/>
+<row key="KRW" value="Won de Corea del Sur"/>
+<row key="JPY" value="Yen Japonés"/>
+<row key="CNY" value="Yuan Chino"/>
+<row key="PLN" value="Zloty de Polonia"/>
+</values>

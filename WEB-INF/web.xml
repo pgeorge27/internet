@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                         "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+ 
+  <!-- Filter -->
+ <filter>
+  <filter-name>CSSAttackFilter</filter-name>
+  <display-name>CSSAttackFilter</display-name>
+  <description>Verifica que el usuario no intente un ataque CSS</description>
+  <filter-class>com.arango.internet.controller.filter.CSSAttackFilter</filter-class>
+ </filter>
+ <filter>
+  <filter-name>LoginFilter</filter-name>
+  <display-name>LoginFilter</display-name>
+  <description>Verifica que el usuario este logueado</description>
+  <filter-class>com.arango.internet.controller.filter.LogginFilter</filter-class>
+ </filter>
+ 
+ <filter>
+  <filter-name>AccountFilter</filter-name>
+  <display-name>AccountFilter</display-name>
+  <description>Verifica que el usuario tenga cuentas de un tipo dado</description>
+  <filter-class>com.arango.internet.controller.filter.AccountFilter</filter-class>
+ </filter>
+ 
+ <filter>
+  <filter-name>NoCacheFilter</filter-name>
+  <display-name>NoCacheFilter</display-name>
+  <description>Evita que el navegador guarde las paginas en Cache</description>
+  <filter-class>com.arango.internet.controller.filter.NoCacheFilter</filter-class>
+ </filter>
+ <filter>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <display-name>ValidacionMovimientos</display-name>
+  <description>Evita que el navegador guarde las paginas en Cache</description>
+  <filter-class>com.arango.internet.controller.compensacion.ValidacionMovimientos</filter-class>
+  <init-param>
+   <param-name>url-msg</param-name>
+   <param-value>/mensajeSecuenciaMovimiento.jsp</param-value>
+  </init-param>
+ </filter>
+ 
+ 
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario10.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario3.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario11.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario9.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario8.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario6.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario10/formulario3.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>ValidacionMovimientos</filter-name>
+  <url-pattern>/compensacion/formulario10/formulario.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>NoCacheFilter</filter-name>
+  <url-pattern>*.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>CSSAttackFilter</filter-name>
+  <url-pattern>*.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>CSSAttackFilter</filter-name>
+  <url-pattern>*.do</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>LoginFilter</filter-name>
+  <url-pattern>*.jsp</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>LoginFilter</filter-name>
+  <url-pattern>*.do</url-pattern>
+ </filter-mapping>
+ <!-- Filter
+ Struts 1.1 -->
+ <servlet>
+  <servlet-name>action</servlet-name>
+  <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+  <init-param>
+   <param-name>config</param-name>
+   <param-value>/WEB-INF/struts-config.xml,/WEB-INF/compensacion-config.xml</param-value>
+  </init-param>
+  <init-param>
+   <param-name>debug</param-name>
+   <param-value>2</param-value>
+  </init-param>
+  <init-param>
+   <param-name>detail</param-name>
+   <param-value>2</param-value>
+  </init-param>
+  <load-on-startup>2</load-on-startup>
+ </servlet>
+ <!-- Struts 1.1 -->
+
+
+	<!-- añado servlet para reportes de contron Edgar Sucre => 09/03/2012 -->
+	<!-- servlet para DeclaracionImportacion  -->
+	<servlet>
+		<servlet-name>DeclaracionImportacion</servlet-name>
+		<servlet-class>com.arango.internet.controller.DeclaracionImportacionPdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+
+	
+		
+	
+	<!-- servlet para DocumentoTransporte  -->	
+	<servlet>
+		<servlet-name>DocumentoTransporte</servlet-name>
+		<servlet-class>com.arango.internet.controller.DocumentoTransportePdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	
+	
+	
+	
+	<!-- servlet para DeclaracionExportacion  -->	
+	<servlet>
+		<servlet-name>DeclaracionExportacion</servlet-name>
+		<servlet-class>com.arango.internet.controller.DeclaracionExportacionPdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	
+	
+	
+	<!-- servlet para InformacionEndeudamiento  -->	
+	<servlet>
+		<servlet-name>InformacionEndeudamiento</servlet-name>
+		<servlet-class>com.arango.internet.controller.InformacionEndeudamientoPdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	
+	
+	
+	<!-- servlet para DatosFaltantesUno  -->	
+	<servlet>
+		<servlet-name>DatosFaltantesUno</servlet-name>
+		<servlet-class>com.arango.internet.controller.DatosFaltantesUnoPdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	
+	
+	
+	<!-- servlet para DatosFaltantesDos  -->
+ <servlet>
+		<servlet-name>DatosFaltantesDos</servlet-name>
+		<servlet-class>com.arango.internet.controller.DatosFaltantesDosPdfServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	
+	
+	
+	<!-- Fin modificaciones Edgar -->
+
+	<servlet>
+  <servlet-name>ConsultaServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ConsultaServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ChangeNicknameServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ChangeNicknameServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ChangePasswordServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ChangePasswordServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>SignOnServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.SignOnServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ <servlet>
+  <servlet-name>MulticashArchivoAction</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.MulticashArchivoAction</servlet-class>
+		<load-on-startup />
+ </servlet>
+<servlet>
+  <servlet-name>SignOutServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.SignOutServlet</servlet-class>
+  <load-on-startup>2</load-on-startup>
+ </servlet>
+ <servlet>
+  <servlet-name>TransferenciaInternacional</servlet-name>
+  <servlet-class>com.arango.internet.controller.ajax.TransferenciaInternacional</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>SWIFTNumber</servlet-name>
+  <servlet-class>com.arango.internet.controller.ajax.SWIFTNumber</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>CambioClaveRequeridoServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.CambioClaveRequeridoServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>SWIFTNumberIntermediario</servlet-name>
+  <servlet-class>com.arango.internet.controller.ajax.SWIFTNumberIntermediario</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ClaveEspecialServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ClaveEspecialServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>CambioPinServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.CambioPinServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>AdministracionEmail</servlet-name>
+  <servlet-class>com.arango.internet.controller.AdministracionEmail</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>NotaPDFServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.reports.pdf.NotaPDFServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>EstadoCtaPDFServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.reports.pdf.EstadoCtaPDFServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ReciboPDFServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.reports.pdf.ReciboPDFServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>PopulateFields</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.ajax.PopulateFields</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>XMLExporterServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.dian.XMLExporterServlet</servlet-class>
+ </servlet>
+ <!-- Add Anthony Mosquera -->
+ <servlet>
+  <servlet-name>XMLExporterServlet_frm3_4_10</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.formulario10.XMLExporterServlet_frm3_4_10</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ExportarExcelServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.dian.ExcelDownloadServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>NotaPDF2Servlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.reports.pdf.NotaPDF2Servlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ChartRendererAction</servlet-name>
+  <servlet-class>com.arango.internet.controller.graphics.ChartRendererAction</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>PopulateNumerales</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.ajax.PopulateNumerales</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ReciboXMLPDFServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.reports.pdf.ReciboXMLPDFServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>SWIFTServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.SWIFTServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>SWIFTDocumentServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.SWIFTDocumentServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ConsolidadoServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ConsolidadoServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>TransferServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.TransferServlet</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>ListaCuenta</servlet-name>
+  <servlet-class>com.arango.internet.controller.ajax.ListaCuenta</servlet-class>
+		<load-on-startup />
+ </servlet>
+ <servlet>
+  <servlet-name>PopulateConsecutivoDeclaracion</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.compensacion.ajax.PopulateConsecutivoDeclaracion</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>UploadImage</servlet-name>
+  <servlet-class>com.arango.internet.util.UploadImage</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>GetImageServlet</servlet-name>
+  <servlet-class>com.arango.internet.util.images.GetImageServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>UploadServlet</servlet-name>
+  <servlet-class>com.arango.internet.util.images.UploadServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>setNewIP</servlet-name>
+  <servlet-class>com.arango.internet.controller.AdressAdministrationSevlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>cancelImage</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.ManagerImageAction</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>CambiarPreguntasServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.CambiarPreguntasServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>CambiarPreguntasServletToken</servlet-name>
+  <servlet-class>com.arango.internet.controller.servlet.token.CambiarPreguntasServletToken</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ValidarPreguntasServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.ValidarPreguntasServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>MensajesBancoServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.MensajesBancoServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ChangeEmailPasswordServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.ChangeEmailPasswordAction</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>PrimerInicioServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.FirstLoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>populate-ciudad</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.ajax.PopulateCiudad</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>populate-departamento</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.ajax.PopulateDepartamento</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>populate-nacionalidad</servlet-name>
+  <servlet-class>com.arango.internet.controller.actions.ajax.PopulateNacionalidad</servlet-class>
+ </servlet>
+ <!-- Servlet de Inversiones -->
+ <servlet>
+  <servlet-name>KeepAliveServlet</servlet-name>
+  <servlet-class>com.arango.internet.controller.inversiones.KeepAliveServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>InversionLogin</servlet-name>
+  <servlet-class>com.arango.internet.controller.inversiones.InversionLogin</servlet-class>
+ </servlet>
+ <!-- servlet controlador DWR -->
+ <servlet>
+  <servlet-name>dwr-invoker</servlet-name>
+  <display-name>DWR Servlet</display-name>
+  <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+  <init-param>
+   <param-name>debug</param-name>
+   <param-value>false</param-value>
+  </init-param>
+ </servlet>
+ <servlet>
+  <servlet-name>sincronizarTokenServlet</servlet-name>
+  <servlet-class>com.arango.internet.token.servlet.sincronizarTokenServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>activarTokenServlet</servlet-name>
+  <servlet-class>com.arango.internet.token.servlet.activarTokenServlet</servlet-class>
+ </servlet>
+ 
+ 
+ <servlet>
+ 	<servlet-name>activarDispositivoServlet</servlet-name>
+ 	<servlet-class>com.arango.internet.token.servlet.activarDispositivoServlet</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>sincronizarDispositivoServlet</servlet-name>
+ 	<servlet-class>com.arango.internet.token.servlet.sincronizarDispositivoServlet</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>activarTokenAutenticacionServlet</servlet-name>
+ 	<servlet-class>com.arango.internet.token.autenticacion.ActivarTokenAutenticacionServlet</servlet-class>
+ </servlet>
+ 
+ <servlet>
+  <servlet-name>UploadServletToken</servlet-name>
+  <servlet-class>com.arango.internet.controller.servlet.token.UploadServletToken</servlet-class>
+ </servlet>
+ 
+ <servlet>
+  <servlet-name>UploadServletAutenticacion</servlet-name>
+  <servlet-class>com.arango.internet.controller.servlet.token.UploadServletAutenticacion</servlet-class>
+ </servlet>
+ 
+ <servlet>
+ 	<servlet-name>ClaveAccesoServlet</servlet-name>
+ 	<servlet-class>com.arango.internet.token.autenticacion.ClaveAccesoServlet</servlet-class>
+ </servlet>
+ 
+  <servlet>
+ 	<servlet-name>reporteBeneficiariosAprobadosServlet</servlet-name>
+ 	<servlet-class>com.arango.internet.token.servlet.ReporteBeneficiariosAprobadosServlet</servlet-class>
+ </servlet>
+ 
+ <!-- reporte de cuenta corriente  -->
+ <servlet>
+ 	<servlet-name>ReportCtaCorPdfSevrlet</servlet-name>
+ 	<servlet-class>com.arango.internet.controller.reports.pdf.CtaCorPDFServlet</servlet-class>
+ </servlet>
+ 
+ <!-- Validacion de transferencias duplicadas -->
+   <servlet>
+ 	<servlet-name>DuplicidadTranferencia</servlet-name>
+ 	<servlet-class>com.arango.internet.controller.ajax.TranferenciaDuplicadas</servlet-class>
+ </servlet>
+ <!-- Validacion de transferencias duplicadas -->
+  <!-- Validacion de fechas festivas -->
+   <servlet>
+ 	<servlet-name>ValidaFechasFestivas</servlet-name>
+ 	<servlet-class>com.arango.internet.controller.ajax.ValidaFechaEfectiva</servlet-class>
+ </servlet>
+ <!-- Validacion de fechas festivas  -->
+ 
+ <!-- Struts 1.1 
+ Standard Action Servlet Mapping -->
+ <servlet-mapping>
+  <servlet-name>action</servlet-name>
+  <url-pattern>*.do</url-pattern>
+ </servlet-mapping>
+ <!-- Struts 1.1 -->
+ <servlet-mapping>
+  <servlet-name>cancelImage</servlet-name>
+  <url-pattern>*.cancelImage</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>setNewIP</servlet-name>
+  <url-pattern>*.setNewIP</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>dwr-invoker</servlet-name>
+  <url-pattern>/dwr/*</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>DeclaracionImportacion</servlet-name>
+		<url-pattern>*.declaimportacion</url-pattern>
+	</servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>UploadServlet</servlet-name>
+  <url-pattern>*.SetImage</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>UploadServletToken</servlet-name>
+  <url-pattern>*.SetImageToken</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>UploadServletAutenticacion</servlet-name>
+  <url-pattern>*.SetImageAutenticacion</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+  <servlet-name>ClaveAccesoServlet</servlet-name>
+  <url-pattern>*.claveAcceso</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+  <servlet-name>GetImageServlet</servlet-name>
+  <url-pattern>*.GetImage</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>UploadImage</servlet-name>
+  <url-pattern>*.UploadImage</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MulticashArchivoAction</servlet-name>
+  <url-pattern>*.multicashArchivoAction</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CambioClaveRequeridoServlet</servlet-name>
+  <url-pattern>*.changefirstpwd</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ChangePasswordServlet</servlet-name>
+  <url-pattern>*.changepwd</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ChangeNicknameServlet</servlet-name>
+  <url-pattern>*.nickname</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ConsultaServlet</servlet-name>
+  <url-pattern>*.consulta</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SignOnServlet</servlet-name>
+  <url-pattern>*.signon</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SignOutServlet</servlet-name>
+  <url-pattern>*.signout</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CambiarPreguntasServlet</servlet-name>
+  <url-pattern>*.preguntas</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CambiarPreguntasServletToken</servlet-name>
+  <url-pattern>*.preguntastoken</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ValidarPreguntasServlet</servlet-name>
+  <url-pattern>*.validarpregunta</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>MensajesBancoServlet</servlet-name>
+  <url-pattern>*.mensajesbanco</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>TransferenciaInternacional</servlet-name>
+  <url-pattern>/plantilla.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SWIFTNumber</servlet-name>
+  <url-pattern>/swift.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PopulateFields</servlet-name>
+  <url-pattern>/params.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SWIFTNumberIntermediario</servlet-name>
+  <url-pattern>/swift2.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ClaveEspecialServlet</servlet-name>
+  <url-pattern>*.claveespecial</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CambioPinServlet</servlet-name>
+  <url-pattern>*.cambioPin</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>AdministracionEmail</servlet-name>
+  <url-pattern>*.AdminEmail</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>DocumentoTransporte</servlet-name>
+		<url-pattern>*.docutransporte</url-pattern>
+	</servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>NotaPDFServlet</servlet-name>
+  <url-pattern>/note.download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>NotaPDF2Servlet</servlet-name>
+  <url-pattern>/note2.download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>EstadoCtaPDFServlet</servlet-name>
+  <url-pattern>/estcta.download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ReciboPDFServlet</servlet-name>
+  <url-pattern>/recibo.download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ReciboXMLPDFServlet</servlet-name>
+  <url-pattern>/reciboxml/download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>DeclaracionExportacion</servlet-name>
+		<url-pattern>*.declaexportacion</url-pattern>
+	</servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SWIFTServlet</servlet-name>
+  <url-pattern>/swift/download</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>SWIFTDocumentServlet</servlet-name>
+  <url-pattern>/descarga/swift</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>XMLExporterServlet</servlet-name>
+  <url-pattern>/exporter/xml</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>DatosFaltantesUno</servlet-name>
+		<url-pattern>*.datosuno</url-pattern>
+	</servlet-mapping>
+ <!-- Add Anthony Mosquera -->
+ <servlet-mapping>
+  <servlet-name>XMLExporterServlet_frm3_4_10</servlet-name>
+  <url-pattern>/exporter/xml_frm3_4_10</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ChartRendererAction</servlet-name>
+  <url-pattern>/grafica</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>InformacionEndeudamiento</servlet-name>
+		<url-pattern>*.infoendeudamiento</url-pattern>
+	</servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PopulateNumerales</servlet-name>
+  <url-pattern>/numerales.list</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ExportarExcelServlet</servlet-name>
+  <url-pattern>/exportar/excel</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ConsolidadoServlet</servlet-name>
+  <url-pattern>/consolidado.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>TransferServlet</servlet-name>
+  <url-pattern>*.transferencia</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ListaCuenta</servlet-name>
+  <url-pattern>/cuenta.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PopulateConsecutivoDeclaracion</servlet-name>
+  <url-pattern>/consecutivo.view</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PopulateConsecutivoDeclaracion</servlet-name>
+  <url-pattern>/lista/consecutivo/declaracion</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ChangeEmailPasswordServlet</servlet-name>
+  <url-pattern>*.ChangeEmailPassword</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PrimerInicioServlet</servlet-name>
+  <url-pattern>*.primerinicio</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>populate-ciudad</servlet-name>
+  <url-pattern>/populate/ciudad</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>populate-departamento</servlet-name>
+  <url-pattern>/populate/departamento</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>populate-nacionalidad</servlet-name>
+  <url-pattern>/populate/nacionalidad</url-pattern>
+ </servlet-mapping>
+ <!--  Servlet de Inversiones -->
+ <servlet-mapping>
+  <servlet-name>KeepAliveServlet</servlet-name>
+  <url-pattern>*.keepalive</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>InversionLogin</servlet-name>
+  <url-pattern>*.invlogin</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>sincronizarTokenServlet</servlet-name>
+  <url-pattern>*.syncToken</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>activarTokenServlet</servlet-name>
+  <url-pattern>*.activarToken</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>activarDispositivoServlet</servlet-name>
+ 	<url-pattern>*.activarDispositivo</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+		<servlet-name>DatosFaltantesDos</servlet-name>
+		<url-pattern>*.datosdos</url-pattern>
+	</servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>sincronizarDispositivoServlet</servlet-name>
+ 	<url-pattern>*.sincronizarDispositivo</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet-mapping>
+ 	<servlet-name>activarTokenAutenticacionServlet</servlet-name>
+ 	<url-pattern>*.activarTokenAutenticacion</url-pattern>
+ </servlet-mapping>
+ 
+ <!-- Agrego servlet mapping para reporte de beneficiarios aprobados -->
+ <servlet-mapping>
+ 	<servlet-name>reporteBeneficiariosAprobadosServlet</servlet-name>
+ 	<url-pattern>*.reporteBeneficiariosAprobados</url-pattern>
+ </servlet-mapping>
+ 
+  <servlet-mapping>
+ 	<servlet-name>ReportCtaCorPdfSevrlet</servlet-name>
+ 	<url-pattern>*.ReportCtaCorPdf</url-pattern>
+ </servlet-mapping>
+ 
+ <!-- Validacion de transferencias duplicadas -->
+  <servlet-mapping>
+ 	<servlet-name>DuplicidadTranferencia</servlet-name>
+ 	<url-pattern>/duplicidadTranferencia.view</url-pattern>
+ </servlet-mapping>
+ <!-- Validacion de transferencias duplicadas -->
+ 
+  <!-- Validacion de fechas festivas -->
+  <servlet-mapping>
+ 	<servlet-name>ValidaFechasFestivas</servlet-name>
+ 	<url-pattern>/Fechasfestivas.view</url-pattern>
+ </servlet-mapping>
+ <!-- Validacion de fechas festivas -->
+ 
+ 
+ 
+ <!--Servlet-->
+ <session-config>
+  <session-timeout>6</session-timeout>
+ </session-config>
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+  <welcome-file>index.html</welcome-file>
+ </welcome-file-list>
+ <!--  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/internal.jsp</location>
+  </error-page> -->
+ <error-page>
+  <error-code>404</error-code>
+  <location>/error/notfound.htm</location>
+ </error-page>
+ <!-- Struts Tag Library Descriptors 
+ taglib>
+    <taglib-uri>/tags/struts-bean</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-html</taglib-uri>
+    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-logic</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-nested</taglib-uri>
+    <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-tiles</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+  </taglib-->
+ <taglib>
+  <taglib-uri>/tags/asi-common</taglib-uri>
+  <taglib-location>/WEB-INF/asi-common.tld</taglib-location>
+ </taglib>
+ <taglib>
+  <taglib-uri>/tags/asi-pdf</taglib-uri>
+  <taglib-location>/WEB-INF/asi-pdfdoc.tld</taglib-location>
+ </taglib>
+ <taglib>
+  <taglib-uri>/tags/asi-internet</taglib-uri>
+  <taglib-location>/WEB-INF/asi-internet.tld</taglib-location>
+ </taglib>
+ <resource-ref>
+  <description>CSIC Connection</description>
+  <res-ref-name>jdbc/CSIC</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+ </resource-ref>
+ <resource-ref>
+  <description>ABANKS Connection</description>
+  <res-ref-name>jdbc/ABANKS</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+ </resource-ref>
+ <resource-ref>
+  <description>ABANKS-CAYMAN Connection</description>
+  <res-ref-name>jdbc/ABANKSCAY</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+ </resource-ref>
+ <resource-ref>
+  <description>CUSTODIA Connection</description>
+  <res-ref-name>jdbc/CUSTODIA</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+ </resource-ref>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name />
+	</login-config>
+</web-app>

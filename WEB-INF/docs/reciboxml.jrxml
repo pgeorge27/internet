@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reciboxml" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="0b7967c4-16f3-4485-a8a6-ea0249455068">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="ISO-8859-1"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="lblTitulo" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTitulo]]></fieldDescription>
+	</field>
+	<field name="lblMonto" class="java.lang.String">
+		<fieldDescription><![CDATA[lblMonto]]></fieldDescription>
+	</field>
+	<field name="monto" class="java.lang.String">
+		<fieldDescription><![CDATA[monto]]></fieldDescription>
+	</field>
+	<field name="lblReferencia" class="java.lang.String">
+		<fieldDescription><![CDATA[lblReferencia]]></fieldDescription>
+	</field>
+	<field name="referencia" class="java.lang.String">
+		<fieldDescription><![CDATA[referencia]]></fieldDescription>
+	</field>
+	<field name="lblFechaElaboracion" class="java.lang.String">
+		<fieldDescription><![CDATA[lblFechaElaboracion]]></fieldDescription>
+	</field>
+	<field name="fechaElaboracion" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaElaboracion]]></fieldDescription>
+	</field>
+	<field name="lblFechaProceso" class="java.lang.String">
+		<fieldDescription><![CDATA[lblFechaProceso]]></fieldDescription>
+	</field>
+	<field name="fechaProceso" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaProceso]]></fieldDescription>
+	</field>
+	<field name="lblBancoCorresponsal" class="java.lang.String">
+		<fieldDescription><![CDATA[lblBancoCorresponsal]]></fieldDescription>
+	</field>
+	<field name="bancoCorresponsal" class="java.lang.String">
+		<fieldDescription><![CDATA[bancoCorresponsal]]></fieldDescription>
+	</field>
+	<field name="lblReferenciaCorresponsal" class="java.lang.String">
+		<fieldDescription><![CDATA[lblReferenciaCorresponsal]]></fieldDescription>
+	</field>
+	<field name="referenciaCorresponsal" class="java.lang.String">
+		<fieldDescription><![CDATA[referenciaCorresponsal]]></fieldDescription>
+	</field>
+	<field name="lblEstado" class="java.lang.String">
+		<fieldDescription><![CDATA[lblEstado]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[estado]]></fieldDescription>
+	</field>
+	<field name="lblTituloBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTituloBeneficiario]]></fieldDescription>
+	</field>
+	<field name="lblCuentaBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblCuentaBeneficiario]]></fieldDescription>
+	</field>
+	<field name="cuentaBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[cuentaBeneficiario]]></fieldDescription>
+	</field>
+	<field name="nombreBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreBeneficiario]]></fieldDescription>
+	</field>
+	<field name="direccionBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[direccionBeneficiario]]></fieldDescription>
+	</field>
+	<field name="ciudadBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[ciudadBeneficiario]]></fieldDescription>
+	</field>
+	<field name="pasiBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[pasiBeneficiario]]></fieldDescription>
+	</field>
+	<field name="lblTituloBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTituloBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="lblCuentaBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblCuentaBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="cuentaBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[cuentaBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="lblSwiftBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblSwiftBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="swiftBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[swiftBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="nombreBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="direccionBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[direccionBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="ciudadBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[ciudadBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="paisBancoBeneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[paisBancoBeneficiario]]></fieldDescription>
+	</field>
+	<field name="lblTituloBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTituloBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="lblSwiftBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[lblSwiftBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="swiftBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[swiftBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="nombreBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="direccionBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[direccionBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="ciudadBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[ciudadBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="paisBancoIntermediario" class="java.lang.String">
+		<fieldDescription><![CDATA[paisBancoIntermediario]]></fieldDescription>
+	</field>
+	<field name="lblTituloOrdenante" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTituloOrdenante]]></fieldDescription>
+	</field>
+	<field name="ordenante" class="java.lang.String">
+		<fieldDescription><![CDATA[ordenante]]></fieldDescription>
+	</field>
+	<field name="lblDetalle" class="java.lang.String">
+		<fieldDescription><![CDATA[lblDetalle]]></fieldDescription>
+	</field>
+	<field name="detalle" class="java.lang.String">
+		<fieldDescription><![CDATA[detalle]]></fieldDescription>
+	</field>
+	<field name="lblTituloAutorizacion" class="java.lang.String">
+		<fieldDescription><![CDATA[lblTituloAutorizacion]]></fieldDescription>
+	</field>
+	<field name="lblElaboradoPor" class="java.lang.String">
+		<fieldDescription><![CDATA[lblElaboradoPor]]></fieldDescription>
+	</field>
+	<field name="elaboradoPor" class="java.lang.String">
+		<fieldDescription><![CDATA[elaboradoPor]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor1" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor1]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor2" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor2]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor3" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor3]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor4" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor4]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor5" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor5]]></fieldDescription>
+	</field>
+	<field name="aprobadoPor6" class="java.lang.String">
+		<fieldDescription><![CDATA[aprobadoPor6]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="120" splitType="Stretch">
+			<image isLazy="true">
+				<reportElement key="image-1" x="4" y="10" width="260" height="68" uuid="37afe7f4-35b3-454b-b951-15d1cd1acb66"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["../../images/logo.jpg"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-1" x="277" y="40" width="273" height="29" uuid="141e86b3-cc49-488f-b6bb-2949375a82ca"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTitulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="465" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-2" x="5" y="7" width="90" height="13" uuid="fb5e64c2-b7f5-48cc-8fce-64f516172437"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblMonto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-3" x="100" y="7" width="168" height="13" uuid="c22568c0-82e4-4429-b299-21ab45c47f34"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-4" x="278" y="7" width="118" height="13" uuid="bf990ec9-45f3-4c49-b051-848d53789104"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblFechaProceso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-5" x="401" y="7" width="149" height="13" uuid="ba367318-1414-473c-888d-5093901f7ae1"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaProceso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-6" x="5" y="21" width="90" height="13" uuid="1c8c6a8a-e07c-4fe0-949a-bff13d248eac"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblReferencia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-7" x="100" y="21" width="168" height="13" uuid="08951dee-c135-4c32-bedf-b9acd8b338c3"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-8" x="278" y="21" width="118" height="13" uuid="d2bdbbe4-8c1f-4130-9579-3ac46e92555f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblBancoCorresponsal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-9" x="401" y="21" width="149" height="13" uuid="11d7eb88-1e15-4be3-ac71-819c217d1af7"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bancoCorresponsal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-10" x="5" y="35" width="90" height="13" uuid="3dfccf26-9a7f-4f76-9291-330f1fe655f4"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblFechaElaboracion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-11" x="100" y="35" width="168" height="13" uuid="250bf963-4037-4a74-b75c-bc9524766f4c"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaElaboracion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-12" x="278" y="35" width="118" height="13" uuid="41582b79-1b99-4efd-89dc-e033ed7b1129"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblReferenciaCorresponsal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-13" x="401" y="35" width="149" height="13" uuid="f2d36b32-f277-4c48-97ef-2a12ddab8730"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referenciaCorresponsal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-14" x="5" y="56" width="90" height="13" uuid="c8474666-e438-4b85-a71c-6fe9b6935fcd"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblEstado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-15" x="100" y="56" width="168" height="13" uuid="0ff048a7-d4af-4c11-8f1c-160d080ac27b"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-18" x="5" y="86" width="105" height="13" uuid="626d98c4-80e6-4c8d-893e-206646934e80"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTituloBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-20" x="279" y="86" width="118" height="13" uuid="f0681dcc-9d9c-43c8-93f2-ecf7d2a63f39"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTituloBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-22" x="5" y="100" width="105" height="13" uuid="0fd2cf6f-a246-44e7-8029-cf4d9b527d4c"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblCuentaBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-23" x="110" y="100" width="158" height="13" uuid="cf4b4f08-68a0-4bda-a1da-304a4e38632a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentaBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-24" x="279" y="100" width="118" height="13" uuid="2e5dc16b-77f0-429a-b170-995af44c95d7"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblCuentaBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-25" x="401" y="100" width="149" height="13" uuid="68da2b30-2067-4b20-a2d5-9116ecc2cd7d"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentaBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-26" x="5" y="114" width="264" height="13" uuid="223775d6-4371-4d16-a2b6-865f81e29f40"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-28" x="279" y="114" width="118" height="13" uuid="c727ba6d-e61f-4ab0-b487-c186266e2421"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblSwiftBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-29" x="401" y="114" width="149" height="13" uuid="2e923ef6-6704-480c-8ade-64c81a8c6145"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{swiftBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-30" x="5" y="128" width="264" height="13" uuid="ff777a59-7ba9-47c7-9c0e-6cbfe538f8d7"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-32" x="279" y="128" width="271" height="13" uuid="486a9e23-7f1f-4f21-8f1e-4f7955b7a48d"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-34" x="5" y="142" width="264" height="13" uuid="934cc4a0-0793-49b1-855c-1945997d83ad"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-36" x="279" y="142" width="271" height="13" uuid="a162c614-9368-43f2-9253-9faf9b0dc982"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-38" x="5" y="156" width="264" height="13" uuid="66080d41-2760-4481-875e-6736033fe3af"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pasiBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-40" x="279" y="170" width="271" height="13" uuid="33af557e-93ee-471c-9e9f-4eeb95a9d1bf"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paisBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-42" x="5" y="196" width="118" height="13" uuid="45d53f33-4f57-4050-ab05-6140c1d3155a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTituloBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-44" x="278" y="188" width="118" height="13" uuid="d73b5ea9-53db-42e0-a953-3811410db52c"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTituloOrdenante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-46" x="5" y="210" width="118" height="13" uuid="310d6470-d7b5-4e3c-ab02-eb9f17667679"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblSwiftBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-47" x="128" y="210" width="140" height="13" uuid="ea8e18f4-f6be-445f-b4fa-3a572188a1be"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{swiftBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-48" x="278" y="202" width="271" height="13" uuid="0f41fcec-b579-4e8e-83b0-a56824ea4875"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ordenante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-50" x="5" y="224" width="264" height="13" uuid="33da0eaa-0b5e-41d1-89f0-3c343d053322"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-54" x="5" y="238" width="264" height="13" uuid="8ef3ed4d-e950-4ed9-b6c2-67c60ee61406"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-58" x="5" y="253" width="264" height="13" uuid="1d0307f8-aa40-43e2-9d1b-6108ca86fa6f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-62" x="5" y="267" width="264" height="13" uuid="597e1216-84e5-4bdd-9de0-393ca8d9f923"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paisBancoIntermediario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-66" x="5" y="291" width="118" height="13" uuid="cf90fdb7-da15-4463-b488-4d48d28be768"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblDetalle}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-70" x="5" y="305" width="264" height="37" uuid="50ee50e6-b224-4358-9cba-4ef0b2ed9568"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalle}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-74" x="278" y="355" width="269" height="13" uuid="37e196e9-c5d4-4b2c-bc6b-73bde058b970"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" isItalic="true" isUnderline="true" pdfFontName="Helvetica-BoldOblique"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblTituloAutorizacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-75" x="278" y="369" width="90" height="13" uuid="64854aa5-09d0-4a13-a4e0-e3a3ec5d6e33"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lblElaboradoPor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-76" x="279" y="383" width="269" height="11" uuid="9c22de65-d4c8-4ffe-b367-af03b0e4f898"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-77" x="372" y="369" width="175" height="13" uuid="c23c600f-099c-4c95-b777-8704c5a5a455"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elaboradoPor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="1" y="77" width="551" height="1" uuid="054206ec-3bc3-4437-b60b-f3189131f6b1"/>
+			</line>
+			<line>
+				<reportElement key="line-2" x="1" y="188" width="551" height="1" uuid="4f36b157-8f5d-44e1-aba6-eb3a7fdf1eea"/>
+			</line>
+			<line>
+				<reportElement key="line-3" x="1" y="277" width="551" height="1" uuid="39dac6c2-4714-4864-905d-8d6efbf55ddf"/>
+			</line>
+			<line>
+				<reportElement key="line-4" x="1" y="346" width="551" height="1" uuid="308812dd-6736-461d-a543-deb3ad034b9c"/>
+			</line>
+			<line>
+				<reportElement key="line-5" x="1" y="52" width="551" height="1" uuid="4088e1f2-dd64-401a-8281-e8c1e7a0213e"/>
+			</line>
+			<line>
+				<reportElement key="line-6" x="1" y="3" width="551" height="1" uuid="2d11028c-3e44-4e79-8a46-c266090a1620"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-7" x="273" y="4" width="1" height="48" uuid="26cbc076-7189-4441-a2cc-81ec3dbddfb1"/>
+			</line>
+			<line>
+				<reportElement key="line-8" x="273" y="78" width="1" height="268" uuid="c67fda76-1700-42f5-820d-fa301c8e986c"/>
+			</line>
+			<line>
+				<reportElement key="line-9" x="1" y="351" width="551" height="1" uuid="9e197cda-33b5-4eaa-9280-5bb377d3003d"/>
+			</line>
+			<line>
+				<reportElement key="line-10" x="273" y="351" width="1" height="110" uuid="03c9f0dc-aa67-4294-90fc-44d7d676334f"/>
+			</line>
+			<line>
+				<reportElement key="line-11" x="1" y="460" width="551" height="1" uuid="9755d68d-a478-4e1f-b438-d9ebfbfbf372"/>
+			</line>
+			<line>
+				<reportElement key="line-12" x="1" y="71" width="551" height="1" uuid="5924263b-a3ff-45a4-88dc-2de41a185a30"/>
+			</line>
+			<line>
+				<reportElement key="line-13" x="1" y="4" width="1" height="67" uuid="af1a034f-895e-47c6-b822-5e15bee015d2"/>
+			</line>
+			<line>
+				<reportElement key="line-14" x="551" y="4" width="1" height="67" uuid="84a748b4-6f97-4aad-8bfe-a905120ef619"/>
+			</line>
+			<line>
+				<reportElement key="line-15" x="1" y="78" width="1" height="268" uuid="a4dd70a8-6f31-47c5-bcca-2ce399b52430"/>
+			</line>
+			<line>
+				<reportElement key="line-16" x="551" y="78" width="1" height="268" uuid="e561f9af-530f-4ec1-be2e-476cb59cb736"/>
+			</line>
+			<line>
+				<reportElement key="line-17" x="1" y="351" width="1" height="110" uuid="92b93182-9e19-447e-8c3b-0aee972984d9"/>
+			</line>
+			<line>
+				<reportElement key="line-18" x="551" y="351" width="1" height="110" uuid="7b5eb673-2164-41e1-b72e-2f50430a167e"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-78" x="279" y="156" width="271" height="13" uuid="5da153fe-5a35-4daf-958f-352a23c6b4ae"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadBancoBeneficiario}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-79" x="279" y="396" width="269" height="11" uuid="dbe212cf-1366-4c9f-93e7-b3e617c94fe7"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-80" x="279" y="408" width="269" height="11" uuid="23cf451d-ce45-4607-832b-967d70dee600"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-81" x="279" y="420" width="269" height="11" uuid="065ee65f-2418-4c5d-ad4b-7bf9978918e2"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-82" x="279" y="433" width="269" height="11" uuid="91998d8c-f977-4d30-8638-90779f4ce93e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor5}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-83" x="279" y="446" width="269" height="11" uuid="8b053f71-2256-42cd-b4ba-013615e93465"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aprobadoPor6}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<values>
+<row key="11" value="Registro Civil de Nacimiento"/>
+<row key="12" value="Tarjeta de Identidad"/>
+<row key="13" value="Cédula de Ciudadanía"/>
+<row key="21" value="Tarjeta de Extranjería"/>
+<row key="22" value="Cédula de Extranjería"/>
+<row key="31" value="NIT"/>
+<row key="41" value="Pasaporte"/>
+
+</values>
