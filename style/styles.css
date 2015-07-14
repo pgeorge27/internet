@@ -58,7 +58,7 @@
   padding: 18px 25px 21px 25px;
   border-right: 1px solid rgba(80, 80, 80, 0.12);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color:#000000;
   text-transform: capitalize;
@@ -169,7 +169,7 @@
   font-weight: 400;
   padding: 11px 25px;
   width: 180px;
-  color: #777777;
+  color: #262626;
   background: #ffffff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), -1px 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -207,14 +207,105 @@
 }
 #cssmenu ul ul li.has-sub.active > a::after,
 #cssmenu ul ul li.has-sub:hover > a::after {
-  border-left-color: #333333;
+  border-left-color: #d35400;
 }
 #cssmenu.align-right ul ul li.has-sub.active > a::after,
 #cssmenu.align-right ul ul li.has-sub:hover > a::after {
   border-right-color: #333333;
   border-left-color: transparent;
 }
-@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+/*AGREGANDO CAMBIOS*/
+#cssmenu > ul > li .top{
+  border-top: 1px solid #A7A7A6;
+}
+#cssmenu > ul > li .bottom{
+  border-bottom: 1px solid #A7A7A6;
+}
+#cssmenu > ul > li > ul > li a:hover {
+  background: #D1CECB;
+}
+#cssmenu > ul > li > ul > li > a:before{
+  color:#d35400;
+  content:"\2022"; margin:0 10px;
+}
+#cssmenu > ul > li > ul > li > ul > li a:before{
+  content:"\2022"; margin:0 10px;
+}
+#cssmenu ul ul li.has-sub > a::after {
+  border-left-color: #d35400;
+}
+
+#cssmenu ul ul li.has-sub > a::after:hover {
+  border-left-color: #d35400;
+}
+
+/*FLEX BOX PARA ELIMINAR LA TABLA DEL HEADER VERSION DESKTOP*/
+  .flex
+   {
+      width: 100%;
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -webkit-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      -o-flex-flow: row wrap;
+      flex-flow: row wrap;
+      -ms-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: center;
+   }
+   .flex > div
+   {
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+   }
+   .flex > div:nth-child(1){ 
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    justify-content: center;
+    width: 10%;
+    order:1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .flex > div:nth-child(2){  
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -ms-align-items: flex-start;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 20%;
+      order:3;
+  }
+  .flex > div:nth-child(3){  
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -webkit-flex-flow: column wrap;
+      -moz-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+      -o-flex-flow: column wrap;
+      flex-flow: column wrap;
+      -ms-align-items: flex-start;
+      align-items: flex-start;
+      order:2;
+      width: 60%;
+  }
+  .flex h6{  
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+@media all and (max-width: 74em), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu {
     background: #D1CECB;
   }
@@ -315,4 +406,69 @@
   #cssmenu ul ul li.has-sub > a::after {
     display: none;
   }
+
+  /*QUITAMOS EL BORDE DE LA LISTA*/
+  #cssmenu > ul > li .top{
+  border-top: 0;
+  }
+  #cssmenu > ul > li .bottom{
+    border-bottom: 0;
+  }
+/*FLEX BOX PARA ELIMINAR LA TABLA DEL HEADER VERSION MOBILE*/
+  .flex
+   {
+      width: 100%;
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -webkit-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      -o-flex-flow: row wrap;
+      flex-flow: row wrap;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: center;
+   }
+   .flex > div
+   {
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+   }
+   .flex > div:nth-child(1){ 
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    justify-content: center;
+    width: 50%;
+    order:1;
+  }
+  .flex > div:nth-child(2){  
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      order:2;
+  }
+  .flex > div:nth-child(3){  
+      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;  /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      -webkit-flex-flow: column wrap;
+      -moz-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+      -o-flex-flow: column wrap;
+      flex-flow: column wrap;
+      -ms-align-items: center;
+      align-items: center;
+      order:3;
+  }
+
 }
