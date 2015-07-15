@@ -12,11 +12,17 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 
 %>
 
-<html>
+<!DOCTYPE html>
+<html:html>
+
 <head>
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/flujos.css'/>" />
 <script language="javascript" src="./scripts/campos.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 <!--
 if (typeof window.event != 'undefined') // IE
@@ -134,28 +140,90 @@ window.statusbar=' ';
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
+<body onLoad="reset();" >
+
+<div class="container">
+
+<html:form method="post"  action="/cambioUsuarioBasico.do">
+
+  	 <header style="padding-top: 20px;">
+			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
+		    </header>
+
+
+		<div class="row" style="padding-top:110px;">
+
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
+				<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.token.cambio.usuario.recuerde"/></strong></div>
+						 <div class="panel-body">
+						 
+						 
+						       <td colspan="2" class="fuente-principal">
+	          <UL>
+	          	<li><bean:message key="lbl.token.cambio.usuario.obs4"/></li>
+	          	<li><bean:message key="lbl.token.cambio.usuario.obs5"/></li>
+	          </UL>
+	       </td>
+ 
+						 </div>
+				
+					</div>
+					   <br> 
+	
+				</div>
+			
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
+
+  			<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.token.introduccion.cambioUsuario"/></strong></div>
+						
+									
+					 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.token.cambio.usuario.usuarioActual"/>:</strong></div>
+                <div><html:text property="usuarioActual" styleClass="form-control" maxlength="16"   styleId="usuarioActual" value=""/> 
+                </div>
+            </div>
+            <br>
+            <div  style="width: 90%; padding-left: 10%;"> 
+          
+              <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.token.cambio.usuario.nuevoUsuario"/>:</strong></div>
+                <div><html:text property="nuevoUsuario" styleClass="form-control" maxlength="16"  styleId="nuevoUsuario" value=""/>
+
+            </div>
+            </div>
+             <br>
+         
+           <div  style="width: 90%; padding-left: 10%;">  
+         
+                <div>
+	                <div>
+	                	 <div><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.token.cambio.usuario.confirmeUsuario"/>:</strong></div>
+	                </div>
+                </div>
+                <div><html:text property="nuevoUsuarioConfirmacion" styleClass="form-control" maxlength="16"  styleId="nuevoUsuarioConfirmacion" value=""/> 
+           
+            </div>
+            </div>
+              <br> 
+            <div align="center">
+            
+				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  			</div>
+  			<br>
+					</div>
+					 <br> 
+
+					</div>
+  <div class="col-md-1"></div>
+
+                </div>
+
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
@@ -175,129 +243,17 @@ window.statusbar=' ';
    session.removeAttribute("msg");
    UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
 %>
-<div align="center">
-<html:form method="post"  action="/cambioUsuarioBasico.do">
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="20" valign="bottom">
-		 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			  <tr> 
-				<td >
-					
-					
-						
-				</td>
-				<td >
-					
-				</td>
-			  </tr>
-			</table>
-		  
-	  </td>
-  </tr>
- 
-<tr> 
-	<td valign="top">
-		<table>
-		  <tr valign="top">
-		    <td>
-		      <!--  Tabla con Campos -->
 
-		<table width="450" border="0" align="center" cellpadding="0" cellspacing="2">
-			<tr>
-				<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-				<td colspan="2" >
-					<div align="left" class="fuente-titulo">
-						<bean:message key="lbl.token.introduccion.cambioUsuario"/>
-					</div>
-				</td>
-					
-			</tr>
-            <tr> 
-            	<td></td>
-                <td width="31%" height="20" ><div align="left" class="fuente-principal"><bean:message key="lbl.token.cambio.usuario.usuarioActual"/></div></td>
-                <td colspan="2"><html:text property="usuarioActual" styleClass="caja-acceso" maxlength="16"   styleId="usuarioActual" value=""/> 
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr>
-            	<td></td> 
-                <td height="20" ><div align="left" class="fuente-principal"><bean:message key="lbl.token.cambio.usuario.nuevoUsuario"/></div></td>
-                <td ><html:text property="nuevoUsuario" styleClass="caja-acceso" maxlength="16"  styleId="nuevoUsuario" value=""/>
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr> 
-            	<td></td>
-                <td height="20">
-	                <div align="left" class="fuente-principal">
-	                	<bean:message key="lbl.token.cambio.usuario.confirmeUsuario"/>
-	                </div>
-                </td>
-                <td ><html:text property="nuevoUsuarioConfirmacion" styleClass="caja-acceso" maxlength="16"  styleId="nuevoUsuarioConfirmacion" value=""/> 
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr>
-            	<td></td>
-				<td colspan="2" height="20" valign="middle" class="fuente-obligatorio"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  			</tr>
-		</table>
 
-		    </td>
-	<td>
-	<!--  Tabla con Tips -->
-	 	<%@ include file="divHeader.jsp"%>
-	  <table cellspacing="3" cellpading="3" >
-        <tr valign="top">
-      	  <td colspan="2">
-      	  <table><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="fuente-recuadro-titulo"><bean:message key="lbl.token.cambio.usuario.recuerde"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-	    <tr>
-	       <td colspan="2" class="fuente-principal">
-	          <UL>
-	          	<li><bean:message key="lbl.token.cambio.usuario.obs4"/></li>
-	          	<li><bean:message key="lbl.token.cambio.usuario.obs5"/></li>
-	          </UL>
-	       </td>
-	    </tr>
-	  </table>
-	  <%@ include file="divFooter.jsp"%>
-	</td>
-		   </tr>
-		 </table>
-	</td>
-  </tr>
- 
-   
-  <tr><td>&nbsp;</td></tr>
-<tr> 
-	<td align="center">
+<br> 
+<br> 
+	<div align="center">
         <html:hidden  property="pantalla" value="cambioUsuarioSuccess"/>   
-        <input name="button" type="button" onClick="containBlank()" class="botton" value="<bean:message key="btn.enviar"/>"> 
-        <input name="limpiar" type="reset" onClick="clear();" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-	</td>
-</tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
+        <input name="button" type="button" onClick="containBlank()" class="btn btn-default" style="width: 100px;"  value="<bean:message key="btn.enviar"/>"> 
+        <input name="limpiar" type="reset" onClick="clear();" class="btn btn-default" style="width: 100px; margin-left: 2em;"  value="<bean:message key="btn.limpiar"/>"> 
+	</div>
 
-
-</table>
 
 
 </html:form>
-</div>
-</td>
-</tr></table></td></tr>
-
-</table></td></tr>
-<tr>
-	<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-		<div align="center" class="derechos">&copy; 
-			<bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-		</div>
-	</td>
-</tr>
-</table></body></html>
+</div></div> <br>  <br> </body></html:html>

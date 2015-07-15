@@ -39,17 +39,18 @@ try{
 	catch(Exception ex){permiteDescarga1 = "0";}
 
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/styles.css'/>">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/transferencia.js'/>"></script>
-<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
-<script src="<html:rewrite page='/scripts/DV.js'/>" type="text/javascript"></script>
+<script type="text/javascript" src="<html:rewrite page='/scripts/DV.js'/>"></script>
+<script type="text/javascript" src="<html:rewrite page='/scripts/script.js'/>"></script>
 
 <script type="text/javascript">
 //Define your images using arbitrary variables, to be passed in as arguments later down the page:
@@ -102,40 +103,11 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 }
 </style>
 
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
-<LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/styles.css'/>">
-<script type="text/javascript"  src="<html:rewrite page='/scripts/script.js'/>"></script>
 
-</HEAD>
+</head>
 
 <body>
-
-<!--     <div class="row" style="width: 90%; padding-right: 2px;">
-
-       <table width="100%" border="0" cellpadding="0" cellspacing="0">
-			<tr>
-				<td width="160" align="center" style="padding-left: 5%;" > 
-						<img onclick="dv.showDV(usersecurity); return false" src='<html:rewrite page="/do.GetImage?img=ch"/>'  style=" width : 90px; height : 90px;" >
-				</td>
-				<td width="1%"></td>
-			<td width="100%" height="100" style="padding-left: 5%;" >
-				<table width="100%" style="text-align: left" >
-					<tr><td><a class="mnu"><h6><strong><bean:message key="lbl.IP_Actual"/> :</strong><%=session.getAttribute("IP.adress")%></h6></a></td></tr>
-					<tr><td><a class="mnu"><h6><strong><bean:message key="lbl.Ultima_Transferencia"/> :</strong>  <common:UltimaTransaccion></common:UltimaTransaccion></h6></a></td></tr>
-					<tr><td><a class="mnu"><h6><strong><bean:message key="lbl.ultimo.acceso"/></strong> <common:fecha-acceso/></h6></a></td></tr>
-				</table>
-
-			</td>
-
-			<td style="padding-left: 2%"> 
-				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/>
-			</td>
-
-			</tr>
-		</table>
-
-		</div> -->
 
 <div class="flex">
 	<div><img onclick="dv.showDV(usersecurity); return false" src='http://pc-14v014:8080/internet/do.GetImage?img=ch'  style=" width : 90px; height : 90px;" ></div>

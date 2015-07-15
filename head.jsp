@@ -11,11 +11,20 @@ java.util.Calendar cal2 =  java.util.Calendar.getInstance();
 
 %>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<SCRIPT LANGUAGE="JavaScript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="<html:rewrite page='/scripts/xaramenu.js' />"></script>
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/estilo.css'/>">
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/newlf.css '/>">
+
+<script LANGUAGE="JavaScript">
+
 <!--
 var da = (document.all) ? 1 : 0;
 var pr = (window.print) ? 1 : 0;
@@ -160,10 +169,3 @@ function regresar(){
  <%}   else {%>
     <title><bean:message key="tit.title.banco2"/></title>
  <%} %>
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-<LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/estilo.css'/>">
-<LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/newlf.css '/>">
-<script src="<html:rewrite page='/scripts/xaramenu.js' />"></script>

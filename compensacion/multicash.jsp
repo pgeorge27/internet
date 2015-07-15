@@ -57,6 +57,12 @@ function ValidaFechas(date)
 
 </script>
 
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
 <!--  Funcion para Rellenar de Ceros -->
 <%! String valores(int numero)
 {
@@ -103,50 +109,60 @@ String fecha = df.format(pDate);
 %>
 <script type="text/javascript" src="<html:rewrite page='<%=calendar%>'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/calendar-trx.js'/>"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
 <%@ include file="../body.jsp" %>
 
+
+<div align="center" class="container"> 
+
+
 <logic:messagesPresent>
-  <table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
-		  <tr><td>
-			 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-				  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								   <td width="95%" class="msg">
+  <div>
+	
+			 <div>
+				  <div><div><img src="<html:rewrite page='/images/warning.gif'/>"></div>
+								   <div class="msg">
 									<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-	<span class="bienvenida">
+	<div class="bienvenida">
 		<table width="80%">
 		<html:messages id="error">					
-			<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
+			<div><div class="bienvenida">- <bean:write name="error" /></div></div>
 		</html:messages>
 		</table>
-	</span><br>
-								   </td></tr>
-			 </table></td></tr>
-		  </table>
+	</div><br>
+								   </div></div>
+			 </div>
+		  </div>
 </logic:messagesPresent>
 
+		<div class="row">
+
+		  <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+
+	<div class="panel panel-default" >
+				
+					 
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.conexion.helmbank"/></strong></div>
+					  <div class="panel-body">
 
 <div align="center"> 
 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0">
-		  <tr>
-            <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>		  
-			<td><div align="left" class="login">Helm Conexión</div></td>
-		  </tr>
-		</table>
-	  </div>
-	  </td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top" align="center">
+
+
+
+	
 	<html:form method="post" action="/multicash/links">
 	  
-  	  <%@ include file="../divHeader.jsp"%>
+  	
 		<table  border="0" align="center" cellpadding="5" cellspacing="5">
 		  <tr> 
 			<td width="31%" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cuentas"/></div></td>
@@ -178,10 +194,22 @@ String fecha = df.format(pDate);
 		  </tr>
 		</table>
 		<%@ include file="../divFooter.jsp"%>
-	  </html:form></td></tr>
+	  </html:form>
 	  <tr>
 	  <td height="20" valign="middle" class="texto-acceso" align="center"><bean:message key="lbl.mensaje.campo.requerido"/></td>
           </tr>  
 </table>
 </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
 <%@ include file="../footer.jsp"  %>	
+
+</html:html>

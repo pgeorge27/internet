@@ -161,12 +161,12 @@
 	        	
 	        	
 	        	<div class="row">
-  <div class="col-md-3" align="center">     <div>
+  <div class="col-md-3" >     <div>
 		                    	<input name="tipoMov" id="TipoOperacion" type="radio" value="1" checked onclick="setValue(1);">
 		                      	<span class="">	<h7>
 		                      		<bean:message key="lbl.movimientos.dia"/> </h7>
 		                      </div></div>
-  <div class="col-md-5" align="center">        <div>
+  <div class="col-md-5" >        <div>
 		                    	<input type="radio" name="tipoMov" id="TipoOperacion" value="2" onclick="setValue(2);">
 		                      	<span class=""><h7>
 		                      		<bean:message key="lbl.movimientos.mes"/></h7>
@@ -280,9 +280,9 @@
 							
 						
 	<div align="center">
-	<input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">  
+	<input name="botonEnviar" onclick="send();" type="button" style="width: 100px" class="btn btn-default" value="<bean:message key="btn.consultar"/>">  
 		
-<input TYPE="BUTTON" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
+<input TYPE="BUTTON" class="btn btn-default" style="width: 100px" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
 				</div>
 							
 							

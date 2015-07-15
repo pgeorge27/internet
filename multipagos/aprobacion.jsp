@@ -73,20 +73,19 @@
 		color: white;
 	}
 </style>
-<script type="text/javascript" 	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
 
 <script type="text/javascript">
 seleccionados = new Array();
 var moneda = "";
 var monedaIso ="";
 $(document).ready(function(){
-	
+
 	moneda = "";
 	$(":checkbox").click(function(data){
 		obj = {indice:this.value,tipo:$(this).attr("id")};
 		Xopa = $(':checkbox:checked').size();
-		
-		if(this.checked){			
+
+		if(this.checked){
 			seleccionados.push(obj);
 			moneda = $(this).attr("moneda");
 			monedaIso = $(this).attr("monedaIso");
@@ -227,9 +226,10 @@ function __update(){
 </script>
 <%@ include file="../body.jsp"%>
 
-<br>
+<div class="container"> 
+
 <logic:messagesPresent>
-	<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso">
+	<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso table-responsive">
 		<tr>
 			<td>
 			<table border="0" cellpadding="1" cellspacing="0" width="100%">
@@ -253,20 +253,18 @@ function __update(){
 </logic:messagesPresent>
 
 <div align="center">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<table class="table-responsive" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
 		<td height="40" valign="bottom">
 		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
 			<tr>
 				<td colspan="2">
-					<%@ include file="../divHeader.jsp"%>
-						<table>
-                        	<tr valign="baseline">
-                            	<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-                                <td class="bienvenida_1"><bean:message key="lbl.transferencias.autorizaciones.nuevas"/></td>
-                            </tr>	
-                        </table>
-					<%@ include file="../divFooter.jsp"%>
+					<table>
+						<tr valign="baseline">
+							<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
+							<td class="bienvenida_1"><bean:message key="lbl.transferencias.autorizaciones.nuevas"/></td>
+						</tr>	
+					</table>
 				</td>
 			</tr>
 			<tr>
@@ -274,7 +272,7 @@ function __update(){
 					<div align="left" class="login"><bean:message key="lbl.transf.inter.aprobacion" /></div>
 				</td>
 				<td width="8%">
-					<div align="right">&nbsp; <INPUT class="botton"
+					<div align="right">&nbsp; <INPUT class="botton btn btn-default"
 					onclick="document.location='<html:rewrite page='/servicios/aprobacion.jsp'/>';"
 					type="button" value="<bean:message key="lbl.retroceder"/>"></div>
 				</td>
@@ -294,7 +292,7 @@ function __update(){
 	<tr>
 		<td><br>
 		<div align="left">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<table class="table-responsive" width="100%" border="0" cellspacing="0" cellpadding="0">
 			<html:form method="post" action="/multipago/autoriza">
 			<html:hidden styleId="proporcion" property="proporcion" value="masivo" />
 <%-- 		<html:hidden styleId="tipos" property="tipo" /> --%>
@@ -311,7 +309,7 @@ function __update(){
 				</table>
 				</td>
 			</tr>
-				<table width="100%" border="0" cellspacing="1" cellpadding="1">
+				<table class="table-responsive" width="100%" border="0" cellspacing="1" cellpadding="1">
 					<TR class="tabla-acceso">
 						<TD class="texto-acceso" width="5%"><bean:message
 							key="lbl.transf.inter.secuencia" /></TD>
@@ -448,7 +446,7 @@ function __update(){
 							} /* End if */
 					%>
 				</table>
-				<table width="100%" border="0" cellspacing="5" cellpadding="5">
+				<table class="table-responsive" width="100%" border="0" cellspacing="5" cellpadding="5">
 					<tr>
 						<td align="center"><input type="button" class="botton"
 							value="<bean:message key="lbl.transf.inter.autorizar"/>"
@@ -466,10 +464,12 @@ function __update(){
 						</td>
 					</tr>
 				</table>
+
 				
 			</html:form>
 		</TABLE>
 </table>
+</div>
 </div>
 
 <%@ include file="../footer.jsp"%>

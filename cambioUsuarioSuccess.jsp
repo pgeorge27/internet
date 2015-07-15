@@ -13,11 +13,17 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 %>
 
 
-<html>
+<!DOCTYPE html>
+<html:html>
+
 <head>
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/flujos.css'/>" />
 <script language="javascript" src="./scripts/campos.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 <!--
 if (typeof window.event != 'undefined') // IE
@@ -106,29 +112,23 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
+<body style="padding-top: 20px;">
+
+<div class="container">
+
+	<html:form method="post" action="/cambioUsuarioBasico.do">
+
+  	 <header>
+			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
+		    </header>
+
+		  <div class="row" style="padding-top: 110px;">
+		<div class="col-md-4 col-md-offset-4">
+		
+				<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.token.introduccion.cambioUsuario" /></strong></div>
+									<div class="panel-body">
+			<logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
 		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
@@ -146,68 +146,27 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <%
    session.removeAttribute("msg");
 %>
-<div > 
-<table width="100%" border="0"  cellpadding="0" cellspacing="0">
-
-  <tr><td height="20" > </td></tr>
-  <tr align="center"> 
-  
-	<td valign="top" colspan="2" width="80%">
-	<table width="100%" align="center"><tr><td>
-	<html:form method="post" action="/cambioUsuarioBasico.do">
-	 <table cellspacing="3" cellpading="3" align="center" width="100%">
-       <tr valign="top">
-			<td>
-				<table>
-					<tr>
-						<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-						<td><p class="fuente-titulo">
-								<bean:message key="lbl.token.introduccion.cambioUsuario" />
-						</p></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td class="fuente-principal">
+			<div align="center">
 							<bean:message key="lbl.token.cambio.usuario.obs3" />
-						</td>
-					</tr>
-				</table>
-			</td>
-	    </tr>
+						</div>
+			
+		
+
+<br>
       
-	  <tr>
-	  	<td align="center">
+
+	  	<div align="center">
 	  		<html:hidden  property="pantalla" value="cambioImagen"/>
-	  		<input type="submit" class="botton" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
-	  	</td>
-	  </tr>
-	  </table>
-
-	
-
-	  </html:form>
-	  </td></tr>
-	  </table>
-	  </td>
-  </tr>
-  <tr>
-	<td height="20" valign="middle" class="texto-acceso"></td>
-  </tr>
-</table></div>
-</td></tr></table></td></tr>
-
-
-
-
-
-
-</table></td></tr>
-	<tr>
-		<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-			<div align="center" class="derechos">
-				<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	  		<input type="submit" class="btn btn-default" style="width: 100px;" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
+	  	</div>
 			</div>
-		</td>
-	</tr>
-</table></body></html>
+	
+						</div>
+							</div>
+
+ </div>
+
+	  </html:form>	
+	</div>
+		</body></html:html>
 

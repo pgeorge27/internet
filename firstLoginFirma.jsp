@@ -12,11 +12,16 @@ String role = session.getAttribute("role.user").toString();
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
 %>
 
-<html>
+<!DOCTYPE html>
+<html:html>
 <head>
 
 <script language="javascript" src="./scripts/campos.js"></script>
 <script language="javascript" src="./scripts/ValidaFirmaDigital.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 <!--
 if (typeof window.event != 'undefined') // IE
@@ -110,6 +115,7 @@ window.statusbar=' ';
 <LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/teclado.css'/>">
 <script type="text/javascript" src="<html:rewrite page='/scripts/tecladoUpdate.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/transferencia.js'/>"></script>
+
 <% String  service = session.getAttribute("codigo.servicio").toString(); %>
 <%if (service.equals("1")) {%> 
     <title><bean:message key="tit.title.banco"/></title>
@@ -119,22 +125,32 @@ window.statusbar=' ';
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td >
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			</td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="16" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
+
+
+
+
+<body onLoad="reset();"  style="padding-top: 30px;" >
+
+
+
+
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-7"><img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/></div>
+<div class="col-md-1"></div>
+  </div>
+
+
+		
+
+<div class="container" style="padding-top: 10px;" >
+<br> 
+
+
+
+
+	
+
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tabla-acceso" >
 	<tr> 
@@ -153,6 +169,131 @@ window.statusbar=' ';
 <%
    session.removeAttribute("msg");
 %>
+
+
+
+
+<br>
+
+
+		<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.cambio.clave.especial"/></strong></div>
+  <div class="panel-body">
+  
+  
+  
+  
+  
+  
+   <form method="post" action="<html:rewrite page='/do.claveespecial'/>" name="forma">
+  
+  
+  <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-4"><strong><bean:message key="lbl.clave_anterior"/>:</strong></div>
+  <div class="col-md-3"><td align="left"><html:password property="oldPassw" styleClass="form-control" redisplay="false" maxlength="4" styleId="claveold"  /> 
+			  </td></div>
+  <div class="col-md-4"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span>&nbsp;<td>Utilice el teclado de su computador</td></div>
+
+  
+  
+  
+  </div>
+  
+  <br>
+  
+
+  
+  
+
+  
+  
+  
+    <input type="hidden" name="Foco" value="newPassw" id="Foco" >
+  
+  
+      <div class="row">
+  <div class="col-md-1"></div>
+<div class="col-md-4"><strong>Ingrese su nueva segunda clave o firma virtual:</strong></div>
+
+  <div class="col-md-3"><td><html:password onchange="checkLength(this)" property="newPassw" styleClass="form-control" redisplay="false" onclick="campoChange(2);" styleId="clavenew" onkeypress="javascript: return false;" onkeydown="javascript: return false;" maxlength="4"/> 
+			  </td></div>
+  <div class="col-md-4"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span>&nbsp;<td>Utilice el teclado virtual de la pantalla</td></div>
+
+  
+  
+  
+  </div>
+  
+
+
+  <br>
+  
+  
+  
+  
+        <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-4"><strong><bean:message key="lbl.reescriba_clave"/>:</strong></div>
+  <div class="col-md-3"><td><html:password onchange="checkLength(this)" property="confirmPassw" styleClass="form-control" redisplay="false" onclick="campoChange(3);" styleId="claveconf" onkeypress="javascript: return false;" onkeydown="javascript: return false;" maxlength="4"/> 
+			</td></div>
+  <div class="col-md-4"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span>&nbsp;<td> Utilice el teclado virtual de la pantalla </td></div>
+
+  
+  
+  
+  </div>
+    
+			<td  align="center"class="texto-acceso">
+						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
+				</td>
+
+			
+		 	
+
+		
+
+		
+
+				<div>
+			    	<div  align="left"  colspan="3" >
+				    	<div id="teclado">
+							<div id="lower" style="display: none;" ></div>
+							<div id="upper"></div>
+							<div id="cls" align="center"></div>		
+						</div>
+					</div>
+			     </div>
+			
+		  <tr> 
+			<td>&nbsp;</td>
+			<td colspan="2"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> 
+			  <input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"> 
+			</td>
+		  </tr>
+		</table>
+	  </form>
+
+
+
+
+  
+  </div>
+</div>
+
+
+
+
+
+
+		<div class="panel panel-default">
+ <div class="panel-heading" align="justify" ></div>
+  <div class="panel-body">
+
+
+
 <div align="center">
 <table width="100%" align="left">
 <tr>
@@ -160,7 +301,7 @@ window.statusbar=' ';
 	<div align="left"> 
 		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
 		  <tr> 
-			<td width="100%"><div align="left" class="login"><bean:message key="tit.title.cambio.clave.especial"/></div></td>
+			<td width="100%"><div align="left" class="login"></div></td>
 		  </tr>
 		</table>
 	  </div></td>
@@ -174,51 +315,7 @@ window.statusbar=' ';
   <tr valign="top">
      <td>
      <!--  Tabla con Cajas -->
-     <form method="post" action="<html:rewrite page='/do.claveespecial'/>" name="forma">
-		<input type="hidden" name="Foco" value="newPassw" id="Foco" >
-		<table width="650" border="0" align="center" cellpadding="0" cellspacing="2">
-		  <tr> 
-			<td width="31%" height="20" class="celda-clave1"><div  class="texto-acceso"><bean:message key="lbl.clave_anterior"/></div></td>
-			<td ><html:password property="oldPassw" styleClass="inputf" redisplay="false" maxlength="4" styleId="claveold"  /> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)  </span></td>
-		 	<td class="texto_informacion">Utilice el teclado de su computador </td>
-		  </tr >
-		  <tr><td width="31%" height="20" class="celda-clave1"></td></tr>
-		  <tr> 
-			<td height="20" class="celda-clave1"><div  class="texto-acceso"><bean:message key="lbl.clave_nueva"/></div></td>
-			<td ><html:password onchange="checkLength(this)" property="newPassw" styleClass="inputf" redisplay="false" onclick="campoChange(2);" styleId="clavenew" onkeypress="javascript: return false;" onkeydown="javascript: return false;" maxlength="4"/> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>) </span></td>
-			  <td class="texto_informacion"> Utilice el teclado virtual de la pantalla  </td>
-		  </tr>
-		  <tr> 
-			<td height="20" class="celda-clave1"><div  class="texto-acceso"><bean:message key="lbl.reescriba_clave"/></div></td>
-			<td><html:password onchange="checkLength(this)" property="confirmPassw" styleClass="inputf" redisplay="false" onclick="campoChange(3);" styleId="claveconf" onkeypress="javascript: return false;" onkeydown="javascript: return false;" maxlength="4"/> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		 <td class="texto_informacion"> Utilice el teclado virtual de la pantalla  </td>
-		  </tr>
-		  			<tr>
-				<td  align="center"class="texto-acceso">
-						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
-				</td>
-			</tr>
-				<tr><td width="30%"><div align="right"></div></td>
-			    	<td  align="left"  colspan="3" >
-				    	<div id="teclado">
-							<div id="lower" style="display: none;" ></div>
-							<div id="upper"></div>
-							<div id="cls" align="center"></div>		
-						</div>
-					</td>
-			     </tr>
-				<tr><td colspan="3">&nbsp;</td></tr>
-		  <tr> 
-			<td>&nbsp;</td>
-			<td colspan="2"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> 
-			  <input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-			</td>
-		  </tr>
-		</table>
-	  </form>
+
      </td>
    <td>
 	<!--  Tabla con Tips -->
@@ -244,7 +341,7 @@ window.statusbar=' ';
 	       </td>
 	    </tr>
 	  </table>
-	   <%@ include file="divFooter.jsp"%>
+
 	</td>
      </tr>
   <tr>
@@ -255,4 +352,30 @@ window.statusbar=' ';
     <td height="31" colspan="6" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
         <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
   </tr>
-</table></td></tr></table></body></html>
+</table></td></tr></table></div>
+
+
+
+
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></body></html:html>
