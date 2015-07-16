@@ -45,7 +45,8 @@ try{
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/styles.css'/>">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/transferencia.js'/>"></script>
@@ -124,7 +125,7 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 		||"65".equals(userInfo.getRole())
         ||"70".equals(userInfo.getRole())){%> 
 
-<nav class="navbar navbar-default" style="width: 99.8%; margin-left: 0.2em;">
+<nav class="navbar navbar-default">
 	<div id='cssmenu' style="z-index:99; " >
 		<ul style="">
 			<li class='has-sub top'><a href='#' ><span>Consultas</span></a>

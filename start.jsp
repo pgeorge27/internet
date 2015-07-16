@@ -45,10 +45,6 @@
  	}
 %>
 
-<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
-
-<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
-
 <!DOCTYPE html>
 <html:html>
 <head>
