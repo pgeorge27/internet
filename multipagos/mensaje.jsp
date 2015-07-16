@@ -26,39 +26,26 @@ function __retornar(){
 </script>
 <%@ include file="/body.jsp"%> 
 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td><div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                             <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                               <tr> 
-                                 <td><div align="center"><img src="<html:rewrite page='/images/success.gif'/>"></div></td>
-                               </tr>
-                               <tr> 
-                                 <td class="bienvenida">Operación realizada</td>
-                               </tr>
-							   <tr>
-								 <td class="bienvenida">Pagos Por archivo : <%=tranferCounter%></td>
-							   </tr>
-							    <tr>
-								 <td class="bienvenida">Pagos Procesados Correctamente  : <%=tranferValid%></td>
-							   </tr>
-							    <tr>
-								 <td class="bienvenida">Pagos no procesados   : <%=tranferInValid%></td>
-							   </tr>
-							   <tr><td><div align="right">&nbsp;
-							<INPUT class="botton" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-                             </table>
-						</td>                                
-                       </tr>
-					</td>                           
-                 </tr>
-				</table></td></tr></div></td>
-       </tr>
-     </table>
+
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-body">
+          <div align="center">
+            <img src="<html:rewrite page='/images/success.gif'/>">
+            <p class="bienvenida">Operación realizada</p>
+          </div>
+          <p class="bienvenida">Pagos Por archivo : <%=tranferCounter%></p>
+          <p class="bienvenida">Pagos Procesados Correctamente  : <%=tranferValid%></p>
+          <p class="bienvenida">Pagos no procesados   : <%=tranferInValid%></p>
+          <div align="center">
+          <input class="botton btn btn-default" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%@ include file="/footer.jsp" %>
