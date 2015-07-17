@@ -88,7 +88,7 @@
 						$('#block').css('top',dim.top -5);
 						$('#block').css('width',width +10);
 						$('#block').css('height',height +15);
-						$('tr').removeClass('hidden');
+						// $('tr').removeClass('hidden');
 						$('div').removeClass('hidden');
 						$('.hidden-later').addClass('hidden');
 
@@ -113,8 +113,9 @@
 			function empezar(){
 				$.unblockUI({});
 				limpiar();
-				$('tr[class="dummy"]').addClass('hidden');
-				$('.hidden-late').removeClass('hidden');
+				// $('tr[class="dummy"]').addClass('hidden');
+				$('div[class="dummy"]').addClass('hidden');
+				$('.hidden-later').removeClass('hidden');
 				$("#messages").empty();
 				$('#sender').attr('cual',1);
 				limpiar();
@@ -159,7 +160,8 @@
 				var clave1 = $('#clave1').val();
 				var clave2 = $('#clave2').val();
 				$('#block').remove();
-				$.blockUI({ message: $('#esperar'), css: { width: '400px' } });
+				// $.blockUI({ message: $('#esperar'), css: { width: '400px' } });
+				$.blockUI({ message: $('#esperar'), css: { width: '200px' } });
 				$.ajax({
 					type: "POST",
 					url: "<html:rewrite page='/do.activarDispositivo'/>",
@@ -172,7 +174,7 @@
 						if(data.status == "success"){
 							$.unblockUI({
 								onUnblock: function(){
-									$.blockUI({ message: $('#msgExito'), css: { width: '400px' } });
+									$.blockUI({ message: $('#msgExito'), css: { width: '200px' } });
 								}
 							});
 						}
@@ -219,7 +221,6 @@
 				<div class="fuente-principal">
 					<bean:message key="<%=paso%>"/>
 				</div>
-				
 
 				<div class="panel panel-default" >
 					<div class="panel-heading" >
@@ -232,6 +233,7 @@
 					<div class="panel-body">
 						<!-- Mensajes de espera para send -->
 						<%@ include file="blockDiv.jsp"%>
+
 						<div class="row" style="display: none;" id="mensajes" >
 							<div class="well">
 								<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></p>
