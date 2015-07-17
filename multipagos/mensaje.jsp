@@ -31,10 +31,13 @@ function __retornar(){
   <div class="row"> 
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default" >
+        <div class="panel-heading">
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>Operación realizada</strong>
+        </div>
         <div class="panel-body">
           <div align="center">
             <img src="<html:rewrite page='/images/success.gif'/>">
-            <p class="bienvenida">Operación realizada</p>
           </div>
           <p class="bienvenida">Pagos Por archivo : <%=tranferCounter%></p>
           <p class="bienvenida">Pagos Procesados Correctamente  : <%=tranferValid%></p>

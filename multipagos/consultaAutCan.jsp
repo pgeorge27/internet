@@ -22,9 +22,8 @@ System.out.println(new java.util.Date(System.currentTimeMillis()));
 		document.forms['consultaForm'].submit();
 	}
 </script>
-<div align="center" class="container"> 
+<div class="container"> 
 	<div class="row"> 
-
 		<div>
 			<logic:messagesPresent>
 			<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso">
@@ -40,23 +39,23 @@ System.out.println(new java.util.Date(System.currentTimeMillis()));
 										<table width="80%">
 											<html:messages id="error">					
 											<tr>
-												<td class="bienvenida">- <bean:write name="error" /></td></tr>
-												</html:messages>
-											</table>
-										</span>
-
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
+												<td class="bienvenida">- <bean:write name="error" /></td>
+											</tr>
+											</html:messages>
+										</table>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
 			</logic:messagesPresent>
 		</div>
 
 		<div class="col-md-4 col-md-offset-4">
 			<div class="panel panel-default" >
-				<div class="panel-heading" align="justify" >
+				<div class="panel-heading" >
 					<img src="<html:rewrite page='/images/logo_icon.png' />" />
 					<strong>
 						<bean:message key="lbl.transf.inter.aprobacion"/> Multipagos
@@ -64,7 +63,6 @@ System.out.println(new java.util.Date(System.currentTimeMillis()));
 				</div>
 
 				<div class="panel-body">
-					<div class="row">
 						<label style="text-align:left">
 							<h5>
 								<span class="texto-acceso"><font color="#FF0000">*</font></span>
@@ -75,35 +73,32 @@ System.out.println(new java.util.Date(System.currentTimeMillis()));
 						<html:form method="post" action="/multipagos/Consulta/autorizaciones">
 						<div class=".col-md-6" style="align: center; padding-right: 3%; width: 90%;" >
 							<html:select property="cliente" styleClass="botton-acceso form-control">
-							<html:option value="">
-							<bean:message key="lbl.transf.inter.seleccione"/>
-							</html:option>
-							<csic:forEachCliente orderBy="NAME_ORDER" >  
-							<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%>
-							</html:option>	
-						</csic:forEachCliente>
-						</html:select>
-					</div>
-					<br>
-					<div>
-						<input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
-
-						<html:reset styleClass="btn btn-default">
-						<bean:message key="btn.limpiar"/>
-						</html:reset>
-
-						<div class="texto-acceso">
-							<h6 style="color:#95A5A6 "><bean:message key="lbl.mensaje.campo.requerido"/></h6>
-							<%@ include file="../divFooter.jsp"%>
+								<html:option value="">
+								<bean:message key="lbl.transf.inter.seleccione"/>
+								</html:option>
+								<csic:forEachCliente orderBy="NAME_ORDER" >  
+									<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%>
+									</html:option>	
+								</csic:forEachCliente>
+							</html:select>
 						</div>
+						<br>
+						<div align="center">
+							<input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">
 
-					</div>
-					</html:form>
+							<html:reset styleClass="btn btn-default">
+							<bean:message key="btn.limpiar"/>
+							</html:reset>
+						</div>
+						</html:form>
+						<div align="center" class="texto-acceso">
+								<h6 style="color:#95A5A6 "><bean:message key="lbl.mensaje.campo.requerido"/></h6>
+								<%@ include file="../divFooter.jsp"%>
+						</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 <%@ include file="../footer.jsp"  %>
 <%

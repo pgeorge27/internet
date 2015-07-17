@@ -63,103 +63,143 @@ private String getDescEstado(String estado){
 
 <%@ include file="../body.jsp"%>
 <%Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);%>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-   <tr> 
-	 <td height="40" valign="bottom"><div align="center"> 
-		 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		   <tr> 
-			 <td width="92%">
-				<div align="left" class="login">Consulta Tranferencias Multipagos</div></td>
-			<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/multipagos/pconsultaMultipagos.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-<logic:present name="consulta.clte">
-<tr><td class="bienvenida"><strong><%=session.getAttribute("consulta.clte") %></strong></td></tr>
 
-</logic:present>
-<tr><td>
-<table width="100%" border="0" cellspacing="1" cellpadding="1">
-  <TR class="tabla-acceso">
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.secuencia"/></TD>
-    <TD class="texto-acceso" width="7%">Fecha Efectiva</TD>
-    <TD class="texto-acceso" width="7%"><bean:message key="lbl.transf.inter.cantidad"/></TD>
-    <TD class="texto-acceso" width="12%"><bean:message key="lbl.moneda"/></TD> 
-    <TD class="texto-acceso" width="10%">Beneficiario</TD>
-    <TD class="texto-acceso" width="10%"><bean:message key="lbl.beneficiario.cuenta"/></TD>
-	<TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.elaborador.por"/></TD>
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.estado"/></TD>
-    <TD class="texto-acceso" width="25%"><bean:message key="lbl.transf.inter.nivel.aprobacion"/></TD>  
-  <TR>
-    <TD colspan="8"></TD>
-    <TD class="texto-acceso"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-    						  <tr class="tabla-acceso">
-    						  	  <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.aprobado.por"/></td>
-    						      <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.fecha.aprobacion"/></td>
-    						      <td class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.tipo.relacion"/></td>
-    						      <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.estado"/></td></tr>
-    						  </table></td></tr>  
-<%
-ArrayList data = (ArrayList)session.getAttribute("transferencias");
-String styleClass = "";
-if (data != null){
-    TranferenciaProcesada t = null;
-    String fecha = null;
-    String aprobadorStr = null;
-    DetalleTransferencia detalle = null;
-    for (int i = 0; i < data.size(); i++){
-	if (i % 2 == 0)
-		styleClass = "";
-	else
-		styleClass = "class=\"celda-clave1\"";
-        
-		t = (TranferenciaProcesada)data.get(i);
-        if (t.getDetalle() != null && t.getDetalle().size() > 0){
-            StringBuffer buffer = new StringBuffer();
-            buffer.append("<table width=\"100%\">");
-            for (int j = 0; j < t.getDetalle().size(); j++){
-	            detalle = (DetalleTransferencia) t.getDetalle().get(j);	 	            
-	            buffer.append("<tr><td class=\"bienvenida\" width=\"30%\">");
-	            buffer.append(detalle.getUsername());
-	            buffer.append("</td><td class=\"bienvenida\" width=\"30%\">");
-	            buffer.append(f.formatFecha(detalle.getFechaAprobacion(), locale));
-	            buffer.append("</td><td class=\"bienvenida\" width=\"10%\">");
-	            buffer.append(detalle.getTipoRelacion());
-	            buffer.append("</td><td class=\"bienvenida\" width=\"30%\" nowrap>");
-	            buffer.append(com.arango.internet.tag.TagUtil.getString(pageContext, getNivelAutorizacion(detalle.getEstado())));	            
-	            buffer.append("</td></tr>");
-            }
-            buffer.append("</table>");
-            aprobadorStr = buffer.toString();
-        }
-        else{
-            fecha = "";
-            aprobadorStr = "";
-        }
-%>
-<tr valign="middle" <%=styleClass%>>
-        <td class="bienvenida"><a href="<html:rewrite page='/multipagos/detalleCon.jsp'/>?w=<%=i%>&t=1"><%=StringUtilities.replace(f.formatCuenta(t.getNumeroDocumento(), "A-S-C"), "-", "")%></a></td>
-        <td class="bienvenida"><%=f.formatFecha(t.getFechaValor(), locale)%></td>
-        <td class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
-        <td class="bienvenida"><%=t.getMonedaAbanks() %></td>  
-        <td class="bienvenida"><%=t.getNombreBeneficiario()==null?"":t.getNombreBeneficiario()%></td> 
-		<td class="bienvenida"><%=t.getCuentabancoBeneficiario	()==null?"":t.getCuentabancoBeneficiario()%></td> 
-		<td class="bienvenida"><%=t.getAdicionadoPor() == null ? "" : t.getAdicionadoPor()%></td>	
-		<td class="bienvenida" nowrap><bean:message key="<%=getDescEstado(t.getEstado())%>"/></td>
-        <td class="bienvenida"><%=aprobadorStr%></td> 	
-		<td class="bienvenida"><%=t.getDescripcionRechazo() == null ? StringUtilities
-										.getValue(t.getMotivo())
-										: t.getDescripcionRechazo()%></td>		
-</tr>
-<%
-   } /* End  for*/
-} /* End if */ %>  
-</TABLE>
-<br>
-<div align="center">
-<INPUT class="botton" onclick="document.location='<html:rewrite page='/multipagos/pconsultaMultipagos.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
-</tr></table>
+<div class="container"> 
+    <div class="row">
+        <div class="table-responsive">
+            <div class="col-md-6">
+                <p class="bienvenida_1">
+                    <img src="<html:rewrite page='/images/gancho.gif'/>" border="0">
+                    <strong>Consulta Tranferencias Multipagos</strong>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div align="right">
+                    <input class="botton btn btn-default" onclick="document.location='<html:rewrite page='/multipagos/pconsultaMultipagos.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <logic:present name="consulta.clte">
+            <p class="bienvenida"><strong><%=session.getAttribute("consulta.clte") %></strong></p>
+        </logic:present>
+
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr class="tabla-acceso">
+                        <td class="texto-acceso" width="5%">
+                            <bean:message key="lbl.transf.inter.secuencia"/>
+                        </td>
+                        <td class="texto-acceso" width="7%">Fecha Efectiva
+                        </td>
+                        <td class="texto-acceso" width="7%">
+                            <bean:message key="lbl.transf.inter.cantidad"/>
+                        </td>
+                        <td class="texto-acceso" width="12%">
+                            <bean:message key="lbl.moneda"/>
+                        </td> 
+                        <td class="texto-acceso" width="10%">Beneficiario
+                        </td>
+                        <td class="texto-acceso" width="10%">
+                            <bean:message key="lbl.beneficiario.cuenta"/>
+                        </td>
+                        <td class="texto-acceso" width="10%">
+                            <bean:message key="lbl.transf.inter.elaborador.por"/>
+                        </td>
+                        <td class="texto-acceso" width="5%">
+                            <bean:message key="lbl.transf.inter.estado"/>
+                        </td>
+                        <td class="texto-acceso" width="25%">
+                            <bean:message key="lbl.transf.inter.nivel.aprobacion"/>
+                        </  td>  
+                        <tr>
+                            <td colspan="8">
+                            </td>
+                            <td class="texto-acceso">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="tabla-acceso">
+                                        <td class="texto-acceso" width="30%">
+                                            <bean:message key="lbl.transf.inter.aprobado.por"/>
+                                        </td>
+                                        <td class="texto-acceso" width="30%">
+                                            <bean:message key="lbl.transf.inter.fecha.aprobacion"/>
+                                        </td>
+                                        <td class="texto-acceso" width="10%">
+                                            <bean:message key="lbl.transf.inter.tipo.relacion"/>
+                                        </td>
+                                        <td class="texto-acceso" width="30%">
+                                            <bean:message key="lbl.transf.inter.estado"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </thead>
+                        <%
+                        ArrayList data = (ArrayList)session.getAttribute("transferencias");
+                        String styleClass = "";
+                        if (data != null){
+                            TranferenciaProcesada t = null;
+                            String fecha = null;
+                            String aprobadorStr = null;
+                            DetalleTransferencia detalle = null;
+                            for (int i = 0; i < data.size(); i++){
+                            if (i % 2 == 0)
+                                styleClass = "";
+                            else
+                                styleClass = "class=\"celda-clave1\"";
+
+                                t = (TranferenciaProcesada)data.get(i);
+                                if (t.getDetalle() != null && t.getDetalle().size() > 0){
+                                    StringBuffer buffer = new StringBuffer();
+                                    buffer.append("<table width=\"100%\">");
+                                    for (int j = 0; j < t.getDetalle().size(); j++){
+                                        detalle = (DetalleTransferencia) t.getDetalle().get(j);
+                                        buffer.append("<tr><td class=\"bienvenida\" width=\"30%\">");
+                                        buffer.append(detalle.getUsername());
+                                        buffer.append("</td><td class=\"bienvenida\" width=\"30%\">");
+                                        buffer.append(f.formatFecha(detalle.getFechaAprobacion(), locale));
+                                        buffer.append("</td><td class=\"bienvenida\" width=\"10%\">");
+                                        buffer.append(detalle.getTipoRelacion());
+                                        buffer.append("</td><td class=\"bienvenida\" width=\"30%\" nowrap>");
+                                        buffer.append(com.arango.internet.tag.TagUtil.getString(pageContext, getNivelAutorizacion(detalle.getEstado())));
+                                        buffer.append("</td></tr>");
+                                    }
+                                    buffer.append("</table>");
+                                    aprobadorStr = buffer.toString();
+                                }
+                                else{
+                                    fecha = "";
+                                    aprobadorStr = "";
+                                }
+                        %>
+                        <tr valign="middle" <%=styleClass%>>
+                                <td class="bienvenida"><a href="<html:rewrite page='/multipagos/detalleCon.jsp'/>?w=<%=i%>&t=1"><%=StringUtilities.replace(f.formatCuenta(t.getNumeroDocumento(), "A-S-C"), "-", "")%></a></td>
+                                <td class="bienvenida"><%=f.formatFecha(t.getFechaValor(), locale)%></td>
+                                <td class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
+                                <td class="bienvenida"><%=t.getMonedaAbanks() %></td>  
+                                <td class="bienvenida"><%=t.getNombreBeneficiario()==null?"":t.getNombreBeneficiario()%></td> 
+                                <td class="bienvenida"><%=t.getCuentabancoBeneficiario  ()==null?"":t.getCuentabancoBeneficiario()%></td> 
+                                <td class="bienvenida"><%=t.getAdicionadoPor() == null ? "" : t.getAdicionadoPor()%></td>   
+                                <td class="bienvenida" nowrap><bean:message key="<%=getDescEstado(t.getEstado())%>"/></td>
+                                <td class="bienvenida"><%=aprobadorStr%></td>   
+                                <td class="bienvenida"><%=t.getDescripcionRechazo() == null ? StringUtilities
+                                                                .getValue(t.getMotivo())
+                                                                : t.getDescripcionRechazo()%></td>      
+                </tr>
+                        <%
+                           } /* End  for*/
+                        } /* End if */ %>  
+            </table>
+            <br>
+        </div>
+    </div>
+    <div align="center">
+        <input class="botton btn btn-default" onclick="document.location='<html:rewrite page='/multipagos/pconsultaMultipagos.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>">
+    </div>
+</div>
 
 <%@ include file="../footer.jsp"  %>

@@ -1,6 +1,6 @@
 ( function( $ ) {
 $( document ).ready(function() {
-$('#cssmenu').prepend('<div id="menu-button">Menu</div>');
+$('#cssmenu').prepend('<div id="menu-button">Men&uacute;</div>');
 	$('#cssmenu #menu-button').on('click', function(){
 		var menu = $(this).next('ul');
 		if (menu.hasClass('open')) {

@@ -259,18 +259,21 @@ function __update(){
 		<div class="col-md-12">
 			<p class="bienvenida_1">
 				<img src="<html:rewrite page='/images/gancho.gif'/>" border="0">
-				<bean:message key="lbl.transferencias.autorizaciones.nuevas"/>
+				<strong><bean:message key="lbl.transf.inter.aprobacion" /></strong>
 			</p>
 		</div>
 
 		<div class="col-md-12">
 			<div class="col-md-6">
-				<div align="left" class="login"><bean:message key="lbl.transf.inter.aprobacion" /></div>
+				<bean:message key="lbl.transferencias.autorizaciones.nuevas"/>
 			</div>
 			<div class="col-md-6">
 				<div align="right">&nbsp; <input class="botton btn btn-default" onclick="document.location='/internet/servicios/aprobacion.jsp';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
 			</div>
 		</div>
+	</div>
+	<br>
+	<div class="row">
 
 		<logic:present name="consulta.clte">
 			<p class="bienvenida"><strong><%=session.getAttribute("consulta.clte")%></strong></p>
@@ -421,7 +424,7 @@ function __update(){
 							%>
 						</tbody>
 
-<!-- 					<tbody>
+					<!-- <tbody>
 						<tr>
 							<td data-title="<bean:message key="lbl.transf.inter.secuencia" />" >AAC</td>
 							<td data-title="Fecha Elaboración">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
@@ -463,18 +466,16 @@ function __update(){
 				</html:form>
 			</table>
 		</div>
-
+	</div>
+	<br>
+	<div class="row">
 		<div align="center">
 			<input type="button" class="botton btn btn-default" value="<bean:message key="lbl.transf.inter.autorizar"/>" onclick="set('<%=ITransferencia.APROBADA %>');">
 			<input type="button" class="botton btn btn-default" id="btmRechaza" value="<bean:message  key="lbl.transf.inter.rechazar"/>" onclick="__reject();">
-		</div>
-
-		<div align="center">
 			<input class="botton btn btn-default" onclick="document.location='<html:rewrite page='/multipagos/consultaAutCan.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>">
 			<input type="hidden" />
 		</div>
-
-		</div>
+	</div>
 </div>
 
 <%@ include file="../footer.jsp"%>

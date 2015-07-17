@@ -16,10 +16,13 @@ function __retornar(){
   <div class="row"> 
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default" >
+        <div class="panel-heading">
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>Operación Suspendida</strong>
+        </div>
         <div class="panel-body">
           <div align="center">
             <img src="<html:rewrite page='/images/warning.gif'/>">
-            <p class="bienvenida">Operación Suspendida</p>
           </div>
           <p class="bienvenida">Los pagos procesados estan presentando errores favor contactar al Soporte Tecnico</p>
           <div align="center">

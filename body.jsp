@@ -111,8 +111,8 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 <body>
 
 <div class="flex">
-	<div><img onclick="dv.showDV(usersecurity); return false" src='http://pc-14v014:8080/internet/do.GetImage?img=ch'  style=" width : 90px; height : 90px;" ></div>
-    <div><img border="0" src="http://pc-14v014:8080/internet/images/logo.jpg"/></div>
+	<div><img class="img-responsive" onclick="dv.showDV(usersecurity); return false" src='http://pc-14v014:8080/internet/do.GetImage?img=ch'  style=" width : 90px; height : 90px;" ></div>
+    <div><img class="img-responsive" border="0" src="http://pc-14v014:8080/internet/images/logo.jpg"/></div>
 	<div>
 		<div><h6><strong><bean:message key="lbl.IP_Actual"/> :</strong><%=session.getAttribute("IP.adress")%></h6></div>
     	<div><h6><strong><bean:message key="lbl.Ultima_Transferencia"/> : </strong><common:UltimaTransaccion></common:UltimaTransaccion></h6></div>

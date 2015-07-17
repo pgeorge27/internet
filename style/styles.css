@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 #cssmenu,
 #cssmenu ul,
@@ -148,15 +149,15 @@
   right: 0;
 }
 #cssmenu ul ul ul {
-  padding-top: 20px;
-  padding-left: 6px;
+  padding-top: 0px;
+  padding-left: 4px;
 }
 #cssmenu.align-right ul ul ul {
   padding-right: 6px;
 }
 #cssmenu ul ul > li:hover > ul {
   left: 180px;
-  top: 20px;
+  top: 0px;
   opacity: 1;
 }
 #cssmenu.align-right ul ul > li:hover > ul {
@@ -168,7 +169,7 @@
   text-decoration: none;
   font-weight: 400;
   padding: 11px 25px;
-  width: 180px;
+  width: 185%;
   color: #262626;
   background: #ffffff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), -1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -233,11 +234,11 @@
   content:"\2022"; margin:0 10px;
 }
 #cssmenu ul ul li.has-sub > a::after {
-  border-left-color: #d35400;
+  border-left-color: #bdc3c7;
 }
 
 #cssmenu ul ul li.has-sub > a::after:hover {
-  border-left-color: #d35400;
+  border-left-color: #bdc3c7;
 }
 
 /*FLEX BOX PARA ELIMINAR LA TABLA DEL HEADER VERSION DESKTOP*/
@@ -381,26 +382,16 @@
   #cssmenu ul ul li:last-child > a {
     border-radius: 0;
   }
-  #cssmenu #menu-button::after {
-    display: block;
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 22px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
-    right: 25px;
-    top: 18px;
-  }
   #cssmenu #menu-button::before {
     display: block;
-    content: '';
+    content: '☰';
     position: absolute;
-    height: 3px;
-    width: 22px;
-    border-top: 2px solid #000;
+    /*height: 3px;*/
+    /*width: 22px;*/
+    /*border-top: 2px solid #000;*/
     right: 25px;
-    top: 28px;
+    top: 10px;
+    font-size: 25px;
   }
   #cssmenu > ul > li.has-sub > a::after,
   #cssmenu ul ul li.has-sub > a::after {
@@ -430,6 +421,8 @@
       -ms-align-items: center;
       align-items: center;
       justify-content: center;
+      padding-right: 10px;
+      padding-left: 10px;
    }
    .flex > div
    {
@@ -441,7 +434,7 @@
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-    justify-content: center;
+    justify-content: flex-start;
     width: 50%;
     order:1;
   }
@@ -450,9 +443,7 @@
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-      -ms-align-items: center;
-      align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       width: 50%;
       order:2;
   }
@@ -466,8 +457,8 @@
       -ms-flex-flow: column wrap;
       -o-flex-flow: column wrap;
       flex-flow: column wrap;
-      -ms-align-items: center;
-      align-items: center;
+      -ms-align-items: flex-start;
+      align-items: flex-start;
       order:3;
   }
 
