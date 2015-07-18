@@ -82,119 +82,62 @@ $(document).ready(function(){
 
 </script>
 
+<div class="container">
+	<div class="row">
+		<logic:messagesPresent>
+			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+			<p><span class="bienvenida"><b><bean:message key="errors.header"/></p>
+			<html:messages id="error">
+				<p class="bienvenida"> - <bean:write name="error" /></p>
+			</html:messages>
+		</logic:messagesPresent>
 
-<logic:messagesPresent>
-  <table cellpadding="1" cellspacing="1" width="750" class="tabla-acceso1">
-		  <tr><td>
-			 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-				  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								   <td width="95%" class="msg">
-									<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-	<span class="bienvenida">
-		<table width="80%">
-		<html:messages id="error">					
-			<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-		</html:messages>
-		</table>
-	</span><br>
-								   </td></tr>
-			 </table></td></tr>
-		  </table>
-</logic:messagesPresent>
+		<div class="col-md-6">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.preg.secreta.observacion"/>
+					</strong>
+				</div>
 
-
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div align="center"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-		    <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-			<td><div align="left" class="login"><bean:message key="tit.title.ingreso.clave.token"/></div>
-			</td>
-		  <td width="8%"><div align="right">&nbsp;</div></td>
-		  </tr>
-		</table>
-	  </div>
-	 </td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top" align="center">
-			<table>
-			 <tr valign="top">
-			    <td width="200">
-			    <!-- Tabla con Formulario -->
-			    <html:form method="post" action="/claveToken.do">
-			<table width="70%" border="0" align="center" cellpadding="5" cellspacing="5">
-		  <tr> 
-			<td width="30%" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.clave.token"/></td>
-		 	<td width="34%" align="center" nowrap><html:text property="claveToken" styleClass="botton-acceso"  maxlength="8"  styleId="claveToken"/></td>
-			<td width="35%"><div align="right"></div></td>
-		  </tr>
-										  
-			<tr>
-				<td colspan="3"  align="center"class="texto-acceso">
-						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
-				</td>
-			</tr>
-				<tr><td width="30%"><div align="right"></div></td>
-			    	<td colspan="3"align="center">
-				    	<div >
-							<div ></div>
-<!-- 							<div id="upper"></div> -->
-							<div id="cls" align="bottom"><input name="button" onclick="send();" type="button" class="botton" value='<bean:message key="btn.enviar"/>'></div>		
-						</div>
-					</td>
-			     </tr>
-			     <tr><td colspan="3">&nbsp;
-						<div id="teclado" style=" visibility: hidden;">
-							<div id="lower" style="display: none;" ></div>
-							<div id="upper"></div>
-							<div id="cls" align="bo"></div>		
-						</div>
-			     </td></tr>
-			     <tr>
-				    <td width="30%"><div align="right"></div></td>
-				    <td  width="34%" align="center">
-				   		
-				    </td>
-				    <td width="35%"><div align="right"></div></td>
-		         </tr>
-		</table>
+				<div class="panel-body">
+					<p><bean:message key="lbl.transferencia.clave.token.paso1" />
+					<img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></p>
+		          	<p><bean:message key="lbl.transferencia.clave.token.paso2" />
+		          	<img src="<html:rewrite page='/images/TokenPin.png'/>" height="15"></p>
+		          	<p><bean:message key="lbl.transferencia.clave.token.paso3" /></p>
+		          	<p><bean:message key="lbl.transferencia.clave.token.paso4" /></p>
+		          	<p><bean:message key="lbl.transferencia.clave.token.paso5" /></p>
+		          	<p><bean:message key="lbl.transferencia.clave.token.paso6" /></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="tit.title.ingreso.clave.token"/>
+					</strong>
+				</div>
+				<div class="panel-body">
+					<html:form method="post" action="/claveToken.do">
+						<p><bean:message key="lbl.clave.token"/></p>
+						<p><html:text property="claveToken" styleClass="botton-acceso form-control"  maxlength="8" styleId="claveToken"/></p>
+						<p><input name="button" onclick="send();" type="button" class="botton btn btn-default" value='<bean:message key="btn.enviar"/>'></p>
+						<p>
+							<div id="teclado" style=" visibility: hidden;">
+								<div id="lower" style="display: none;" ></div>
+								<div id="upper"></div>
+								<div id="cls" align="bo"></div>		
+							</div>
+						</p>
+						<p></p>
                     </html:form>
-			    </td>
-			    <td>
-			    <!--  Cuadro de Tips -->
-			    <%@ include file="../divHeader.jsp"%>
-			    <table cellspacing="3" cellpading="3"  width="350">
-        <tr valign="top">
-      	  <td colspan="2">
-      	  <table><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="bienvenida"><bean:message key="lbl.preg.secreta.observacion"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-	    <tr>
-	       <td colspan="2" class="bienvenida">
-				
-	          <OL>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso2" /><img src="<html:rewrite page='/images/TokenPin.png'/>" height="15"></li>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso3" /></li>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso4" /></li>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso5" /></li>
-	          	<li><bean:message key="lbl.transferencia.clave.token.paso6" /></li>
-	          </OL>
-	       </td>
-	    </tr>
-	  </table>	
-	  <%@ include file="../divFooter.jsp"%>	                   
-      </td>                                
-  </tr>
- </table>
- </td></tr></table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <%@ include file="../footer.jsp" %>
