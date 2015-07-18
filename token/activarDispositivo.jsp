@@ -217,6 +217,11 @@
 <body>
 	<div class="container">
 		<div class="row">
+
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+
 			<div class="col-md-4 col-md-offset-4">
 				<div class="fuente-principal">
 					<bean:message key="<%=paso%>"/>
@@ -243,7 +248,7 @@
 						</div>
 
 						<!-- Div que contiene el primer paso - este div se bloquea al enviar la primera clave -->
-						<div id="block-one" align="center">
+						<div id="block-one">
 							<form action="<%=action %>" id="formulario" method="post">
 								<div class="hidden-later">
 									<p><b><bean:message key="lbl.activar.dispositivo.instruccion1" /></b></p>
