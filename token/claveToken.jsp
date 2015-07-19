@@ -84,6 +84,11 @@ $(document).ready(function(){
 
 <div class="container">
 	<div class="row">
+
+		<div align="right">
+			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+		</div>
+
 		<logic:messagesPresent>
 			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
 			<p><span class="bienvenida"><b><bean:message key="errors.header"/></p>

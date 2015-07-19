@@ -219,7 +219,7 @@
 		<div class="row">
 
 			<div align="right">
-				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+				<img class="img-responsive" border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
 			</div>
 
 			<div class="col-md-4 col-md-offset-4">

@@ -4,21 +4,32 @@
 
 <%@ include file="../head.jsp"  %>
 <%@ include file="../body.jsp"  %>
-		   <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="mnuItem">
-                        <tr> 
-                          <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                              <tr> 
-                                <td width="46%" rowspan="2"><div align="center"> 
-                                    <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                                      <tr> 
-                                        <td><div align="center"><img src="<html:rewrite page='/images/error.gif'/>"></div></td>
-                                      </tr>
-                                      <tr> 
-                                        <td class="bienvenida"><p align="justify"><bean:message key="error.token.generic.msg"/></p></td>
-                                      </tr>
-                                    </table>
-                                  </div></td>                                
-                              </tr>                      
-			</table>
+
+
+<div class="container"> 
+  <div class="row">
+
+    <div align="right">
+      <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-heading">
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+            <!-- TItulo del panel header -->
+          </strong>
+        </div>
+        <div class="panel-body">
+          <div align="center">
+            <img src="<html:rewrite page='/images/error.gif'/>">
+          </div>
+          <p class="bienvenida"><bean:message key="error.token.generic.msg"/></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%@ include file="../footer.jsp"  %>

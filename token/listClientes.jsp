@@ -78,102 +78,67 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 <%@ include file="../body.jsp" %>
 
 <br>
-<logic:messagesPresent>
-  <table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
-		  <tr><td>
-			 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-				  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								   <td width="95%" class="msg">
-									<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-	<span class="bienvenida">
-		<table width="80%">
-		<html:messages id="error">					
-			<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-		</html:messages>
-		</table>
-	</span><br>
-								   </td></tr>
-			 </table></td></tr>
-		  </table>
-</logic:messagesPresent>
 
-<html:form method="post" action="/edit/plantilla">
-	<html:hidden property="indice"/>
-	<html:hidden property="secuencia"/>
+<div class="container"> 
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default" >
 
-</html:form>
-<html:form method="post" action="/delete/plantilla">
-	<html:hidden property="indice"/>
-	<html:hidden property="secuencia"/>
+				<div class="panel-heading">
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<!-- TItulo del panel header -->
+						<bean:message key="lbl.beneficiarios.aprobados.menu" />
+					</strong>
+				</div>
 
-</html:form>
-<html:form method="post" action="/consultaAprovados.do">
+				<div class="panel-body">
 
-<div align="center"> 
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td	height="40"	valign="bottom" colspan="2">
-		<div align="center">
-		<table width="100%"	border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			<tr>
-				<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-				<td class="bienvenida">
-				<div align="left" class="login"><bean:message key="lbl.beneficiarios.aprobados.menu" /></div>
-				</td>
-			</tr>
-		</table>
+					<logic:messagesPresent>
+						<p>
+							<img src="<html:rewrite page='/images/logo_icon.png' />" />
+							<strong>
+								<bean:message key="errors.header"/>
+							</strong>
+						</p>
+						<html:messages id="error">
+							<p class="bienvenida"> - <bean:write name="error" /></p>
+						</html:messages>
+					</logic:messagesPresent>
+
+					<html:form method="post" action="/edit/plantilla">
+						<html:hidden property="indice"/>
+						<html:hidden property="secuencia"/>
+
+					</html:form>
+
+					<html:form method="post" action="/delete/plantilla">
+						<html:hidden property="indice"/>
+						<html:hidden property="secuencia"/>
+
+					</html:form>
+
+					<html:form method="post" action="/consultaAprovados.do">
+						<p>
+							<bean:message key="lbl.transf.inter.cliente" /> (<font color="#FF0000">*</font>)
+						</p>
+
+						<html:select property="cliente" onchange="__submit()" styleClass="botton-acceso form-control">
+							<html:option value="">
+								<bean:message key="lbl.transf.inter.seleccione"/>
+							</html:option>
+							<csic:forEachCliente orderBy="NAME_ORDER">
+								<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%></html:option>
+							</csic:forEachCliente>
+						</html:select> 
+
+						<%@ include file="../divFooter.jsp"%>
+
+					</html:form>
+				</div>
+			</div>
 		</div>
-		</td>
-	</tr>
-	<tr valign="middle">
-			<td colspan="2" align="center" width="30%">
-			 <%@ include file="../divHeader.jsp"%>
-			<table style="padding: 8px" width="200px">
-			<tr>
-				<td width="40%" align="right" class="bienvenida"><div align="right" class="texto-acceso"><bean:message key="lbl.transf.inter.cliente" /></div></td>
-					<td width="90%" class="bienvenida" align="right"><html:select property="cliente" onchange="__submit()" styleClass="botton-acceso">
-										<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
-										<csic:forEachCliente orderBy="NAME_ORDER">  
-											<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%></html:option>	
-										 </csic:forEachCliente>
-								   </html:select> 
-									
-									</td>
-					<td>(<font color="#FF0000">*</font>)</td>					
-				</tr>
-			</table>
-			 <%@ include file="../divFooter.jsp"%>
-			</td>
-	</tr>
-	<tr>
-		<td class="texto-acceso">&nbsp;</td></tr>
-	
-<!-- 	<tr> -->
-<!-- 		<td valign="top" colspan="2"> -->
-<!-- 			<table width="100%" border="0" cellpadding="1" cellspacing="2"> -->
-<!-- 			<tr class="tabla-acceso"> -->
-<%-- 			    <td class="texto-acceso" width="50%" nowrap><bean:message key="lbl.transf.inter.plantilla"/></td> --%>
-			   			    
-<!-- 			    <td class="texto-acceso" width="5%"></td></tr> -->
-<%-- 			<logic:notEmpty name="plantillas"> --%>
-<%-- 				<logic:iterate name="plantillas" id="row" --%>
-<%-- 					type="com.arango.common.beans.TransferenciaInternacional" indexId="resultNo" > --%>
-<%-- 					<bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>			 --%>
-<%-- 				    <logic:equal name="remainder" value="0"> --%>
-<!-- 				       <tr> -->
-<%-- 				    </logic:equal> --%>
-<%-- 				    <logic:notEqual name="remainder" value="0"> --%>
-<!-- 				       <tr class="celda-clave1"> -->
-<%-- 				    </logic:notEqual> --%>
-<%-- 				    <td class="bienvenida"><bean:write name="row" property="nombreEmisor" />&nbsp;/&nbsp;<bean:write name="row" property="nombreBeneficiario" /></td> --%>
-<%-- 					<td class="bienvenida"><input type="button" class="botton" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>&nbsp; --%>
-<%-- 						<input type="button" class="botton" name="btndel" onclick="__delete(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/></td> --%>
-<%-- 					</logic:iterate> --%>
-<%-- 			</logic:notEmpty> --%>
-<!-- 			</table> -->
-<!-- 	</td></tr> -->
-	
-	
-	
-</table></div></html:form>
+	</div>
+</div>
+
 <%@ include file="../footer.jsp"  %>
