@@ -11,6 +11,10 @@ BODY{
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10px;
 	color: #FFFFFF;
+	height:31px;
+	background-color:#4D4F53;
+	width: 100%;
+
 }
 .sub-title{
 	font-family: Verdana, Arial, Helvetica, sans-serif;

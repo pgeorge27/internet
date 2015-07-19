@@ -44,6 +44,15 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
+
+
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/flujos.css'/>" />
 <link rel="stylesheet" type="text/css"
@@ -52,15 +61,11 @@
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/activarDispositivo.css'/>">
 <script type="text/javascript"
-	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
-<script type="text/javascript"
 	src="<html:rewrite page='/scripts/jquery.blockUI.js'/>"></script>
 <script src="<html:rewrite page='/scripts/jquery.numeric.js'/>" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
-<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
-<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 
 <script type="text/javascript">
 			$(document).ready(function(){

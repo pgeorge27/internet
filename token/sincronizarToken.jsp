@@ -14,11 +14,17 @@
 	String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
 		
 %>
+
+	<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+	<script type="text/javascript" 	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
+	<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+	<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+
 <link rel="stylesheet" type="text/css" 	href="<html:rewrite page='/style/flujos.css'/>" />
 <link rel="stylesheet" type="text/css" 	href="<html:rewrite page='/style/estilo.css'/>">
 <LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/newlf.css '/>">
 <link rel="stylesheet" type="text/css" 	href="<html:rewrite page='/style/activarDispositivo.css'/>">
-<script type="text/javascript" 	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
 <script type="text/javascript"	src="<html:rewrite page='/scripts/jquery.blockUI.js'/>"></script>
 <script src="<html:rewrite page='/scripts/jquery.numeric.js'/>" type="text/javascript"></script>
 <script type="text/javascript">
@@ -42,12 +48,13 @@
 		 				var dim2 = $('*[blockable=true]').position();
 		 				var height = dim2.top - dim.top;
 		 				
-		 				$('body').append('<div id="block" class="wraper"></div>');
+		 				// $('body').append('<div id="block" class="wraper"></div>');
 		 				$('#block').css('left',dim.left -10);
 		 				$('#block').css('top',dim.top -5);
 		 				$('#block').css('width',width +10);
 		 				$('#block').css('height',height +15);
-		 				$('tr').removeClass('hidden');
+		 				$('div').removeClass('hidden');
+		 				$('.hidden-later').addClass('hidden');
 		 				
 		 				
 // 		 				$('#derechos').css('position','absolue');
@@ -71,7 +78,8 @@
  			function empezar(){
  				$.unblockUI({});
  				limpiar();
- 				$('tr[class="dummy"]').addClass('hidden');
+ 				$('div[class="dummy"]').addClass('hidden');
+ 				$('.hidden-later').removeClass('hidden');
  				$("#messages").empty();
  				$('#sender').attr('cual',1);
  				limpiar();
@@ -171,31 +179,125 @@
  				//$("#formulario").submit();
  			}
 </script>	
-
-
+<body>
 	<!-- Mensajes de espera para send -->
 	<%@ include file="blockDiv.jsp"%>
 
-	
-	
-	<!-- Div que contiene los mensajes de error -->
-	<div style="display: none;" id="mensajes" >			
-		<table width="100%" border="0" cellspacing="1" cellpadding="1" class="tabla-acceso" >
-						
-			<tr> 
-				<td valign="top" width="10%" align="right"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-				<td valign="top">
-					<table>
-						<tr><td class="fuente-principal"><b><bean:message key="errors.header"/></b></td></tr>
-						<tr><td><div id="messages" class="fuente-principal"></div></td>		        			
-					</table>
-				</td>
-			</tr>
-		</table>   
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<!-- TItulo del panel header -->
+							<bean:message key="tit.title.registro.token" />
+						</strong>
+					</div>
+					<div class="panel-body">
+
+						<!-- Div que contiene los mensajes de error -->
+						<div style="display: none;"  id="mensajes" >
+						<div align="center">
+							<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>">
+							<p><b><bean:message key="errors.header"/></b></p>
+							<p id="messages"></p>
+							</div>
+						</div>
+
+						<!-- Div que contiene el primer paso - este div se bloquea al enviar la primera clave -->
+						<div id="block-one" >
+							<form  id="formulario" method="post">
+								<div class="hidden-later">
+									<p><bean:message key="lbl.activar.dispositivo.instruccion1" /></p>
+									<p><bean:message key="lbl.pasos.sincronizar.token.paso1" />
+										<img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></p>
+										<p><bean:message key="lbl.pasos.sincronizar.token.paso2" /><img src="<html:rewrite page='/images/TokenClave.png'/>" height="15">
+										</p>
+										<p><bean:message key="lbl.activar.dispositivo.paso3" />
+										</p>
+										<p><bean:message key="lbl.activar.dispositivo.paso4" />
+										</p>
+
+										<p align="center">
+											<bean:message key="lbl.activar.dispositivo.label1" />
+											<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+										</p>
+										<p><input type="text" name="clave1" class="inputf form-control" maxlength="8" id="clave1" /></p>
+								</div>
+
+								<!-- Empieza los campos ocultos -->
+								<div class="hidden dummy">
+									<p>
+
+										<bean:message key="lbl.activar.dispositivo.instruccion2" />
+
+									</p>
+
+
+									<p>
+
+										<bean:message key="lbl.pasos.sincronizar.token.paso1" />
+										<img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15">
+
+									</p>
+
+									<p>
+
+										<bean:message key="lbl.pasos.sincronizar.token.paso2" /><img src="<html:rewrite page='/images/TokenClave.png'/>" height="15">
+
+									</p>
+
+									<p>
+
+										<bean:message key="lbl.activar.dispositivo.paso3" />
+
+									</p>
+
+									<p>
+
+										<bean:message key="lbl.activar.dispositivo.paso4" />
+
+									</p>
+
+									<p>
+										<bean:message key="lbl.activar.dispositivo.label2" />
+										<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+									</p>
+
+									<p align="center" >
+										<input type="text" name="clave2" class="inputf form-control"
+										maxlength="8" id="clave2" />
+									</p>
+								</div>
+
+								<!-- Terminan los campos ocultos -->
+
+
+								<div align="center">
+									<input id="sender"
+									name="button" cual="1" onclick="send();" type="button"
+									class="btn btn-default" value="<bean:message key="btn.enviar"/>" /> 
+									<input name="Submit2" onclick="limpiar();" type="button" class="btn btn-default" value="<bean:message key="btn.limpiar"/>" />
+									<p><bean:message key="lbl.mensaje.campo.requerido" /></p>
+
+								</div>
+
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
+
+
 	<!-- Div que contiene el primer paso - este div se bloquea al enviar la primera clave -->
-	<div id="block-one" align="center">
+	<div style="display: none;" id="block-one" align="center">
 		<form  id="formulario" method="post">
 
 			<!-- Tabla con el contenido -->
@@ -336,7 +438,7 @@
 							class="fuente-obligatorio" align="left">
 							<bean:message key="lbl.activar.dispositivo.label2" />
 						</div></td>
-					<td><input type="text" name="clave2" class="inputf"
+					<td><input type="text" name="clave2" class="inputf form-control"
 						maxlength="8" id="clave2" /><span class="texto-acceso">(<font
 							color="#FF0000">*</font>)
 					</span></td>
@@ -352,8 +454,8 @@
 				<tr>
 					<td colspan="3" align="center"><input id="sender"
 						name="button" cual="1" onclick="send();" type="button"
-						class="botton" value="<bean:message key="btn.enviar"/>" /> <input
-						name="Submit2" onclick="limpiar();" type="button" class="botton"
+						class="btn btn-default" value="<bean:message key="btn.enviar"/>" /> <input
+						name="Submit2" onclick="limpiar();" type="button" class="btn btn-default"
 						value="<bean:message key="btn.limpiar"/>" /></td>
 				</tr>
 
@@ -375,21 +477,5 @@
 		</form>
 	</div>
 
-
-
-
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-			   	</table>
-		   	</td>
-	   	</tr> 
-	</table>
-	<!-- Div que contiene el cintillo de los derechos reservados -->
-	<div id="derechos">
-		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' />
-	</div>
 </body>
 </html>

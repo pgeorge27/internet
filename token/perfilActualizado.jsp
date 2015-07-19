@@ -16,6 +16,11 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 <html>
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
+
 <script language="javascript" src="./scripts/campos.js"></script>
 <script type="text/javascript">
 <!--
@@ -105,110 +110,82 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="bienvenida3"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="bienvenida3">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
-%>
-<div > 
-<table width="100%" border="0"  cellpadding="0" cellspacing="0">
 
-  <tr><td height="20" > </td></tr>
-  <tr align="center"> 
-  
-	<td valign="top" colspan="2" width="80%">
-	<table width="80%" align="center"><tr><td>
-	<html:form method="post" action="/preguntaSeguridad.do">
-	 <table cellspacing="3" cellpading="3" align="center" width="90%">
-       <tr valign="top">
-      	  <td colspan="2">
-      	  <table ><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.titulo"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-      <tr>
-	    <td class="bienvenida_2">
-		       <bean:message key="lbl.token.perfil.actializado.intro" />
-	    </td>
-	  </tr>
-	  
-	  <tr>
-	  		<td class="bienvenida_2">
-		       <ul>
-		       		<li><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.ul1"/></p></li>
-		       		<li><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.ul2"/></p></li>
-		       		<li><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.ul3"/></p></li>
-		       		<li><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.ul4"/></p></li>
-		       		<li><p class="bienvenida_2"><bean:message key="lbl.token.perfil.actializado.ul5"/></p></li>
-		       </ul>
-	    	</td>
-	  </tr>
-	  
-	  <tr>
-	  	<td>
-	  		<html:hidden  property="pantalla" value="showLogout"/>
-	  		<input type="submit" class="botton" value='<bean:message key="lbl.token.perfil.actializado.but" />' />
-	  	</td>
-	  </tr>
-	  </table>
-
-	
-
-	  </html:form>
-	  </td></tr>
-	  </table>
-	  </td>
-  </tr>
-  <tr>
-	<td height="20" valign="middle" class="texto-acceso"></td>
-  </tr>
-</table></div>
-</td></tr></table></td></tr>
+<body>
 
 
-</table></td></tr>
-<tr>
-	<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-		<div align="center" class="derechos">
-			<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-		</div>
-	</td>
-</tr>
-</table></body></html>
+<div class="container">
+  <div class="row">
+
+    <div align="right">
+      <img class="img-responsive" border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+    </div>
+    <br>
+    <br>
+
+	<div>
+		<logic:present name="msg">
+			<p>
+				<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"
+			</p>
+			<p>
+				<b><bean:message key="errors.header"/></b>
+			</p>
+			<p>
+				<%String error = session.getAttribute("msg").toString();%>
+				<bean:message key="<%=error%>"/>
+			</p>
+		</logic:present>
+	</div>
+
+	<%
+		session.removeAttribute("msg");
+	%>
+
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-heading">
+			<img src="<html:rewrite page='/images/logo_icon.png' />" />
+			<strong>
+				<!-- TItulo del panel header -->
+				<bean:message key="lbl.token.perfil.actializado.titulo"/>
+			</strong>
+        </div>
+        <div class="panel-body">
+			<html:form method="post" action="/preguntaSeguridad.do">
+				<p>
+					<bean:message key="lbl.token.perfil.actializado.intro" />
+				</p>
+				<p class="bienvenida_2">
+					<bean:message key="lbl.token.perfil.actializado.ul1"/>
+				</p>
+				<p class="bienvenida_2">
+					<bean:message key="lbl.token.perfil.actializado.ul2"/>
+				</p>
+				<p class="bienvenida_2">
+					<bean:message key="lbl.token.perfil.actializado.ul3"/>
+				</p>
+				<p class="bienvenida_2">
+					<bean:message key="lbl.token.perfil.actializado.ul4"/>
+				</p>
+				<p class="bienvenida_2">
+					<bean:message key="lbl.token.perfil.actializado.ul5"/>
+				</p>
+				<html:hidden  property="pantalla" value="showLogout"/>
+				<div align="center">
+					<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.perfil.actializado.but" />' />
+				</div>
+			</html:form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+	<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+</div>
+
+</body>
+</html>

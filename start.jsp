@@ -409,10 +409,9 @@ function makeAlert(aTitle,aMessage){
 </tr>
 </table>
 
-<br>
+</div>
 <%@ include file="footer.jsp" %>
 
-</div>
 
 </body>
 
