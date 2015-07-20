@@ -13,6 +13,15 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 %>
 
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<script type="text/javascript"
+	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 	<script type="text/javascript" src="<html:rewrite page='/scripts/campos.js'/>"></script>
 	<script type="text/javascript" src="<html:rewrite page='/scripts/ValidaFirmaDigital.js'/>"></script>
 	<script type="text/javascript" src="<html:rewrite page='/scripts/tecladoUpdate.js'/>"></script>
@@ -86,226 +95,106 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 	<LINK REL="stylesheet" TYPE="text/css" HREF="<html:rewrite page='/style/estilo.css'/>">
 </head>
 
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();">
-	<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-		
-		<tr> 
-			<td colspan="2" style="padding: 15px">
-			
-				<table width="100%" border="0" cellpadding="10" cellspacing="0">
-					<tr>
-						<td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td>
-					</tr>
-				</table>
-			
-			</td>
-			
-		</tr>
-	  	
-	  	<tr> 
-			<td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
-				<div  class="fuente-principal"><bean:message key="tit.title.atenticacion.paso4"/></div>
-			</td>
-	  	</tr>
-	  
-	  	<tr valign="top"> 
-	    	<td width="50%">	
-				<logic:present name="msg">
-					<table width="100%" border="0" cellspacing="1" cellpadding="1" class="tabla-acceso" >
-						<tr> 
-							<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-							<td valign="top">
-								<table>
-									<tr><td class="fuente-principal"><b><bean:message key="errors.header"/></b></td></tr>
-									<tr><td class="fuente-principal">
-							        <%String error = session.getAttribute("msg").toString();%>
-										<bean:message key="<%=error%>"/></td></tr>
-								</table>
-							</td>
-						</tr>
-					</table>   
-				</logic:present>
-			 
-			 	<% session.removeAttribute("msg");	%>
-			 
-				<div align="center">
-					
-					<table width="100%" align="left">
-						<html:form method="post" action="/activarPin.do">
-	     					<input type="hidden" name="Foco" value="claveold" id="Foco" >
-	     			  
-	  					<tr>
-	  						<td>	
-	  							<table>
-	  
-				  					<tr> 
-										<td  height="40" valign="top" >
-											<div style="padding-left: 50px" align="left"> 
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-						  							<tr> 
-														<!-- td width="92%"><div align="left" class="login"><bean:message key="tit.title.cambio.clave.especial"/></div></td>
-														<td width="8%"><div align="right"></div></td-->
-														<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>
-														<td width="100%"><div align="left" class="fuente-titulo"><bean:message key="lbl.token.introduccion.activarPin"/></div></td>
-														<td width="8%"><div align="right"></div></td>
-						  							</tr>
-						  
-						  							<tr><td colspan="3">&nbsp;</td></tr>
-						  
-													<tr>
-														<td>&nbsp;</td>
-														<td  align="left" class="fuente-principal"><bean:message key="lbl.activar.pin.seguridad.explicacion"/></td>
-														<td>&nbsp;</td>
-													</tr>
-						  
-						  							<tr><td colspan="3">&nbsp;</td></tr>
-						  
-												    <tr>
-												  		<td>&nbsp;</td>
-												  		<td  align="left" class="fuente-principal"><bean:message key="lbl.activar.pin.msg2"/></td>
-												  		<td>&nbsp;</td>
-												    </tr>
-												    
-												    <tr><td colspan="3">&nbsp;</td></tr>
-						  
-						  							<tr valign="top">
-					     								<td>&nbsp;</td>
-					     								<td>	
-						     									<table>
-						     										<tr>
-						     											<td  class="celda-clave1">
-						     												<div  class="fuente-obligatorio">
-						     													<bean:message key="lbl.nuevo.pin"/>
-						     												</div>
-						     											</td>
-						     											
-						     											<td style="padding-left: 60px">
-						     												<html:password property="nuevoPin" styleClass="caja-acceso" redisplay="false" onclick="campoChange(2);" styleId="clavenew" maxlength="6"/>
-						     												<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
-						     											</td>
-						     										</tr>
-						     										
-						     										<tr> 
-																		<td  height="20" class="fuente-obligatorio"><div  class="fuente-obligatorio"><bean:message key="lbl.confirme.nuevo.pin"/></div></td>
-																		<td style="padding-left: 60px"><html:password property="nuevoPinConfirmacion" styleClass="caja-acceso" redisplay="false" onclick="campoChange(3);" styleId="claveconf" maxlength="6"/> 
-						  													<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
-						  												</td>
-						  											</tr>		
-						  										</table>
-					     								</td>
-					     								<td>&nbsp;</td>		
-					     							</tr>
-						  
-						  							
-						  
-						  							<tr>
-						  								
-														<td colspan="3"  align="center"class="texto-acceso">
-															<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
-														</td>
-						  							</tr>
-						  							
-						  							<tr><td colspan="3">&nbsp;</td></tr>
-						  
-						  							<tr> 
-														<td>&nbsp;</td>
-														<td colspan="2">
-															<div align="center">
-							  									<input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> 
-							  									<input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>">
-							  									<html:hidden  property="pantalla" value="primeraActivacionDispositivo"/>
-						  									</div>  
-														</td>
-						  							</tr>
-						  							
-						  							
-						  							
-						  	
-						  							<tr>
-						  									
-														<td style="padding-top: 60px" colspan="3" height="20" valign="middle" class="fuente-obligatorio" align="center"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-														
-				  									</tr>
-						  
-						  							<tr>
-														<td>&nbsp;</td>
-								    					<td>
-									    					<div id="teclado" style=" visibility: hidden;">
-																<div id="lower" style="display: none;" ></div>
-																<div id="upper"></div>
-															<div id="cls" align="bo"></div>		
-															</div>
-														</td>
-														<td>&nbsp;</td>
-						  							</tr>
-						  
-						  							
-						  
-												</table>
-					  						</div>
-										</td>	  
-				  					</tr>  
-				
-								</table>
-							</td>
-		
-						</div>
-					</tr>
-					
-				</html:form>
-				</table>
-			</td>
-					
-			<!-- 		empieza el cuadro de indicaciones -->
-			
-			<td style="padding-top: 75px"  width="50%">
-				<%@ include file="../../divHeader.jsp"%>
-				<table  cellspacing="3" cellpading="3" >
-			        <tr valign="top">
-						<td colspan="2">
-							<table>
-								<tr>
-									<td>
-										<img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-									<td class="fuente-recuadro-titulo"><p ><bean:message key="lbl.cambio.pin.tips.titulo"/></p></td>
-								</tr>
-							</table>
-						</td>
-				    </tr>
-				    
-				    <tr valign="top">
-				       <td colspan="2"  class="fuente-principal">
-				          <UL>
-				          	<li><bean:message key="lbl.cambio.pin.obs1" /></li>
-				          	<li><bean:message key="lbl.cambio.pin.obs2" /></li>
-				            <li><bean:message key="lbl.cambio.pin.obs3" /></li>
-				            
-				            <li><bean:message key="lbl.cambio.pin.obs5" /></li>
-				          </UL>
-				       </td>
-				    </tr>
-			    
-				</table>
-				<%@ include file="../../divFooter.jsp"%>
-			</td>		
-		   
-			<!-- 	   termina cuadro de indicaciones -->
-		   
-		</tr>
-		
-	  
-		<!-- empieza cinta con derechos reservados -->
-		<tr>
-			<td height="31" colspan="2" style="width:100%;height:31;background-color:#4D4F53;">
-				<div align="center" class="derechos">
-					<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+<body onLoad="reset();">
+
+<div class="container">
+	<div class="row">
+
+		<div align="right">
+			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+		</div>
+		<br>
+		<br>
+		<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+			<div  class="fuente-principal">
+				<bean:message key="tit.title.atenticacion.paso4"/>
+			</div>
+		</div>
+		<br>
+		<br>
+
+		<logic:present name="msg">
+			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+			<p><b><bean:message key="errors.header"/></b></p>
+			<p class="fuente-principal">
+				<%String error = session.getAttribute("msg").toString();%>
+			<bean:message key="<%=error%>"/></p>
+		</logic:present>
+		<% session.removeAttribute("msg");	%>
+
+		<div class="col-md-6">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.preg.secreta.observacion"/>
+					</strong>
 				</div>
-			</td>
-		</tr>
-	
-		<!-- termina cinta con derechos reservados -->
-	
-	</table>
+
+				<div class="panel-body">
+					<p><bean:message key="lbl.cambio.pin.obs1" /></p>
+					<p><bean:message key="lbl.cambio.pin.obs2" /></p>
+					<p><bean:message key="lbl.cambio.pin.obs3" /></p>
+					<p><bean:message key="lbl.cambio.pin.obs5" /></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.token.introduccion.activarPin"/>
+					</strong>
+				</div>
+				<div class="panel-body">
+					<html:form method="post" action="/activarPin.do">
+						<input type="hidden" name="Foco" value="claveold" id="Foco" >
+						<p>
+							<bean:message key="lbl.activar.pin.seguridad.explicacion"/>
+						</p>
+						<p>
+							<bean:message key="lbl.activar.pin.msg2"/>
+						</p>
+						<p>
+							<bean:message key="lbl.nuevo.pin"/>
+							<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+						</p>
+						<p>
+							<html:password property="nuevoPin" styleClass="caja-acceso form-control" redisplay="false" onclick="campoChange(2);" styleId="clavenew" maxlength="6"/>
+						</p>
+						<p>
+							<bean:message key="lbl.confirme.nuevo.pin"/>
+							<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+						</p>
+						<p>
+							<html:password property="nuevoPinConfirmacion" styleClass="caja-acceso form-control" redisplay="false" onclick="campoChange(3);" styleId="claveconf" maxlength="6"/>
+						</p>
+
+						<p>
+							<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
+						</p>
+
+						<div align="center">
+							<input name="button" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.enviar"/>">
+							<input name="Submit2" type="reset" class="btn btn-default" value="<bean:message key="btn.limpiar"/>">
+							<html:hidden  property="pantalla" value="primeraActivacionDispositivo"/>
+							<br>
+							<p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+						</div>
+
+					</html:form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Div que contiene el cintillo de los derechos reservados -->
+	<div align="center" id="derechos" style="width:100%;height:31;background-color:#4D4F53;" ><p style="color:#fff">
+		<bean:message key="<%=copyrigth %>"
+			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' /></p>
+	</div>
 
 
 </body>
