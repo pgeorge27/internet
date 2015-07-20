@@ -15,7 +15,11 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 
 <html>
 <head>
-
+<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<script type="text/javascript"
+	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <script language="javascript" src="./scripts/campos.js"></script>
 <script type="text/javascript">
 <!--
@@ -175,156 +179,110 @@ window.statusbar=' ';
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="tit.title.atenticacion.paso1"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="bienvenida"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="bienvenida">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
-   UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
-%>
-<div align="center">
-<form method="post" action="<html:rewrite page='/do.claveAcceso'/>" name="forma">
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr> 
+<body onLoad="reset();" >
 
-	<td valign="top">
-		<table>
+	<div class="container">
+		<div class="row">
 
-		  <tr valign="top">
-		  
-		    <td>
-		      <!--  Tabla con Campos -->
-		      <html:form action="/change/psw" method="post">
-		<table width="450" border="0" align="center" cellpadding="0" cellspacing="2">
-			<tr> 
-				<td>
-					<img src="<html:rewrite page='/images/gancho.gif' />"border="0" />
-				</td>
-				<td colspan="2">
-					<div align="left" class="fuente-titulo">
-						<bean:message key="tit.title.cambio_clave"/>
-					</div>
-				</td>
-			</tr>
-		  <tr>
-			<td></td>
-			<td width="31%" height="20"><div align="left" class="fuente-principal"><bean:message key="lbl.clave_usuario_anterior"/></div></td>
-			 <td><html:password property="oldPassw" styleClass="caja-acceso" maxlength="11"   styleId="claveold" /> 
-			   <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		  </tr>
-		  <tr>
-		    <td></td>
-			<td height="20"><div align="left" class="fuente-principal"><bean:message key="lbl.clave_usuario_nueva"/></div></td>
-			 <td><html:password property="newPassw" styleClass="caja-acceso" maxlength="11"  styleId="clavenew" />
-			  
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td height="20"><div align="left" class="fuente-principal"><bean:message key="lbl.reescriba_clave_usuario"/></div></td>
-				<td><html:password property="confirmPassw" styleClass="caja-acceso" maxlength="11"  styleId="claveconf" /> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td height="20" valign="middle" class="fuente-obligatorio" colspan="2"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-		  </tr>
-		</table>
-		  </html:form>
-		    </td>
-	<td>
-	<!--  Tabla con Tips -->
-	 	<%@ include file="/divHeader.jsp"%>
-	  <table cellspacing="3" cellpading="3" >
-        <tr valign="top">
-      	  <td colspan="2">
-      	  <table><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="fuente-recuadro-titulo"><bean:message key="lbl.preg.secreta.observacion"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-	    <tr>
-	       <td colspan="2" class="fuente-principal">
-	          <UL>
-	          	<li><bean:message key="lbl.cambio.clave.obs1" /></li>
-	          	<li><bean:message key="lbl.cambio.clave.obs2" /></li>
-	          	<li><bean:message key="lbl.cambio.clave.firstLogin.obs3" /></li>
-	          </UL>
-	       </td>
-	    </tr>
-	  </table>
-	  <%@ include file="/divFooter.jsp"%>
-	</td>
-		   </tr>
-		 </table>
-	</td>
-  </tr>
- 
-
-  <tr><td>&nbsp;</td></tr>
-<tr> 
-	<td align="center"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> 
-	  <input name="limpiar" type="reset" onclick="limpiar();" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-	</td>
-</tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-</form>
-</div>
-</table>
-</form>
-</div>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-
-</table>
-</td>
-</tr>
-	<tr>
-		<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-			<div align="center" class="derechos">&copy; 
-				<bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
 			</div>
-		</td>
-	</tr>
-</table>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="tit.title.atenticacion.paso1"/>
+				</div>
+			</div>
+			<br>
+			<br>
+
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading" >
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.preg.secreta.observacion"/>
+						</strong>
+					</div>
+
+					<div class="panel-body">
+						<p><bean:message key="lbl.cambio.clave.obs1" /></p>
+						<p><bean:message key="lbl.cambio.clave.obs2" /></p>
+						<p><bean:message key="lbl.cambio.clave.firstLogin.obs3" /></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading" >
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="tit.title.cambio_clave"/>
+						</strong>
+					</div>
+
+					<div class="panel-body">
+
+						<logic:present name="msg">
+						<div class="well">
+							<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>">
+							<p class="bienvenida">
+								<b><bean:message key="errors.header"/></b>
+							</p>
+							<p class="bienvenida">
+								<%String error = session.getAttribute("msg").toString();%>
+								<bean:message key="<%=error%>"/>
+							</p>
+						</div>
+					</logic:present>
+					<%
+					session.removeAttribute("msg");
+					UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
+					%>
+
+					<form method="post" action="<html:rewrite page='/do.claveAcceso'/>" name="forma">
+						<html:form action="/change/psw" method="post">
+							<p>
+								<bean:message key="lbl.clave_usuario_anterior"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="oldPassw" styleClass="caja-acceso form-control" maxlength="11"   styleId="claveold" />
+							</p>
+							<p>
+								<bean:message key="lbl.clave_usuario_nueva"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="newPassw" styleClass="caja-acceso form-control" maxlength="11"  styleId="clavenew" />
+							</p>
+							<p>
+								<bean:message key="lbl.reescriba_clave_usuario"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="confirmPassw" styleClass="caja-acceso form-control" maxlength="11"  styleId="claveconf" />
+							</p>
+							<div align="center">
+								<input name="button" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.enviar"/>"> 
+								<input name="limpiar" type="reset" onclick="limpiar();" class="btn btn-default" value="<bean:message key="btn.limpiar"/>">
+								<p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+
+							</div>
+						</html:form>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+
 </body>
 </html>
