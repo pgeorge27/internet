@@ -71,39 +71,40 @@ String cuentas = "";
 </script>
 
 <%@ include file="../body.jsp"%>
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-              <tr> 
-                <td height="40" valign="bottom"><div align="center"> 
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-                      <tr> <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>
-                        <td><div align="left" class="login">MultiPagos - Carga de Archivo</div></td>
-                      
-                      </tr>
-                    </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td valign="top" align="center" >
-				<html:form method="post" action="/multipagos/verificacionArchivo" method="post" enctype="MULTIPART/FORM-DATA">
-				<html:hidden property="numcuentaCsic" value=<%=cuentas%> />
-				  <%@ include file="../divHeader.jsp"%>
-					<table  border="0" align="center" cellpadding="5" cellspacing="5">
-					    <tr>  
-							<td width="45%" height="20" class="celda-clave1"><div align="right" class="texto-acceso">Archivo <span class="texto-acceso">(<font color="#FF0000">*</font>)</span> </div> </td>
-            	      		<td>  <html:file  property="archivo" accept="text/plain"/><!--input type="file" name="" accept="text/plain" /--> </td>
-					   </tr>
-					    <tr>
-							<td>&nbsp;&nbsp;</td>
-      				  		<td> <input name="botonEnviar" onclick="send();" type="button" class="botton" value="Cargar">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-					  		 <input TYPE="BUTTON" class="botton" VALUE="<bean:message key="btn.cancelar"/>" onclick="retornar()"></td>
-                       </tr>
-				   </table>
-                    <%@ include file="../divFooter.jsp"%>
-                  </html:form></td>
-              </tr>
-              <tr>
-                <td height="25" align="center" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-              </tr>
-            </table>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+          MultiPagos - Carga de Archivo
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <html:form method="post" action="/multipagos/verificacionArchivo" method="post" enctype="MULTIPART/FORM-DATA">
+            <html:hidden property="numcuentaCsic" value="<%=cuentas%>" />
+
+            Archivo <span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+            <html:file styleClass="btn" property="archivo" accept="text/plain"/>
+            <div align="center">
+            <br>
+              <input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="Cargar">
+              <input TYPE="button" class="btn btn-default" VALUE="<bean:message key="btn.cancelar"/>" onclick="retornar()">
+              <br><br>
+              <p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+            </div>
+
+
+          </html:form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <%@ include file="../footer.jsp"  %>

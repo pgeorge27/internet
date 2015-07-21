@@ -8,8 +8,17 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados" : "msg.derechos.reservados2";
 %>
 
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html:html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+
 <SCRIPT language="Javascript">
 var mensaje = "<bean:message key='<%=copyrigth %>' arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>";
 function noViewSource(btnClick)
@@ -115,7 +124,8 @@ document.onkeypress = function(e)  // FireFox/Others
 </script>
 
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body style="padding-top: 30px;">
+
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
     <tr> 
     <td ><br>
@@ -148,7 +158,7 @@ document.onkeypress = function(e)  // FireFox/Others
                                       	<%@ include file="../../divHeader.jsp"%>
                                       		<table>
                                       			<tr valign="baseline">
-                                      				<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
+                                      				<td><img class="img-responsive" src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
                                       				<td class="fuente-titulo"><bean:message key="lbl.confirmar.imagen.indicacion"/></td>
                                       			</tr>	
                                       		</table>
@@ -157,7 +167,7 @@ document.onkeypress = function(e)  // FireFox/Others
                                       	</td> 
                                       </tr>	
                                       <tr> 
-                                        <td><div align="right" ><img src="<html:rewrite page='/do.GetImage'/>"  style=" width : 325px; height : 325px;"></div></td>
+                                        <td><div align="right" ><img class="img-responsive" src="<html:rewrite page='/do.GetImage'/>"  style=" width : 325px; height : 325px;"></div></td>
                                       </tr>
                                       <tr> 
                                         <td align="right" >

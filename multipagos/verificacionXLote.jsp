@@ -93,7 +93,7 @@ function __retornar(){
 							<td class="texto-acceso" align="center">
 								<div class="texto-acceso" title="Moneda">Moneda</div>
 							</td>
-							<td class="texto-acceso" align="center">
+							<td class="texto-acceso" align="center"> 
 								<div class="texto-acceso" title="Monto">Monto</div>
 							</td>
 							<td class="texto-acceso" align="center">
@@ -125,37 +125,37 @@ function __retornar(){
 							<td data-title="Numero Cuenta no Valida" class="bienvenida">Numero Cuenta no Valida</td>
 						</logic:equal>
 						<logic:notEqual name="row" property="numeroCuenta" value="1000000001">
-							<td data-title="<bean:write name="row" property="numeroCuenta"/>" class="bienvenida">
+							<td data-title="Numero de Cuenta" class="bienvenida">
 								<bean:write name="row" property="numeroCuenta"/>
 							</td>
 						</logic:notEqual>
 
-						<td data-title="<bean:write name="row" property="fechaValor" formatKey="formato-fecha"/>" class="bienvenida">
+						<td data-title="Fecha Valor" class="bienvenida">
 							<bean:write name="row" property="fechaValor" formatKey="formato-fecha"/>
 						</td>
-						<td data-title="<bean:write name="row" property="monedaString" />" class="bienvenida">
+						<td data-title="Moneda" class="bienvenida">
 							<bean:write name="row" property="monedaString" />
 						</td>
-						<td data-title="<bean:write name="row" property="monto" format="######0.00"/>" class="bienvenida">
+						<td data-title="Monto" class="bienvenida">
 							<bean:write name="row" property="monto" format="######0.00"/>
 						</td>
-						<td data-title="<bean:write name="row" property="codigoSwiftABA" />" class="bienvenida">
+						<td data-title="SWIFT/ABA/OTROS" class="bienvenida">
 							<bean:write name="row" property="codigoSwiftABA" />
 						</td>
-						<td data-title="<bean:write name="row" property="nonbrebancoBeneficiario" />" class="bienvenida">
+						<td data-title="Banco Beneficiario" class="bienvenida">
 							<bean:write name="row" property="nonbrebancoBeneficiario" />
 						</td>
-						<td data-title="<bean:write name="row" property="nombreBeneficiario" />" class="bienvenida">
+						<td data-title="Beneficiario" class="bienvenida">
 							<bean:write name="row" property="nombreBeneficiario" />
 						</td>
-						<td data-title="<bean:write name="row" property="cuentabancoBeneficiario" />" class="bienvenida">
+						<td data-title="Cuenta Beneficiario" class="bienvenida">
 							<bean:write name="row" property="cuentabancoBeneficiario" />
 						</td>
 						<logic:equal name="row" property="error" value="0">
-							<td data-title="" class="bienvenida"></td>
+							<td data-title="Detalle de Error" class="bienvenida"></td>
 						</logic:equal>
 						<logic:notEqual name="row" property="error" value="0">
-							<td data-title="<bean:write name="row" property="error" />" class="bienvenida">
+							<td data-title="Detalle de Error" class="bienvenida">
 								<bean:write name="row" property="error" />
 							</td>	
 						</logic:notEqual>
@@ -183,4 +183,6 @@ function __retornar(){
 
 	</div>
 </div>
+</div>
+<br><br>
 <%@ include file="/footer.jsp"  %>

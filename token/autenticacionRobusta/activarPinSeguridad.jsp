@@ -114,11 +114,13 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 		<br>
 
 		<logic:present name="msg">
-			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
-			<p><b><bean:message key="errors.header"/></b></p>
-			<p class="fuente-principal">
-				<%String error = session.getAttribute("msg").toString();%>
-			<bean:message key="<%=error%>"/></p>
+			<div align="center" class="well">
+				<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<p class="fuente-principal">
+					<%String error = session.getAttribute("msg").toString();%>
+				<bean:message key="<%=error%>"/></p>
+			</div>
 		</logic:present>
 		<% session.removeAttribute("msg");	%>
 
@@ -132,10 +134,12 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 				</div>
 
 				<div class="panel-body">
-					<p><bean:message key="lbl.cambio.pin.obs1" /></p>
-					<p><bean:message key="lbl.cambio.pin.obs2" /></p>
-					<p><bean:message key="lbl.cambio.pin.obs3" /></p>
-					<p><bean:message key="lbl.cambio.pin.obs5" /></p>
+					<ul>
+						<li><bean:message key="lbl.cambio.pin.obs1" /></li>
+						<li><bean:message key="lbl.cambio.pin.obs2" /></li>
+						<li><bean:message key="lbl.cambio.pin.obs3" /></li>
+						<li><bean:message key="lbl.cambio.pin.obs5" /></li>
+					</ul>
 				</div>
 			</div>
 		</div>

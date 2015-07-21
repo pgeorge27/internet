@@ -303,7 +303,7 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 
 			<li class='has-sub top'><a href='#'><span>Multipagos</span></a>
 				<ul>
-					<li><a href="/internet/multipagos/CargaArchivo.jsp"><span>Carga de Archivo</span></a></li>
+					<li class="visible-lg"><a href="/internet/multipagos/CargaArchivo.jsp"><span>Carga de Archivo</span></a></li>
 	<% if ("50".equals(userInfo.getRole()) || "70".equals(userInfo.getRole())){%>
 					<li><a href="/internet/multipagos/consultaAutCan.jsp"><span>Aprobar MultiPagos</span></a></li>
 	<%}%>
