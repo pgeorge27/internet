@@ -17,8 +17,15 @@ java.util.Calendar cal2 =  java.util.Calendar.getInstance();
 %>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 var da = (document.all) ? 1 : 0;
@@ -284,335 +291,216 @@ function validateQuestion(){
 
 </head>
 
-<body style="margin: 0px;">
+<body>
 
-<logic:present name="msg">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-		<tr> 
-			<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-			<td valign="top">
-				<table>
-					<tr><td class="bienvenida"><b><bean:message key="errors.header"/></b></td></tr>
-					<tr><td class="bienvenida">
-					<%
-					String errors[] = session.getAttribute("msg").toString().split(";");
-					for(int i=0; i<errors.length; i++){
-					%>
-					- <bean:message key="<%=errors[i] %>"/>
+	<div class="container"> 
+		<div class="row">
 
-					<% out.println("<BR>"); }	%>	
-					</td></tr>
-				</table>
-			</td>
-		</tr>
-	</table>   
-</logic:present>
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="tit.title.atenticacion.paso6"/>
+				</div>
+			</div>
+			<br>
+			<br>
+			<logic:present name="msg">
+				<div align="center" class="well col-md-4">
+					<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+					<p><b><bean:message key="errors.header"/></b></p>
+					<p class="fuente-principal">
+						<%
+						String errors[] = session.getAttribute("msg").toString().split(";");
+						for(int i=0; i<errors.length; i++){
+						%>
+						- <bean:message key="<%=errors[i] %>"/>
 
-<%
-   session.removeAttribute("msg");
-   ManagerBean mb = new ManagerBean();
-%>
+						<% out.println("<BR>"); }
+						%>
+					</p>
+				</div>
+			</logic:present>
+			<%
+			session.removeAttribute("msg");
+			ManagerBean mb = new ManagerBean();
+			%>
 
-
-
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-	<tr> 
-		<td>
-			<table width="100%" border="0" cellpadding="10" cellspacing="0">
-				<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr>
-			</table>			
-		</td>
-		<td>&nbsp;</td>	 
-	</tr>
-	
-	<tr> 
-		<td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div class="fuente-principal"><bean:message key="tit.title.atenticacion.paso6"/></div></td>
-	</tr>
-  
-	<tr valign="top"> 
-		<td colspan="4">
-			<div align="center"> 
-				<form name="forma" action="<html:rewrite page='/do.preguntastoken'/>" method="post">
-
-					<%
-						if (session.getAttribute("pregOK") != null)
-						{
-					%>
-
-							<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="580">
-								<TR>
-									<TD class="bienvenida">
-									<h4><font color="#CC6600"></font></h4>
-									</TD>
-								</TR>
-							</TABLE>
-
-					<%
-							session.removeAttribute("pregOK");
-						}
-					%>
-				
-					<table width="800" align="center">
-						<tr>
-							<td width="1000" align="left">
-								<table width="1000" border="0" align="left" cellpadding="0" cellspacing="0">
-									
-									<tr> 
-										<td height="20" valign="bottom">
-											<div align="left"> 
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-													<tr> 
-														<!--td width="60%"><div align="left" class="login"><bean:message key="lbl.preg.secreta.titulo1a"/></div></td>
-														<td width="40%"><div align="right"></div></td-->
-														<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>
-														<td width="100%"><div align="left" class="fuente-titulo"><bean:message key="lbl.preg.secreta.titulo1b"/></div></td>
-														<td width="8%"><div align="right"></div></td>
-													</tr>
-												</table>
-											</div>
-										</td>
-									</tr>
-  
-									<tr><td>&nbsp;</td></tr> 
-									<tr><td>&nbsp;</td></tr>
-  
-									<tr> 
-										<td valign="top" align="left">
-											<table>
-												<tr valign="top">
-												
-													<td>
-														<!--  Tabla con Preguntas -->
-														<table width="400" border="0" cellpadding="0" cellspacing="2">
-															<tr>
-																<td class="fuente-principal">1. <bean:message key="lbl.preg.secreta1"/></td>
-															</tr>
-															
-															<tr><td>&nbsp;</td></tr>
-
-															<tr> 
-																<td align="center">
-																	<select name="pregunta1">
-																		<option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
-																			<%
-																				ArrayList lista = mb.getPreguntasCuestionario(userInfo);
-																				PreguntaUsuario pregunta = null;
-																				int preg1 = Integer.parseInt((request.getParameter("pregunta1")==null || request.getParameter("pregunta1").equals(""))?"0":request.getParameter("pregunta1"));
-																				int preg2 = Integer.parseInt((request.getParameter("pregunta2")==null || request.getParameter("pregunta2").equals(""))?"0":request.getParameter("pregunta2"));
-																				String preg3 = (request.getParameter("pregunta3")!=null)?request.getParameter("pregunta3"):"";
-																				String respuesta1 = (request.getParameter("respuesta1")!=null)?request.getParameter("respuesta1"):"";
-																				String respuesta2 = (request.getParameter("respuesta2")!=null)?request.getParameter("respuesta2"):"";
-																				String respuesta3 = (request.getParameter("respuesta3")!=null)?request.getParameter("respuesta3"):"";
-																			
-																				
-																				for (int i=0; i<10; i++)
-																				{
-																					pregunta = (PreguntaUsuario)lista.get(i);
-																					String selected = (preg1==pregunta.getCodigoPregunta()) ? " selected " : "";
-																					out.println("<option value=\"" + pregunta.getCodigoPregunta() + "\""+ selected + ">");
-																					if (pregunta.getNombreEtiqueta() != null){
-																			%>	
-																						<bean:message key="<%=pregunta.getNombreEtiqueta() %>"/>
-																					<%
-																					}else
-																						out.print(pregunta.getDescripcionPregunta());
-																					out.print("</option>");
-																				}
-																					%>
-																	</select>
-																</td>
-															</tr>
-															
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta1"/></td>
-															</tr>
-															<tr>
-																<td align="center"><input name="respuesta1" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta1 %>" ></td>
-															</tr>
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-															</tr>
-															<tr>
-																<td align="center"><input name="confirma1" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta1 %>" ></td>
-															</tr>
-															<tr>
-																<td class="texto-acceso" align="center"><bean:message key="lbl.preg.secreta.rango"/></td>
-															</tr>
-															
-															<tr><td>&nbsp;</td></tr>
-		  
-															<tr>
-																<td class="fuente-principal">2. <bean:message key="lbl.preg.secreta2"/></td>
-															</tr>
-		  
-															<tr><td>&nbsp;</td></tr>
-															
-															<tr>
-															<td align="center">			
-															   <select name="pregunta2">
-																  <option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
-																 <%
-																	for (int i=0; i<10; i++)
-																	{
-																		pregunta = (PreguntaUsuario)lista.get(i+10);
-																		String selected = (preg2==pregunta.getCodigoPregunta()) ? " selected " : "";
-																		out.println("<option value=\"" + pregunta.getCodigoPregunta() + "\""+ selected + ">");
-																		if (pregunta.getNombreEtiqueta() != null){
-																		%>	
-																			<bean:message key="<%=pregunta.getNombreEtiqueta() %>"/>
-																		<%
-																		}else
-																			out.println(pregunta.getDescripcionPregunta());
-																		out.print("</option>");
-																	}
-																%>
-																</select>
-															</td>
-															</tr>
-		 
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta2"/></td>
-															</tr>
-	     
-															<tr>
-																<td align="center"><input name="respuesta2" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta2 %>"></td>
-															</tr>
-		  
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-															</tr>
-															
-															<tr>
-																<td align="center"><input name="confirma2" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta2 %>"></td>
-															</tr>
-		 
-															<tr>
-																<td class="texto-acceso" align="center"><bean:message key="lbl.preg.secreta.rango"/></td>
-															</tr>
-		
-															<tr><td>&nbsp;</td></tr>
-															
-															<tr>
-																<td class="fuente-principal">3. <bean:message key="lbl.preg.secreta3"/>&nbsp;
-																<span class="texto-acceso"><bean:message key="lbl.preg.secreta.rango"/></span></td>
-															</tr>
-															
-															<tr><td>&nbsp;</td></tr>
-		  
-															<tr>
-																<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<bean:message key="lbl.preg.secreta3.texto"/></td>
-															</tr>
-		  
-															<tr> 
-																<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<input name="pregunta3" type="text" class="caja-acceso" size="40" maxlength="50" value="<%=preg3 %>"></td>
-															</tr>
-															
-															<tr> 
-																<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<bean:message key="lbl.preg.secreta3.confirm"/></td>
-															</tr>
-
-															<tr> 
-																<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<input name="confirmapreg3" type="text" class="caja-acceso" size="40" maxlength="50" value="<%=preg3 %>"></td>
-															</tr>
-															
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta3"/></td>
-															</tr>
-															
-															<tr>
-																<td align="center"><input name="respuesta3" type="text" class="caja-acceso" size="20" value="<%=respuesta3 %>"></td>
-															</tr>
- 		
-															<tr> 
-																<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-															</tr>
-		 
-															<tr>
-																<td align="center"><input name="confirma3" type="text" class="caja-acceso" size="20" value="<%=respuesta3 %>"></td>
-															</tr>
-		  
-															<tr><td>&nbsp;</td></tr>
-		  
-															<tr> 
-																<td align="center"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> &nbsp;&nbsp;<input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"></td>
-															</tr>
-														</table>
-														<!--  FIn de Tabla con Preguntas -->
-		
-													</td>
-		
-													<td>
-														<!--  Tabla con Tips -->
-														<%@ include file="../../divHeader.jsp"%>
-														
-														<table cellspacing="0" cellpading="0" >
-															<tr><td colspan="2">&nbsp;</td></tr>
-															
-															<tr>
-																<td width="5%"><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-																<td><p class="fuente-recuadro-titulo"><B><bean:message key="lbl.pregunta.tips.titulo"/></B></p></td>
-															</tr>
-															
-															<tr>
-																<td class="fuente-principal" colspan="2">
-																	<UL>
-																	<li><bean:message key="lbl.preg.secreta.obs1"/></li>
-																	<li><bean:message key="lbl.preg.secreta.obs2"/></li>
-																	<li><bean:message key="lbl.preg.secreta.obs3"/></li>
-																	<li><bean:message key="lbl.preg.secreta.obs6"/></li>
-																	<li><bean:message key="lbl.preg.secreta.obs7"/></li>	
-																	</UL>
-																</td>
-															</tr>
-														</table>
-														
-														<%@ include file="../../divFooter.jsp"%>
-														<!--  Fin de Tabla con Tips -->
-													</td>
-													
-												</tr>
-											</table>
-											
-										</td>
-									</tr>
-								</table> 
-							</td>
-						</tr>
-					</table>
-					
-					<br>
-
-				</form> 
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong><bean:message key="lbl.pregunta.tips.titulo"/></strong>
+					</div>
+					<div class="panel-body">
+						<ul>
+							<li><bean:message key="lbl.preg.secreta.obs1"/></li>
+							<li><bean:message key="lbl.preg.secreta.obs2"/></li>
+							<li><bean:message key="lbl.preg.secreta.obs3"/></li>
+							<li><bean:message key="lbl.preg.secreta.obs6"/></li>
+							<li><bean:message key="lbl.preg.secreta.obs7"/></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 
-			<!-- Empieza lo de footer.jsp -->
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.preg.secreta.titulo1b"/>
+						</strong>
+					</div>
+					<div class="panel-body">
 
-			<%
-			   java.util.Calendar cal4 =  java.util.Calendar.getInstance();
-			   String  serv = session.getAttribute("codigo.servicio").toString(); 
-			   System.out.println("Codigo Servicio: " + serv);
-			%>		
+						<form name="forma" action="<html:rewrite page='/do.preguntastoken'/>" method="post">
+							<%
+								if (session.getAttribute("pregOK") != null)
+								{
+							%>
+							<%
+									session.removeAttribute("pregOK");
+								}
+							%>
+							<p>
+								1. <bean:message key="lbl.preg.secreta1"/>
+							</p>
+							<p>
+								<select class="form-control" name="pregunta1">
+									<option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
+									<%
+									ArrayList lista = mb.getPreguntasCuestionario(userInfo);
+									PreguntaUsuario pregunta = null;
+									int preg1 = Integer.parseInt((request.getParameter("pregunta1")==null || request.getParameter("pregunta1").equals(""))?"0":request.getParameter("pregunta1"));
+									int preg2 = Integer.parseInt((request.getParameter("pregunta2")==null || request.getParameter("pregunta2").equals(""))?"0":request.getParameter("pregunta2"));
+									String preg3 = (request.getParameter("pregunta3")!=null)?request.getParameter("pregunta3"):"";
+									String respuesta1 = (request.getParameter("respuesta1")!=null)?request.getParameter("respuesta1"):"";
+									String respuesta2 = (request.getParameter("respuesta2")!=null)?request.getParameter("respuesta2"):"";
+									String respuesta3 = (request.getParameter("respuesta3")!=null)?request.getParameter("respuesta3"):"";
 
-		</td>
-	</tr>
-</table>
-<!--
-</td></tr>
-   </table></td></tr> -->
-<table width="100%">   
- <tr>
-<%if (serv.equals("1")) {%> 
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="msg.derechos.reservados" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-     </div></td>
- <%}   else {%>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="msg.derechos.reservados2" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-     </div></td>
- <%} %>
- 
-  </tr>
-</table>
+
+									for (int i=0; i<10; i++)
+									{
+									pregunta = (PreguntaUsuario)lista.get(i);
+									String selected = (preg1==pregunta.getCodigoPregunta()) ? " selected " : "";
+									out.println("<option value=\"" + pregunta.getCodigoPregunta() + "\""+ selected + ">");
+									if (pregunta.getNombreEtiqueta() != null){
+									%>	
+									<bean:message key="<%=pregunta.getNombreEtiqueta() %>"/>
+									<%
+									}else
+									out.print(pregunta.getDescripcionPregunta());
+									out.print("</option>");
+									}
+									%>
+								</select>
+							</p>
+							<p>
+								<bean:message key="lbl.resp.secreta1"/>
+							</p>
+							<p>
+								<input name="respuesta1" type="text" class="caja-acceso form-control" size="20" maxlength="50" value="<%=respuesta1 %>" >
+							</p>
+							<p>
+								<bean:message key="lbl.preg.secreta.conf.resp"/>
+							</p>
+							<p>
+								<input name="confirma1" type="text" class="caja-acceso form-control" size="20" maxlength="50" value="<%=respuesta1 %>" >
+							</p>
+							<p>
+								<span class="texto-acceso">
+									<bean:message key="lbl.preg.secreta.rango"/>
+								</span>
+							</p>
+							<p>
+								2. <bean:message key="lbl.preg.secreta2"/>
+							</p>
+							<p>
+								<select class="form-control" name="pregunta2">
+									<option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
+									<%
+									for (int i=0; i<10; i++)
+									{
+									pregunta = (PreguntaUsuario)lista.get(i+10);
+									String selected = (preg2==pregunta.getCodigoPregunta()) ? " selected " : "";
+									out.println("<option value=\"" + pregunta.getCodigoPregunta() + "\""+ selected + ">");
+									if (pregunta.getNombreEtiqueta() != null){
+									%>	
+									<bean:message key="<%=pregunta.getNombreEtiqueta() %>"/>
+									<%
+									}else
+									out.println(pregunta.getDescripcionPregunta());
+									out.print("</option>");
+									}
+									%>
+								</select>
+							</p>
+
+							<p>
+								<bean:message key="lbl.resp.secreta2"/>
+							</p>
+							<p>
+								<input name="respuesta2" type="text" class="caja-acceso form-control" size="20" maxlength="50" value="<%=respuesta2 %>">
+							</p>
+							<p>
+								<bean:message key="lbl.preg.secreta.conf.resp"/>
+							</p>
+							<p>
+								<input name="confirma2" type="text" class="caja-acceso form-control" size="20" maxlength="50" value="<%=respuesta2 %>">
+							</p>
+							<p>
+								<span class="texto-acceso">
+									<bean:message key="lbl.preg.secreta.rango"/>
+								</span>
+							</p>
+							<p>
+								3. <bean:message key="lbl.preg.secreta3"/>
+								<span class="texto-acceso">
+									<bean:message key="lbl.preg.secreta.rango"/>
+								</span>
+							</p>
+							<p>
+								<bean:message key="lbl.preg.secreta3.texto"/>
+							</p>
+							<p>
+								<input name="pregunta3" type="text" class="caja-acceso form-control" size="40" maxlength="50" value="<%=preg3 %>">
+							</p>
+							<p>
+								<bean:message key="lbl.preg.secreta3.confirm"/>
+							</p>
+							<p>
+								<input name="confirmapreg3" type="text" class="caja-acceso form-control" size="40" maxlength="50" value="<%=preg3 %>">
+							</p>
+							<p>
+								<bean:message key="lbl.resp.secreta3"/>
+							</p>
+							<p>
+								<input name="respuesta3" type="text" class="caja-acceso form-control" size="20" value="<%=respuesta3 %>">
+							</p>
+							<p>
+								<bean:message key="lbl.preg.secreta.conf.resp"/>
+							</p>
+							<p>
+								<input name="confirma3" type="text" class="caja-acceso form-control" size="20" value="<%=respuesta3 %>">
+							</p>
+
+							<div align="center">
+								<input name="button" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.enviar"/>">
+								<input name="Submit2" type="reset" class="btn btn-default" value="<bean:message key="btn.limpiar"/>">
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 </body>
 </html>
