@@ -304,7 +304,54 @@ function __changeTipoEnvio(__element){
 
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<body>
+
+<!-- <div class="container"> 
+    <div class="row">
+		<div align="right">
+			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+		</div>
+		<br>
+		<br>
+		<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+			<div  class="fuente-principal">
+				<bean:message key="<%=paso%>"/>
+			</div>
+		</div>
+		<br>
+		<br>
+
+
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+              <bean:message key="lbl.actualiza.titulo.persona"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+			<html:form action="/salvaInformacionPersona.do">
+				<ul>
+					<li><bean:message key="<%=introduccion %>" /></li>
+				</ul>
+				<p><bean:message key="lbl.actualiza.leyenda"/></p>
+				<p><bean:message key="lbl.actualiza.natural.titulo.2"/></p>
+
+			</html:form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+  </div>
+ -->
+
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
         <td ><br>

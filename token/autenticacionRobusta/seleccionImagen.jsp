@@ -175,7 +175,7 @@ function userElection()
 </head>
 <body>
 
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<table id="Table_01" width="95%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
         <td><br>
 		<table width="100%" border="0" cellpadding="10" cellspacing="0">

@@ -12,8 +12,15 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 
 %>
 
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/flujos.css'/>" />
 <script language="javascript" src="./scripts/campos.js"></script>
@@ -136,170 +143,107 @@ window.statusbar=' ';
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="tit.title.first.login.paso1"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="fuente-principal"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="fuente-principal">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
-   UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
-%>
-<div align="center">
-<html:form method="post"  action="/cambioUsuarioToken.do">
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="20" valign="bottom">
-		 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			  <tr> 
-				<td >
-					
-					
-						
-				</td>
-				<td >
-					
-				</td>
-			  </tr>
-			</table>
-		  
-	  </td>
-  </tr>
- 
-<tr> 
-	<td valign="top">
-		<table>
-		  <tr valign="top">
-		    <td>
-		      <!--  Tabla con Campos -->
+<body onLoad="reset();" >
 
-		<table width="450" border="0" align="center" cellpadding="0" cellspacing="2">
-			<tr>
-				<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-				<td colspan="2" >
-					<div align="left" class="fuente-titulo">
-						<bean:message key="lbl.token.introduccion.cambioUsuario"/>
+	<div class="container"> 
+		<div class="row">
+
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="tit.title.first.login.paso1"/>
+				</div>
+			</div>
+			<br>
+			<br>
+			<logic:present name="msg">
+			<div align="center" class="well col-md-4  col-md-offset-4">
+				<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<p class="fuente-principal">
+					<%String error = session.getAttribute("msg").toString();%>
+					<bean:message key="<%=error%>"/></p>
+				</div>
+			</logic:present>
+			<%
+				session.removeAttribute("msg");
+				UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
+			%>
+
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.token.cambio.usuario.recuerde"/>
+						</strong>
 					</div>
-				</td>
-					
-			</tr>
-            <tr> 
-            	<td></td>
-                <td width="31%" height="20" ><div align="left" class="fuente-principal"><bean:message key="lbl.token.cambio.usuario.usuarioActual"/></div></td>
-                <td colspan="2"><html:text property="usuarioActual" styleClass="caja-acceso" maxlength="16"   styleId="usuarioActual" value=""/> 
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr>
-            	<td></td> 
-                <td height="20" ><div align="left" class="fuente-principal"><bean:message key="lbl.token.cambio.usuario.nuevoUsuario"/></div></td>
-                <td ><html:text property="nuevoUsuario" styleClass="caja-acceso" maxlength="16"  styleId="nuevoUsuario" value=""/>
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr> 
-            	<td></td>
-                <td height="20">
-	                <div align="left" class="fuente-principal">
-	                	<bean:message key="lbl.token.cambio.usuario.confirmeUsuario"/>
-	                </div>
-                </td>
-                <td ><html:text property="nuevoUsuarioConfirmacion" styleClass="caja-acceso" maxlength="16"  styleId="nuevoUsuarioConfirmacion" value=""/> 
-                <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-            </tr>
-            <tr>
-            	<td></td>
-				<td colspan="2" height="20" valign="middle" class="fuente-obligatorio"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  			</tr>
-		</table>
+					<div class="panel-body">
+						<ul>
+							<li><bean:message key="lbl.token.cambio.usuario.obs4"/></li>
+							<li><bean:message key="lbl.token.cambio.usuario.obs5"/></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-		    </td>
-	<td>
-	<!--  Tabla con Tips -->
-	 	<%@ include file="../../divHeader.jsp"%>
-	  <table cellspacing="3" cellpading="3" >
-        <tr valign="top">
-      	  <td colspan="2">
-      	  <table><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="fuente-recuadro-titulo"><bean:message key="lbl.token.cambio.usuario.recuerde"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-	    <tr>
-	       <td colspan="2" class="fuente-principal">
-	          <UL>
-	          	<li><bean:message key="lbl.token.cambio.usuario.obs4"/></li>
-	          	<li><bean:message key="lbl.token.cambio.usuario.obs5"/></li>
-	          </UL>
-	       </td>
-	    </tr>
-	  </table>
-	  <%@ include file="../../divFooter.jsp"%>
-	</td>
-		   </tr>
-		 </table>
-	</td>
-  </tr>
- 
-   
-  <tr><td>&nbsp;</td></tr>
-<tr> 
-	<td align="center">
-        <html:hidden  property="pantalla" value="cambioUsuarioSuccess"/>   
-        <input name="button" type="button" onClick="containBlank()" class="botton" value="<bean:message key="btn.enviar"/>"> 
-        <input name="limpiar" type="reset" onClick="clear();" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-	</td>
-</tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.token.introduccion.cambioUsuario"/>
+						</strong>
+					</div>
+					<div class="panel-body">
 
+						<html:form method="post"  action="/cambioUsuarioToken.do">
 
-</table>
+							<p>
+								<bean:message key="lbl.token.cambio.usuario.usuarioActual"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:text property="usuarioActual" styleClass="caja-acceso form-control" maxlength="16"   styleId="usuarioActual" value=""/>
+							</p>
+							<p>
+								<bean:message key="lbl.token.cambio.usuario.nuevoUsuario"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:text property="nuevoUsuario" styleClass="caja-acceso form-control" maxlength="16"  styleId="nuevoUsuario" value=""/>
+							</p>
+							<p>
+								<bean:message key="lbl.token.cambio.usuario.confirmeUsuario"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:text property="nuevoUsuarioConfirmacion" styleClass="caja-acceso form-control" maxlength="16"  styleId="nuevoUsuarioConfirmacion" value=""/>
+							</p>
+							<p align="center">
+								<bean:message key="lbl.mensaje.campo.requerido"/>
+							</p>
 
+							<div align="center">
+								<html:hidden  property="pantalla" value="cambioUsuarioSuccess"/>
+								<input name="button" type="button" onClick="containBlank()" class="btn btn-default" value="<bean:message key="btn.enviar"/>">
+								<input name="limpiar" type="reset" onClick="clear();" class="btn btn-default" value="<bean:message key="btn.limpiar"/>">
+							</div>
+						</html:form>
+					</div>
+				</div>
+			</div>
 
-</html:form>
-</div>
-</td>
-</tr></table></td></tr>
-
-</table></td></tr>
-<tr>
-	<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-		<div align="center" class="derechos">&copy; 
-			<bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
 		</div>
-	</td>
-</tr>
-</table></body></html>
+	</div>
+
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+
+</body></html>

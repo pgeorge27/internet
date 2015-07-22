@@ -48,6 +48,7 @@ function validatePass(){
 		return true;
 	}
 
+
 }
 
 function send(){
@@ -93,147 +94,94 @@ var option = "0"; // Solamente teclado numerico
 
 <script type="text/javascript" src="<html:rewrite page='/scripts/transferencia.js'/>"></script>
 </HEAD>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="document.forms[0].reset(); ">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;" class="bienvenida"><div  class="bienvenida" align="right"><bean:message key="tit.title.first.login.paso4"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="left" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<!-- Body -->
-<%@ include file="blockDiv.jsp"%>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="1" cellpadding="1" class="tabla-acceso" >
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="bienvenida"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="bienvenida">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
 
-	if (session.getAttribute("act")!=null){	
-		%>
-		<script language="javascript">
-			$.blockUI({ message: $('#msgExito'), css: { width: '350px' } });
-		</script> 
-		<%
-		session.removeAttribute("act");
-	}
 
-%>
-<div align="center">
-<table width="100%" align="left">
-  <tr> 
-	<td height="40" valign="top" colspan="4">
-	<div align="left"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<!-- td width="92%"><div align="left" class="login"><bean:message key="tit.title.cambio.clave.especial"/></div></td>
-			<td width="8%"><div align="right"></div></td-->
-			<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>
-				<td width="100%"><div align="left" class="login"><bean:message key="tit.title.registro.token"/></div></td>
-				<td width="8%"><div align="right"></div></td>
-		  </tr>
-		  <tr>
-		  	<td width="50px">&nbsp;</td>
-		  	<td width="100%" class="bienvenida"><bean:message key="lbl.title.registro.token.otp1"/></td>
-		  	<td width="8%"><div align="right"></div></td>
-		  </tr>
-		  
-		  <tr>		 
-		  	<td width="50px">&nbsp;</td> 	
-		  	<td class="bienvenida"><bean:message key="lbl.title.registro.token.pasos" /></td>
-		  	<td width="8%">&nbsp;</td>
-		  </tr>																							
-		  <tr>
-		  	<td width="50px">&nbsp;</td>
-		  	<td width="100%">
-		  	 <dl>
-		  	 	<dt class="bienvenida"><bean:message key="lbl.pasos.registro.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
-		  	 	<dt class="bienvenida"><bean:message key="lbl.pasos.registro.token.paso2" /><img src="<html:rewrite page='/images/TokenClave.png'/>" height="15"></li>
-		  	 	<dt class="bienvenida"><bean:message key="lbl.pasos.registro.token.paso3" /></li>
-		  	 </dl>
-		  	</td>
-		  	<td width="8%">&nbsp;</td>
-		  </tr>
-		  
-		</table>
-	  </div></td>
-  </tr>
-<tr><td>
-<form method="post" action="<html:rewrite page='/do.activarToken'/>" name="forma">
-<table width="95%" border="0" cellpadding="0" cellspacing="0" align="left">
-  <tr valign="top">
-     <td>
-     <!--  Tabla con Cajas -->     
-		<input type="hidden" name="Foco" value="claveold" id="Foco" >
-		<input type="hidden" name="paso" value="1" id="paso" >
-		<table width="600" border="0" cellpadding="0" cellspacing="2">
-		  
-		  <tr> 
-		  	<td width="3%">&nbsp;</td>
-			<td width="31%" height="20" class="celda-clave1" align="left"><div  class="texto-acceso"><bean:message key="lbl.registro.token.clave.generada" /></div></td>
-			<td><input type="text" name="otp1" class="inputf" maxlength="8"  onclick="campoChange(1);" id="claveold"/> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>	  
-		  </tr>
-		  <tr>
-		  		<td width="5%">&nbsp;</td>
-				<td colspan="2" align="center"class="texto-acceso">
-						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
-				</td>
-			</tr>
-				
-				<tr><td colspan="3" align="center"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"/><input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"/></td></tr>
-		 
+<body onLoad="document.forms[0].reset(); ">
 
-		  <tr> 
-			<td>&nbsp;</td><!---->
-			<td colspan="2"> 
-			   
-			</td>
-		  </tr>
-		</table>
-	  </form>
-     </td>
-   <td>
-	</td>
-     </tr>
-     <tr>
-	<td height="20" valign="middle" class="texto-acceso" align="center"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  </tr>
-</table>
-</tr>
-</table>
+<div class="container"> 
+		<div class="row">
 
-</div>
-</td>
-</tr></table></td></tr>
- <tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table></td></tr></table></body></html>
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="tit.title.atenticacion.paso4"/>
+				</div>
+			</div>
+			<br>
+			<br>
+			<logic:present name="msg">
+				<div align="center" class="well col-md-4">
+					<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+					<p><b><bean:message key="errors.header"/></b></p>
+					<p class="fuente-principal">
+						<%String error = session.getAttribute("msg").toString();%>
+					<bean:message key="<%=error%>"/></p>
+				</div>
+			</logic:present>
+			<%
+				session.removeAttribute("msg");
+				if (session.getAttribute("act")!=null){	
+					%>
+					<script language="javascript">
+						$.blockUI({ message: $('#msgExito'), css: { width: '350px' } });
+					</script> 
+					<%
+					session.removeAttribute("act");
+				}
+			%>
+
+
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="tit.title.registro.token"/>
+						</strong>
+					</div>
+					<div class="panel-body">
+						<p>
+							<bean:message key="lbl.title.registro.token.otp1"/>
+						</p>
+						<p>
+							<bean:message key="lbl.title.registro.token.pasos" />
+						</p>
+						<p>
+							<bean:message key="lbl.pasos.registro.token.paso1" />
+							<img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15">
+						</p>
+						<p>
+							<bean:message key="lbl.pasos.registro.token.paso2" />
+							<img src="<html:rewrite page='/images/TokenClave.png'/>" height="15">
+						</p>
+						<p>
+							<bean:message key="lbl.pasos.registro.token.paso3" />
+						</p>
+						<form method="post" action="<html:rewrite page='/do.activarToken'/>" name="forma">
+							<p><input type="hidden" name="Foco" value="claveold" id="Foco" ></p>
+							<p><input type="hidden" name="paso" value="1" id="paso" ></p>
+							<p><bean:message key="lbl.registro.token.clave.generada" /><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></p>
+							<p><input type="text" name="otp1" class="inputf form-control" maxlength="8"  onclick="campoChange(1);" id="claveold"/></p>
+							<p><input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" /></p>
+							<div align="center">
+								<input name="button" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.enviar"/>"/>
+								<input name="Submit2" type="reset" class="btn btn-default" value="<bean:message key="btn.limpiar"/>"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+
+</body>
+</html>

@@ -114,7 +114,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 </head>
 <body>
 
-<div class="container"> 
+	<div class="container"> 
 		<div class="row">
 
 			<div align="right">
@@ -130,16 +130,16 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 			<br>
 			<br>
 			<logic:present name="msg">
-				<div align="center" class="well col-md-4">
-					<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
-					<p><b><bean:message key="errors.header"/></b></p>
-					<p class="fuente-principal">
-						<%String error = session.getAttribute("msg").toString();%>
+			<div align="center" class="well col-md-4">
+				<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<p class="fuente-principal">
+					<%String error = session.getAttribute("msg").toString();%>
 					<bean:message key="<%=error%>"/></p>
 				</div>
 			</logic:present>
 			<%
-				session.removeAttribute("msg");
+			session.removeAttribute("msg");
 			%>
 
 			<div class="col-md-4 col-md-offset-4">
@@ -161,7 +161,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 						<div align="center">
 							<html:form method="post" action="/activarPin.do">
-								<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
+							<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
 							</html:form>
 						</div>
 					</div>
