@@ -224,12 +224,16 @@
 			<div align="right">
 				<img class="img-responsive" border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
 			</div>
-
-			<div class="col-md-4 col-md-offset-4">
-				<div class="fuente-principal">
-					<bean:message key="<%=paso%>"/>
-				</div>
-
+			<br>
+			<br>
+            <div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+	        <div  class="fuente-principal">
+	          <bean:message key="<%=paso%>"/>
+	        </div>
+	      </div>
+	      <br>
+	      <br>
+			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-default" >
 					<div class="panel-heading" >
 						<img src="<html:rewrite page='/images/logo_icon.png' />" />
@@ -286,9 +290,9 @@
 											<input type="text" name="clave1" class="inputf form-control" maxlength="8" id="clave1" />
 										</p>
 
-										<input id="sender" name="button" cual="1" onclick="send();" type="button" class="botton btn btn-default" value="<bean:message key="btn.enviar"/>" />
+										<input id="sender" name="button" cual="1" onclick="send();" type="button" class=" btn btn-default" value="<bean:message key="btn.enviar"/>" />
 
-										<input name="Submit2" onclick="limpiar();" type="button" class="botton btn btn-default" value="<bean:message key="btn.limpiar"/>" />
+										<input name="Submit2" onclick="limpiar();" type="button" class=" btn btn-default" value="<bean:message key="btn.limpiar"/>" />
 									</div>
 
 								</div>
@@ -319,9 +323,9 @@
 												<input type="text" name="clave2" class="inputf form-control" maxlength="8" id="clave2" />
 											</p>
 
-											<input id="sender" name="button" cual="1" onclick="send();" type="button" class="botton btn btn-default" value="<bean:message key="btn.enviar"/>" />
+											<input id="sender" name="button" cual="1" onclick="send();" type="button" class=" btn btn-default" value="<bean:message key="btn.enviar"/>" />
 
-											<input name="Submit2" onclick="limpiar();" type="button" class="botton btn btn-default"	value="<bean:message key="btn.limpiar"/>" />
+											<input name="Submit2" onclick="limpiar();" type="button" class=" btn btn-default"	value="<bean:message key="btn.limpiar"/>" />
 										</div>
 
 									</div>
@@ -497,9 +501,9 @@
 					<td colspan="3" align="center">
 					<input id="sender"
 						name="button" cual="1" onclick="send();" type="button"
-						class="botton" value="<bean:message key="btn.enviar"/>" /> 
+						class="" value="<bean:message key="btn.enviar"/>" /> 
 						<input
-						name="Submit2" onclick="limpiar();" type="button" class="botton"
+						name="Submit2" onclick="limpiar();" type="button" class=""
 						value="<bean:message key="btn.limpiar"/>" />
 						</td>
 				</tr>

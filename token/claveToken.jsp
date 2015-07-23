@@ -85,19 +85,17 @@ $(document).ready(function(){
 <div class="container">
 	<div class="row">
 
-		<div align="right">
-			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
-		</div>
-
 		<logic:messagesPresent>
+		<div class="well col-md-4 col-md-offset-4">
 			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
 			<p><span class="bienvenida"><b><bean:message key="errors.header"/></p>
 			<html:messages id="error">
 				<p class="bienvenida"> - <bean:write name="error" /></p>
 			</html:messages>
+			</div>
 		</logic:messagesPresent>
 
-		<div class="col-md-6">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="panel panel-default" >
 				<div class="panel-heading" >
 					<img src="<html:rewrite page='/images/logo_icon.png' />" />
@@ -130,7 +128,8 @@ $(document).ready(function(){
 					<html:form method="post" action="/claveToken.do">
 						<p><bean:message key="lbl.clave.token"/></p>
 						<p><html:text property="claveToken" styleClass="botton-acceso form-control"  maxlength="8" styleId="claveToken"/></p>
-						<p><input name="button" onclick="send();" type="button" class="botton btn btn-default" value='<bean:message key="btn.enviar"/>'></p>
+						<div align="center">
+						<p><input name="button" onclick="send();" type="button" class="btn btn-default" value='<bean:message key="btn.enviar"/>'></p>
 						<p>
 							<div id="teclado" style=" visibility: hidden;">
 								<div id="lower" style="display: none;" ></div>
@@ -138,6 +137,7 @@ $(document).ready(function(){
 								<div id="cls" align="bo"></div>		
 							</div>
 						</p>
+						</div>
 						<p></p>
                     </html:form>
 				</div>

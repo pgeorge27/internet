@@ -1,4 +1,4 @@
-<%@ taglib uri="http://jakarta.apache.org/struts/tags-bean" prefix="bean" %>
+confirmarImagen.jsp<%@ taglib uri="http://jakarta.apache.org/struts/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html" %>
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-logic" prefix="logic" %>
 <%
@@ -9,12 +9,15 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 %>
 
 <!DOCTYPE html>
-<html:html>
+<html>
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+
 <link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
@@ -124,93 +127,68 @@ document.onkeypress = function(e)  // FireFox/Others
 </script>
 
 </head>
-<body style="padding-top: 30px;">
+<body>
 
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-    <tr> 
-    <td ><br>
-		<table width="100%" border="0" cellpadding="0" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-recuadro-titulo"><bean:message key="tit.title.atenticacion.paso3"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-	<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td><div align="center"> 
-                    
-                      <table width=100%" height="200" border="0" cellpadding="0" cellspacing="0" >
-                        <tr> 
-                          <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                              <tr> 
-                                <td width="46%" rowspan="2"><div align="center"> 
-                                    <table width="70%" border="0" cellspacing="2" cellpadding="2">
-                                      <tr>
-                                      	<td>
-                                      	
-                                      	<%@ include file="../../divHeader.jsp"%>
-                                      		<table>
-                                      			<tr valign="baseline">
-                                      				<td><img class="img-responsive" src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-                                      				<td class="fuente-titulo"><bean:message key="lbl.confirmar.imagen.indicacion"/></td>
-                                      			</tr>	
-                                      		</table>
-                                      	<%@ include file="../../divFooter.jsp"%>
-                                      	
-                                      	</td> 
-                                      </tr>	
-                                      <tr> 
-                                        <td><div align="right" ><img class="img-responsive" src="<html:rewrite page='/do.GetImage'/>"  style=" width : 325px; height : 325px;"></div></td>
-                                      </tr>
-                                      <tr> 
-                                        <td align="right" >
-                                        <table width="100%">
-                                        <tr>
-                                        	<td width="60%"><div class="fuente-principal"><h3><bean:message key="lbl.token.cambio.imagen.nombreImagen" /></h3></div></td>
-                                        	<td><div align="right"><input size="35" id="mark" type="text" maxlength="12" style="text-transform: uppercase"></div></td>
-                                       	</tr>
-                                        <tr><td>
-                                        <html:form method="post" action="/seleccionImagen.do">                                        
-                                        	<input type="hidden" name="pantalla" value="success">
-                                        	<html:hidden property="marca"  styleId="marca" value=""/>
-                                        	<div align="right"><input name="baceptar"  onclick="makeSubmit();" type="button" class="botton" value="<bean:message key="btn.confirmar.imagen"/>"></div> 
-			  							</html:form>
-										</td><td>
-			  							<html:form method="post" action="/seleccionImagen.do">			  								
-			  								<input type="hidden" name="pantalla" value="seleccionImagen">
-											<input name="btCancelar" onclick="submit();" type="button" class="botton" value="<bean:message key="btn.cancelar"/>"  > 
-										</html:form>
-										</td></tr>
-										</table>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </div></td>                                
-                              </tr>
-                            </table></td>
-                        </tr>
-                      </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td></td>
-              </tr>
-            </table></td>
-        </tr>
-      </table></td>
-  </tr>
-  <tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table>
+  <div class="container"> 
+    <div class="row">
+
+      <div align="right">
+        <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+      </div>
+      <br>
+      <br>
+      <div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+        <div  class="fuente-principal">
+          <bean:message key="lbl.login.cliente.existente3"/>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+              <bean:message key="lbl.confirmar.imagen.indicacion"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <div class="row" align="center">
+              <img class="img-responsive" align="right" src="<html:rewrite page='/do.GetImage'/>">
+            </div>
+            <p>
+              <bean:message key="lbl.token.cambio.imagen.nombreImagen" />
+            </p>
+            <p>
+              <input class="form-control" id="mark" type="text" maxlength="12" style="text-transform: uppercase;">
+            </p>
+            <div align="center">
+              <div class="col-md-4 col-md-offset-2">
+                <html:form method="post" action="/cambioImagenToken.do">
+                  <input type="hidden" name="pantalla" value="cambioImagenSuccess">
+                  <html:hidden property="marca"  styleId="marca" value=""/>
+                  <input name="baceptar"  onclick="makeSubmit();" type="button" class="btn btn-default" value="<bean:message key="btn.confirmar.imagen"/>">
+                </html:form>
+              </div>
+              <div class="col-md-4">
+                <form method="post" name="cancelacion" action="<html:rewrite page='/cambioImagenToken.do'/>">
+                  <input type="hidden" name="pantalla" value="cambioImagenSeleccion">
+                  <input name="btCancelar" onclick="submit();" type="button" class="btn btn-default" value="<bean:message key="btn.cancelar"/>"  >
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- empieza cinta con derechos reservados -->
+  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+  </div>
+
+
 </body>
 
 </html>

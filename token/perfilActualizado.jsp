@@ -142,7 +142,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 		session.removeAttribute("msg");
 	%>
 
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-default" >
         <div class="panel-heading">
 			<img src="<html:rewrite page='/images/logo_icon.png' />" />

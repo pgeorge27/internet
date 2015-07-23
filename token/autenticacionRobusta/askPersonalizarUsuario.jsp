@@ -179,10 +179,13 @@ marcas.carga();
 							<p>
 								<bean:message key="lbl.token.cambio.usuario.obs1"/>
 							</p>
+							
+							<div align="center">
+
 							<p>
 								<bean:message key="lbl.token.cambio.usuario.obs2"/>
 							</p>
-
+							
 							<div class="radio">
 								<label>
 									<input type="radio" name="seleccion" id="optionsRadios1" value="do" checked>
@@ -198,7 +201,7 @@ marcas.carga();
 								<html:hidden styleId="pantalla" property="pantalla" value="personalizarUsuario" />
 							</p>
 
-							<div align="center">
+							
 								<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.cambio.usuario.boton1" />'/>
 							</div>
 						</html:form>

@@ -304,11 +304,11 @@ function __changeTipoEnvio(__element){
 
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 </head>
-
 <body>
 
-<!-- <div class="container"> 
-    <div class="row">
+<div class="container">
+	<div class="row">
+
 		<div align="right">
 			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
 		</div>
@@ -322,35 +322,160 @@ function __changeTipoEnvio(__element){
 		<br>
 		<br>
 
+		<logic:present name="msg">
+			<div align="center" class="well col-md-4 col-md-offset-4">
+				<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<p class="fuente-principal">
+					<%String error = session.getAttribute("msg").toString();%>
+				<bean:message key="<%=error%>"/></p>
+			</div>
+		</logic:present>
+		<% session.removeAttribute("msg");	%>
 
-      <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-default" >
-          <div class="panel-heading">
-            <img src="<html:rewrite page='/images/logo_icon.png' />" />
-            <strong>
-              <bean:message key="lbl.actualiza.titulo.persona"/>
-            </strong>
-          </div>
-          <div class="panel-body">
-			<html:form action="/salvaInformacionPersona.do">
-				<ul>
-					<li><bean:message key="<%=introduccion %>" /></li>
-				</ul>
-				<p><bean:message key="lbl.actualiza.leyenda"/></p>
-				<p><bean:message key="lbl.actualiza.natural.titulo.2"/></p>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.actualiza.titulo.persona"/>
+					</strong>
+				</div>
+				<div class="panel-body">
+					<html:form action="/salvaInformacionPersona.do">
+						<ul>
+							<li><bean:message key="<%=introduccion %>" /></li>
+						</ul>
+						<p><bean:message key="lbl.actualiza.leyenda"/></p>
+						<p><b><bean:message key="lbl.actualiza.natural.titulo.2"/></b></p>
 
-			</html:form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+						<div class="col-md-3">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.nombre"/>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<bean:write property="nombre" name="frmPersona" />
+							</p>
+							<html:hidden property="nombre"/>
+						</div>
 
 
-  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
-    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-  </div>
- -->
+						<div class="col-md-3">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.primer.apellido"/>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<bean:write property="primerApellido" name="frmPersona"/>
+							</p>
+							<html:hidden property="primerApellido"/>
+						</div>
+
+						<div class="col-md-3">
+							<bean:message key="lbl.actualiza.natural.segundo.apellido"/>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<bean:write property="segundoApellido" name="frmPersona"/>
+							</p>
+							<html:hidden property="segundoApellido"/>
+						</div>
+
+						<div class="col-md-3">
+							<p>
+								<bean:message key="lbl.actualiza.natural.apellido.casada"/>
+							</p>
+						</div>
+						<div class="col-md-9">
+							<p>
+								<html:text property="apellidoCasada" styleClass="form-control" maxlength="25"/>
+								<html:hidden property="segundoApellido"/>
+							</p>
+						</div>
+
+						<div class="col-md-3">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.identificacion"/>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<bean:write property="identificacion" name="frmPersona"/>
+							</p>
+						</div>
+
+						<div class="col-md-3">
+							<bean:message key="lbl.actualiza.natural.estado.civil"/>
+						</div>
+						<div class="col-md-9">
+							<html:select property="estadoCivil" styleClass="form-control">
+								<html:option value="">[Seleccione un valor]</html:option>
+								<html:option value="S">Soltero (a)</html:option>
+								<html:option value="C">Casado (a)</html:option>
+								<html:option value="D">Divorciado (a)</html:option>
+								<html:option value="V">Viudo (a)</html:option>
+								<html:option value="U">Unión Libre</html:option>
+							</html:select>
+						</div>
+
+<!-- 						<div class="col-md-3">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.fecha.nacimiento"/>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<html:select property="year" styleClass="textfield-y" styleId="year" onchange="updateYear(this)">
+								<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
+								<html:option value=""></html:option>
+								<html:options collection="cpYears" property="key" labelProperty="value"/>
+								</html:select>
+
+								<html:select styleClass="textfield-m" styleId="month" property="month" onchange="updateMonth(this)">
+								<html:option value=""></html:option>
+								<html:option value="01">01</html:option>
+								<html:option value="02">02</html:option>
+								<html:option value="03">03</html:option>
+								<html:option value="04">04</html:option>
+								<html:option value="05">05</html:option>
+								<html:option value="06">06</html:option>
+								<html:option value="07">07</html:option>
+								<html:option value="08">08</html:option>
+								<html:option value="09">09</html:option>
+								<html:option value="10">10</html:option>
+								<html:option value="11">11</html:option>
+								<html:option value="12">12</html:option>
+								</html:select>
+
+								<html:select styleClass="textfield-m" styleId="day" property="day" onchange="updateDay(this)">
+								<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
+								<html:option value=""></html:option>
+								<html:options collection="cpDays" property="key" labelProperty="value"/>
+								</html:select>
+
+							</p>
+						</div>
+
+						<div class="col-md-3">
+							Fecha: <span id="selectedDate"></span>
+						</div>
+						<div class="col-md-9">
+							<p class="form-control" >
+								<html:hidden property="fechaNacimientoStr" />
+							</p>
+						</div> -->
+						</html:form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Div que contiene el cintillo de los derechos reservados -->
+	<div align="center" id="derechos" style="width:100%;height:31;background-color:#4D4F53;" ><p style="color:#fff">
+		<bean:message key="<%=copyrigth %>"
+			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' /></p>
+	</div>
+
 
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
@@ -366,62 +491,15 @@ function __changeTipoEnvio(__element){
   </tr>
   <tr valign="top"> 
     <td colspan="4">
-    
-<logic:messagesPresent>
-<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso">
-  <tr><td>
-	 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-		  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-						   <td width="95%" class="msg">
-								<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-			<div class="bienvenida">
-				<table width="80%">
-					<html:messages id="error">					
-						<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-					</html:messages>
-				</table>
-			</div><br>
-		</td></tr>
-		</table>
-	</td></tr>
-</table>
-</logic:messagesPresent>
+
 	<div align="center">
 	    <html:form action="/salvaInformacionPersona.do">
 	    	 <table class="marco-titulo" border="0" cellspacing="1" cellpadding="1">
-	    	   <tr>
-					<td height="20" valign="top" class="texto-acceso"> 	
-							<img src="<html:rewrite page='/images/gancho.gif'/>" border="0" hspace="8">
-							<FONT size="2"><bean:message key="lbl.actualiza.titulo.persona"/></FONT>
-					</td>
-			  </tr>
-			  <tr>
-				<td height="10" valign="middle" class="bienvenida"></td>
-			  </tr>
-			   <tr>
-				<td height="20" valign="bottom" class="bienvenida">
-				<UL>
-	          		<li><bean:message key="<%=introduccion %>" /></li>
-				</UL>
-				</td>
-			  </tr>
-	    	   <tr>
-				<td height="20" valign="middle" class="bienvenida"><bean:message key="lbl.actualiza.leyenda"/></td>
-			  </tr>
-	    	   <tr>
-				<td height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.actualiza.natural.titulo.2"/></td>
-			  </tr>
+
+
 	    	 </table>
-	    	 <%@ include file="/WEB-INF/marco/inicio.jsp"%>
 	    	 <table class="marco" border="0" cellspacing="1" cellpadding="1">
-						<tr>
-			    	 		<td class="celdas" width="5%"><font color="#FF0000">*</font></td>
-							<td class="celdas-border" width="30%"><bean:message key="lbl.actualiza.natural.nombre"/></td>
-							<td class="celdas" width="60%"><div class="text"><bean:write property="nombre" name="frmPersona"/></div>
-							<html:hidden property="nombre"/></td>
-							<td align="left" width="5%">
-							</td></tr>
-			    	 	<tr valign="top">	    	 		
+	    	 	<tr valign="top">	    	 		
 							<td class="celdas"><font color="#FF0000">*</font></td>
 							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.primer.apellido"/></td>
 							<td class="celdas"><div class="text"><bean:write property="primerApellido" name="frmPersona"/></div>

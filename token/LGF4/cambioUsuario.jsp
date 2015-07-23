@@ -12,9 +12,15 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 String clienteExiste = (String)session.getAttribute("cliente.existe");
 %>
 
-
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 
 <script language="javascript" src="./scripts/campos.js"></script>
 <script type="text/javascript">
@@ -123,7 +129,75 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body>
+
+	<div class="container"> 
+		<div class="row">
+
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="lbl.login.cliente.existente2"/>
+				</div>
+			</div>
+			<br>
+			<br>
+			<logic:present name="msg">
+			<div align="center" class="well col-md-4">
+				<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<p class="fuente-principal">
+					<%String error = session.getAttribute("msg").toString();%>
+					<bean:message key="<%=error%>"/></p>
+				</div>
+			</logic:present>
+			<%
+			session.removeAttribute("msg");
+			%>
+
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.token.introduccion.cambioUsuario"/>
+						</strong>
+					</div>
+					<div class="panel-body">
+						<html:form method="post" action="/personalizarUsuario.do">	
+						<p><bean:message key="lbl.token.cambio.usuario.obs1"/></p>
+						<div  align="center">
+						<p><bean:message key="lbl.token.cambio.usuario.obs2"/></p>
+						<p>
+							<label class="radio-inline">
+								<input checked="checked" type="radio" value="do" name="seleccion" /> <bean:message key="lbl.afirmacion"/> 
+							</label>
+							<label class="radio-inline">
+								<input type="radio" value="skip" name="seleccion" /> <bean:message key="lbl.negacion"/>
+							</label>
+						</p>
+						
+							<html:hidden styleId="pantalla" property="pantalla" value="personalizarUsuario" />
+							<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.cambio.usuario.boton1" />'/>
+						</div>
+
+
+						</html:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
         <td><br>
@@ -145,24 +219,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
               <tr> 
                 <td>
  <br>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="bienvenida3"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="bienvenida3">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
-%>
+
 <div > 
 <table width="100%" border="0"  cellpadding="0" cellspacing="0">
 

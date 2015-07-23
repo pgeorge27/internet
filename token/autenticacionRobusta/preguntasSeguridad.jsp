@@ -170,6 +170,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 					<div class="panel-body">
 						<html:form method="post" action="/preguntaSeguridad.do">
 							<p><bean:message key="lbl.token.pregunta.seguridad.msg"/></p>
+							<div align="center">
 							<p><bean:message key="lbl.token.pregunta.seguridad.pregunta"/></p>
 							<p>
 							<label class="radio-inline">
@@ -180,7 +181,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 							</label>
 							</p>
-							<div align="center">
+				
 								<html:hidden styleId="pantalla" property="pantalla" value="preguntasSeguridadForm"/>
 								<input type="submit" value='<bean:message key="lbl.token.cambio.usuario.boton1"/>' class="btn btn-default"/>
 							</div>

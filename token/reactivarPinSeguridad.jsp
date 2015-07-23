@@ -111,16 +111,18 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 		</div>
 
 		<logic:present name="msg">
+		 <div align="center" class="well col-md-4 col-md-offset-4">
 			<p><b><bean:message key="errors.header"/></b></p>
 			<p>
 				<%String error = session.getAttribute("msg").toString();%>
 				<bean:message key="<%=error%>"/>
 			</p>
+		</div>
 		</logic:present>
 		<% session.removeAttribute("msg");	%>
 		</br>
 		</br>
-		<div class="col-md-6">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="panel panel-default" >
 				<div class="panel-heading" >
 					<img src="<html:rewrite page='/images/logo_icon.png' />" />

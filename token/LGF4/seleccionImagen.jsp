@@ -7,13 +7,21 @@ response.setHeader("Cache-Control","no-store"); //HTTP 1.1
 response.setHeader("Pragma","no-cache"); //HTTP 1.0
 response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 session.setAttribute("no.aplicar.regla.password", "true");
+session.setAttribute("flag", "9");
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
 String descripcion = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "lbl.mant.imagen.obs3" :  "lbl.mant.imagen.obs4";
-String clienteExiste = (String)session.getAttribute("cliente.existe");
+
 %>
 
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 .texto-acceso2 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -165,8 +173,9 @@ function userElection()
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<body>
+
+<table id="Table_01" width="95%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
         <td><br>
 		<table width="100%" border="0" cellpadding="10" cellspacing="0">
@@ -176,7 +185,7 @@ function userElection()
      
   </tr>
   <tr> 
-  	<td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="lbl.login.cliente.existente3"/></div></td>
+    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="tit.title.atenticacion.paso3"/></div></td>
   </tr>
   <tr valign="top"> 
     <td colspan="4">
@@ -187,7 +196,9 @@ function userElection()
               <tr> 
                 <td>
  <br>
+
 <logic:present name="msg">
+ <div align="center" class="well">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
 		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
@@ -200,56 +211,55 @@ function userElection()
 			</table>
 		</td>
 	</tr>
-</table>   
+</table>
+</div>
 </logic:present>
+
 <%
    session.removeAttribute("msg");
 %>
-<div > 
+
+
+<div class="container" style="padding-top: 30px;">
+
 <table width="100%" border="0"  cellpadding="0" cellspacing="0">
   
   <tr align="center"> 
   
 	<td valign="top" colspan="2" width="100%">
 	<table width="100%" align="center"><tr><td>
-	<form method="post" action="<html:rewrite page='/token/LGF4/UploadPageAutenticacion.jsp'/>" name="forma">
+<form method="post" action="<html:rewrite page='/token/LGF4/UploadPageAutenticacion.jsp'/>" name="forma">
       	<input type="hidden" name="categoria" id="categoria" value="" />
       	<input type="hidden" name="imageRefresh" id="imageRefresh" value="<html:rewrite page='/seleccionImagen'/>.do" />
-      	<input type="hidden" name="pantalla" value="seleccionImagenLGF4" />
+      	<input type="hidden" name="pantalla" value="seleccionImagen" />
       	
-      	<%@ include file="../../divHeader.jsp"%>
-	 <table cellspacing="3" cellpading="3" align="center" width="100%">
-       <tr valign="top">
-      	  <td colspan="2">
-      	  <table ><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="fuente-recuadro-titulo"><bean:message key="lbl.imagen.tips.titulo"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-      <tr>
-	    <td class="fuente-principal">
-	    <UL>
-	       <li><bean:message key="lbl.mant.imagen.obs1" /></li>	       
-	       <li><bean:message key="<%=descripcion %>" /></li>
-	    </UL>
-	    </td>
-	  </tr>
-	  </table>
-	  <%@ include file="../../divFooter.jsp"%>
+
+	<div class="panel panel-default" >
+
+		<div class="panel-heading" >
+			<img src="<html:rewrite page='/images/logo_icon.png' />" />
+			<strong>
+				<bean:message key="lbl.imagen.tips.titulo"/>
+			</strong>
+		</div>
+
+		<div class="panel-body">
+			<UL>
+				<li><bean:message key="lbl.mant.imagen.obs1" /></li>
+				<li><bean:message key="<%=descripcion %>" /></li>
+			</UL>
+		</div>
+	</div>
+
 	
 	<!-- Inicio del Div -->
 <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+
   <tr>
-	<td width="11px" height="9px" background="<html:rewrite page='/images/div/top-left.gif'/>"></td>
-	<td height="9px" background="<html:rewrite page='/images/div/top-meddium.gif'/>"></td>
-	<td width="8px" height="9px" background="<html:rewrite page='/images/div/top-right.gif'/>"></td>
-  </tr>
-  <tr>
-	<td width="11px" height="9px" background="<html:rewrite page='/images/div/left-center.gif'/>"></td>
+
 	<td>
 	<!-- Colocar Contenido Aqui -->	
-	
+	<div class="panel panel-default">
 	  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	   <tr>
 	   	<td valign="top" width="19%">
@@ -328,7 +338,7 @@ function userElection()
 						</c:if>
 						<td width="20">
 						  <a href="do.SetImageAutenticacion?id=<c:out value='${imagen}'/>">
-						   <img src="do.GetImage?id=<c:out value="${imagen}"/>&img=ch" width="100" height="100" border="0" />
+						   <img class="img-responsive" src="do.GetImage?id=<c:out value="${imagen}"/>&img=ch" width="100" height="100" border="0" />
 						   </a>
 						</td>
 					</c:forEach>
@@ -346,7 +356,7 @@ function userElection()
 		</table>
 		
 		
-		<%@ include file="../../divFooter.jsp"%>
+
 		
 	  </form></td></tr>
 	  </table>  
@@ -356,14 +366,15 @@ function userElection()
 	<td height="20" valign="middle" class="texto-acceso"></td>
   </tr>
 </table></div>
-</td></tr></table></td></tr>
+</td></tr></table>
+</div>
+</td></tr>
 
 
-<tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
+</table></td></tr></table>
 
-
-
-</table></td></tr></table></body></html>
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+</body></html>

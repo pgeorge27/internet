@@ -28,8 +28,17 @@ ArrayList codigos = (ArrayList)session.getAttribute("codigos.Banco.formularios")
 
 
 <%@page import="com.arango.common.beans.UserInfo"%>
-<%@page import="java.util.ArrayList"%><HTML>
-<HEAD>
+<%@page import="java.util.ArrayList"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" type="text/css"
 	href="<html:rewrite page='/style/flujos.css'/>" />
 <SCRIPT language="Javascript">
@@ -101,7 +110,85 @@ document.oncontextmenu = protect;}}}
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body>
+
+<div class="container"> 
+    <div class="row">
+      <div align="right">
+        <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+      </div>
+      <br>
+      <br>
+      <div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+        <div  class="fuente-principal">
+
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+              <bean:message key="msg.introduccion.saludo"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <p><bean:message key="<%=introduccion %>"/></p>
+
+            <ol type=1>
+              <%
+              int Flag =  Integer.parseInt(session.getAttribute("flag").toString());
+              String pantalla = "";
+
+              if (60 == Flag || 61 == Flag ){pantalla = "cambioclave";} 
+              if (62 == Flag){pantalla = "cambioUsuario";} 
+              if (63 == Flag){pantalla = "cambioImagen";}
+              if (64 == Flag){pantalla = "preguntasSeguridad";}
+
+              while( Flag <= 64){
+              if (61 ==Flag){
+              %>
+              <li><div class="fuente-principal"><bean:message key="tit.title.cambio_clave" /></div></li>
+              <%}%>
+              <%if (62 == Flag){
+
+              %>
+              <li><div class="fuente-principal"><bean:message key="lbl.token.introduccion.cambioUsuario" /></div></li>
+              <%}%>
+              <%if (63 ==Flag){
+
+              %>
+              <li><div class="fuente-principal"><bean:message key="lbl.flujo.login.imagen" /></div></li>
+              <%}%>
+              <%if (64 ==Flag){
+
+              %>
+              <li><div class="fuente-principal"><bean:message key="lbl.token.autenticacion.introduccion.pregunta" /></div></li>
+              <%}%>
+              <%
+              Flag++; }
+              %>
+            </ol>
+
+            <html:form method="post" action="/loginUsuariosF4.do" >
+              <div align="center">
+                <html:hidden  property="pantalla" value="<%=pantalla%>"/>
+                <input type="submit" value='<bean:message key="lbl.token.cambio.usuario.boton1" />' class="btn btn-default"/>
+              </div>
+            </html:form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+  </div>
 
 
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
@@ -143,40 +230,7 @@ document.oncontextmenu = protect;}}}
                                        <td >
                                        
 										<p align="justify"><div class="fuente-principal"><bean:message key="<%=introduccion %>"/></div></p>
-										<ol type=1>
-											<%
-											int Flag =  Integer.parseInt(session.getAttribute("flag").toString());
-											String pantalla = "";
-											
-											if (60 == Flag || 61 == Flag ){pantalla = "cambioclave";} 
-											if (62 == Flag){pantalla = "cambioUsuario";} 
-								           	if (63 == Flag){pantalla = "cambioImagen";}
-								           	if (64 == Flag){pantalla = "preguntasSeguridad";}
-											 
-								           	while( Flag <= 64){
-														if (61 ==Flag){
-														%>
-															<li><div class="fuente-principal"><bean:message key="tit.title.cambio_clave" /></div></li>
-											           	<%}%>
-											            <%if (62 == Flag){
-											            		
-											            %>
-															<li><div class="fuente-principal"><bean:message key="lbl.token.introduccion.cambioUsuario" /></div></li>
-											          	<%}%>
-														<%if (63 ==Flag){
-															
-														%>
-															<li><div class="fuente-principal"><bean:message key="lbl.flujo.login.imagen" /></div></li>
-											           	<%}%>
-											           	<%if (64 ==Flag){
-															
-														%>
-															<li><div class="fuente-principal"><bean:message key="lbl.token.autenticacion.introduccion.pregunta" /></div></li>
-											           	<%}%>							          	 
-											        <%
-											       Flag++; }
-											     %>
-								          </ol>
+			
 										</td>
 										
                                       </tr>

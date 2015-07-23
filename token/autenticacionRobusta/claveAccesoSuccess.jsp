@@ -128,6 +128,24 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 			</div>
 			<br>
 			<br>
+			
+<logic:present name="msg">
+<div class="well col-md-4 col-md-offset-4">
+<div class="well">
+<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>">
+<p class="bienvenida">
+<b><bean:message key="errors.header"/></b>
+</p>
+<p class="bienvenida">
+<%String error = session.getAttribute("msg").toString();%>
+<bean:message key="<%=error%>"/>
+</p>
+</div>
+</div>
+</logic:present>
+<%
+session.removeAttribute("msg");
+%>
 
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-default" >
@@ -139,24 +157,6 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 					</div>
 
 					<div class="panel-body">
-
-						<logic:present name="msg">
-							<div class="well">
-								<div class="well">
-									<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>">
-									<p class="bienvenida">
-										<b><bean:message key="errors.header"/></b>
-									</p>
-									<p class="bienvenida">
-										<%String error = session.getAttribute("msg").toString();%>
-										<bean:message key="<%=error%>"/>
-									</p>
-								</div>
-							</div>
-						</logic:present>
-						<%
-						session.removeAttribute("msg");
-						%>
 						<html:form method="post" action="/personalizarUsuario.do">
 							<p><bean:message key="lbl.token.autenticacion.clave.success" /></p>
 							<div align="center"> 		

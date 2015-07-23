@@ -223,142 +223,126 @@ function send(){
 <div class="container">
 	<div class="row">
 		<div class="row">
-			<div>
-				<logic:messagesPresent>
-				<table align="center" cellpadding="1" cellspacing="1" width="750" class="tabla-acceso">
-					<tr>
-						<td>
-							<table border="0" cellpadding="1" cellspacing="0" width="100%">
-								<tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-									<td width="95%" class="msg">
-										<span class="bienvenida">
-											<b><bean:message key="errors.header"/></b>
-										</span>
-										<span class="bienvenida">
-											<table width="80%">
-												<html:messages id="error">
-												<tr>
-													<td class="bienvenida">- <bean:write name="error" />
-													</td>
-												</tr>
-												</html:messages>
-											</table>
-										</span><br>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</logic:messagesPresent>
-		</div>
 
-		<div class="col-md-4 col-md-offset-4">
-			<div class="panel panel-default" >
+			<logic:messagesPresent>
+			<div align="center" class="well col-md-4 col-md-offset-4">
+				<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+				<p><b><bean:message key="errors.header"/></b></p>
+				<html:messages id="error">
+				<p class="bienvenida">- <bean:write name="error" />
+					</html:messages>
+					<p class="fuente-principal">
+						<%String error = session.getAttribute("msg").toString();%>
+						<bean:message key="<%=error%>"/></p>
+					</div>
+				</logic:messagesPresent>
 
-				<div class="panel-heading">
-					<img src="<html:rewrite page='/images/logo_icon.png' />" />
-					<strong><bean:message key="lbl.transf.inter.consulta"/> Multipagos</strong>
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-default" >
+
+						<div class="panel-heading">
+							<img src="<html:rewrite page='/images/logo_icon.png' />" />
+							<strong><bean:message key="lbl.transf.inter.consulta"/> Multipagos</strong>
+						</div>
+
+						<div class="panel-body">
+
+							<html:hidden property="tipo" value="2" />
+
+							<div>
+								<label style="text-align:left">
+									<h5>
+										<span class="texto-acceso"><font color="#FF0000">*</font></span>
+										<strong><bean:message key="lbl.transf.inter.cliente"/>:</strong>
+									</h5>
+								</label>
+							</div>
+
+							<html:form method="post" action="/multipagos/Consulta/autorizaciones">
+
+								<html:select property="cliente" styleClass="botton-acceso form-control">
+								<html:option value="">
+								<bean:message key="lbl.transf.inter.seleccione"/>
+								</html:option>
+								<csic:forEachCliente orderBy="NAME_ORDER">
+								<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%></html:option>
+								</csic:forEachCliente>
+								</html:select>
+
+								<label style="text-align:left">
+									<h5>
+										<span class="texto-acceso"><font color="#FF0000">*</font></span>
+										<strong><bean:message key="lbl.transf.inter.estado"/>:</strong>
+									</h5>
+								</label>
+
+								<html:select property="estado" styleClass="botton-acceso form-control">
+								<html:option value="">
+								<bean:message key="lbl.transf.inter.todos"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.PENDIENTE %>">
+								<bean:message key="lbl.transf.inter.pendiente"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.RECHAZADA %>">
+								<bean:message key="lbl.transf.inter.rechazada"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.APROBADA %>">
+								<bean:message key="lbl.transf.inter.aprobada"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.RECHAZADA_BANCO %>">
+								<bean:message key="lbl.transf.inter.rechazada.banco"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.EN_PROCESO %>">
+								<bean:message key="lbl.transf.inter.en.proceso"/>
+								</html:option>
+								<html:option value="<%=ITransferencia.PROCESADA %>">
+								<bean:message key="lbl.transf.inter.completada"/>
+								</html:option>
+								</html:select>
+								<br>
+								<div class="row">
+									<div class="col-md-2">
+										<h5>
+											<strong><bean:message key="lbl.desde"/>:</strong>
+										</h5>
+									</div>
+									<div class="col-md-5" align="center">
+										<html:text property="desde" styleId="desde" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaInicio%>"/>
+									</div>
+									<div class="col-md-5">
+										<input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-2">
+										<h5>
+											<strong><bean:message key="lbl.hasta"/>:</strong>
+										</h5>
+									</div>
+									<div class="col-md-5" align="center">
+										<html:text property="hasta" styleId="hasta" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaFin%>"/>
+									</div>
+									<div class="col-md-5">
+										<input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
+									</div>
+								</div>
+								<br>
+								<div align="center">
+									<input name="botonEnviar" onclick="send();" type="button" class="botton btn btn-default" value="<bean:message key="btn.consultar"/>">
+
+									<html:reset styleClass="botton btn btn-default">
+									<bean:message key="btn.limpiar"/>
+									</html:reset>
+									<h6 style="color:#95A5A6 ">
+										<bean:message key="lbl.mensaje.campo.requerido"/>
+									</h6>
+								</div>
+							</html:form>
+						</div>
+					</div>
 				</div>
-
-				<div class="panel-body">
-
-					<html:hidden property="tipo" value="2" />
-
-					<div>
-						<label style="text-align:left">
-							<h5>
-								<span class="texto-acceso"><font color="#FF0000">*</font></span>
-								<strong><bean:message key="lbl.transf.inter.cliente"/>:</strong>
-							</h5>
-						</label>
-					</div>
-
-					<html:form method="post" action="/multipagos/Consulta/autorizaciones">
-
-					<html:select property="cliente" styleClass="botton-acceso form-control">
-					<html:option value="">
-					<bean:message key="lbl.transf.inter.seleccione"/>
-					</html:option>
-					<csic:forEachCliente orderBy="NAME_ORDER">
-					<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%></html:option>
-				</csic:forEachCliente>
-				</html:select>
-
-				<label style="text-align:left">
-					<h5>
-						<span class="texto-acceso"><font color="#FF0000">*</font></span>
-						<strong><bean:message key="lbl.transf.inter.estado"/>:</strong>
-					</h5>
-				</label>
-
-				<html:select property="estado" styleClass="botton-acceso form-control">
-				<html:option value="">
-				<bean:message key="lbl.transf.inter.todos"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.PENDIENTE %>">
-				<bean:message key="lbl.transf.inter.pendiente"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.RECHAZADA %>">
-				<bean:message key="lbl.transf.inter.rechazada"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.APROBADA %>">
-				<bean:message key="lbl.transf.inter.aprobada"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.RECHAZADA_BANCO %>">
-				<bean:message key="lbl.transf.inter.rechazada.banco"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.EN_PROCESO %>">
-				<bean:message key="lbl.transf.inter.en.proceso"/>
-				</html:option>
-				<html:option value="<%=ITransferencia.PROCESADA %>">
-				<bean:message key="lbl.transf.inter.completada"/>
-				</html:option>
-				</html:select>
-				<br>
-				<div class="row">
-					<div class="col-md-2">
-						<h5>
-							<strong><bean:message key="lbl.desde"/>:</strong>
-						</h5>
-					</div>
-					<div class="col-md-5" align="center">
-						<html:text property="desde" styleId="desde" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaInicio%>"/>
-					</div>
-					<div class="col-md-5">
-						<input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
-					</div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col-md-2">
-						<h5>
-							<strong><bean:message key="lbl.hasta"/>:</strong>
-						</h5>
-					</div>
-					<div class="col-md-5" align="center">
-						<html:text property="hasta" styleId="hasta" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaFin%>"/>
-					</div>
-					<div class="col-md-5">
-						<input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
-					</div>
-				</div>
-				<br>
-				<div align="center">
-					<input name="botonEnviar" onclick="send();" type="button" class="botton btn btn-default" value="<bean:message key="btn.consultar"/>">
-
-					<html:reset styleClass="botton btn btn-default">
-					<bean:message key="btn.limpiar"/>
-					</html:reset>
-					<h6 style="color:#95A5A6 ">
-						<bean:message key="lbl.mensaje.campo.requerido"/>
-					</h6>
-				</div>
-				</html:form>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
-</div>
 <%@ include file="../footer.jsp"  %>

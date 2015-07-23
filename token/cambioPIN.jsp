@@ -130,19 +130,21 @@ function IsNumeric(input)
 <div class="container">
 	<div class="row">
 
-		<div class="well">
+		
 			<logic:present name="msg">
+			<div class="well col-md-4 col-md-offset-4">
 				<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8">
 				<p><b><bean:message key="errors.header"/></b></p>
 				<p>
 					<%String error = session.getAttribute("msg").toString();%>
 					<bean:message key="<%=error%>"/>
 				</p>
+				</div>
 			</logic:present>
 			<p><% session.removeAttribute("msg"); %></p>
-		</div>
+		
 
-		<div class="col-md-6">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="panel panel-default" >
 				<div class="panel-heading" >
 					<img src="<html:rewrite page='/images/logo_icon.png' />" />

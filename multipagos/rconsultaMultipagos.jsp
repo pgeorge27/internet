@@ -114,7 +114,7 @@ private String getDescEstado(String estado){
                         </td>
                         <td class="texto-acceso" width="25%">
                             <bean:message key="lbl.transf.inter.nivel.aprobacion"/>
-                        </  td>  
+                        </td>  
                         <tr>
                             <td colspan="8">
                             </td>

@@ -9,12 +9,18 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 session.setAttribute("no.aplicar.regla.password", "true");
 String role = session.getAttribute("role.user").toString();
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
-String clienteExiste = (String)session.getAttribute("cliente.existe");
+
 %>
 
 
 <html>
 <head>
+
+<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<script type="text/javascript"
+	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
 <script language="javascript" src="./scripts/campos.js"></script>
 <script type="text/javascript">
@@ -106,102 +112,68 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr>
- <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="lbl.login.cliente.existente1"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0" width="500px">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
-	<tr> 
-		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
-		<td valign="top">
-			<table>
-				<tr><td class="bienvenida3"><b><bean:message key="errors.header"/></b></td></tr>
-				<tr><td class="bienvenida3">
-		        <%String error = session.getAttribute("msg").toString();%>
-					<bean:message key="<%=error%>"/></td></tr>
-			</table>
-		</td>
-	</tr>
-</table>   
-</logic:present>
-<%
-   session.removeAttribute("msg");
-%>
-<div > 
-<table width="100%" border="0"  cellpadding="0" cellspacing="0">
+<body>
 
-  <tr><td height="20" > </td></tr>
-  <tr align="center"> 
-  
-	<td valign="top" colspan="2" width="80%">
-	<table width="80%" align="center"><tr><td>
-	<html:form method="post" action="/personalizarUsuario.do">
-	 <table cellspacing="3" cellpading="3" align="center" width="90%">
-	  <tr>
-		  <td>
-			<img src="<html:rewrite page='/images/gancho.gif'/>" border="0">
-		  </td>
-		  <td>
-			<p class="fuente-titulo"><bean:message key="tit.title.cambio_clave"/></p>
-		  </td>
-	  </tr>
-      <tr>
-		<td></td>
-	    <td class="fuente-principal">
-		       <bean:message key="lbl.token.autenticacion.clave.success" />
-	    </td>
-	  </tr>
-	  <tr>
-	  	<td colspan="2" align="center"> 		
-	  		<input type="submit" class="botton" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
-	  	</td>
-	  </tr>
-	  </table>
-	   </html:form>
-	  </td></tr>
-	  </table>
-	  </td>
-  </tr>
-  <tr>
-	<td height="20" valign="middle" class="texto-acceso"></td>
-  </tr>
-</table></div>
-</td></tr></table></td></tr>
+	<div class="container">
+		<div class="row">
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="tit.title.atenticacion.paso1"/>
+				</div>
+			</div>
+			<br>
+			<br>
 
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default" >
+					<div class="panel-heading" >
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="tit.title.cambio_clave"/>
+						</strong>
+					</div>
 
+					<div class="panel-body">
 
+						<logic:present name="msg">
+							<div class="well">
+								<div class="well">
+									<img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>">
+									<p class="bienvenida">
+										<b><bean:message key="errors.header"/></b>
+									</p>
+									<p class="bienvenida">
+										<%String error = session.getAttribute("msg").toString();%>
+										<bean:message key="<%=error%>"/>
+									</p>
+								</div>
+							</div>
+						</logic:present>
+						<%
+						session.removeAttribute("msg");
+						%>
+						<html:form method="post" action="/personalizarUsuario.do">
+							<p><bean:message key="lbl.token.autenticacion.clave.success" /></p>
+							<div align="center"> 		
+								<input type="submit" class="btn btn-default" value='<bean:message key="lbl.token.cambio.usuario.boton2" />' />
+							</div>
+						</html:form>
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
 
-</table>
-</td>
-</tr>
-<tr>
-<td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;">
-<div align="center" class="derechos">
-<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-</div>
-</td>
-</tr>
-</table>
 </body>
 </html>

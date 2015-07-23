@@ -15,6 +15,10 @@ String clienteExiste = (String)session.getAttribute("cliente.existe");
 
 <html>
 <head>
+<script type="text/javascript"
+	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
 <script language="javascript" src="./scripts/campos.js"></script>
 <script type="text/javascript">
@@ -175,7 +179,99 @@ window.statusbar=' ';
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/flujos.css'/>" />
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
+<body onLoad="reset();" >
+
+<div class="container">
+		<div class="row">
+
+			<div align="right">
+				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+			</div>
+			<br>
+			<br>
+			<div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+				<div  class="fuente-principal">
+					<bean:message key="lbl.login.cliente.existente1"/>
+				</div>
+			</div>
+			<br>
+			<br>
+
+			<div class="col-md-4 col-md-offset-1">
+				<div class="panel panel-default" >
+					<div class="panel-heading" >
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="lbl.preg.secreta.observacion"/>
+						</strong>
+					</div>
+
+					<div class="panel-body">
+					<ul>
+						<li><bean:message key="lbl.cambio.clave.obs1" /></li>
+						<li><bean:message key="lbl.cambio.clave.obs2" /></li>
+						<li><bean:message key="lbl.cambio.clave.firstLogin.obs3" /></li>
+					</ul>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="panel panel-default" >
+					<div class="panel-heading" >
+						<img src="<html:rewrite page='/images/logo_icon.png' />" />
+						<strong>
+							<bean:message key="tit.title.cambio_clave"/>
+						</strong>
+					</div>
+
+					<div class="panel-body">
+
+
+
+					<form method="post" action="<html:rewrite page='/do.claveAcceso'/>" name="forma">
+						<html:form action="/change/psw" method="post">
+							<p>
+								<bean:message key="lbl.clave_usuario_anterior"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="oldPassw" styleClass="caja-acceso form-control" maxlength="11"   styleId="claveold" />
+							</p>
+							<p>
+								<bean:message key="lbl.clave_usuario_nueva"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="newPassw" styleClass="caja-acceso form-control" maxlength="11"  styleId="clavenew" />
+							</p>
+							<p>
+								<bean:message key="lbl.reescriba_clave_usuario"/>
+								<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+							</p>
+							<p>
+								<html:password property="confirmPassw" styleClass="caja-acceso form-control" maxlength="11"  styleId="claveconf" />
+							</p>
+							<div align="center">
+								<input name="button" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.enviar"/>"> 
+								<input name="limpiar" type="reset" onclick="limpiar();" class="btn btn-default" value="<bean:message key="btn.limpiar"/>">
+								<p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+
+							</div>
+						</html:form>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+	<!-- empieza cinta con derechos reservados -->
+	<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+		<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+	</div>
+
 <table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
    <tr> 
         <td ><br>
