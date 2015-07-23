@@ -5,35 +5,59 @@
 
 <%@ taglib uri="/tags/asi-internet" prefix="csic" %>
 
+<!DOCTYPE html>
+<html:html>
 
+<head>
 <%@ include file="../head.jsp"%>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
+
 <%@ include file="../body.jsp" %>
-	<br><br>
-	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td><div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                             <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                               <tr> 
-                                 <td><div align="center"><img src="<html:rewrite page='/images/success.gif'/>"></div></td>
-                               </tr>
-                               <tr> 
-                                 <td class="bienvenida">Plantilla creada satisfactoriamente</td>
-                               </tr>
-                             </table>
-						</td>                                
-                       </tr></table>
-					</td>                           
-                 </tr>
-				</table></td></tr></div></td>
-       </tr>
-     </table>
-     <br>
-<div align="center">
-<INPUT class="botton" onclick="document.location='<html:rewrite page='/transferencias/crearPlantilla.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
-<%@ include file="../footer.jsp" %>
+
+<body>
+
+<div align="center" class="container"> 
+
+
+		<div class="row">
+
+		  <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Mensaje</strong></div>
+					  <div class="panel-body">
+				
+				
+				
+				<div align="center"><img src="<html:rewrite page='/images/success.gif'/>"></div>
+				
+				<br>
+				
+				<div class="" align="center">Plantilla creada satisfactoriamente</div>
+				
+				<br>
+				
+				<div align="center">
+<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/transferencias/crearPlantilla.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+
+					</div>
+
+		</div>
+	
+	</div>
+	</div>
+	
+		</div>
+
+
+</div>
+</body>
+</html:html>

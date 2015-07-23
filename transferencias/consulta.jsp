@@ -62,9 +62,39 @@ private String getDescEstado(String estado){
     return "lbl.transf.inter.estado.no.definido";
 }
 %>
-<%@ include file="../head.jsp"  %>
+<!DOCTYPE html>
+<html:html>
 
+<head>
+<%@ include file="../head.jsp"  %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <%@ include file="../body.jsp"%>
+
+<body>
+
+
+<div class="container">
+
+	<div class="row">
+		<div>
+			<div class="panel panel-default" >
+				<div class="panel-heading">
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong><bean:message key="lbl.transf.inter.consulta"/></strong>
+				</div>
+
+</div>
+
+</div>
+
+</div>
+
+
 <%Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);%>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
    <tr> 
@@ -72,11 +102,12 @@ private String getDescEstado(String estado){
 		 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
 		   <tr> 
 			 <td width="92%">
-				<div align="left" class="login"><bean:message key="lbl.transf.inter.consulta"/></div></td>
+				<div align="left" class="login"></div></td>
 			<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/servicios/transferencias.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
+							<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/servicios/transferencias.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
 		  </tr>
 		</table>
+		<br>
 	  </div></td>
   </tr>
 <logic:present name="consulta.clte">
@@ -84,27 +115,29 @@ private String getDescEstado(String estado){
 
 </logic:present>
 <tr><td>
-<table width="100%" border="0" cellspacing="1" cellpadding="1">
+<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+<thead class="cf">
   <TR class="tabla-acceso">
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.secuencia"/></TD>
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.fecha.elaboracion"/></TD>
-    <TD class="texto-acceso" width="5%">Fecha Efectiva</TD>
-    <TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.cantidad"/></TD>
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.moneda"/></TD> 
-    <TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.cuenta"/></TD>
-    <TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.elaborador.por"/></TD>
-    <TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.estado"/></TD>
-    <TD class="texto-acceso" width="25%"><bean:message key="lbl.transf.inter.nivel.aprobacion"/></TD>
-    <TD class="texto-acceso" width="20%"><bean:message key="lbl.transf.inter.comentario"/></TD></TR>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.secuencia"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.fecha.elaboracion"/></TD>
+    <TD class="texto-acceso" >Fecha Efectiva</TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.cantidad"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.moneda"/></TD> 
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.cuenta"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.elaborador.por"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.estado"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.nivel.aprobacion"/></TD>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.comentario"/></TD></TR>
   <TR>
     <TD colspan="8"></TD>
     <TD class="texto-acceso"><table width="100%" border="0" cellspacing="0" cellpadding="0">
     						  <tr class="tabla-acceso">
-    						  	  <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.aprobado.por"/></td>
-    						      <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.fecha.aprobacion"/></td>
-    						      <td class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.tipo.relacion"/></td>
-    						      <td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.estado"/></td></tr>
-    						  </table></td></tr>  
+    						  	  <td class="texto-acceso" ><bean:message key="lbl.transf.inter.aprobado.por"/></td>
+    						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.fecha.aprobacion"/></td>
+    						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.tipo.relacion"/></td>
+    						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.estado"/></td></tr>
+    						  </table></td></tr>  </thead>
 <%
 ArrayList data = (ArrayList)session.getAttribute("transferencias");
 String styleClass = "";
@@ -143,24 +176,31 @@ if (data != null){
         }
 %>
 <tr valign="middle" <%=styleClass%>>
-        <td class="bienvenida"><a href="<html:rewrite page='/transferencias/detalle.jsp'/>?w=<%=i%>&t=1"><%=StringUtilities.replace(f.formatCuenta(t.getNumeroDocumento(), "A-S-C"), "-", "")%></a></td>
-        <td class="bienvenida"><%=f.formatFecha(t.getFechaElaboracion(), locale)%></td>
-         <td class="bienvenida"><%=f.formatFecha(t.getFecha(), locale)%></td>
-        <td class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
-        <td class="bienvenida"><%=t.getMoneda() %></td>  
-        <td class="bienvenida"><%=f.formatCuenta(t.getCuenta().getCodigoBanco(), "C") %></td>  
-        <td class="bienvenida"><%=t.getUsuarioPrepara()==null?"":t.getUsuarioPrepara()%></td>   
-        <td class="bienvenida" nowrap><bean:message key="<%=getDescEstado(t.getEstado())%>"/></td>
-        <td class="bienvenida"><%=aprobadorStr%></td>                        
-        <td class="bienvenida"><%=t.getDescripcionRechazo()==null?StringUtilities.getValue(t.getMotivo()):t.getDescripcionRechazo()%></td>        
+        <td data-title="Referencia"  class="bienvenida"><a href="<html:rewrite page='/transferencias/detalle.jsp'/>?w=<%=i%>&t=1"><%=StringUtilities.replace(f.formatCuenta(t.getNumeroDocumento(), "A-S-C"), "-", "")%></a></td>
+        <td data-title="Fecha Elaboración"  class="bienvenida"><%=f.formatFecha(t.getFechaElaboracion(), locale)%></td>
+         <td data-title="Fecha Efectiva" class="bienvenida"><%=f.formatFecha(t.getFecha(), locale)%></td>
+        <td data-title="Cantidad - Amount" class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
+        <td data-title="Moneda" class="bienvenida"><%=t.getMoneda() %></td>  
+        <td data-title="Número de Cuenta - Account Number" class="bienvenida"><%=f.formatCuenta(t.getCuenta().getCodigoBanco(), "C") %></td>  
+        <td data-title="Elaborador por" class="bienvenida"><%=t.getUsuarioPrepara()==null?"":t.getUsuarioPrepara()%></td>   
+        <td data-title="Estado" class="bienvenida" nowrap><bean:message key="<%=getDescEstado(t.getEstado())%>"/></td>
+        <td data-title="Nivel de Autorización" class="bienvenida"><%=aprobadorStr%></td>                        
+        <td data-title="Comentario" class="bienvenida"><%=t.getDescripcionRechazo()==null?StringUtilities.getValue(t.getMotivo()):t.getDescripcionRechazo()%></td>        
 </tr>
 <%
    } /* End  for*/
 } /* End if */ %>  
-</TABLE>
+</table>
+<br>
+</div>
 <br>
 <div align="center">
-<INPUT class="botton" onclick="document.location='<html:rewrite page='/servicios/transferencias.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
-</tr></table>
+<br>
+<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/servicios/transferencias.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+</tr></div></table>
 
 <%@ include file="../footer.jsp"  %>
+
+</div>
+</body>
+</html:html>

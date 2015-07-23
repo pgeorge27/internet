@@ -3,10 +3,18 @@
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://ajaxtags.org/tags/ajax" prefix="ajax" %>
 <%@ taglib uri="/tags/asi-internet" prefix="csic" %>
-
 <%@ page import="java.util.Locale"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Calendar"%>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
 <%@ include file="../head.jsp"%>
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
@@ -76,9 +84,13 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 %>
 <script type="text/javascript" src="<html:rewrite page='<%=calendar%>'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/calendar-trx.js'/>"></script>
+
+</head>
 <%@ include file="../body.jsp" %>
 
-<br>
+<body>
+<div class="container">
+
 <logic:messagesPresent>
 	<table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
 		<tr>
@@ -103,6 +115,7 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 	</table>
 </logic:messagesPresent>
 
+
 <html:form method="post" styleId="editBeneForm" action="/edit/beneficiario">
 	<html:hidden property="indice"/>
 	<html:hidden property="secuencia"/>
@@ -113,30 +126,21 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 </html:form>
 
 <html:form method="post" styleId="beneForm" action="/mant/beneficiarios">
-<div align="center"> 
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td	height="40"	valign="bottom" colspan="2">
-		<div align="center">
-		<table width="100%"	border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			<tr>
-				<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-				<td class="bienvenida">
-				<div align="left" class="login"><bean:message key="lbl.beneficiarios.general.mnu" /></div>
-				</td>
-			</tr>
-		</table>
-		</div>
-		</td>
-	</tr>
-	<tr valign="middle">
-		<td colspan="2" align="center" width="30%">
-			<%@ include file="../divHeader.jsp"%>
-			<table width="200px">
-				<tr>
-					<td width="30%" align="right" class="bienvenida"><div align="right" class="texto-acceso"><bean:message key="lbl.transf.inter.cliente" /></div></td>
-					<td width="80%" class="bienvenida" align="right">
-						<html:select property="cliente" styleClass="botton-acceso" onchange="__submit();">
+<div class="row" style="padding-top:20px;">
+
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+  			<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.beneficiarios.general.mnu" /></strong></div>
+
+					       <div  style="width: 90%; padding-left: 10%;"> 
+					       <br>
+            	
+              <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.transf.inter.cliente" />:</strong></div>
+              <br>
+                <div><html:select property="cliente" styleClass="form-control" onchange="__submit();">
 							<logic:notEmpty name="clientes.plantillas">
 								<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
 								<bean:define id="cp" scope="session" name="clientes.plantillas" type="java.util.ArrayList"/>
@@ -146,22 +150,33 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 								<html:option value=""><bean:message key="lbl.seleccione.no.hay.clientes"/></html:option>
 							</logic:empty>
 						</html:select>
-					</td>
-				</tr>
-			</table>
-			<%@ include file="../divFooter.jsp"%>
-		</td>
-	</tr>
-	<tr><td class="texto-acceso">&nbsp;</td></tr>
-	<tr>
+                </div>
+                <br>
+            </div>
+            <br>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<br>
+<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+
 		<td valign="top" colspan="2">
 			<table width="100%" border="0" cellpadding="1" cellspacing="2">
+			<thead class="cf">
 				<tr class="tabla-acceso">
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.nombre"/></td>
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.cuenta"/></td>
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.banco"/></td>
 					<td class="texto-acceso" width="25%"></td>
 				</tr>
+				</thead>
 				<logic:notEmpty name="beneficiarios">
 				<logic:iterate name="beneficiarios" id="row" type="com.arango.common.beans.BeneficiarioBean" indexId="resultNo" >
 					<bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>			
@@ -172,13 +187,13 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 				       <tr class="celda-clave1">
 				    </logic:notEqual>
 				    
-				    <td class="bienvenida">
+				    <td data-title="Nombre" class="bienvenida">
 				    	<bean:write name="row" property="nombre" />
 				    </td>
-				    <td class="bienvenida">
+				    <td data-title="Cuenta" class="bienvenida">
 				    	<bean:write name="row" property="cuenta" />
 				    </td>
-				    <td class="bienvenida">
+				    <td data-title="Banco" class="bienvenida">
 				    	<bean:write name="row" property="banco" />
 				    </td>
 					<td class="bienvenida">
@@ -190,8 +205,13 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 				</logic:notEmpty>
 			</table>
 		</td>
-	</tr>
-</table>
+		
+		</table>
 </div>
+
+
+
 </html:form>
-<%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>

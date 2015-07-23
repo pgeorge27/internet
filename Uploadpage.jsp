@@ -10,8 +10,80 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 session.setAttribute("no.aplicar.regla.password", "true");
 %>
 
-<html>
+<!DOCTYPE html>
+<html:html>
+
 <head>
+
+
+
+
+<style type="text/css">
+
+
+  
+@media (min-width: 1200px){
+         .col-md-3{
+          
+               
+            }
+            
+            
+ 
+            
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1195px) {
+   .col-md-2{
+               
+               margin-right: 1em;
+              
+            }
+            
+       
+
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 610px) and (max-width: 800px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+            
+
+}
+
+
+@media only screen and (max-width : 1024px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+}
+
+
+
+
+</style>
+
+
+
+
+
+
 <script type="text/javascript"	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
 <script language="javascript" src="./scripts/campos.js"></script>
 <SCRIPT language="Javascript">
@@ -119,30 +191,58 @@ $(document).ready(function()
  <%} %>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
-<logic:present name="msg">
+<body>
+
+<div class="container">
+
+
+ 	 <header style="padding-top: 20px;">
+			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
+		    </header>
+
+
+
+
+
+
+
+
+<div class="row visible-lg" style="padding-top:110px;">
+
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+
+
+<div class="panel panel-default">
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.seleccion.marca.indentidad.personal"/></strong></div>
+						 <div class="panel-body" style="">
+						 
+	  
+	  
+	  
+	        <div class="row">
+  <div class="col-md-2"></div>
+<div class="col-md-2"><strong><bean:message key="lbl.seleccion.marca.nombre.imagen"/> :</strong></div>
+
+  <div class="col-md-6"><input class="btn btn-default btn-xs"  type="file" name="file" id="file" style=" "/></div>
+  <div class="col-md-2"></div>
+
+
+  
+  
+  </div>
+  
+   <br>
+	  
+	  
+	  
+	  <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
 		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
@@ -160,61 +260,102 @@ $(document).ready(function()
 <%
    session.removeAttribute("msg");
 %>
-<div align="center"> 
-<%@ include file="divHeader.jsp"%>
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="20" valign="bottom">
-	<div align="left"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="100%"><div align="center" class="login"> <bean:message key="tit.seleccion.marca.indentidad.personal"/> </div></td>			
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-  <tr> 
-	<td valign="top">
-	
-	<form id="forma" action='<html:rewrite page="/do.SetImage"/>' method="post" enctype="multipart/form-data" 
-           name="productForm" id="productForm"><br><br>
-    <table width="400px" align="center" border=0 >
-      <tr>
-        <td align="center" colspan=2 style="font-weight:bold;font-size:20pt;">     </td>
-      </tr>
-      <tr>
-        <td height="30" class="texto-acceso"> <bean:message key="lbl.seleccion.marca.nombre.imagen"/> </td>
-        <td class="texto-acceso">   <input   type="file" name="file" id="file" style=" width : 311px;"/></td>
-      </tr>     
-	  <tr>
-        <td align="center" colspan=2 height="10">     </td>
-      </tr>
 
-      <tr> <table>
-          <td align="center" width="200" ><input type="submit" class="botton" name="Submit" value="<bean:message key="lbl.seleccion.marca.subir"/>"></td>
-			<td align="center" width="200"><input type="button" class="botton" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>"></td>
-      </table></tr>
-      <tr>   <td colspan="2">&nbsp;</td>
-      </tr>
-    </table>
-    <%@ include file="divFooter.jsp"%>
-  </form>
+	<br>	
+
+<form id="forma" action='<html:rewrite page="/do.SetImage"/>' method="post" enctype="multipart/form-data" 
+           name="productForm" id="productForm">
+	  
+	  
+	  
+	  
+	  
+	  					<div align="center">
+										
+								
+										
+										<div class="row">
+									
+										<div class="col-md-4"></div>
+  <div class="col-md-2">	
+                                      	<input type="submit" style="width: 110px;" class="btn btn-default" name="Submit" value="<bean:message key="lbl.seleccion.marca.subir"/>">
+			  							
+			  							</div>
+  <div class="col-md-2">	
+			  						
+			  		
+			  <input type="button" class="btn btn-default" style="width: 110px;" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>">
 		
-	</td>
-  </tr>
-  
-  <tr> 
-	<td height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  </tr>
-</table>
+									</div>
+										<div class="col-md-4"></div>
+										
+							</div>			
 
-</div> 
-	</table></td></tr>
-   </table></td></tr>
- <tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="msg.derechos.reservados" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table>
+										</div>
+										
+										<br>
+	  
+	  
+	   <div align="center">
+            
+				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  			</div>
+  			<br>
+	  
+	   </form> 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+ 
+						 </div>
+				
+					</div>
+					   <br> 
+	
+				</div>
 
+<div class="col-md-2"></div>
+</div>
+
+
+
+
+
+
+ <br>
+    
+  <br><br>
+    
+    <br><br>
+  <br><br>
+  <br>
+    
+  <br><br>
+    
+    <br><br>
+
+
+</div>
 </body>
+
+</html:html>

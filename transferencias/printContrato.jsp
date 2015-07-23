@@ -9,7 +9,8 @@ if (locale == null){
 	locale = com.arango.common.util.i18n.ASIResourceBundle.getDefaultLocale();
 }
 %>
-<html>
+<!DOCTYPE html>
+<html:html>
 <head>
 <script language="javascript">
 <!--
@@ -115,14 +116,26 @@ div.Section1
 	{page:Section1;}
 -->
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
-<table width="95%" align="center">
+<div class="container" style="padding-top: 30px;">
+<table>
 	<tr>
-		<td><div align="center" id="bankdiv" style="display:"><a href="javascript:printContrato()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+		<td><div align="center" id="bankdiv" style="display:"><a href="javascript:printContrato()"><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
 		</td></tr>
-	<tr><td><img src="<html:rewrite page='/images/logo.jpg'/>"></td></tr>	
+		
+	  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-7"><img class="img-responsive" alt="Responsive image" border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/></div>
+<div class="col-md-1"></div>
+  </div>
+  <br>
 	<tr>	
+	<br>
 		<td>
 			<% if ("en".equals(locale.getLanguage())){%>
 				<%@ include file="./agreement_en.htm" %>
@@ -132,5 +145,6 @@ div.Section1
 		</td>
 	</tr>
 </table>
+</div>
 </body>
-</html>
+</html:html>

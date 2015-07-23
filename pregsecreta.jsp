@@ -8,7 +8,8 @@
 <% 
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
 %>
-<html>
+<!DOCTYPE html>
+<html:html>
 <head>
 <script type="text/javascript">
 <!--
@@ -193,23 +194,24 @@ window.statusbar=' ';
  <%} %>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="reset();" >
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-   
+
+<body style="padding-top: 30px;"  onLoad="reset();" >
+
+
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-7"><img class="img-responsive" alt="Responsive image" border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/></div>
+<div class="col-md-1"></div>
+  </div>
+
+<div class="container" style="padding-top: 30px;">
+
+
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
@@ -236,7 +238,7 @@ window.statusbar=' ';
    ManagerBean mb = new ManagerBean();
    UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
 %>
-<div align="center"> 
+
 <form name="forma" action="<html:rewrite page='/do.preguntas'/>" method="post">
 <%
 if (session.getAttribute("pregOK") != null)
@@ -252,37 +254,47 @@ if (session.getAttribute("pregOK") != null)
 session.removeAttribute("pregOK");
 }
 %>
-<table width="800" align="left">
-<tr><td width="30">&nbsp;</td>
-<td width="1000" align="left">
-<table width="1000" border="0" align="left" cellpadding="0" cellspacing="0">
-<tr> 
-	<td height="20" valign="bottom">
-	<div align="left"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="60%"><div align="left" class="login"><bean:message key="lbl.preg.secreta.titulo1a"/></div></td>
-			<td width="40%"><div align="right"></div></td>
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-  <tr><td>&nbsp;</td></tr> 
-  <tr><td>&nbsp;</td></tr>
-  <tr> 
-	<td valign="top" align="left">
-	 <table>
-	 <tr valign="top">
-	    <td>
-	    <!--  Tabla con Preguntas -->
-		<table width="400" border="0" cellpadding="0" cellspacing="2">
-		  <tr>
-		    <td class="bienvenida2">1. <bean:message key="lbl.preg.secreta1"/></td>
-		  </tr>
-		  <tr><td>&nbsp;</td></tr>
-		  <tr> 
-			<td align="center">
-			   <select name="pregunta1">
+
+  <br>
+
+          <div class="col-md-6">
+
+          <div class="panel panel-default">
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.pregunta.tips.titulo"/></strong></div>
+  <div class="panel-body" align="justify" style="padding-right: 8%;" >
+
+  <UL>
+	     		<li><bean:message key="lbl.preg.secreta.obs1"/></li>
+	     		<li><bean:message key="lbl.preg.secreta.obs2"/></li>
+		     	<li><bean:message key="lbl.preg.secreta.obs3"/></li>
+	   		    <li><bean:message key="lbl.preg.secreta.obs6"/></li>
+	     		<li><bean:message key="lbl.preg.secreta.obs7"/></li>	
+     	    </UL>
+ 
+  
+  </div>
+</div>
+
+          </div>
+
+		
+        
+          <div class="col-md-6"><div class="panel panel-default">
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.preg.secreta.titulo1a"/></strong></div>
+  <div class="panel-body">
+
+
+									<label style="text-align:left">	<h5><strong>
+				
+						1. <bean:message key="lbl.preg.secreta1"/>:
+					
+						</strong></h5>
+			</label>
+			
+			  
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%; " >	   <select class="form-control" name="pregunta1">
 			   <option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
 			   <%
 			   		ArrayList lista = mb.getPreguntasCuestionario(userInfo);
@@ -309,32 +321,56 @@ session.removeAttribute("pregOK");
 			   			out.print("</option>");
 			   		}
 			   		%>
-				</select>
-		    </td>
-		  </tr>
-		 <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta1"/></td>
-		 </tr>
-		 <tr>
-			<td align="center"><input name="respuesta1" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta1 %>"></td>
-		  </tr>
-		  <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-		 </tr>
-		 <tr>
-			<td align="center"><input name="confirma1" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta1 %>"></td>
-		  </tr>
-		 <tr>
-		    <td class="texto-acceso" align="center"><bean:message key="lbl.preg.secreta.rango"/></td>
-		 </tr>
-		 <tr><td>&nbsp;</td></tr>
-		  <tr>
-		    <td class="bienvenida2">2. <bean:message key="lbl.preg.secreta2"/></td>
-		  </tr>
-		  <tr><td>&nbsp;</td></tr>
-		  <tr>
-			<td align="center">
-			   <select name="pregunta2">
+				</select> </div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.resp.secreta1"/>:
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="respuesta1" type="text" class="form-control" size="20" maxlength="50" value="<%=respuesta1 %>"></div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.preg.secreta.conf.resp"/>:
+					
+						</strong></h5>
+			</label>
+
+
+
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="confirma1" type="text" class="form-control" size="20" maxlength="50" value="<%=respuesta1 %>"><bean:message key="lbl.preg.secreta.rango"/></div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left">	<h5><strong>
+				
+						2.<bean:message key="lbl.preg.secreta2"/>:
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;">
+  	   <select class="form-control" name="pregunta2">
 			   	  <option value="-1"><bean:message key="lbl.seleccion.pregunta"/></option>
 			   <%
 			   		for (int i=0; i<8; i++)
@@ -352,100 +388,158 @@ session.removeAttribute("pregOK");
 			   		}
 			    %>
 				</select>
-		    </td>
-		  </tr>
-		 <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta2"/></td>
-	     </tr>
-	     <tr>
-			<td align="center"><input name="respuesta2" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta2 %>"></td>
-		  </tr>
-		  <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-		 </tr>
-		 <tr>
-			<td align="center"><input name="confirma2" type="text" class="caja-acceso" size="20" maxlength="50" value="<%=respuesta2 %>"></td>
-		  </tr>
-		 <tr>
-		    <td class="texto-acceso" align="center"><bean:message key="lbl.preg.secreta.rango"/></td>
-		 </tr>
-		 <tr><td>&nbsp;</td></tr>
-		  <tr>
-		    <td class="bienvenida2">3. <bean:message key="lbl.preg.secreta3"/>&nbsp;
-		    <span class="texto-acceso"><bean:message key="lbl.preg.secreta.rango"/></span></td>
-		  </tr>
-		  <tr><td>&nbsp;</td></tr>
-		  <tr>
-		   <td class="bienvenidaBold" align="left">&nbsp;&nbsp;<bean:message key="lbl.preg.secreta3.texto"/></td></tr>
-		  <tr> 
-			<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<input name="pregunta3" type="text" class="caja-acceso" size="40" maxlength="50" value="<%=preg3 %>"> 
-			  </td>
-		  </tr>
-		 <tr>
-		   <td class="bienvenidaBold" align="left">&nbsp;&nbsp;<bean:message key="lbl.preg.secreta3.confirm"/></td></tr>
-		  <tr> 
-			<td class="bienvenidaBold" align="left">&nbsp;&nbsp;<input name="confirmapreg3" type="text" class="caja-acceso" size="40" maxlength="50" value="<%=preg3 %>"> 
-			  </td>
-		  </tr>
-		  <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.resp.secreta3"/></td>
-		  </tr>
-		  <tr>
-			<td align="center"><input name="respuesta3" type="text" class="caja-acceso" size="20" value="<%=respuesta3 %>"></td>
-		  </tr>
- 		 <tr> 
-			<td height="20" class="bienvenidaBold" align="center"><bean:message key="lbl.preg.secreta.conf.resp"/></td>
-		 </tr>
-		 <tr>
-			<td align="center"><input name="confirma3" type="text" class="caja-acceso" size="20" value="<%=respuesta3 %>"></td>
-		  </tr>
-		  <tr><td>&nbsp;</td></tr>
-		  <tr> 
-			<td align="center"><input name="button"  type="button" onclick="send()" class="botton" value="<bean:message key="btn.enviar"/>"> 
-			  &nbsp;&nbsp;<input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-			</td>
-		  </tr>
-		</table>
-		<!--  FIn de Tabla con Preguntas -->
-		</td>
-		<td>
-		<!--  Tabla con Tips -->
-		<%@ include file="divHeader.jsp"%>
-		<table cellspacing="0"  >
-         <tr><td colspan="2">&nbsp;</td></tr>
-         <tr>
-      	   <td width="5%"><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	       <td><p class="bienvenida_2"><B><bean:message key="lbl.pregunta.tips.titulo"/></B></p></td>
-	     </tr>
-	     <tr>
-           <td class="bienvenida_2" colspan="2">
-     	     <UL>
-	     		<li><bean:message key="lbl.preg.secreta.obs1"/></li>
-	     		<li><bean:message key="lbl.preg.secreta.obs2"/></li>
-		     	<li><bean:message key="lbl.preg.secreta.obs3"/></li>
-	   		    <li><bean:message key="lbl.preg.secreta.obs6"/></li>
-	     		<li><bean:message key="lbl.preg.secreta.obs7"/></li>	
-     	    </UL>
-          </td>
-        </tr>
-	  </table>
-	  <%@ include file="divFooter.jsp"%>
-		<!--  Fin de Tabla con Tips -->
-		</td>
-		</tr>
-		</table>
-	 </td>
-  </tr>
-</table> 
-</td></tr></table>
+						
+  </div>
+ 
+</div>
+
 <br>
 
-</form> 
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.resp.secreta2"/>:
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="respuesta2" type="text" class="form-control" size="20" maxlength="50" value="<%=respuesta2 %>">
+  <bean:message key="lbl.preg.secreta.rango"/></div>
+ 
 </div>
-</td>
-</tr>
-  <tr style=" width : 1000px;">
-    <td height="31" colspan="6" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-   </tr>
-</table> 
+
+<br>
+
+				<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.preg.secreta.conf.resp"/>:
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="confirma2" type="text" class="form-control" size="20" maxlength="50" value="<%=respuesta2 %>">
+  <bean:message key="lbl.preg.secreta.rango"/></div>
+ 
+</div>
+
+<br>
+						<label style="text-align:left;">	<h5><strong>
+				
+						3.<bean:message key="lbl.preg.secreta3"/>:
+					
+					
+						</strong></h5>
+			</label>
+
+
+
+<br>
+							<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.preg.secreta3.texto"/>:
+				
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="pregunta3" type="text" class="form-control" size="40" maxlength="50" value="<%=preg3 %>"> 
+</div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.preg.secreta3.confirm"/>:
+				
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="confirmapreg3" type="text" class="form-control" size="40" maxlength="50" value="<%=preg3 %>"> 
+</div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.resp.secreta3"/>:
+				
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="respuesta3" type="text" class="form-control" size="20" value="<%=respuesta3 %>">
+</div>
+ 
+</div>
+
+<br>
+
+									<label style="text-align:left; padding-left: 3%;">	<h5><strong>
+				
+						<bean:message key="lbl.preg.secreta.conf.resp"/>:
+				
+					
+						</strong></h5>
+			</label>
+
+  	  	<div class="row">
+  <div class=".col-md-2" ></div>
+  <div class=".col-md-6" style="padding-right: 0%; width: 90%; padding-left: 8%;"><input name="confirma3" type="text" class="form-control" size="20" value="<%=respuesta3 %>">
+</div>
+ 
+</div>
+
+
+<br>
+
+
+				<div class="row">
+										 <div class="col-md-3"></div>	
+  <div class="col-md-2">	<div align="center">
+                                      
+                                        	<input type="hidden" name="marca" id="marca" value="">
+                                        	<input name="button" type="button" onclick="send()" class="btn btn-default" style="width: 110px;" value="Enviar"> 
+			  				
+			  							
+			  							</div></div>
+			  							
+			  							 <div class="col-md-1"></div>	
+			  							
+			  							
+  <div class="col-md-2">	<div align="center">
+			  						
+			  							
+									<input name="Submit2" type="reset" class="btn btn-default" style="width: 110px;" value="Limpiar"> 
+									
+										
+										</div></div>
+										
+										 <div class="col-md-4"></div>	
+										
+							</div>
+										
+										<br>
+	
+
+
+
+</form> 
+
+</div> 
+</body> 
+
+</html:html>

@@ -172,6 +172,22 @@ window.statusbar=' ';
 
 
 
+		<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.firma.digital.tips.titulo"/></strong></div>
+  <div class="panel-body" align="justify" style="padding-right: 5%;">
+
+
+
+     <UL>
+	          	<li><bean:message key="lbl.cambio.clave.especial.obs1" /></li>
+	          	<li><bean:message key="lbl.cambio.clave.especial.obs2" /></li>
+	            <li><bean:message key="lbl.cambio.clave.especial.obs3" /></li>
+	            <li><bean:message key="lbl.cambio.clave.especial.obs4" /></li>
+	          </UL>
+
+  
+  </div>
+</div>
 
 <br>
 
@@ -245,121 +261,97 @@ window.statusbar=' ';
   
   
   </div>
-    
-			<td  align="center"class="texto-acceso">
+  
+  
+    <br>
+  
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">	
 						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
-				</td>
 
-			
-		 	
-
-		
-
-		
-
-				<div>
-			    	<div  align="left"  colspan="3" >
 				    	<div id="teclado">
 							<div id="lower" style="display: none;" ></div>
 							<div id="upper"></div>
 							<div id="cls" align="center"></div>		
 						</div>
 					</div>
-			     </div>
-			
-		  <tr> 
-			<td>&nbsp;</td>
-			<td colspan="2"><input name="button" onclick="send();" type="button" class="botton" value="<bean:message key="btn.enviar"/>"> 
-			  <input name="Submit2" type="reset" class="botton" value="<bean:message key="btn.limpiar"/>"> 
-			</td>
-		  </tr>
-		</table>
+			     
+  <div class="col-md-4"></div>
+  </div>
+  
+  
+    <br>
+    
+    
+    
+    
+    
+      <div class="row">
+  <div class="col-md-6"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-2">	
+						<input type="checkbox" id="changeLetters" checked="false" onclick="changeStyle();" style="display: none;" />
+						
+						<div align="right">
+
+				    	<div id="teclado">
+							<div id="lower" style="display: none;" ></div>
+							<div id="upper"></div>
+							<div id="cls" align="center"></div>		
+						</div>
+						</div>
+					</div>
+			     
+
+  </div>
+    
+
+	
 	  </form>
+	  
+	         <div align="center">
+            
+				<strong><div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></strong></div>
+  			</div>
+  			
+  			<br>
 
+								<div align="center">
+										
+								
+										
+										<div class="row">
+									
+										<div class="col-md-4"></div>
+  <div class="col-md-2">	
+                                      	<input name="button" onclick="send();" type="button" class="btn btn-default" style="width: 110px;"  value="<bean:message key="btn.enviar"/>">
+			  							
+			  							</div>
+  <div class="col-md-2">	
+			  						
+			  		
+			  <input name="Submit2" type="reset" class="btn btn-default" style="width: 110px;"  value="<bean:message key="btn.limpiar"/>"> 
+		
+									</div>
+										<div class="col-md-4"></div>
+										
+							</div>			
 
-
-
-  
-  </div>
-</div>
-
-
-
-
-
-
-		<div class="panel panel-default">
- <div class="panel-heading" align="justify" ></div>
-  <div class="panel-body">
-
-
-
-<div align="center">
-<table width="100%" align="left">
-<tr>
-	<td height="40" valign="bottom" colspan="2">
-	<div align="left"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="100%"><div align="left" class="login"></div></td>
-		  </tr>
-		</table>
-	  </div></td>
-</tr>
-<tr><td>
-<table width="90%" border="0" cellpadding="0" cellspacing="0" align="left">
-  <tr> 
-
-  </tr>
-  <tr><td colspan="2">&nbsp;</td></tr>
-  <tr valign="top">
-     <td>
-     <!--  Tabla con Cajas -->
-
-     </td>
-   <td>
-	<!--  Tabla con Tips -->
-	<%@ include file="divHeader.jsp"%>
-	  <table  cellspacing="3"  >
-        <tr valign="top">
-      	  <td colspan="2">
-      	  <table><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><p class="bienvenida_2"><B><bean:message key="lbl.firma.digital.tips.titulo"/></B></p></td>
-	      </tr>
-	      </table>
-	      </td>
-	    </tr>
-	    <tr valign="top">
-	       <td colspan="2" class="bienvenida_2">
-	          <UL>
-	          	<li><bean:message key="lbl.cambio.clave.especial.obs1" /></li>
-	          	<li><bean:message key="lbl.cambio.clave.especial.obs2" /></li>
-	            <li><bean:message key="lbl.cambio.clave.especial.obs3" /></li>
-	            <li><bean:message key="lbl.cambio.clave.especial.obs4" /></li>
-	          </UL>
-	       </td>
-	    </tr>
-	  </table>
-
-	</td>
-     </tr>
-  <tr>
-	<td height="20" valign="middle" align="center" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  </tr>
-</table></td></tr>
- <tr>
-    <td height="31" colspan="6" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table></td></tr></table></div>
-
-
-
+										</div>
+										
+										<br>
+	
 
   
   </div>
 </div>
+
+
+
+
+
+
 
 
 

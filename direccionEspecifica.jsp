@@ -5,8 +5,9 @@
 <% 
 String field = request.getParameter("field");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html:html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Dirección Especifica</title>
@@ -133,51 +134,97 @@ window.top.hidePopWin();
 }
 
 </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body onload="splitDireccion()">
-<form id="frm" name="frm" action="">
-	<div align="center"><br>
-	    	 <table border="0" cellpadding="1" cellspacing="0" width="300">
-					
-						<tbody><tr>
-			    	 			<td class="celdas-border" width="30%"><b>Calle y Nro:</b></td>
-							<td class="celdas" width="60%">
-							<input name="calle" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
-			    	 	<tr valign="middle">	    	 		
-							<td class="celdas-border">Edificio/Residencia:</td>
-							<td class="celdas"><input name="residencia" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
-			    	 	<tr valign="middle">
-			    	 		
-							<td class="celdas-border">Municipio:</td>
-							<td class="celdas"><input name="municipio" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
-<tr valign="middle">
-			    	 		
-							<td class="celdas-border" width="30%">Urbanización:</td>
-							<td class="celdas" width="60%"><input name="urbanizacion" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
-			    	 	<tr valign="middle">
-			    	 		
-							<td class="celdas-border">Mailing Code:</td>
-							<td class="celdas"><input name="mailingCode" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
-			    	 	<tr valign="middle">
-			    	 		
-							<td class="celdas-border">Casa:</td>
-							<td class="celdas"><input name="casa" maxlength="25" size="45" class="textfield" type="text"></td>
-							</tr>
 
-			    	 	
-<tr valign="middle">			       <td align="center" COLSPAN="2" heigth="100px"><br>
-				   <input class="botton" onclick="setDireccion();" value="Aceptar" type="button">
-				   <input class="botton" onclick="window.top.hidePopWin()" value="Cancelar" type="button">
-	    	 	</td></tr>
-						</tbody></table>
-			
-	    </div>
+<div class="container">
+
+		<div class="row" style="padding-top: 5%; padding-left: 3%; padding-right: 3%;">
+
+		  <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Dirección Específica</strong></div>
+
+					  <div class="panel-body">
+
+<form id="frm" name="frm" action="">
+	
+			 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Calle y Nro:</strong></div>
+                <div><input name="calle" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+            
+            				 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Edificio / Residencia:</strong></div>
+                <div><input name="residencia" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+            
+            
+                        				 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Municipio:</strong></div>
+                <div><input name="municipio" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+            
+            
+                                    				 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Urbanización:</strong></div>
+                <div><input name="urbanizacion" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+            
+
+
+                                  				 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Mailing Code:</strong></div>
+                <div><input name="mailingCode" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+            
+            
+                                             				 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong>Casa:</strong></div>
+                <div><input name="casa" maxlength="25" size="45" class="form-control" type="text">
+                </div>
+            </div>
+
 </form>
+
+</div>
+
+<div align="center">
+  
+       <input class="btn btn-default" onclick="setDireccion();" value="Aceptar" type="button">
+      <input  class="btn btn-default" onclick="window.top.hidePopWin()" value="Cancelar" type="button">
+	</div>
+	<br>
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
-</html>
+</html:html>

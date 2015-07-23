@@ -25,6 +25,10 @@ private String getNombre(String text){
     return temp;
 }
 %>
+<!DOCTYPE html>
+<html:html>
+
+<head>
 <%@ include file="../head.jsp"%>
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 
@@ -32,6 +36,8 @@ private String getNombre(String text){
 <script type="text/javascript" src="<html:rewrite page='/scripts/prototype.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/ajaxtags-1.1.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
+
+</head>
 <%
 Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);
 if (locale == null){
@@ -87,7 +93,10 @@ String calendar = "/calendar/calendar-"+locale.getLanguage()+".js";
 </script>
 <%@ include file="../body.jsp" %>
 
-<br>
+<body>
+
+<div class="container">
+
 <logic:messagesPresent>
 	<table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
 		<tr>
@@ -111,65 +120,83 @@ String calendar = "/calendar/calendar-"+locale.getLanguage()+".js";
 		</tr>
 	</table>
 </logic:messagesPresent>
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div align="center"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td><div align="left" class="login"><bean:message key="lbl.beneficiarios.general.mnu"/></div></td>
-		  </tr>
-		</table>
-	</div></td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top">
+
+
+
 	<html:form method="post" action="/grabar/beneficiario" onsubmit="document.forms[0].action.value='validate'">
 	<html:hidden property="action" />
 	<html:hidden property="mode" value="create"/>
 	<html:hidden property="secuencia" />
 
-	<table width="100%" border="0" cellpadding="5" cellspacing="1">
-		<tr>
-			<td colspan="3" height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-		</tr>
-		
-		<tr>
-			<td class="bienvenida"><b>1:</b> <bean:message key="lbl.beneficiario.nombre"/></td>  		
-			<td class="bienvenida"><b>2:</b> <bean:message key="lbl.beneficiario.cuenta"/></td>
-			<td class="bienvenida"><b>3:</b> <bean:message key="lbl.beneficiario.banco"/></td>
-		</tr>
-		
-		<tr>
-			<td><html:text property="nombre" size="50" styleId="nombreId" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td><html:text property="cuenta" size="50" styleId="cuentaId" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td><html:text property="banco" size="50"  styleId="bancoId" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		</tr>
-		
-		<tr>
-			<td colspan="3" align="center">
-				<br><br>
-				<input type="button" class="botton" onclick="send();" value="Aceptar"/>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" class="botton" onclick="document.location='<html:rewrite page='/mant/beneficiarios.do'/>'" value="Cancelar"/>
-			</td>
-		</tr>
-		
-	</table>
-	</html:form>
+<div class="row" style="padding-top:20px;">
+
+
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+  			<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.beneficiarios.general.mnu"/></strong></div>
+						
+									
+					 <br> 
+					       <div  style="width: 90%; padding-left: 10%;"> 
+            	
+              <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.beneficiario.nombre"/>:</strong></div>
+                <div><html:text property="nombre" size="50" styleId="nombreId" styleClass="form-control"/>
+                </div>
+            </div>
+            <br>
+            <div  style="width: 90%; padding-left: 10%;"> 
+          
+              <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.beneficiario.cuenta"/>:</strong></div>
+                <div><html:text property="cuenta" size="50" styleId="cuentaId" styleClass="form-control"/>
+
+            </div>
+            </div>
+             <br>
+         
+           <div style="width: 90%; padding-left: 10%;">  
+         
+                <div>
+	                <div>
+	                	 <div><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.beneficiario.banco"/>:</strong></div>
+	                </div>
+                </div>
+                <div><html:text property="banco" size="50"  styleId="bancoId" styleClass="form-control"/>
+           
+            </div>
+            </div>
+              <br> 
+            <div align="center">
+            
+				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  			</div>
+  			<br>
+  			
+<div align="center">
+      
+ <input type="button" class="btn btn-default" onclick="send();" value="Aceptar"/>
+
+        <input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/mant/beneficiarios.do'/>'" value="Cancelar"/>
+	</div>
+	<br>
+
+					</div>
+					 <br> 
+
+					</div>
+  <div class="col-md-3"></div>
+
+</div>
+
 	<script>
 	function __initialize(){
 		_refresh();
 	}
 	__initialize();
 	</script>
-<!-- Fin. Solicitud -->
-	</td>
-</tr>
-</table></div>
 
-<%@ include file="../footer.jsp"  %>
+</html:form>
+</div>
+</body>
+</html:html>

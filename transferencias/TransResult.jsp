@@ -10,7 +10,18 @@
 <%@page import="com.arango.common.util.Format" %>
 <%@ page import="java.util.Locale" %>
 
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
 <%@ include file="/head.jsp"  %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 
 <%! Format f = Format.getFormat();%>
 
@@ -48,63 +59,73 @@ function changeGraphit(tipo){
 </script>
 <%@ include file="/body.jsp"%>
 
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-	<tr> 
-		<td height="40" valign="bottom">
-			<div align="left"> 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-				<tr> 
-					<td><div align="left" class="login">Reporte</div></td>
-					<td width="8%">
-						<div align="right">&nbsp;
-							<INPUT class="botton" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>">
-						</div>
-					</td>
-				</tr>
-			</table>
-			</div>
-		</td>
-	</tr>
-</table>
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">     
-    <tr> 
-        <td valign="top">
-			<table width="100%">
-				<tr align="center" >
-					<td>
-						<table width="40%" border="0" cellpadding="0" cellspacing="0">
+<body>
+
+<div class="container">
+
+<br>
+
+<div align="right">&nbsp;
+							<INPUT class="btn btn-default" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+<br>
+
+
+	<div class="row">
+		<div>
+			<div class="panel panel-default" >
+				<div class="panel-heading">
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>Reporte</strong>
+				</div>
+
+</div>
+
+</div>
+
+</div>
+
+						<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 						<tr align="center">
-							<td width="10%"><div align="left" class="subtitulos"><bean:message key="lbl.desde"/></div></td>
-							<td width="30%" class="subtitulos" align="left"> <script type="text/javascript">document.write(queryString["desde"]);</script></td>
-							<td width="10%"><div align="left" class="subtitulos"><bean:message key="lbl.hasta"/></div></td>
-							<td width="30%" class="subtitulos" align="left"> <script type="text/javascript">document.write(queryString["hasta"]);</script></td>
-						</tr>
-						</table>
-						<br/>
-					</td>
-				</tr>
-				
-				<tr align="center">
-				<br/>
-					<td>
-						<img width="700" height="450" src="<html:rewrite page='/grafica'/>">
-					</td>
-				</tr>
+							<td data-title="Desde"><div align="left" class="subtitulos"><bean:message key="lbl.desde"/></div></td>
+							<td class="subtitulos" align="left"> <script type="text/javascript">document.write(queryString["desde"]);</script></td>
+							<td data-title="Hasta"><div align="left" class="subtitulos"><bean:message key="lbl.hasta"/></div></td>
+							<td  class="subtitulos" align="left"> <script type="text/javascript">document.write(queryString["hasta"]);</script></td>
+						</tr></thead>
+
 			</table>
+			<br>
+					<div align="center">
+			
+				
+						<img class="img-responsive center-block" width="700" height="450" alt="Responsive image"  src="<html:rewrite page='/grafica'/>">
+				
+				</div>
+			
+			</div>
+			
+			<br>
+			<br>
+			
 			<html:form method="get"  action="/trans/activity/report.do"   >
 				<html:hidden property="estado" />
 				<html:hidden property="cuenta" />
 				<html:hidden property="desde" />
 				<html:hidden property="hasta" />
 			</html:form>
-			<table width="60%" border="0" cellpadding="1" cellspacing="2" align="center">
+						
+									<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 				<tr class="tabla-acceso">
-					<td class="texto-acceso" width="4%" align="center"></td>
-					<td class="texto-acceso" width="50%" align="center">Nombre Beneficiario</td>
-					<td class="texto-acceso" width="10%" align="center"><INPUT class="botton" onclick="changeGraphit('ctaTrans');" type=button value="Cantidad transferencias"/></td>
-					<td class="texto-acceso" width="25%" align="center">Moneda</td>
-					<td class="texto-acceso" width="20%" align="center"><INPUT class="botton" onclick="changeGraphit('monto');" type=button value="Valor"/></td>                                                
-				</tr>
+					<td class="texto-acceso"  align="center">N°</td>
+					<td class="texto-acceso"  align="center">Nombre Beneficiario</td>
+					<td class="texto-acceso"  align="center"><INPUT class="botton" onclick="changeGraphit('ctaTrans');" type=button value="Cantidad transferencias"/></td>
+					<td class="texto-acceso"  align="center">Moneda</td>
+					<td class="texto-acceso"  align="center"><INPUT class="botton" onclick="changeGraphit('monto');" type=button value="Valor"/></td>                                                
+				</tr></thead>
 				<logic:present name="transf.activity">
 				<logic:iterate name="transf.activity" id="row" type="com.arango.internet.banking.Movimiento" indexId="resultNo">
 					<bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>			
@@ -114,34 +135,36 @@ function changeGraphit(tipo){
 					<logic:notEqual name="remainder" value="0">
 					   <tr class="celda-clave1">
 					</logic:notEqual>
-							<td class="bienvenida" align="center"><%=Integer.toString(resultNo.intValue()+1) %></td>
-							<td class="bienvenida" align="left"><bean:write name="row" property="nombre"/></td>
-							<td class="bienvenida" align="center"><bean:write name="row" property="secuenciaMov"/></td>
-							<td class="bienvenida" align="left"><bean:write name="row" property="moneda"/></td>
-							<td class="bienvenida" align="right"><bean:write name="row" property="suma" format="##,###,###,##0.00"/></td>
-						</tr>
+							<td data-title="N°" class="bienvenida" align="center"><%=Integer.toString(resultNo.intValue()+1) %></td>
+							<td data-title="Nombre Beneficiario" class="bienvenida" align="left"><bean:write name="row" property="nombre"/></td>
+							<td data-title="Cantidad Transferencias" class="bienvenida" align="center"><bean:write name="row" property="secuenciaMov"/></td>
+							<td class="Moneda" align="left"><bean:write name="row" property="moneda"/></td>
+							<td class="Valor" align="right"><bean:write name="row" property="suma" format="##,###,###,##0.00"/></td>
+						
 				</logic:iterate>
 				</logic:present>
 			</table>
-			<table width="100%" border="0" cellpadding="5" cellspacing="5">	
-				<tr><br>
-					<td colspan="2">
-						<div align="center">
+			
+<br>	
+		</div>	
+			
+			
+	<br>
+	<br>
+		
+		<div align="center">
 							<a href="javascript:printPage3()">
 								<img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0">
 							</a>
 						</div>	
-					</td>
-				</tr>
-				<tr> 
-					<td valign="top" class="texto-acceso" colspan="2">
-						<div align="center"><br>
-						<INPUT class="botton" onclick="__retornar();" type=button value="<bean:message key="lbl.retroceder"/>">
+						
+						<br>
+
+						<div align="center">
+						<INPUT class="btn btn-default" onclick="__retornar();" type=button value="<bean:message key="lbl.retroceder"/>">
 						</div>
-					</td>
-				</tr>
-			</table>
-		</td>
-    </tr>
-</table>
-<%@ include file="/footer.jsp"  %>
+
+			<br>
+</div>	
+</body>
+</html:html>

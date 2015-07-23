@@ -135,7 +135,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <div class="container" style="padding-top:20px">
 
    	 <header>
-			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
+			<img border="0" class="img-responsive" alt="Responsive image" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
 <br>
 <br>
@@ -143,7 +143,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 <br>
 
-		<div class="row" style="padding-top: 5%;">
+		<div class="row" style="padding-top: 10%; padding-left: 3%; padding-right: 3%;">
 
 		  <div class="row">
 		<div class="col-md-4 col-md-offset-4">

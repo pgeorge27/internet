@@ -12,8 +12,58 @@
 <%! 
 com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
 
-
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
+
+<style type="text/css">
+
+
+  
+@media (min-width: 1200px){
+         .col-md-3{
+          
+               
+            }
+            
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1195px) {
+   .col-md-2{
+               
+               margin-right: 1em;
+              
+            }
+            
+
+}
+
+
+@media screen and (min-width: 610px) and (max-width: 800px) {
+   .col-md-3{
+
+            }
+            
+
+}
+
+
+@media only screen and (max-width : 1024px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+}
+
+</style>
+
 <% 
 String descripcion = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "lbl.mant.imagen.obs3" :  "lbl.mant.imagen.obs4";
 String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("1")) ? "msg.derechos.reservados"  : "msg.derechos.reservados2";
@@ -123,19 +173,14 @@ $(document).ready(function()
 });
 </script>
 <link rel="stylesheet" type="text/css" 	href="<html:rewrite page='/style/flujos.css'/>" />
-
-
+</head>
+<body>
 
 <%@ include file="body.jsp"  %>
 
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-				<tr> 
-					<td height="300" valign="middle">
-						<table border="0" align="center" cellpadding="0" cellspacing="0">
-							<tr> 
-								<td>
-									<br>
-									<logic:present name="msg">
+<div class="container">
+
+				<logic:present name="msg">
 									<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 										<tr> 
 											<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
@@ -153,77 +198,97 @@ $(document).ready(function()
 									<%
 									   session.removeAttribute("msg");
 									%>
-									<div align="center"> 
-									<%@ include file="divHeader.jsp"%>
-										<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-										  <tr> 
-											<td height="20" valign="bottom">
-											<div align="left"> 
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-												  <tr> 
-													<td width="100%"><div align="center" class="fuente-titulo"> <bean:message key="tit.seleccion.marca.indentidad.personal"/> </div></td>			
-												  </tr>
-												</table>
-											  </div></td>
-										  </tr>
-										  <tr> 
-											<td valign="top">
-											
-											<form name="forma" id="forma" action='<html:rewrite page="/do.SetImage"/>' method="post" enctype="multipart/form-data"><br><br>
 
-											<table width="400px" align="center" border=0 >
-												<tr>
-													<td align="center" colspan=2 style="font-weight:bold;font-size:20pt;">     </td>
-												</tr>
-												<tr>
-													<td height="30" class="fuente-obligatorio"> <bean:message key="lbl.seleccion.marca.nombre.imagen"/> </td>
-													<td class="texto-acceso">   <input   type="file" name="file" id="file" style=" width : 311px;"/></td>
-												</tr>     
-												<tr>
-													<td align="center" colspan=2 height="10"></td>
-												</tr>
 
-												<tr> 
-													<table>
-														<tr>
-															<td align="center" width="200" ><input type="submit" class="botton" name="Submit" value="<bean:message key="lbl.seleccion.marca.subir"/>"></td>
-															<td align="center" width="200"><input type="button" class="botton" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>"></td>
-														</tr>
-													</table>
-												</tr>
-												<tr>   
-													<td colspan="2">&nbsp;</td>
-												</tr>
-											</table>
-											<%@ include file="divFooter.jsp"%>
-										  </form>
-												
-											</td>
-										  </tr>
-										  
-										  <tr> 
-											<td height="20" valign="middle" align="center" class="fuente-obligatorio"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-										  </tr>
-										</table>
-									</div>
-								</td>
-							</tr>
+<div class="row visible-lg" style="padding-top:20px;">
 
-						</table>
-					</td>
-				</tr>
-				
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+
+<div class="panel panel-default">
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.seleccion.marca.indentidad.personal"/></strong></div>
+						 <div class="panel-body" style="">
+
+	        <div class="row">
+  <div class="col-md-2"></div>
+<div class="col-md-2"><strong><bean:message key="lbl.seleccion.marca.nombre.imagen"/> :</strong></div>
+
+  <div class="col-md-6"><input class="btn btn-default btn-xs"  type="file" name="file" id="file" style=" "/></div>
+  <div class="col-md-2"></div>
+
+  </div>
+  
+
+
+	  <logic:present name="msg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
+	<tr> 
+		<td valign="top" width="10%"><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>" border="0" hspace="8"></td>
+		<td valign="top">
+			<table>
+				<tr><td class="bienvenida3"><b><bean:message key="errors.header"/></b></td></tr>
+				<tr><td class="bienvenida3">
+		        <%String error = session.getAttribute("msg").toString();%>
+					<bean:message key="<%=error%>"/></td></tr>
 			</table>
+		</td>
+	</tr>
+</table>   
+</logic:present>
+<%
+   session.removeAttribute("msg");
+%>
 
-</td></tr>
-	</table></td></tr>
-   </table></td></tr></table>
-   	
-   	<!-- Div que contiene el cintillo de los derechos reservados -->
-	<div id="derechos">
-		<bean:message key="<%=copyrigth %>"
-			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' />
+<br>	
+
+			<form name="forma" id="forma" action='<html:rewrite page="/do.SetImage"/>' method="post" enctype="multipart/form-data"><br><br>
+
+	  					<div align="center">
+										
+								
+										
+										<div class="row">
+									
+										<div class="col-md-4"></div>
+  <div class="col-md-2">	
+<input type="submit" class="btn btn-default" style="width: 110px;" name="Submit" value="<bean:message key="lbl.seleccion.marca.subir"/>">			  							
+			  							</div>
+  <div class="col-md-2">	
+			  						
+			  		
+<input type="button" class="btn btn-default" style="width: 110px;" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>">		
+									</div>
+										<div class="col-md-4"></div>
+										
+							</div>			
+
+										</div>
+										
+										<br>
+					 
+	   <div align="center">
+            
+				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  			</div>
+  			<br>
+										
+										  </form>
+
+						 </div>
+				
+					</div>
+					
+	
+				</div>
+
+<div class="col-md-2"></div>
+</div>
+
+
+
+
 	</div>
 	
 </body>
-</html>   
+</html:html>

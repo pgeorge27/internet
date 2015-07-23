@@ -11,10 +11,19 @@
 <%@ page import="java.util.Calendar"%>
 <%@ page import="java.util.Locale"%>
 
+<!DOCTYPE html>
+<html:html>
+
+<head>
 
 <%@ include file="../head.jsp"  %> 
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <%
 Calendar cal = Calendar.getInstance();
 SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -213,9 +222,13 @@ function send(){
      }
  } 
 </script>
+</head>
+<body>
 <%@ include file="../body.jsp"%>
 
-<br>
+<div class="container">
+<html:form method="post" action="/query">
+
 <logic:messagesPresent>
   <table align="center" cellpadding="1" cellspacing="1" width="750" class="tabla-acceso">
 		  <tr><td>
@@ -234,58 +247,79 @@ function send(){
 			 </table></td></tr>
 		  </table>
 </logic:messagesPresent>
-<div align="center">
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div align="center"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-		    <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-			<td><div align="left" class="login"><bean:message key="lbl.transf.inter.consulta"/></div></td>
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top" align="center" >
-	<html:form method="post" action="/query">
-	<%@ include file="../divHeader.jsp"%>
-		<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-		<tr> 
-                        <td colspan="3" width="100%"><div align="center" class="subtitulos"><bean:message key="lbl.movimiento.tipos"/></div></td>
-                      </tr>
-                      <tr> 
-                        <td colspan="3"><table width="100%" border="0" align="center"  >
-                            <tr> 
-                              <td ><html:radio property="tipo" styleId="TipoOperacion" value="1" onclick="setValue(1);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.dia"/> </span></td>
-                              <td ><html:radio property="tipo" styleId="TipoOperacion" value="2" onclick="setValue(2);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.mes"/></span></td>
-                              <td ><html:radio property="tipo" styleId="TipoOperacion" value="3" onclick="setValue(3);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.historicos"/></span></td>
-                              <td ><html:radio property="tipo" styleId="TipoOperacion" value="4" onclick="setValue(4);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.Afuturo"/></span></td>                           
-                            </tr>
-                          </table></td>
-                      </tr>
-		  <tr> 
-			<td  height="20"  width="40%" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.transf.inter.cliente"/></div></td>
-			<td  nowrap><html:select property="cliente" styleClass="botton-acceso">
+
+ <div class="row">
+ 
+ <div class="col-md-1"></div>
+
+          <div class="col-md-10"><div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.transf.inter.consulta"/></strong></div>
+  <div class="panel-body">
+
+
+  				           <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-3"><strong><bean:message key="lbl.movimiento.tipos"/>:</strong></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-1"></div>
+ 
+  </div>
+
+ <div class="col-md-1"></div>
+ 
+  <br>
+ 	        	<div class="row">
+ 	        	 <div class="col-md-1"></div>
+  <div class="col-md-2" >     <div>
+		                    	<html:radio property="tipo" styleId="TipoOperacion" value="1" onclick="setValue(1);"/>
+		                      	<span class="">	<h7>
+		                      		<bean:message key="lbl.movimientos.dia"/> </h7>
+		                      </div></div>
+  <div class="col-md-3" >        <div>
+		                    	<html:radio property="tipo" styleId="TipoOperacion" value="2" onclick="setValue(2);"/>
+		                      	<span class=""><h7>
+		                      		<bean:message key="lbl.movimientos.mes"/></h7>
+		                      	</span>
+		                    </div></div>
+  <div class="col-md-2">             <div>
+		                    	<html:radio property="tipo" styleId="TipoOperacion" value="3" onclick="setValue(3);"/>
+		                    	<span class=""><h7>
+		                    		<bean:message key="lbl.movimientos.historicos"/></h7>
+		                    	</span>
+		                    </div>
+	               </div>
+	                 <div class="col-md-3">             <div>
+		                    	<html:radio property="tipo" styleId="TipoOperacion" value="4" onclick="setValue(4);"/>
+		                    	<span class=""><h7>
+		                    		<bean:message key="lbl.movimientos.Afuturo"/></h7>
+		                    	</span>
+		                    </div>
+	               </div>
+	                  </div>
+	                  
+	                   <br>
+   				           <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.transf.inter.cliente"/>:</strong></div>
+  <div class="col-md-5"><html:select property="cliente" styleClass="form-control">
 										<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
 										<csic:forEachCliente orderBy="NAME_ORDER">  
 											<html:option value="<%=codigo%>" ><%=nombre%>&nbsp;<%=apellido%></html:option>	
 										 </csic:forEachCliente>
-								   </html:select> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td width="35%"><div align="right"></div></td>
-		  </tr>
-		  <tr> 
-			<td colspan="1" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.transf.inter.estado"/></div></td>
-			<td colspan="3" nowrap><html:select property="estado" styleClass="botton-acceso">
+								   </html:select> </div>
+  <div class="col-md-1"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></div>
+ 
+  </div>
+
+		 <br>		
+                  
+	                     				           <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.transf.inter.estado"/>:</strong></div>
+  <div class="col-md-5"><html:select property="estado" styleClass="form-control">
 										<html:option value=""><bean:message key="lbl.transf.inter.todos"/></html:option>
 										<html:option value="<%=ITransferencia.PENDIENTE %>"><bean:message key="lbl.transf.inter.pendiente"/></html:option>                 
 										<html:option value="<%=ITransferencia.RECHAZADA %>"><bean:message key="lbl.transf.inter.rechazada"/></html:option>
@@ -293,37 +327,65 @@ function send(){
 										<html:option value="<%=ITransferencia.RECHAZADA_BANCO %>"><bean:message key="lbl.transf.inter.rechazada.banco"/></html:option>	
 										<html:option value="<%=ITransferencia.EN_PROCESO %>"><bean:message key="lbl.transf.inter.en.proceso"/></html:option>
 										<html:option value="<%=ITransferencia.PROCESADA %>"><bean:message key="lbl.transf.inter.completada"/></html:option>										
-								   </html:select>
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td width="35%"><div align="right"></div></td>
-		  </tr>
-		   <tr> 
-                        <td colspan="1" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.desde"/></div></td>
-                        <td colspan="3" class="bienvenida"><html:text property="desde" styleId="desde" styleClass="botton-acceso" size="20" maxlength="12" value="<%=fechaInicio%>"/>
-                          <input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
-                          
-                        </td>
-                      </tr>
-                      <tr> 
-                        <td colspan="1" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.hasta"/></div></td>
-                        <td colspan="3" class="bienvenida"><html:text property="hasta" styleId="hasta" styleClass="botton-acceso" size="20" maxlength="12" value="<%=fechaFin%>"/>
-                          <input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]</td>
-                      </tr>
-		  <tr> 
-			<td colspan="3" align="center"><br>
-			<input name="botonEnviar" onclick="send();" type="button" class="botton" value="<bean:message key="btn.consultar"/>">
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<html:reset styleClass="botton"><bean:message key="btn.limpiar"/></html:reset>
-			</td>
-		  </tr>
-		</table>
-		<%@ include file="../divFooter.jsp"%>
-	  </html:form></td>
-  </tr>
-  
-  <tr>
-	<td height="20" valign="middle" class="texto-acceso" align="center"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-  </tr>
-</table></div>
+								   </html:select></div>
+  <div class="col-md-1"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></div>
+ 
+  </div>						
+					
+	
+ 
+   <br>
 
-<%@ include file="../footer.jsp"  %>
+ 	                     				           <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.desde"/>:</strong></div>
+  <div class="col-md-5"><html:text property="desde" styleId="desde" styleClass="form-control" size="20" maxlength="12" value="<%=fechaInicio%>"/></div>
+  <div class="col-md-3"><input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]</div>
+ 
+  </div>		
+  
+  <br>
+
+ 
+  	                     				           <div class="row">
+  <div class="col-md-1"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.hasta"/>:</strong></div>
+  <div class="col-md-5"><html:text property="hasta" styleId="hasta" styleClass="form-control" size="20" maxlength="12" value="<%=fechaFin%>"/></div>
+  <div class="col-md-3"><input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]</div>
+ 
+  </div>		
+  
+  
+    <br>
+
+  	<div align="center">
+	<input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" style="width: 100px" value="<bean:message key="btn.consultar"/>">
+		
+<html:reset styleClass="btn btn-default" style="width: 100px"><bean:message key="btn.limpiar"/></html:reset>
+				</div>
+							
+ 
+   <br>
+ 
+ 			<div align="center">
+					<div class="texto-acceso">
+						<h6 style="color:#95A5A6 "><bean:message key="lbl.mensaje.campo.requerido"/></h6>
+							
+					</div>
+				</div>	
+
+</div></div>
+
+
+ </div>
+ </div>
+
+
+ </html:form>
+</div>
+
+</body>
+
+</html:html>

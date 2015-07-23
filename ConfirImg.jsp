@@ -105,13 +105,83 @@ document.onkeypress = function(e)  // FireFox/Others
 //-->
 </script>
 
+
+
+<style type="text/css">
+
+
+  
+@media (min-width: 1200px){
+         .col-md-3{
+          
+                margin-left: 1em;
+            }
+            
+            
+ 
+            
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1195px) {
+   .col-md-3{
+               
+               
+              
+            }
+            
+       
+
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 610px) and (max-width: 800px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+            
+
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
 <div class="container">
 
+
+
   	 <header style="padding-top: 20px;">
 			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
+		    
+		    
+
 
 
 		  <div class="row" style="padding-top: 110px;">
@@ -121,7 +191,7 @@ document.onkeypress = function(e)  // FireFox/Others
 					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.confirmar.imagen.indicacion"/></strong></div>
 									<div class="panel-body">
 
-<div><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/do.GetImage'/>"></div>
+<div><img class="img-responsive center-block" alt="Responsive image" src="<html:rewrite page='/do.GetImage'/>"></div>
 
 <br>
 <div class="row">
@@ -133,29 +203,42 @@ document.onkeypress = function(e)  // FireFox/Others
 	</div>
 
 			</div>
-
-										</div>
+			
+			<br>
+			
+			
+			
+			
 										
-											
-										<div align="center">
+										
+										
+										
+<div align="center">
 										
 								
 										
-										<div class="row" style="margin-left: 2em;">
-  <div class="col-md-5">	<div align="center">
-                                        <form name="formConfirma" action="<html:rewrite page='/saveImg.jsp'/>" >
-                                        	<input type="hidden" name="marca"  id="marca" value=""/>
-                                        	<input name="baceptar"  onclick="makeSubmit();" type="button" class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.confirmar"/>"> 
-			  							</form >
+										<div class="row">
+										 <div class="col-md-1"></div>	
+  <div class="col-md-3">	<div align="center">
+                                        <form name="formConfirma" action="/internet/saveImg.jsp">
+                                        	<input type="hidden" name="marca" id="marca" value="">
+                                        	<input name="baceptar" onclick="makeSubmit();" type="button" value="Confirmación" class="btn btn-default" style="width: 110px;"> 
+			  							</form>
 			  							
 			  							</div></div>
-  <div class="col-md-5">	<div align="center" >
+			  							
+			  							 <div class="col-md-2"></div>	
+			  							
+			  							
+  <div class="col-md-3">	<div align="center">
 			  						
-			  							<form name="cancelacion" action="<html:rewrite page='/firstLogInSC.jsp'/>">
-										<input name="btCancelar" onclick="submit();" type="button" class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.cancelar"/>"  > 
+			  							<form name="cancelacion" action="/internet/firstLogInSC.jsp">
+										<input name="btCancelar" onclick="submit();" type="button" value="Cancelar" class="btn btn-default" style="width: 110px;"> 
 										</form>
 										
 										</div></div>
+										
+										 <div class="col-md-2"></div>	
 										
 							</div>			
 			
@@ -164,6 +247,50 @@ document.onkeypress = function(e)  // FireFox/Others
 			  						
 								
 										</div>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<br>
+			
+			
+			
+
+										</div>
+										
+											
+			
 														
 										</div>
 										

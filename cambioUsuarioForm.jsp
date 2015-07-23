@@ -139,10 +139,44 @@ window.statusbar=' ';
  <%} %>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+
+
+  
+@media screen and (min-width: 200px) and (max-width: 240px) {
+      .btn-default{
+            width: 35%;
+         
+        }
+
+
+ }
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body onLoad="reset();" >
 
 <div class="container">
+
+
 
 <html:form method="post"  action="/cambioUsuarioBasico.do">
 
@@ -216,6 +250,13 @@ window.statusbar=' ';
 				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
   			</div>
   			<br>
+  			
+<div align="center">
+        <input type="hidden" name="pantalla" value="cambioUsuarioSuccess">   
+        <input name="button" type="button" value="Enviar" onclick="containBlank()" class="btn btn-default"> 
+        <input name="limpiar" type="reset" value="Limpiar" onclick="clear();" class="btn btn-default"> 
+	</div>
+	<br>
 					</div>
 					 <br> 
 
@@ -247,11 +288,7 @@ window.statusbar=' ';
 
 <br> 
 <br> 
-	<div align="center">
-        <html:hidden  property="pantalla" value="cambioUsuarioSuccess"/>   
-        <input name="button" type="button" onClick="containBlank()" class="btn btn-default" style="width: 100px;"  value="<bean:message key="btn.enviar"/>"> 
-        <input name="limpiar" type="reset" onClick="clear();" class="btn btn-default" style="width: 100px; margin-left: 2em;"  value="<bean:message key="btn.limpiar"/>"> 
-	</div>
+
 
 
 

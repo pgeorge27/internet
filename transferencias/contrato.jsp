@@ -53,7 +53,24 @@ div.Section1
 	{page:Section1;}
 -->
 </style>
+
+<!DOCTYPE html>
+<html:html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <%@ include file="../body.jsp"%>
+
+<body>
+
+<div class="container">
+		<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.transf.inter.contrato"/></strong></div>
+  <div class="panel-body">
 
 <%
 Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);
@@ -61,47 +78,39 @@ if (locale == null){
 	locale = com.arango.common.util.i18n.ASIResourceBundle.getDefaultLocale();
 }
 %>
+
 <div align="center"> 
 <html:form method="post" action="/aceptacion">
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div align="center"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="92%"><div align="left" class="login"><bean:message key="lbl.transf.inter.contrato"/></div></td>
-			<td width="8%">
-				<div align="center"><a href="<html:rewrite page='/transferencias/printContrato.jsp'/>" target="_new"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-			</td>
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top" align="center">
-		  		<div style="width:90%;height:200px;overflow:scroll;border:#cccccc 1px solid">
+
+				<div align="right"><a href="<html:rewrite page='/transferencias/printContrato.jsp'/>" target="_new"><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/images/printer2.jpg'/>"></a></div>
+  <br> 
+	<div align="center">
+		  		<div style="height:200px;overflow:scroll;border:#cccccc 1px solid">
 		  		<% if ("en".equals(locale.getLanguage())){%>
 		  			<%@ include file="./agreement_en.htm" %>
 				<%}else{%>
 					<%@ include file="./agreement_es.htm" %>
 				<%}%>
 		  		</div>
-		</td>
-  </tr>
+		</div>
 
 
-  <tr> 
-		<td align="center"><br>
+
+		<div align="center"><br>
 		<div id="bankdiv" style="display:">
-			<html:submit styleClass="botton"><bean:message key="lbl.aceptar.contrato"/></html:submit>
+			<html:submit styleClass="btn btn-default" style="width: 110px;"><bean:message key="lbl.aceptar.contrato"/></html:submit>
 			
-			<input type="button" class="botton" name="foo" value="<bean:message key="lbl.no.aceptar.contrato"/>" onclick="document.location='<html:rewrite page='/start.jsp'/>'">
-		</div></td>
-  </tr>
+			<input type="button" class="btn btn-default" style="width: 110px;" name="foo" value="<bean:message key="lbl.no.aceptar.contrato"/>" onclick="document.location='<html:rewrite page='/start.jsp'/>'">
+		</div></div>
 
-	
-	</table></html:form></div>
-<%@ include file="../footer.jsp"  %>
+
+	</html:form></div>
+
+
+  
+  </div>
+</div>
+
+</div>
+</body>
+</html:html>

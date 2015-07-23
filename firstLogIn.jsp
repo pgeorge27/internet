@@ -216,8 +216,8 @@ window.statusbar=' ';
   <div class="col-md-4">
     
 				<div class="panel panel-default" >
-					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.token.cambio.usuario.recuerde"/></strong></div>
-						 <div class="panel-body">
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.token.cambio.usuario.recuerde"/></strong></div>
+						 <div class="panel-body" style="padding-right: 12%">
 						 
 	    <div align="justify">
 	          <UL>
@@ -238,7 +238,7 @@ window.statusbar=' ';
   <div class="col-md-4">
 
   			<div class="panel panel-default" >
-					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.cambio_clave"/></strong></div>
+					 <div class="panel-heading" align="left" ><img  src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.cambio_clave"/></strong></div>
 						
 									
 					 <br> 
@@ -264,15 +264,40 @@ window.statusbar=' ';
 			  
 			  
 		  </div>
+		    </div>
 		  <br>
-	 <div  style="width: 90%; padding-left: 10%;"> 
-	 		  		               <div class=""><strong><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></div>&nbsp;	<bean:message key="lbl.reescriba_clave_usuario"/>:</strong></div>
-	 
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
 		
-				<div><html:password property="confirmPassw" styleClass="form-control" maxlength="11"  styleId="claveconf" /> 
-			  </div>
 		
-		</div>
+		
+			 <div  style="width: 90%; padding-left: 10%;"> 
+		 
+		               <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.reescriba_clave_usuario"/>:</strong></div>
+		 
+		
+			 <div><html:password property="oldPassw" styleClass="form-control" maxlength="15"   styleId="claveold" /> 
+			 </div>
+		  </div>
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
 		  </html:form>
 					 
 
@@ -282,10 +307,11 @@ window.statusbar=' ';
   			
   			<div align="center"> 
 <input name="button" onclick="send();" type="button"  class="btn btn-default" style="width: 100px; "  value="<bean:message key="btn.enviar"/>"> 
-	  <input name="limpiar" type="reset" onclick="clear();"  class="btn btn-default" style="width: 100px; margin-left: 2em;"  value="<bean:message key="btn.limpiar"/>"> 
+	  <input name="limpiar" type="reset" onclick="clear();"  class="btn btn-default" style="width: 100px; "  value="<bean:message key="btn.limpiar"/>"> 
 	
 </div>
 <br>
+					</div>
 					</div>
 					</div>
 					 <br> 

@@ -44,9 +44,20 @@ if (request.getParameter("back") != null){
 }
 
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
+
 <%@ include file="/head.jsp"  %>
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <style>
 .lstbox {
 	font-family: Arial, Helvetica, sans-serif;
@@ -101,7 +112,12 @@ function retornar(){
 <script language="javascript" src="<html:rewrite page='/scripts/utilidades.js'/>"></script>
 <script language="javascript" src="<html:rewrite page='/scripts/objetoFecha.js'/>"></script>
 
+</head>
+
+<body>
 <%@ include file="/body.jsp"%>
+
+<div class="container">
 <logic:messagesPresent>
 	<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso">
 		<tr><td>
@@ -123,26 +139,38 @@ function retornar(){
 		</tr>
 	</table>
 </logic:messagesPresent>
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-	<tr> 
-		<td height="40" valign="bottom"><div align="center"> 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-				<tr>
-					<td width="50px"> <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	          		<td><div align="left" class="login">Parametros</div></td>
-				</tr>
-			</table>
-		</div></td>
-	</tr>
-	<tr> 
-		<td valign="top" align="center">
+
+
+
+
+
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Parametros</strong></div>
+					  <div class="panel-body">
+
+
+
+
+	
 			<html:form method="get" action="/reporte/control">
 			<html:hidden property="tipo" value="3"/>
-			<%@ include file="../divHeader.jsp"%>
- 			<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-				<tr> 
-					<td colspan="2"><div align="center" class="subtitulos"><bean:message key="lbl.movimiento.tipos"/></div></td>
-				</tr>
+			
+			
+			
+			
+			
+							           <div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.movimiento.tipos"/>:</strong></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-1"></div>
+ 
+  </div>
+  
+   <br>
+		
+ 
 				<!--
 				<tr> 
 					<td colspan="2">
@@ -159,10 +187,13 @@ function retornar(){
 					</td>
 				</tr>
 				-->
-				<tr>
-					<td width="30%" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cuentas"/></div></td>
-					<td width="70%">
-						<html:select property="cuenta" styleClass="lstbox">
+				
+				
+				  <div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.cuentas"/>:</strong></div>
+  <div class="col-md-4">		<html:select property="cuenta" styleClass="form-control">
 							<logic:notEmpty name="cuentasCompensacion">
 								<html:option value=""><bean:message key="lbl.seleccione.una.cuenta"/></html:option>
 								<bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
@@ -171,14 +202,21 @@ function retornar(){
 							<logic:empty name="cuentasCompensacion">
 								<html:option value=""><bean:message key="lbl.seleccione.no.hay.cuentas"/></html:option>
 							</logic:empty>
-						</html:select>
-						<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
-					</td>
-				</tr>
-				<tr> 
-					<td class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.clase.documento"/></div></td>
-					<td nowrap>
-						<html:select property="doc" styleClass="lstbox">
+						</html:select></div>
+  <div class="col-md-1"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></div>
+
+  </div>
+  
+   <br>
+				
+				
+				
+				
+					  <div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.clase.documento"/>:</strong></div>
+  <div class="col-md-4">					<html:select property="doc" styleClass="form-control">
 							<html:option value="0">Todos</html:option>
 							<html:option value="1">Información por Declaración de Importación</html:option>
 							<html:option value="2">Información por Documento de Transporte</html:option>
@@ -186,36 +224,91 @@ function retornar(){
 							<html:option value="4">Información de Endeudamiento</html:option>										
 							<html:option value="5">Información de Datos Faltantes del Formulario 1</html:option>	
 							<html:option value="6">Información de Datos Faltantes del Formulario 2</html:option>	
-						</html:select>
-				 		<span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
-					</td>
-				</tr>
-                <tr>
-                   	<td class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.desde"/></div></td>
-                   	<td class="bienvenida"><html:text property="desde" styleClass="botton-acceso" size="20" maxlength="12"/>
-                    	<input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
-					</td>
-                </tr>
-				<tr> 
-					<td class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.hasta"/></div></td>
-					<td class="bienvenida"><html:text property="hasta" styleClass="botton-acceso" size="20" maxlength="12"/>
-						<input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
-					</td>
-				</tr>
-				<tr>
-					<td>&nbsp;<br><br></td>
-					<td><input name="botonEnviar" onclick="send();" type="button" class="botton" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
-						<input TYPE="BUTTON" class="botton" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
-					</td>
-				</tr>
-			</table>
+						</html:select></div>
+  <div class="col-md-1"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></div>
+
+  </div>
+  
+   <br>			
+				
+				
+				
+				
+		     <div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.desde"/>:</strong></div>
+  <div class="col-md-4"><html:text property="desde" styleClass="form-control" size="20" maxlength="12"/></div>
+  <div class="col-md-2"><input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]</div>
+
+  </div>
+  
+   <br>		
+				
+				
+				
+				
+				     <div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2"><strong><bean:message key="lbl.hasta"/>:</strong></div>
+  <div class="col-md-4"><html:text property="hasta" styleClass="form-control" size="20" maxlength="12"/></div>
+  <div class="col-md-2"><input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]</div>
+
+  </div>
+  
+   <br>		
+				
+				
+				
+				 <br>	
+				
+				
+				   				<div class="row">
+										 <div class="col-md-4"></div>	
+  <div class="col-md-2">	<div align="center">
+                                      
+                                        
+<input name="botonEnviar" onclick="send();" type="button"  class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.consultar"/>">			  							
+			  							</div></div>
+			  							
+			  						
+			  							
+			  							
+  <div class="col-md-2">	<div align="center">
+			  						
+			  							
+						<input TYPE="BUTTON" class="btn btn-default" style="width: 110px;"  VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
+										
+										</div></div>
+										
+										 <div class="col-md-4"></div>	
+										
+							</div>
+										
+										<br>
+				
+				
+				
+				
+	
+
+
 			<%@ include file="../divFooter.jsp"%>
 			</html:form>
-		</td>
-	</tr>
-	<tr>
-		<td height="25" align="center" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-	</tr>
-</table>
 
-<%@ include file="/footer.jsp"  %>
+     <br>
+
+    <div align="center">
+            
+				<div style="color:#7f8c8d"><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  			</div>
+
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html:html>

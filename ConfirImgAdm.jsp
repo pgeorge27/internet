@@ -131,6 +131,75 @@ function cancelar(){
 }
 </script>
 
+
+
+
+<style type="text/css">
+
+
+  
+@media (min-width: 1200px){
+         .col-md-3{
+          
+                margin-right: 1em;
+            }
+            
+            
+ 
+            
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1195px) {
+   .col-md-1{
+               
+              margin-left: -1em;
+              
+            }
+            
+       
+
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 610px) and (max-width: 800px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+            
+
+}
+
+
+@media only screen and (max-width : 1024px) {
+   .col-md-3{
+               
+            
+                
+              
+            }
+}
+
+
+
+
+</style>
+
+
+
+
+
+
 </head>
 
 <link rel="stylesheet" type="text/css" 	href="<html:rewrite page='/style/flujos.css'/>" />
@@ -148,7 +217,7 @@ function cancelar(){
 					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.confirmar.imagen.indicacion"/></strong></div>
 									<div class="panel-body">
 
-<div><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/do.GetImage'/>"></div>
+<div><img class="img-responsive center-block" alt="Responsive image" src="<html:rewrite page='/do.GetImage'/>"></div>
 
 <br>
 <div class="row">
@@ -158,35 +227,95 @@ function cancelar(){
 
 
 	</div>
+	
+	<br>
+	
+
+			
+										
+										<div align="center">
+										
+								
+										
+										<div class="row">
+										 <div class="col-md-1"></div>	
+  <div class="col-md-3">	<div align="center">
+                                  <form name="formConfirma" action="<html:rewrite page='/saveImg.jsp'/>" >
+                                        	<input type="hidden" name="marca"  id="marca" value=""/>
+                                        	<div ><input name="baceptar"  onclick="makeSubmit();" type="button"  class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.confirmar"/>"></div> 
+			  							</form >
+			  							
+			  							</div></div>
+			  							
+			  							 <div class="col-md-2"></div>	
+			  							
+			  							
+  <div class="col-md-3">	<div align="center">
+			  						
+			  							<form name="cancelacion" action="<html:rewrite page='/do.cancelImage'/>">
+										<input name="btCancelar" onclick="submit();" type="button"  class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.cancelar"/>"  > 
+										</form>
+										
+										</div></div>
+										
+										 <div class="col-md-2"></div>	
+										
+							</div>			
+			
+								
+			  							
+			  						
+								
+										</div>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
 
 			</div>
 
 										</div>
 										
 											
-										<div align="center">
-										
-								
-										
-										<div class="row" style="margin-left: 2em;">
-  <div class="col-md-5">	<div align="center">
-                                        <form name="formConfirma" action="<html:rewrite page='/saveImg.jsp'/>" >
-                                        	<input type="hidden" name="marca"  id="marca" value=""/>
-                                        	<div align="right"><input name="baceptar"  onclick="makeSubmit();" type="button"  class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.confirmar"/>"></div> 
-			  							</form >
-			  							
-			  							</div></div>
-  <div class="col-md-5">	<div align="center" >
-			  						
-			  						<form name="cancelacion" action="<html:rewrite page='/do.cancelImage'/>">
-										<input name="btCancelar" onclick="submit();" type="button"  class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.cancelar"/>"  > 
-										</form>
-										
-										</div></div>
-										
-							</div>			
 
-										</div>
 														
 										</div>
 
