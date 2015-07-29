@@ -12,8 +12,9 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 	com.arango.common.util.Actividad.writeLog(ex, null);
 %>
 
-<HTML>
-<HEAD>
+<!DOCTYPE html>
+<html:html>
+<head>
 <SCRIPT language="Javascript">
 var mensaje = "<bean:message key='msg.derechos.reservados' arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>";
 function noViewSource(btnClick)
@@ -53,62 +54,57 @@ document.oncontextmenu = protect;}}}
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
 <LINK REL="stylesheet" TYPE="text/css" HREF="./style/estilo.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-    <tr> 
-    <td ><br>
-		<table width="100%" border="0" cellpadding="0" cellspacing="0">
-			<tr><td align="right"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-	<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td><div align="center"> 
-                    
-                      <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" >
-                        <tr> 
-                          <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                              <tr> 
-                                <td width="46%" rowspan="2"><div align="center"> 
-                                    <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                                      <tr> 
-                                        <td><div align="center"><img src="<html:rewrite page='/images/error.gif'/>"></div></td>
-                                      </tr>
-                                      <tr> 
-                                        <td class="bienvenida"><p align="justify">En estos momentos estamos realizando labores de mantenimiento en nuestros sistemas, favor contactar nuestra área de Servicio al Cliente.</p></td>
-                                      </tr>
-                                    </table>
-                                  </div></td>                                
-                              </tr>
-                             
-                            </table></td>
-                        </tr>
-                      </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td></td>
-              </tr>
-            </table></td>
-        </tr>
-      </table></td>
-  </tr>
-  <tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="msg.derechos.reservados"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table>
+<body>
+
+<div class="container">
+
+	 <header style="padding-top: 20px;">
+			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
+		    </header>
+		    <br>
+
+		                    <div class="row" style="padding-left: 3%; padding-right: 3%; padding-top: 80px;">
+
+		  <div class="row"><div class="col-md-4 col-md-offset-4">
+		
+				<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Mensaje</strong></div>
+					 
+					 <br>
+                  					 <div class="row" align="center">
+                                        <div class="col-md-4"></div>
+ <div class="col-md-4"><img src="<html:rewrite page='/images/error.gif'/>"></div>
+                                       <div class="col-md-4"></div>
+                  </div>
+                  <br>
+					 <div class="row" style="padding-right: 3%; padding-left: 3%;">
+                       
+					 
+  <div class="col-md-2"></div>
+  <div class="col-md-8" align="center">En estos momentos estamos realizando labores de mantenimiento en nuestros sistemas, favor contactar nuestra área de Servicio al Cliente.</div>
+  <div class="col-md-2"></div>
+  
+                        </div>
+					 
+					 
+						 <br>
+						
+					</div>
+				
+						</div>
+							</div>
+
+                </div>
+		    
+
+
+</div>
 </body>
 
-</html>
+</html:html>

@@ -205,151 +205,94 @@ function retroceder()
 </script>
 
 <%@ include file="../body.jsp"%>
-<logic:messagesPresent>
-	<table cellpadding="1" cellspacing="1" width="750" class="tabla-acceso1" id="msgError">
-		<tr>
-			<td>
-			<table border="0" cellpadding="1" cellspacing="0" width="100%">
-				<tr valign="top">
-					<td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-					<td width="95%" class="msg">
-						<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-						<span class="bienvenida">
-							<table width="80%">
-								<html:messages id="error">					
-									<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-								</html:messages>
-							</table>
-						</span><br>
-					</td>
-				</tr>
-			</table>
-			</td>
-		</tr>
-	</table>
-	<script type="text/javascript">
-		CONST_Y += document.getElementById('msgError').clientHeight;
-	</script>
-</logic:messagesPresent>
 
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr> 
-		<td height="40" valign="bottom">
-		<div align="center"> 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-				<tr> 
-					<td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-					<td><div align="left" class="login"><bean:message key="tit.title.firma.transaccion.token"/></div></td>
-					<td width="8%"><div align="right">&nbsp;</div></td>
-				</tr>
-			</table>
+<div class="container"> 
+	<div class="row">
+
+		<logic:present name="msg">
+		<div align="center" class="well col-md-4 col-md-offset-4">
+			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+			<p><b><bean:message key="errors.header"/></b></p>
+			<p class="bienvenida">- <bean:write name="error" /></p>
 		</div>
-		</td>
-	</tr>
-	<tr> 
-		<td class="texto-acceso">&nbsp;</td>
-	</tr>
-	<tr>
-		<td valign="top" align="center">
-		<table>
-			<tr valign="top">
-			    <td width="200">
-			    <!-- Tabla con Formulario -->
-			    <html:form method="post" action="/autoriza" enctype="multipart/form-data">
-			    <html:hidden styleId="tipos" property="indice" value="1" />
-			    <html:hidden styleId="tipos" property="pantalla" value="aprobar" />
-			    <table width="400" cellspacing="0" cellpadding="0" >
-			    	<tr>
-			    		<td>
-				    		<table width="400">
-						    	<tr>
-						    		<td class="bienvenida"><bean:message key="lbl.monto.transferencia.firma.transaccion.token" /></td>
-						    		<td class="bienvenida"><input name="amount" id="amount_id2" readonly="readonly" type="text" value="<%=f.formatMonto(t.getMonto())%>"></td>
-						    	</tr>
-						    </table>
-			    		</td>
-			    	</tr>
-			    </table>
-			    
-			    <html:hidden property="tipo" />
-			    
-				<table width="70%" border="0" align="center" cellpadding="5" cellspacing="5">
-					<tr>
-						<td colspan="3" ><bean:message key="lbl.area.transmision.firma.transaccion.token" />
-						  <div id="led-wrapper" style="float:right; width: 500px; position:relative">
-							<div id="resize-buttons" style="width:32px;float:left;">
-							  <a href="javascript:void(0);" onclick="divResizeUp();"><img src="<html:rewrite page='/images/zoom_in.png'/>" style="width:16px; border:0;"/></a>
-							  <a href="javascript:void(0);" onclick="divResizeDn();"><img src="<html:rewrite page='/images/zoom_out.png'/>" style="width:16px; border:0;"/></a>
-							</div>
-							<div name="captorsTransmissionZone" id="captorsTransmissionZone" style="position:relative;height: 60px;float:left;border:0px solid #C00"></div>
-						  </div>
-						</td>
-					</tr>
-					<tr>
-						<td width="30%" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.firma.transaccion.token.clave"/></div></td>
-						<td width="34%" align="center" nowrap><input type="text" name="clave" maxlength="8" class="botton-acceso"  id="clave"/></td>
-						<td width="35%"><div align="right"></div></td>
-					</tr>
-					<tr>
-						<td width="30%"><div align="right"></div></td>
-						<td  width="34%" align="center">
-							&nbsp;&nbsp; &nbsp;&nbsp;
-							<table>
-								<tr valign="baseline">
-									<td>
-									<input id="btenviar" type="button" class="botton" value='<bean:message key="lbl.firma.transaccion.token.validar"/>' onclick="autorizar();"></td>
-									<td>
-									<input class="botton" onclick="retroceder();" type="button" value='<bean:message key="lbl.firma.transaccion.token.cancelar"/>'></td>
-								</tr>
-							</table>
-						</td>
-						<td width="35%"><div align="right"></div></td>
-					</tr>
-				</table>
-				<input type="hidden" id="amount_id" value=<%=monto%>>
-                    </html:form>
-                
-			    </td>
-			    <td>
-			    <!--  Cuadro de Tips -->
-			    <%@ include file="../divHeader.jsp"%>
-			    <table cellspacing="3" cellpading="3"  width="350">
-					<tr valign="top">
-						<td colspan="2">
-							<table>
-								<tr>
-								  <td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-								  <td><p class="bienvenida"><bean:message key="lbl.firma.transaccion.token.pasos"/></p></td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-					   <td colspan="2" class="bienvenida">
-						  <OL>
-							<li><bean:message key="lbl.firma.transaccion.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso2" /><img src="<html:rewrite page='/images/TokenOptico.png'/>" height="15"></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso3" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso4" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso5" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso6" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso7" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso8" /></li>
-							<li><bean:message key="lbl.firma.transaccion.token.paso9" /></li>
-						  </OL>
-					   </td>
-					</tr>
-					<tr>
-						<td colspan="2" class="fuente-principal"><bean:message key="lbl.firma.transaccion.token.paso10" /></td>
-					</tr>
-				</table>
-				<%@ include file="../divFooter.jsp"%>
-				</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
+		<script type="text/javascript">
+			CONST_Y += document.getElementById('msgError').clientHeight;
+		</script>
+	</logic:present>
+	<%
+	session.removeAttribute("msg");
+	%>
+
+	<div class="col-md-4 col-md-offset-1">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<img src="<html:rewrite page='/images/logo_icon.png' />" />
+				<strong>
+					<bean:message key="lbl.firma.transaccion.token.pasos"/>
+				</strong>
+			</div>
+			<div class="panel-body">
+				<ol>
+					<li><bean:message key="lbl.firma.transaccion.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso2" /><img src="<html:rewrite page='/images/TokenOptico.png'/>" height="15"></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso3" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso4" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso5" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso6" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso7" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso8" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso9" /></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<img src="<html:rewrite page='/images/logo_icon.png' />" />
+				<strong>
+					<bean:message key="tit.title.firma.transaccion.token"/>
+				</strong>
+			</div>
+			<div class="panel-body">
+
+				<html:form method="post" action="/autoriza" enctype="multipart/form-data">
+				<html:hidden styleId="tipos" property="indice" value="1" />
+				<html:hidden styleId="tipos" property="pantalla" value="aprobar" />
+				<p><bean:message key="lbl.monto.transferencia.firma.transaccion.token" /></p>
+				<p><input name="amount" id="amount_id2" readonly="readonly" type="text" value="<%=f.formatMonto(t.getMonto())%>"></p>
+				<html:hidden property="tipo" />
+
+				<p><bean:message key="lbl.area.transmision.firma.transaccion.token" /></p>
+
+				<div id="resize-buttons" >
+					<a href="javascript:void(0);" onclick="divResizeUp();"><img src="<html:rewrite page='/images/zoom_in.png'/>" style="width:16px; border:0;"/></a>
+					<a href="javascript:void(0);" onclick="divResizeDn();"><img src="<html:rewrite page='/images/zoom_out.png'/>" style="width:16px; border:0;"/></a>
+				</div>
+				<div name="captorsTransmissionZone" id="captorsTransmissionZone" style="position:relative;height: 60px;float:left;border:0px solid #C00"></div>
+
+
+				<p><bean:message key="lbl.firma.transaccion.token.clave"/></p>
+
+				<input type="text" name="clave" maxlength="8" class="botton-acceso"  id="clave"/>
+
+				<div align="center">
+					<input id="btenviar" type="button" class="btn btn-default" value='<bean:message key="lbl.firma.transaccion.token.validar"/>' onclick="autorizar();">
+					<input class="btn btn-default" onclick="retroceder();" type="button" value='<bean:message key="lbl.firma.transaccion.token.cancelar"/>'>
+					<input type="hidden" id="amount_id" value=<%=monto%>>
+				</div>
+				</html:form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
 <%@ include file="../footer.jsp" %>
 <script type="text/javascript" src="<html:rewrite page='/scripts/ocra-init.js' />"></script>
 <script type="text/javascript">

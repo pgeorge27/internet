@@ -49,7 +49,18 @@ if (ec == null){
 String cuenta = (String)session.getAttribute("cuenta.banco");
 String cliente = ((Titular)ec.Titulares.get(0)).getNombre();
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
 <%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 
 <SCRIPT language=javascript src="../scripts/NotasDebitoCredito.js"></SCRIPT>
 <script language=javascript>
@@ -60,34 +71,72 @@ function __download(){
 <SCRIPT language=javascript src="../scripts/formatDes.js"></SCRIPT>
 <%@ include file="../body.jsp"%>
 
+
+<body>
+
+<div class="container"> 
+
 <div id="estcta" align="left">
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	  <tr> 
 		<td height="30" class="texto-acceso"><div id=bankdiv align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>"  width="116" height="68"></div></td>
 		<td class="texto-acceso"><div align="right">&nbsp;</div></td>
 	  </tr>
-	  <tr> 
-		<td height="40" colspan="2" valign="bottom"><div align="center"> 
-			<table width="100%" border="0" cellpadding="2" cellspacing="2"  align="left">
-			  <tr>  <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>
-				<td width="92%"><div align="left" class="login">
+
+	<div align="left" class="login">
 					<%
 					Object obj = session.getAttribute("con.tipo.mov");
 					String tipo = obj == null ? "1" : obj.toString();
 					if ("1".equals(tipo)){%>
-					<bean:message key="tit.title.consulta.movimientos.dia"/>
-					<%}else if ("2".equals(tipo)){%>
-					<bean:message key="tit.title.consulta.movimientos.mes.actual"/>
+
+				
+
+
+	<div class="row">
+ 
+  <div class="col-md-10"  style="font-size: 14px;"><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.consulta.movimientos.dia"/></strong></div>
+</div>
+
+
+
+
+					<%}else if ("2".equals(tipo)){%>					
+					
+
+	<div class="row">
+ 
+  <div class="col-md-10"  style="font-size: 14px;"><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.consulta.movimientos.mes.actual"/></strong></div>
+</div>
+
+
+
 					<%}else if ("3".equals(tipo)){%>
-					<bean:message key="tit.title.consulta.movimientos.historico"/>
+
+
+	<div class="row">
+ 
+  <div class="col-md-10"  style="font-size: 14px;"><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.consulta.movimientos.historico"/></strong></div>
+</div>
+
+
 					<%}%>
-					</div></td>
-				 </tr>
-			</table></div></td>
-	  </tr>
+					</div>
+				
+			</div>
+	
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  <tr> 
 		<td valign="top" align="center">
-		<%@ include file="../divHeader.jsp"%>
+		
 			<table width="100%" border="0" cellspacing="1" cellpadding="0">                   
 				<tr> 
 				  <td width="55%" height="20" class="catra-texto" align="center">
@@ -96,46 +145,105 @@ function __download(){
   {
 %>
 <%if (!"1".equals(tipo)){%>
-<table width="60%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.desde"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.desde"), locale)%></td>
-          <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.hasta"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.hasta"), locale)%></td>
-       </tr>
-</table>
+
+
+
+
+<div class="row">
+  <div class="col-md-3"><div align="left"" class=""><strong><bean:message key="lbl.desde"/>:</strong></div></div>
+  <div class="col-md-3" align="left"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.desde"), locale)%></div>
+  <div class="col-md-3" align="left"><div class=""><strong><bean:message key="lbl.hasta"/>:</strong></div></div>
+  <div class="col-md-3" align="left"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.hasta"), locale)%></div>
+
+
+</div>
+
 
 <%}%>
 
-<table width="60%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.cuenta"/></div></td>
-          <td align="right" height="15" class="bienvenida"><%=f.formatCuenta(ec.getNumeroCuenta())%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.titular"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=((Titular)ec.Titulares.get(0)).getNombre()%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.moneda"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=ec.getMoneda()%></td>
-       </tr>
-</table>	   
-<table width="60%" border="0" cellpadding="0" cellspacing="2" align="center">	   
-<tr> 
-					  <td height="15" colspan="2" nowrap>
-								<div align="left" class="texto-acceso"><br>
-									<bean:message key="lbl.cc.descripcion.observacion"/><br></div></td></tr>
-</table>
+
+
 <br>
-<table width="100%" border="0" cellpadding="0" cellspacing="2">
+
+
+
+
+<div class="row">
+  <div class="col-md-3"><div align="left"" class=""><strong><bean:message key="lbl.numero.cuenta"/>:</strong></div></div>
+  <div class="col-md-3" align="left"><%=f.formatCuenta(ec.getNumeroCuenta())%></div>
+  <div class="col-md-3" align="left"></div>
+  <div class="col-md-3" align="left"></div>
+
+
+</div>
+
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-3"><div align="left"" class=""><strong><bean:message key="lbl.titular"/>:</strong></div></div>
+  <div class="col-md-3" align="left"><%=((Titular)ec.Titulares.get(0)).getNombre()%></div>
+  <div class="col-md-3" align="left"></div>
+  <div class="col-md-3" align="left"></div>
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-3"><div align="left"" class=""><strong><bean:message key="lbl.moneda"/>:</strong></div></div>
+  <div class="col-md-3" align="left"><%=ec.getMoneda()%></div>
+  <div class="col-md-3" align="left"></div>
+  <div class="col-md-3" align="left"></div>
+
+
+</div>
+
+
+<br>
+
+
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-6"><div align="left"" class=""><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div></div>
+
+  <div class="col-md-3" align="left"></div>
+  <div class="col-md-3" align="left"></div>
+
+
+</div>
+
+
+<br>
+
+
+
+
+
+
+<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+<thead class="cf">   
 
 <tr class="tabla-acceso">
-	<td class="texto-acceso" width="10%"><bean:message key="lbl.fecha"/></TD>
-    <td class="texto-acceso" width="39%"><bean:message key="lbl.descripcion"/></TD>
-    <td class="texto-acceso" width="8%"><bean:message key="lbl.referencia"/></TD>
-    <td class="texto-acceso" width="16%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.debito"/></TD>
-    <td class="texto-acceso" width="17%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.credito"/></TD></TR>
+	<td class="texto-acceso" ><bean:message key="lbl.fecha"/></TD>
+    <td class="texto-acceso" ><bean:message key="lbl.descripcion"/></TD>
+    <td class="texto-acceso"><bean:message key="lbl.referencia"/></TD>
+    <td class="texto-acceso" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.debito"/></TD>
+    <td class="texto-acceso"  align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.credito"/></TD></TR></thead> 
   
 <%
 String styleClass = "";
@@ -149,48 +257,118 @@ for (int i = 0; i < mov.size(); i++){
 %>
 
 <TR valign="top" <%=styleClass%>>
-    <TD class="bienvenida" align=left width="10%"><%=f.formatFecha(m.getFechaValida(), locale)%></TD>
-    <TD class="bienvenida" style="color:blue;CURSOR: hand" 
+    <TD data-title="Fecha" class="bienvenida" align=left ><%=f.formatFecha(m.getFechaValida(), locale)%></TD>
+    <TD data-title="Descripción" class="bienvenida" style="color:blue;CURSOR: hand" 
     <%if ("D".equals(m.getTipoTransaccion())){%>
     onclick="mostrarNotaDebito(<%=i %>,'<bean:message key="lbl.aviso.debito.cuenta.corriente"/>','<bean:message key="lbl.debitamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
     <%}else{%>
 	onclick="mostrarNotaCredito(<%=i %>,'<bean:message key="lbl.aviso.credito.cuenta.corriente"/>','<bean:message key="lbl.acreditamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
 	<%}%>
-    align=left width="35%"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
-    <TD class="bienvenida" align=middle width="5%"><%=m.getNumeroDocumento()==null?"":m.getNumeroDocumento()%></TD>
-    <TD class="bienvenida" align=right width="20%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD class="bienvenida" align=right width="20%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD></TR>
+    align=left><a><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></a></TD>
+    <TD data-title="Referencia" class="bienvenida" align=middle ><%=m.getNumeroDocumento()==null?"":m.getNumeroDocumento()%></TD>
+    <TD data-title="Débito" class="bienvenida" align=right ><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Crédito" class="bienvenida" align=right ><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD></TR>
 <%} /* End for - loop*/ %>
 
-</table>
+</table></div>
 
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div></td>
-	</tr>
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
-				<INPUT class="botton" onclick="history.back();" type=button value="<bean:message key="lbl.retroceder"/>"> </div></td></tr>
-</table>					
+
+
+	<div align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div>
+
+
+<div align="center"><br>
+				<INPUT class="btn btn-default" onclick="history.back();" type=button value="<bean:message key="lbl.retroceder"/>"> </div>
+				
 <%
 }
 else
 {
 %>
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-  <tr class="tabla-acceso">
-<TD class="texto-acceso" width="15%">
-<bean:message key="msg.sin.movimentos"/></td></tr>
-<tr> 
-	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="history.back();" type=button value="<bean:message key="lbl.retroceder"/>"> </div></td></tr>
-</table>
+
+
+
+
+
+
+
+
+
+
+          <div class="row" style="padding-left: 3%; padding-right: 3%; padding-top: 30px;">
+
+		  <div class="row"><div class="col-md-4 col-md-offset-4">
+		
+				<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Mensaje</strong></div>
+					 
+					 <br>
+                  					 <div class="row" align="center">
+                                        <div class="col-md-4"></div>
+ <div class="col-md-4"> <img src="<html:rewrite page='/images/success.gif'/>"></div>
+                                       <div class="col-md-4"></div>
+                  </div>
+                  <br>
+					 <div class="row" style="padding-right: 3%; padding-left: 3%;">
+                       
+					 
+  <div class="col-md-2"></div>
+  <div class="col-md-8" align="center"><bean:message key="msg.sin.movimentos"/></div>
+  <div class="col-md-2"></div>
+  <br>
+   <br>
+  <br>
+<div align="center">
+
+<INPUT class="btn btn-default" onclick="history.back();" type=button value="<bean:message key="lbl.retroceder"/>"> </div>
+  
+   <br>
+                        </div>
+					 
+					 
+						 <br>
+						
+					</div>
+				
+						</div>
+							</div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%
 }
 %>
 </table>
 
-<%@ include file="../divFooter.jsp"%>
+
 </div>
 </table>
 </div>
@@ -290,3 +468,6 @@ else
 </div>
 <!--fin nota-->
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>

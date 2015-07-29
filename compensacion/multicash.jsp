@@ -143,30 +143,29 @@ String fecha = df.format(pDate);
 		  </div>
 </logic:messagesPresent>
 
-		<div class="row">
+
 
 		  <div class="row">
 		<div class="col-md-4 col-md-offset-4">
 
 	<div class="panel panel-default" >
-				
-					 
 					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.conexion.helmbank"/></strong></div>
 					  <div class="panel-body">
-
-<div align="center"> 
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-
-
-
-	
-	<html:form method="post" action="/multicash/links">
-	  
-  	
-		<table  border="0" align="center" cellpadding="5" cellspacing="5">
-		  <tr> 
-			<td width="31%" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cuentas"/></div></td>
-			<td width="39%" nowrap><html:select property="cuenta" styleClass="botton-acceso">
+					
+<html:form method="post" action="/multicash/links">
+  	 
+					
+									<label style="text-align:left">	<h5><strong>
+				
+						<font color="#FF0000" >*</font>&nbsp;<bean:message key="lbl.cuentas"/>:
+					
+						</strong></h5>
+			</label>
+			
+			  
+  	  	<div class="row">
+  <div class=".col-md-2" style="align: right"></div>
+  <div class=".col-md-6" style="align: center; padding-right: 3%; width: 90%;" ><html:select property="cuenta" styleClass="form-control">
 									<logic:notEmpty name="cuentasMulticash">
 											<html:option value=""><bean:message key="lbl.seleccione.una.cuenta"/></html:option>
 											<bean:define id="cp" scope="session" name="cuentasMulticash" type="java.util.ArrayList"/>
@@ -176,37 +175,55 @@ String fecha = df.format(pDate);
 									<logic:empty name="cuentasMulticash">
 										<html:option value=""><bean:message key="lbl.seleccione.no.hay.cuentas"/></html:option>
 									</logic:empty>
-									</html:select> 
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td width="35%"><div align="right"></div></td>
-		  </tr>
-		  <tr> 
-			<td width="31%" height="20" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.fecha"/></div></td>
-			<td class="bienvenida" width="39%" nowrap><input name="desde" id="desde" type="text" class="botton-acceso" size="20" maxlength="12" value="<%=fecha%>">
-	         <input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
-			  <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td width="35%"><div align="right"></div></td>
-		  </tr>
-		  <tr> 
-			<td colspan="2" align="center"><input name="botonEnviar" onclick="__submit();" type="button" class="botton" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
-			  <input TYPE="BUTTON" class="botton" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
-			</td>
-		  </tr>
-		</table>
-		<%@ include file="../divFooter.jsp"%>
-	  </html:form>
-	  <tr>
-	  <td height="20" valign="middle" class="texto-acceso" align="center"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-          </tr>  
-</table>
+									</html:select> </div>
+ 
 </div>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<br>
+
+							
+							<div class="row">
+  <div class="col-md-2">								<label style="text-align:left">	<h5><strong>
+				
+							<bean:message key="lbl.fecha"/>:
+					
+						</strong></h5>
+			</label></div>
+  <div class="col-md-5" align="center"><input name="desde" id="desde" type="text" class="form-control" size="20" maxlength="12" value="<%=fecha%>"></div>
+  <div class="col-md-5"> <input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" >[<b>dd-mm-yyyy</b>]	</div>
+					
+								</div>
+								<br>
+
+
+ <div align="center"> 
+			<input name="botonEnviar" onclick="__submit();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">
+			  <input TYPE="BUTTON" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
+			
+		  </div> 
+
+
+
+	<br>
+		 
+				<div>
+					<div class="texto-acceso">
+						<h6 style="color:#95A5A6 "><bean:message key="lbl.mensaje.campo.requerido"/></h6>
+							<%@ include file="../divFooter.jsp"%>
+					</div>
+				</div>	
+
+ </html:form>
+					</div>
+
+		</div>
+	
+	</div>
+	</div>
+	
+		</div>  
+					  
+
 
 
 </body>

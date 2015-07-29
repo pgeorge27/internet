@@ -19,10 +19,6 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 <head>
 
 <script language="javascript" src="./scripts/campos.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
-<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 <!--
 if (typeof window.event != 'undefined') // IE
@@ -179,16 +175,32 @@ window.statusbar=' ';
  <%} %>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+
+
 </head>
 <body onLoad="reset();" >
+
 <div class="container">
 
- 	 <header style="padding-top: 20px;">
+
+
+
+
+
+	 <header style="padding-top: 20px;">
 			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
 
-<form method="post" action="<html:rewrite page='/do.changefirstpwd'/>" name="forma">
 
+
+
+ <br>
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
@@ -208,6 +220,10 @@ window.statusbar=' ';
    session.removeAttribute("msg");
    UserInfo userInfo = com.arango.common.servlet.helper.SessionReader.getUserInfo(session, pageContext.getServletContext());
 %>
+
+
+
+<form method="post" action="<html:rewrite page='/do.changefirstpwd'/>" name="forma">
 
 
 	<div class="row" style="padding-top:110px;">
@@ -233,30 +249,32 @@ window.statusbar=' ';
 					   <br> 
 	
 				</div>
-			
+
+
+
+
+
   <div class="col-md-1"></div>
   <div class="col-md-4">
 
   			<div class="panel panel-default" >
 					 <div class="panel-heading" align="left" ><img  src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.title.cambio_clave"/></strong></div>
-						
-									
-					 <br> 
-					 
-					 
-					 
-					 
-	      <html:form action="/change/psw" method="post">
-		 <div  style="width: 90%; padding-left: 10%;"> 
+	
+			  <html:form action="/change/psw" method="post">	
+			   <br>	
+
+						 <div  style="width: 90%; padding-left: 10%;"> 
 		 
-		               <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.clave_usuario_anterior"/>:</strong></div>
+		               <div class=""><strong><span class="" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.clave_usuario_anterior"/>:</strong></div>
 		 
 		
 			 <div><html:password property="oldPassw" styleClass="form-control" maxlength="15"   styleId="claveold" /> 
 			 </div>
 		  </div>
 		  <br>
-		  <div  style="width: 90%; padding-left: 10%;"> 
+
+		  
+		  	  <div  style="width: 90%; padding-left: 10%;"> 
 		  		               <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.clave_usuario_nueva"/>:</strong></div>
 		  
 		
@@ -265,67 +283,57 @@ window.statusbar=' ';
 			  
 		  </div>
 		    </div>
+		    
+		    
 		  <br>
-		  
-		  
-		  
-		  
-		  
-		  
-		  
 
-		
-		
-		
-			 <div  style="width: 90%; padding-left: 10%;"> 
+		  	 <div  style="width: 90%; padding-left: 10%;"> 
 		 
 		               <div class=""><strong><span class="texto-acceso" style="magin-left: 2em;">(<font color="#FF0000">*</font>)</span>&nbsp;<bean:message key="lbl.reescriba_clave_usuario"/>:</strong></div>
 		 
 		
-			 <div><html:password property="oldPassw" styleClass="form-control" maxlength="15"   styleId="claveold" /> 
+			 <div><html:password property="confirmPassw" styleClass="form-control" maxlength="11"  styleId="claveconf" /> 
 			 </div>
 		  </div>
 		
-		
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		  </html:form>
-					 
 
-              <br> 
-         
-  			<br>
-  			
-  			<div align="center"> 
-<input name="button" onclick="send();" type="button"  class="btn btn-default" style="width: 100px; "  value="<bean:message key="btn.enviar"/>"> 
+					 </html:form>	
+					  <br>
+					 
+					 		   <div align="center">
+	<div><bean:message key="lbl.mensaje.campo.requerido"/></div>
+  </div>
+   <br>
+  
+   
+   
+     			<div align="center"> 
+<input name="button" onclick="send();" type="button"   class="btn btn-default" style="width: 100px; "  value="<bean:message key="btn.enviar"/>"> 
 	  <input name="limpiar" type="reset" onclick="clear();"  class="btn btn-default" style="width: 100px; "  value="<bean:message key="btn.limpiar"/>"> 
 	
 </div>
-<br>
-					</div>
-					</div>
-					</div>
-					 <br> 
+ <br>
+  <br>
+					   </div>
+					   </div>
+					   </div>
+					 
+			 <br>
+		  		 
+					 
+					 
+			 
+					 
+ <br>
+		  
 
 
 
-
-
-
-
-
-</form>
-
-</div>
-
-
+		 
+		</form>			 
+	
+ <div>
+    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
+        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
+  </div>	</div>
 </body></html:html>

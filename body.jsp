@@ -9,6 +9,7 @@
 <%@ page import="com.arango.common.beans.UserInfo"%>
 <%@ page import="com.arango.internet.controller.SecurityImageUser"%>
 
+
 <%
 PerfilXML p = (PerfilXML)session.getAttribute("perfil.xml");
 if (p == null)
@@ -39,13 +40,34 @@ try{
 	catch(Exception ex){permiteDescarga1 = "0";}
 
 %>
+
+
+<script language="javascript">
+timegap=500
+followspeed=5
+followrate=40
+suboffset_top=10;
+suboffset_left=10;
+
+effect = ""
+
+
+function openwin(url)
+{
+	nwin=window.open(url, "nwin",config="scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes,");
+	nwin.focus();
+}
+
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
-<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/styles.css'/>">
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/all.css'/>">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.js'/>"></script>
@@ -327,7 +349,7 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 	<%if ("50".equals(userInfo.getRole()) ||"70".equals(userInfo.getRole())){
 		String keyCambioPin ="";
 	if(session.getAttribute("tieneToken").toString().equals("S")){%>	
-					<li><a href="/internet/mant/AdminIMG.jsp"><span>Cambio imagen personlaizada</span></a></li>
+					<li><a href="/internet/mant/AdminIMG.jsp"><span>Cambio imagen personalizada</span></a></li>
 					<li><a href="/internet/token/sincronizarToken.jsp"><span>Sincronizar su Dispositivo</span></a></li>
 					<li><a href="/internet/token/cambioPIN.jsp"><span>Cambio del PIN de su Dispositivo</span></a></li>
 	<% } else if(session.getAttribute("tieneToken").toString().equals("N")) { %>
@@ -348,7 +370,31 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
   <div>no debe ser ejecutado</div>
  <%} %>
 
+<script language="JavaScript">
+      urlBase= "<html:rewrite page='/logout.jsp'/>";
+      ar[0] = 'User ID: <%=session.getAttribute("user.id")%>      Cliente: <%=nombreCliente%>     ip=<%=session.getAttribute("IP.adress")%>';
+      showBanner();
+</script>
 
+<div id="__objPleaseWait" style="overflow:visible;display:none;position:absolute;top:0px;left:0px;background-color:white;border-style:solid;border-width:1px;border-color:black;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=10, OffY=10, Color=Gray, Positive=true)"
+		onclick="__CloseWait();">
+
+<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+	<td colspan="2" height="8px" style="Padding-Top:2px;Padding-Bottom:2px;Padding-Left:10px;cursor:default;white-space:nowrap;font-size:11px;font-family:Arial;background-color:gray;color:White;font-weight:bold;">
+			<bean:message key="tit.title.banco"/>
+	</td></tr>
+	<tr>
+	<td style="Padding:12px;cursor:default;Font-Size:11px;white-space:nowrap;font-family:Arial;font-size:11px;"> </td> 
+		<td style="Padding:12px;cursor:default;Font-Size:11px;white-space:nowrap;font-family:Arial;font-size:11px;">
+		<table border="0" cellpadding="3" cellspacing="1" width="100%">
+		  <tr><td width="5%" valign="top"><img src="<html:rewrite page='/images/session.gif'/>"></td>
+			  <td width="95%" class="bienvenida">
+				  <bean:message key="lbl.alerta.fin.sesion"/> <a href="javascript:__CloseWait();"><bean:message key="lbl.clave.especial.click.aqui"/></a>.
+			  </td></tr>
+		</table>
+	</td></tr> 
+</table>
 </div>
 </body>
 </html>

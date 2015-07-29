@@ -68,11 +68,7 @@
 
 <%@ include file="../body.jsp"%>
 
-
-
 <div align="center" class="container"> 
-
-
 
 		<div class="row">
 
@@ -84,10 +80,8 @@
 					  <div class="panel-body">
 					
 	<form name=forma method=POST action="<html:rewrite page='/do.consulta'/>">
-
-		<input type="hidden" name="tipo" value="CON_SO">
-	  	<input type="hidden" name="producto" value="<%=prod%>">
-	  	<input type="hidden" name="backPage" value="../servicios/seleccion.jsp?prod=<%=prod%>" >
+	  <input type="hidden" name="tipo" value="CON">
+	  <input type="hidden" name="backPage" value="../servicios/seleccion.jsp?prod=<%=prod%>" >
   	 
 					
 									<label style="text-align:left">	<h5><strong>
@@ -100,23 +94,19 @@
 			  
   	  	<div class="row">
   <div class=".col-md-2" style="align: right"></div>
-  <div class=".col-md-6" style="align: center; padding-right: 3%; width: 90%;" ><csic:ListaCuentas classname="form-control" name="cuentas" acceso="CON" producto="<%=prod%>"/>  </div>
+  <div class=".col-md-6" style="align: center; padding-right: 3%; width: 90%;" ><csic:ListaCuentas classname="form-control" name="cuentas" acceso="CON" producto="<%=prod%>"/>    </div>
  
 </div>
 
 <br>
 
-
-	<div>
-					<input name="botonEnviar" style="width: 100px" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
-					
-					
+	  <div> 
+			<input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" style="width: 110px;" value="<bean:message key="btn.consultar"/>">
+			  <input type="button" class="btn btn-default" style="width: 110px;" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
+			
+		  </div>
 				
-					
-					
-					
-				  	<input TYPE="BUTTON" style="width: 100px" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
-				</div>
+				 </form>
 	<br>
 		 
 				<div>
@@ -125,17 +115,9 @@
 							<%@ include file="../divFooter.jsp"%>
 					</div>
 				</div>	
-				
-	
-  
-					
-					</div>
-					
-				<%@ include file="../divFooter.jsp"%>
-			
 
-	</form>
-	
+					</div>
+
 		</div>
 	
 	</div>
@@ -145,10 +127,6 @@
 	  
 </div>
 
-
 </body>
-
-
-
 
 </html:html>

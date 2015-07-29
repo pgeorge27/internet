@@ -172,15 +172,18 @@ $(document).ready(function()
 				<bean:message key="tit.seleccion.marca.indentidad.personal"/>
             </strong>
           </div>
+
           <div class="panel-body">
+
+          <div align="center">
+          
 				<form name="forma" id="forma" action='<html:rewrite page="/do.SetImageToken"/>' method="post" enctype="multipart/form-data">
-					<p><bean:message key="lbl.seleccion.marca.nombre.imagen"/></p>
-					<p><input type="file" name="file" id="file" /></p>
-					<div align="center">
-						<input type="submit" class="btn btn-default" name="Submit" value="<bean:message key='lbl.seleccion.marca.subir'/>">
-						<input type="button" class="btn btn-default" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>">
-					</div>
-				</form>
+					<bean:message key="lbl.seleccion.marca.nombre.imagen"/>
+                <input  class="btn " type="file" name="file" id="file"/>
+                <input type="submit" class="btn btn-default" name="Submit" value="<bean:message key="lbl.seleccion.marca.subir"/>">
+                <input type="button" class="btn btn-default" onclick="cancelar();" value="<bean:message key='btn.cancelar'/>">
+              </form>
+        <p><bean:message key="lbl.mensaje.campo.requerido"/></p>
           </div>
         </div>
       </div>
