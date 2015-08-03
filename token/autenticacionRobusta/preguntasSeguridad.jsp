@@ -181,7 +181,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 							</label>
 							</p>
-				
+
 								<html:hidden styleId="pantalla" property="pantalla" value="preguntasSeguridadForm"/>
 								<input type="submit" value='<bean:message key="lbl.token.cambio.usuario.boton1"/>' class="btn btn-default"/>
 							</div>

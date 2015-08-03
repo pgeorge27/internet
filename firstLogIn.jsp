@@ -193,14 +193,14 @@ window.statusbar=' ';
 
 
 
-	 <header style="padding-top: 20px;">
+	 <header style="">
 			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
 
 
 
 
- <br>
+
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
@@ -324,7 +324,7 @@ window.statusbar=' ';
 					 
 			 
 					 
- <br>
+
 		  
 
 
@@ -332,8 +332,9 @@ window.statusbar=' ';
 		 
 		</form>			 
 	
- <div>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </div>	</div>
-</body></html:html>
+	</div>
+<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer></body></html:html>

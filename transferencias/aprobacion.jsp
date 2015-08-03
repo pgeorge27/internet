@@ -154,7 +154,7 @@ function __update(){
 
 <body>
 
-<div align="center" class="container"> 
+<div  class="container"> 
 
 	<%if(session.getAttribute("tieneToken").equals("S")){ %>
 	<div class="row">
@@ -232,20 +232,21 @@ function __update(){
 						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.estado" /></TD>
 						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.nivel.aprobacion" /></TD>
 						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.comentario" /></TD>
-					</TR>
+					</TR></thead>  
 					<TR>
 						<TD colspan="8"></TD>
 						<TD class="texto-acceso">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<table class="col-md-12 table-bordered table-striped table-condensed cf">
+						<thead class="cf"> 
 							<tr class="tabla-acceso">
 								<td class="texto-acceso"><bean:message key="lbl.transf.inter.aprobado.por" /></td>
 								<td class="texto-acceso" ><bean:message key="lbl.transf.inter.fecha.aprobacion" /></td>
 								<td class="texto-acceso" ><bean:message key="lbl.transf.inter.tipo.relacion" /></td>
 								<td class="texto-acceso" ><bean:message key="lbl.transf.inter.estado" /></td>
-							</tr>
+							</tr></thead>  
 						</table>
-						</td>
-					</tr></thead>  
+						
+					
 					<%
 						String styleClass = "";
 						boolean isNva	  = false;
@@ -278,13 +279,13 @@ function __update(){
 												aprobacion = false;
 											}
 										}
-										buffer.append("<tr><td class=\"bienvenida\" width=\"30%\">");
+										buffer.append("<tr><td data-title=\"Autorizado por\" class=\"bienvenida\" width=\"30%\">");
 										buffer.append(detalle.getUsername());
-										buffer.append("</td><td class=\"bienvenida\" width=\"30%\">");
+										buffer.append("</td><td data-title=\"Fecha Aprobación\" class=\"bienvenida\">");
 										buffer.append(f.formatFecha(detalle.getFechaAprobacion(), locale));
-										buffer.append("</td><td class=\"bienvenida\" width=\"10%\">");
+										buffer.append("</td><td  data-title=\"Tipo Relación\" class=\"bienvenida\" >");
 										buffer.append(detalle.getTipoRelacion());
-										buffer.append("</td><td class=\"bienvenida\" width=\"30%\" nowrap>");
+										buffer.append("</td><td data-title=\"Estado\" class=\"bienvenida\">");
 										buffer.append(com.arango.internet.tag.TagUtil.getString(pageContext,getNivelAutorizacion(detalle.getEstado())));
 										buffer.append("</td></tr>");
 									}
@@ -326,6 +327,13 @@ function __update(){
 						} /* End if */
 					%>
 				</table>
+				
+				
+				
+				
+				
+				
+				
 				<br>
 					
 						<br>

@@ -122,7 +122,7 @@ div.Section1
 <link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="container" style="padding-top: 30px;">
+<div class="container visible-lg" style="padding-top: 30px;">
 <table>
 	<tr>
 		<td><div align="center" id="bankdiv" style="display:"><a href="javascript:printContrato()"><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>

@@ -494,6 +494,7 @@
     padding-left: 50%; 
     white-space: normal;
     text-align:right;
+    min-height: 30px;
   }
  
   #no-more-tables td:before { 

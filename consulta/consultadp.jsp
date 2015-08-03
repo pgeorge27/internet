@@ -20,124 +20,183 @@ if (request.getParameter("backPage") != null)
   backPage=(String)request.getParameter("backPage");  
 %>
 
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
 <%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+
+</head>
 <%@ include file="../body.jsp"%>
+<body>
+
+<div align="center" class="container"> 
 
 
-<div align="center"> 
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0">
-		  <tr>
-            <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>		  
-			<td><div align="left" class="login">
-			<bean:message key="tit.consulta.saldo.dp.2"/>
-			</div></td>
-		  </tr>
-		</table>
-	  </div>
-	  </td>
-  </tr>
-  <tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top" align="center">
-<!-- aqui -->
-			<%@ include file="../divHeader.jsp"%>
-			
-		<table width="350" border="0" cellspacing="1" cellpadding="0" align="center">                   
-			  <tr> 
-				<td width="40%" height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.deposito"/></div></td>
-				<td width="20%">&nbsp;&nbsp;</td>
-				<td width="40%"height="15" align="right" class="bienvenida"><%=f.formatCuenta(cta.getNumeroCuenta())%></td>
-			</TR>
-			
-			<!-- Moneda -->
-	        <tr> 
-			  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.cc.moneda"/></div></td>
-			  <td></td>
-	          <td align="right" height="15" class="bienvenida" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;<%=cta.getMoneda()%></TD>
-	        </TR>
-						
-			<!-- Fecha Emision -->
+ <div class="row">
+ 
+ <div class="col-md-2"></div>
+
+          <div class="col-md-8"><div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.consulta.saldo.dp.2"/></strong></div>
+  <div class="panel-body">
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.numero.deposito"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatCuenta(cta.getNumeroCuenta())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.moneda"/>:</strong></div>
+    <div class="col-md-4" align="left"><%=cta.getMoneda()%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.fecha.apertura"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatFecha(cta.getFechaApertura(), locale)%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.fecha.vencimiento"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatFecha(cta.getFechaVencimiento(), locale)%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.plazo"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=cta.getPlazo()%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.tasa.interes"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatPorcentaje(cta.getTasaInteres())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.capital"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getCapital())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.interes"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getInteresesPagados())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.interes.vencimiento"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getInteresesVencimiento())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.saldo.pignorado"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getInteresesVencimiento())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+
 			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.fecha.apertura"/></div></td>
-				<td></td>
-			    <td height="15" align="right" class="bienvenida"><%=f.formatFecha(cta.getFechaApertura(), locale)%></td>
-			    
-			<!-- Fecha Vencimiento -->
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.fecha.vencimiento"/></div></td>
-				<td></td>
-			    <td height="15" align="right" class="bienvenida"><%=f.formatFecha(cta.getFechaVencimiento(), locale)%></td>
-			</TR>
-						    
-			<!-- No. Dias -->
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.plazo"/></div></td>
-				<td></td>
-			    <td height="15" align="right" class="bienvenida"><%=cta.getPlazo()%></td>
-			</TR>
-			
-			<!-- Tasa Interes -->    
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.tasa.interes"/></div></td>
-				<td></td>
-			    <td height="15" align="right" class="bienvenida"><%=f.formatPorcentaje(cta.getTasaInteres())%></td>
-			</TR>
-			
-			<!-- Principal-Capital -->    
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.capital"/></div></td>
-				<td></td>
-			    <td height="15" class="bienvenida" align="right"><%=f.formatMonto(cta.getCapital())%></td>
-			</TR>
-			    
-			<!-- Intereses -->    
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.interes"/></div></td>
-				<td></td>
-			    <td height="15" class="bienvenida" align="right"><%=f.formatMonto(cta.getInteresesPagados())%></td>
-			</TR>
-			
-			<!-- Total al Vencimiento -->
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.interes.vencimiento"/></div></td>
-				<td></td>				
-			    <td height="15" class="bienvenida" align="right"><%=f.formatMonto(cta.getInteresesVencimiento())%></td>                                    
-			</TR>
-			
-			<!-- Pignorado -->
-			<tr> 
-				<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.saldo.pignorado"/></div></td>
-				<td></td>				
-			    <td height="15" class="bienvenida" align="right"><%="SI".equals(cta.getCtaPignorada()) ? com.arango.internet.tag.TagUtil.getString(pageContext, "lbl.afirmacion"):com.arango.internet.tag.TagUtil.getString(pageContext, "lbl.negacion")%></td>
-			</TR>
-						    
-			<tr> 
-				<td valign="top">&nbsp;</td>
-				<td></td>
-				<td></td>
-				</tr>
-			<tr> 
-				<td valign="top" class="texto-acceso" colspan="3"><div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div></td>
+				<td valign="top" class="texto-acceso" colspan="3"><div class="visible-lg" align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div></td>
 				</tr>
 				<tr> 
 					<td valign="top" class="texto-acceso" colspan="3"><div align="center"><br>
-							<INPUT class="botton" onclick="retornar()" type=button value="<bean:message key="lbl.retroceder"/>"> </td></tr>
-            </table>		  
+							<INPUT class="btn btn-default" onclick="retornar()" type=button value="<bean:message key="lbl.retroceder"/>"> </td></tr>
 
-			<%@ include file="../divFooter.jsp"%>
 
-	  </form></td>
-  </tr>
-  
-  
-</table>
-</div>			
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"> 
+		
 <SCRIPT language="Javascript">
   function retornar()
   {
@@ -150,3 +209,18 @@ if (request.getParameter("backPage") != null)
 %>
 
 <%@ include file="../footer.jsp"  %>
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+</div> 
+
+</body>
+</html:html>

@@ -270,7 +270,7 @@ function __downloadDoc(){
 
 
 					
-								<div align="center">
+								<div class="visible-lg" align="center">
 									<bean:message key="lbl.cc.descripcion.observacion"/></div>
 
 
@@ -499,7 +499,7 @@ for (int i = 0; i < mov.size(); i++){
               </tr>
               <tr> 
                 <td colspan="2" valign="top" class="texto-acceso"><div align="center">                
-                <a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+                <div class="visible-lg"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div></div>
                 <div align="center">  <br>
 				<a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a></div>
 				<br></td>

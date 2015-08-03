@@ -109,7 +109,7 @@ if (navigator.appName =="Microsoft Internet Explorer")
   <br>
 <hr>
     <br>
-		<div class="row">
+		<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		  <div class="row">
 		<div class="col-md-4 col-md-offset-4">
@@ -139,7 +139,7 @@ if (navigator.appName =="Microsoft Internet Explorer")
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<input type="text" id="usuario" name="usuario" placeholder="Usuario" size="20" maxlength="16" title="Introduzca en este campo el login suministrado por el banco." class="form-control" autofocus>
+												<input type="text"  id="usuario" name="usuario" placeholder="Usuario" size="20" maxlength="16" title="Introduzca en este campo el login suministrado por el banco." class="form-control" autofocus>
 											</div>
 										</div>
 										<div class="form-group">

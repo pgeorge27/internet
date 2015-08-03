@@ -270,18 +270,18 @@ function retroceder()
 					<a href="javascript:void(0);" onclick="divResizeUp();"><img src="<html:rewrite page='/images/zoom_in.png'/>" style="width:16px; border:0;"/></a>
 					<a href="javascript:void(0);" onclick="divResizeDn();"><img src="<html:rewrite page='/images/zoom_out.png'/>" style="width:16px; border:0;"/></a>
 				</div>
-				<div name="captorsTransmissionZone" id="captorsTransmissionZone" style="position:relative;height: 60px;float:left;border:0px solid #C00"></div>
-
-
+				<div class="row">
+					<div name="captorsTransmissionZone" id="captorsTransmissionZone" style="position:relative;height: 60px;float:left;border:0px solid #C00"></div>
+				</div>
 				<p><bean:message key="lbl.firma.transaccion.token.clave"/></p>
-
-				<input type="text" name="clave" maxlength="8" class="botton-acceso"  id="clave"/>
+				<p><input type="text" name="clave" maxlength="8" class="form-control"  id="clave"/></p>
 
 				<div align="center">
 					<input id="btenviar" type="button" class="btn btn-default" value='<bean:message key="lbl.firma.transaccion.token.validar"/>' onclick="autorizar();">
 					<input class="btn btn-default" onclick="retroceder();" type="button" value='<bean:message key="lbl.firma.transaccion.token.cancelar"/>'>
 					<input type="hidden" id="amount_id" value=<%=monto%>>
 				</div>
+
 				</html:form>
 			</div>
 		</div>

@@ -66,7 +66,18 @@
 		counter = data.size();
 	}
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
 <%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <style type="text/css">
 	.nueva {
 		background-color: #F6E3CE; 
@@ -218,6 +229,9 @@ function __update(){
 }
 </script>
 <%@ include file="../body.jsp"%>
+<body>
+
+<div class="container"> 
 
 <br>
 <logic:messagesPresent>
@@ -245,47 +259,48 @@ function __update(){
 		</tr>
 	</table>
 </logic:messagesPresent>
-<div align="center">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td height="40" valign="bottom">
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			<tr>
-				<td colspan="2">
-					<%@ include file="../divHeader.jsp"%>
-						<table>
-                        	<tr valign="baseline">
-                            	<td><img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-                                <td class="bienvenida_1"><bean:message key="lbl.transferencias.autorizaciones.nuevas"/></td>
-                            </tr>	
-                        </table>
-					<%@ include file="../divFooter.jsp"%>
-				</td>
-			</tr>
-			<tr>
-				<td width="92%"><div align="left" class="login"><bean:message key="lbl.transf.inter.aprobacion" /></div></td>
-				<td width="8%">
-					<div align="right">&nbsp; <INPUT class="botton"
+
+
+
+	<div class="row">
+ 
+  <div class="col-md-10"><img src="<html:rewrite page='/images/logo_icon.png' />" /><bean:message key="lbl.transferencias.autorizaciones.nuevas"/></div>
+</div>
+
+<br>
+
+
+	<div class="row">
+		<div>
+			<div class="panel panel-default" >
+				<div class="panel-heading" align="left">
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong><bean:message key="lbl.transf.inter.aprobacion"/></strong>
+				</div>
+
+</div>
+
+</div>
+
+</div>
+
+					<div align="right">&nbsp; <INPUT class="btn btn-default"
 					onclick="document.location='<html:rewrite page='/servicios/aprobacion.jsp'/>';"
 					type="button" value="<bean:message key="lbl.retroceder"/>"></div>
-				</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="texto-acceso">&nbsp;</td>
-	</tr>
+<br>
+
+
+
+
+
 
 	<logic:present name="consulta.clte">
 	<tr>
-		<td class="bienvenida"><strong><%=session.getAttribute("consulta.clte")%></strong></td>
+		<td class="" align="left"><strong><%=session.getAttribute("consulta.clte")%></strong></td>
 	</tr>
 	</logic:present>
-	<tr>
-		<td><br>
-		<div align="left">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	
+	
 			<html:form method="post" action="/autoriza">
 				<html:hidden styleId="proporcion" property="proporcion" value="masivo" />
 		<%-- 	<html:hidden styleId="tipos" property="tipo" /> --%>
@@ -302,32 +317,35 @@ function __update(){
 					</table>
 					</td>
 				</tr>
-				<table width="100%" border="0" cellspacing="1" cellpadding="1">
+						<div id="no-more-tables">	
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+<thead class="cf">   
 					<TR class="tabla-acceso">
-						<TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.secuencia" /></TD>
-						<TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.fecha.elaboracion" /></TD>
-						<TD class="texto-acceso" width="5%">Fecha Efectiva</TD>
-						<TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.cantidad" /></TD>
-						<TD class="texto-acceso" width="5%"><bean:message key="lbl.moneda" /></TD>
-						<TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.cuenta" /></TD>
-						<TD class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.elaborador.por" /></TD>
-						<TD class="texto-acceso" width="5%"><bean:message key="lbl.transf.inter.estado" /></TD>
-						<TD class="texto-acceso" width="25%"><bean:message key="lbl.transf.inter.nivel.aprobacion" /></TD>
-						<TD class="texto-acceso" width="20%"><bean:message key="lbl.transf.inter.comentario" /></TD>
+						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.secuencia" /></TD>
+						<TD class="texto-acceso"><bean:message key="lbl.transf.inter.fecha.elaboracion" /></TD>
+						<TD class="texto-acceso" >Fecha Efectivas</TD>
+						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.cantidad" /></TD>
+						<TD class="texto-acceso" ><bean:message key="lbl.moneda" /></TD>
+						<TD class="texto-acceso"><bean:message key="lbl.transf.inter.cuenta" /></TD>
+						<TD class="texto-acceso"><bean:message key="lbl.transf.inter.elaborador.por" /></TD>
+						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.estado" /></TD>
+						<TD class="texto-acceso" ><bean:message key="lbl.transf.inter.nivel.aprobacion" /></TD>
+						<TD class="texto-acceso"><bean:message key="lbl.transf.inter.comentario" /></TD>
 					</TR>
 					<TR>
 						<TD colspan="8"></TD>
 						<TD class="texto-acceso">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<table class="col-md-12 table-bordered table-striped table-condensed cf">
+						<thead class="cf">  
 							<tr class="tabla-acceso">
-								<td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.aprobado.por" /></td>
-								<td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.fecha.aprobacion" /></td>
-								<td class="texto-acceso" width="10%"><bean:message key="lbl.transf.inter.tipo.relacion" /></td>
-								<td class="texto-acceso" width="30%"><bean:message key="lbl.transf.inter.estado" /></td>
-							</tr>
+								<td class="texto-acceso" ><bean:message key="lbl.transf.inter.aprobado.por" /></td>
+								<td class="texto-acceso" ><bean:message key="lbl.transf.inter.fecha.aprobacion" /></td>
+								<td class="texto-acceso"><bean:message key="lbl.transf.inter.tipo.relacion" /></td>
+								<td class="texto-acceso"><bean:message key="lbl.transf.inter.estado" /></td>
+							</tr></thead> 
 						</table>
 						</td>
-					</tr>
+					</tr></thead> 
 					<%
 						String styleClass = "";
 						boolean isNva	  = false;
@@ -364,17 +382,17 @@ function __update(){
 												}
 											}
 											buffer
-													.append("<tr><td class=\"bienvenida\" width=\"30%\">");
+													.append("<tr><td data-title=\"Aprobado por\" class=\"bienvenida\" width=\"30%\">");
 											buffer.append(detalle.getUsername());
 											buffer
-													.append("</td><td class=\"bienvenida\" width=\"30%\">");
+													.append("</td><td data-title=\"Fecha Aprobación\" class=\"bienvenida\" width=\"30%\">");
 											buffer.append(f.formatFecha(detalle
 													.getFechaAprobacion(), locale));
 											buffer
-													.append("</td><td class=\"bienvenida\" width=\"10%\">");
+													.append("</td><td data-title=\"Tipo Relación\" class=\"bienvenida\" width=\"10%\">");
 											buffer.append(detalle.getTipoRelacion());
 											buffer
-													.append("</td><td class=\"bienvenida\" width=\"30%\" nowrap>");
+													.append("</td><td data-title=\"Estado\" class=\"bienvenida\" width=\"30%\" nowrap>");
 											buffer.append(com.arango.internet.tag.TagUtil
 													.getString(pageContext,
 															getNivelAutorizacion(detalle
@@ -400,20 +418,20 @@ function __update(){
 							}
 					%>
 					<tr valign="top" class="<%=cssClase %>" >
-						<td class="bienvenida" nowrap><input type="checkbox" moneda="<%=t.getMoneda()%>" monedaIso="<%=t.getCodigoMonedaIso()%>" name="indice" value='<%=""+i %>' id="<%=tipo%>" /><a
+						<td data-title="Referencia"  class="bienvenida" nowrap><input type="checkbox" moneda="<%=t.getMoneda()%>" monedaIso="<%=t.getCodigoMonedaIso()%>" name="indice" value='<%=""+i %>' id="<%=tipo%>" /><a
 							href="<html:rewrite page='/transferencias/detalle.jsp'/>?n=<%=tipo%>&w=<%=i%>&t=2"><%=StringUtilities.replace(f.formatCuenta(t
 										.getNumeroDocumento(), "A-S-C"), "-",
 										"")%></a></td>
-						<td class="bienvenida"><%=f.formatFecha(t.getFechaElaboracion(), locale)%></td>
-						<td class="bienvenida"><%=f.formatFecha(t.getFecha(), locale)%></td>
-						<td class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
-						<td class="bienvenida"><%=t.getMoneda()%></td>
-						<td class="bienvenida"><%=f.formatCuenta(t.getCuenta().getCodigoBanco(), "C")%></td>
-						<td class="bienvenida"><%=t.getUsuarioPrepara() == null ? "" : t
+						<td data-title="Fecha Elaboración" class="bienvenida"><%=f.formatFecha(t.getFechaElaboracion(), locale)%></td>
+						<td data-title="Fecha Efectiva" class="bienvenida"><%=f.formatFecha(t.getFecha(), locale)%></td>
+						<td data-title="Cantidad - Amount" class="bienvenida" align="right"><%=f.formatMonto(t.getMonto())%></td>
+						<td  data-title="Moneda" class="bienvenida"><%=t.getMoneda()%></td>
+						<td data-title="Número de Cuenta - Account Number" class="bienvenida"><%=f.formatCuenta(t.getCuenta().getCodigoBanco(), "C")%></td>
+						<td data-title="Elaborador por" class="bienvenida"><%=t.getUsuarioPrepara() == null ? "" : t
 								.getUsuarioPrepara()%></td>
-						<td class="bienvenida"><bean:message key="<%=getDescEstado(t.getEstado())%>" /></td>
-						<td class="bienvenida"><%=aprobadorStr%></td>
-						<td class="bienvenida"><%=t.getDescripcionRechazo() == null ? StringUtilities
+						<td data-title="Estado" class="bienvenida"><bean:message key="<%=getDescEstado(t.getEstado())%>" /></td>
+						<td data-title="Nivel de Autorización" class="bienvenida"><%=aprobadorStr%></td>
+						<td data-title="Nivel de Autorización" class="bienvenida"><%=t.getDescripcionRechazo() == null ? StringUtilities
 										.getValue(t.getMotivo())
 										: t.getDescripcionRechazo()%></td>
 					</tr>
@@ -422,27 +440,35 @@ function __update(){
 							} /* End if */
 					%>
 				</table>
+				</div>
+	
+				<br>
+				<br>
 				<table width="100%" border="0" cellspacing="5" cellpadding="5">
 					<tr>
-						<td align="center"><input type="button" class="botton"
+						<td align="center"><input type="button" class="btn btn-default"
 							value="<bean:message key="lbl.transf.inter.autorizar"/>"
 							onclick="set('<%=ITransferencia.APROBADA %>');">
-						&nbsp;&nbsp; <input type="button" class="botton" id="btmRechaza"
+						&nbsp;&nbsp; <input type="button" class="btn btn-default" id="btmRechaza"
 							value="<bean:message  key="lbl.transf.inter.rechazar"/>"
 							onclick="__reject();"> &nbsp;&nbsp;</td>
 					</TR>
 					<tr>
 						<td align="center"><br>
-						<INPUT class="botton"
+						<INPUT class="btn btn-default"
 							onclick="document.location='<html:rewrite page='/servicios/aprobacion.jsp'/>';"
 							type="button" value="<bean:message key="lbl.retroceder"/>">
 						<input type="hidden" id>
 						</td>
 					</tr>
 				</table>
+			
 			</html:form>
-		</TABLE>
-</table>
-</div>
+		
 
-<%@ include file="../footer.jsp"%>
+
+
+
+</div> 
+</body>
+</html:html>

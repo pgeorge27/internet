@@ -11,6 +11,10 @@
 <%@ page import="java.text.*"%>
 <%@ page import="org.apache.struts.util.LabelValueBean"%>
 <%@ page import="com.arango.common.util.StringUtilities" %>
+
+<!DOCTYPE html>
+<html>
+
 <%!
 private String getNombre(String text){
     if (text == null)
@@ -27,8 +31,7 @@ private String getNombre(String text){
 }
 %>
 
-<!DOCTYPE html>
-<html:html>
+
 
 <head>
 <%@ include file="../head.jsp"%>
@@ -38,13 +41,14 @@ private String getNombre(String text){
 <script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
-</head>
+
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 
 <script type="text/javascript" src="<html:rewrite page='/scripts/utilidades.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/prototype.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/ajaxtags-1.1.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
+
 <%
 String Moneda = (session.getAttribute("monedaSelect")!=null) ? session.getAttribute("monedaSelect").toString() : "";
 
@@ -263,22 +267,22 @@ function _showAlert(field, label){
 					 break;
 			case 12: msg = "<bean:message key="lbl.transf.inter.paisBeneficiario"/> <bean:message key="lbl.transf.inter.titulo.beneficiario"/>";
 		}
-		field.className = "botton-acceso-wn";
+		field.className = "form-control";
 		alert("<bean:message key="lbl.nota.transferencias.cuba"/>" + " " + msg);
 	}
 	else{
-		field.className = "botton-acceso";
+		field.className = "form-control";
 	}
 }
 function __validateField1(){
 	var _value = __getValue("lblPaisBancoIntermediario");
 	if (_value){
 		if (isValidMessage(_value)){
-			document.forms[0].swiftBancoIntermediario.className = "botton-acceso-wn";
+			document.forms[0].swiftBancoIntermediario.className = "form-control";
 			alert("<bean:message key="lbl.nota.transferencias.cuba2"/>");
 		}
 		else{
-			document.forms[0].swiftBancoIntermediario.className = "botton-acceso";		
+			document.forms[0].swiftBancoIntermediario.className = "form-control";		
 		}
 	}
 }
@@ -295,11 +299,11 @@ function __validateField2(){
 	var _value = __getValue("lblPaisBancoBeneficiario");
 	if (_value){
 		if (isValidMessage(_value)){	
-			document.forms[0].swiftBeneficiario.className = "botton-acceso-wn";
+			document.forms[0].swiftBeneficiario.className = "form-control";
 			alert("<bean:message key="lbl.nota.transferencias.cuba2"/>");
 		}
 		else{
-			document.forms[0].swiftBeneficiario.className = "botton-acceso";
+			document.forms[0].swiftBeneficiario.className = "form-control";
 		}
 	}
 }
@@ -651,6 +655,7 @@ function areEqual(a,b){
       	}
       }
 </script>
+</head>
 <%@ include file="../body.jsp" %>
 
 <body>
@@ -789,7 +794,18 @@ function areEqual(a,b){
 
 
    				           <div class="row">
-  <div class="col-md-4" align="left"><b>4:</b>&nbsp;<html:radio property="tipoSWIFTBeneficiario" value="SWIFT" styleId="_SWIFT"/>&nbsp;&nbsp;<bean:message key="lbl.transf.inter.swiftBeneficiario"/>&nbsp; <html:radio property="tipoSWIFTBeneficiario" value="ABA" styleId="_ABA"/>&nbsp;&nbsp;<bean:message key="lbl.transf.inter.abaBeneficiario"/></div>
+  <div class="col-md-4" align="left">
+  
+  
+  <html:radio property="tipoSWIFTBeneficiario" value="SWIFT" styleId="_SWIFT"/>
+						<bean:message key="lbl.transf.inter.swiftBeneficiario"/>
+						<html:radio property="tipoSWIFTBeneficiario" value="ABA" styleId="_ABA"/>
+						<bean:message key="lbl.transf.inter.abaBeneficiario"/>
+  
+  
+  
+  
+  </div>
 
   <div class="col-md-3"><html:text property="swiftBeneficiario" styleId="swiftBeneficiario" maxlength="18" styleClass="form-control"/></div>
 
@@ -810,7 +826,7 @@ function areEqual(a,b){
    				           <div class="row">
   <div class="col-md-4" align="left">&nbsp;<b>5:</b>&nbsp;<bean:message key="lbl.transf.inter.nombreBancoIntermediario"/>:</div>
 
-  <div class="col-md-3"><html:hidden property="bancoBeneficiario"/><div id="lblBancoBeneficiario" class="form-control"></div></div>
+  <div class="col-md-3"><html:hidden property="bancoBeneficiario"/><textarea id="lblBancoBeneficiario" class="form-control" rows="3"></textarea></div>
   
   <div class="col-md-2" align="left"><b>6:</b> <bean:message key="lbl.transf.inter.direccionBancoBeneficiario"/>:</div>
   
@@ -854,7 +870,14 @@ function areEqual(a,b){
 
   <div class="col-md-3"><html:text property="cuentaBancoIntermediario" styleId="cuentaBancoIntermediario" onkeypress="alphabetic();" onblur="_showAlert(this,8);" maxlength="34" size="45" styleClass="form-control"/></div>
   
-  <div class="col-md-2" align="left"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span>&nbsp;<b>10:</b>&nbsp;<html:radio property="tipoSWIFTIntermediario" value="SWIFT" styleId="_SWIFT2" onclick="_choseValue('SWIFT');"/>&nbsp;<bean:message key="lbl.transf.inter.swiftBancoIntermediario"/>&nbsp;<html:radio property="tipoSWIFTIntermediario" value="ABA" styleId="_ABA2" onclick="_choseValue('ABA');"/>&nbsp;<bean:message key="lbl.transf.inter.abaBancoIntermediario"/></div>
+  <div class="col-md-2" align="left"><b>10:</b>
+  
+  
+  <html:radio property="tipoSWIFTIntermediario" value="SWIFT" styleId="_SWIFT2" onclick="_choseValue('SWIFT');"/>
+						<bean:message key="lbl.transf.inter.swiftBancoIntermediario"/>
+						<html:radio property="tipoSWIFTIntermediario" value="ABA" styleId="_ABA2" onclick="_choseValue('ABA');"/>
+						<bean:message key="lbl.transf.inter.abaBancoIntermediario"/>
+  </div>
   
   
     <div class="col-md-3"><html:text property="swiftBancoIntermediario" styleId="swiftBancoIntermediario" maxlength="18" styleClass="form-control"/></div>
@@ -872,12 +895,21 @@ function areEqual(a,b){
 		    				           <div class="row">
   <div class="col-md-4" align="left"><b>11:</b>&nbsp;<bean:message key="lbl.transf.inter.bancoBeneficiario"/>:</div>
 
-  <div class="col-md-3"><div id="lblNombreBancoIntermediario" class="form-control" style="display:"></div><div id="txtNombreBancoBeneficiario" style="display:none"><html:text property="nombreBancoIntermediario" styleClass="form-control" size="45" maxlength="50" onkeypress="alphanumeric()" onblur="_showAlert(this, 5);"/></div></div>
+  <div class="col-md-3">
+  
+  
+  <textarea id="lblNombreBancoIntermediario" class="form-control" rows="3" style="display:"></textarea>
+  
+						<div id="txtNombreBancoBeneficiario" style="display:none"><html:text property="nombreBancoIntermediario" styleClass="botton-acceso" size="45" maxlength="50" onkeypress="alphanumeric()" onblur="_showAlert(this, 5);"/></div>
+  
+  </div>
   
   <div class="col-md-2" align="left"><b>12:</b>&nbsp;<bean:message key="lbl.transf.inter.direccionBancoIntermediario"/>:</div>
   
   
-    <div class="col-md-3"> <html:hidden property="direccionBancoIntermediario"/><textarea id="lblDireccionBancoIntermediario" class="form-control" rows="3" onkeypress="alphabetic();validateLength(this, 50)" onblur="_showAlert(this, 6);"></textarea></div>
+    <div class="col-md-3">
+     <textarea id="lblDireccionBancoIntermediario" class="form-control" rows="3" style="display:"></textarea>
+						<div id="txtDireccionBancoIntermediario" style="display:none"><html:textarea property="direccionBancoIntermediario" styleClass="botton-acceso" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 50)" onblur="_showAlert(this, 6);" /></div></div>
   
 
   </div>
@@ -953,7 +985,10 @@ function areEqual(a,b){
    				           <div class="row">
   <div class="col-md-4" align="left"><span class="texto-acceso">(<font color="#FF0000">*</font>)</span>&nbsp;<b>17:</b><bean:message key="lbl.transf.inter.direccionBeneficiario"/>:</div>
 
-  <div class="col-md-3"><html:hidden property="direccionBeneficiario"/><textarea id="direccionBeneficiario" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 90)" onblur="_showAlert(this, 2);" class="form-control"></textarea></div>
+  <div class="col-md-3">
+  						<html:textarea property="direccionBeneficiario" styleId="direccionBeneficiario" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 90)" onblur="_showAlert(this, 2);" styleClass="form-control"/>
+  
+  </div>
   
   
   
@@ -1108,4 +1143,4 @@ function areEqual(a,b){
 
 </div>
 </body>
-</html:html>
+</html>

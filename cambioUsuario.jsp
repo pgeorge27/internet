@@ -24,6 +24,8 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 <script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 
+
+
 <script type="text/javascript">
 
 if (typeof window.event != 'undefined') // IE
@@ -212,7 +214,19 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 </div>
 </div>
 
-	</div>
+
+
+
+
+
+<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer>
+
+
+
 </body>
 
 </html:html>

@@ -167,16 +167,15 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 <div id="no-more-tables">
 <table class="col-md-12 table-bordered table-striped table-condensed cf">
 
-		<td valign="top" colspan="2">
-			<table width="100%" border="0" cellpadding="1" cellspacing="2">
+	
 			<thead class="cf">
 				<tr class="tabla-acceso">
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.nombre"/></td>
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.cuenta"/></td>
 					<td class="texto-acceso" width="25%" nowrap><bean:message key="lbl.beneficiario.banco"/></td>
-					<td class="texto-acceso" width="25%"></td>
-				</tr>
-				</thead>
+					<td class="texto-acceso" width="25%">Opciones</td>
+				</tr></thead>
+				
 				<logic:notEmpty name="beneficiarios">
 				<logic:iterate name="beneficiarios" id="row" type="com.arango.common.beans.BeneficiarioBean" indexId="resultNo" >
 					<bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>			
@@ -196,22 +195,23 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 				    <td data-title="Banco" class="bienvenida">
 				    	<bean:write name="row" property="banco" />
 				    </td>
-					<td class="bienvenida">
-						<input type="button" class="botton" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>&nbsp;
-						<input type="button" class="botton" name="btndel" onclick="__delete(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
+					<td data-title="Opciones" class="bienvenida">
+						<input type="button" class="btn btn-default" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>&nbsp;
+						<input type="button" class="btn btn-default" name="btndel" onclick="__delete(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
 					</td>
-				</tr>
+				
 				</logic:iterate>
 				</logic:notEmpty>
 			</table>
-		</td>
 		
-		</table>
 </div>
 
 
 
 </html:form>
 </div>
+<br>
+<br>
+<br>
 </body>
 </html:html>

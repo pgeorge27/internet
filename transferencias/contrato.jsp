@@ -82,7 +82,7 @@ if (locale == null){
 <div align="center"> 
 <html:form method="post" action="/aceptacion">
 
-				<div align="right"><a href="<html:rewrite page='/transferencias/printContrato.jsp'/>" target="_new"><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/images/printer2.jpg'/>"></a></div>
+				<div class="visible-lg" align="right"><a href="<html:rewrite page='/transferencias/printContrato.jsp'/>" target="_new"><img class="img-responsive" alt="Responsive image" src="<html:rewrite page='/images/printer2.jpg'/>"></a></div>
   <br> 
 	<div align="center">
 		  		<div style="height:200px;overflow:scroll;border:#cccccc 1px solid">

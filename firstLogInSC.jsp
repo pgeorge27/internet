@@ -13,8 +13,17 @@ String descripcion = (session.getAttribute("codigo.servicio").toString().equals(
 
 %>
 
-<html>
+<!DOCTYPE html>
+<html:html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 .texto-acceso2 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -160,31 +169,11 @@ function userElection()
 	marcas.carga();
 %>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
+
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right" ><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-    
-<table width="100%" border="0" cellspacing="2" cellpadding="2">
-        <tr> 
-          <td height="300" valign="middle"><table border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td>
- <br>
+<body style="padding-top: 30px;">
+
+
 <logic:present name="msg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">
 	<tr> 
@@ -203,52 +192,54 @@ function userElection()
 <%
    session.removeAttribute("msg");
 %>
-<div > 
-<table width="100%" border="0"  cellpadding="0" cellspacing="0">
+
+
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-7"><img class="img-responsive" alt="Responsive image" border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/></div>
+<div class="col-md-1"></div>
+  </div>
   
-  <tr align="center"> 
-  
-	<td valign="top" colspan="2" width="100%">
-	<table width="100%" align="center"><tr><td>
+
+
+<div class="container" style="padding-top: 30px;">
+
+
+
 	<form method="post" action="<html:rewrite page='/Uploadpage.jsp'/>" name="forma">
       	<input type="hidden" name="categoria" id="categoria" value="" />
       	<input type="hidden" name="imageRefresh" id="imageRefresh" value="<html:rewrite page='/do.primerinicio'/>" />
       	<input type="hidden" name="pantalla" value="cambioImagenSeleccion" />
-      	
-      	<%@ include file="divHeader.jsp"%>
-	 <table cellspacing="3" cellpading="3" align="center" width="100%">
-       <tr valign="top">
-      	  <td colspan="2">
-      	  <table ><tr><td>
-      	  <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-	      <td><B><p class="bienvenida_2"><bean:message key="lbl.imagen.tips.titulo"/></p></B></td>
-	      </tr></table>
-	      </td>
-	    </tr>
-      <tr>
-	    <td class="bienvenida_2">
-	    <UL>
-	       <li><bean:message key="lbl.mant.imagen.obs1" /></li>
+
+
+		<div class="panel panel-default" >
+					 <div class="panel-heading" align="left" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.imagen.tips.titulo"/></strong></div>
+  <div class="panel-body">
+  
+  
+  <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10" style="padding-right: 7%;">
+   <h5 align="justify">  
+          <UL>
+	       <li> <strong><bean:message key="lbl.mant.imagen.obs1" /></strong></li>
+	       <br>
 	       <!--  <li><bean:message key="lbl.mant.imagen.obs2" /></li>-->
 	       <li><bean:message key="<%=descripcion %>" /></li>
-	    </UL>
-	    </td>
-	  </tr>
-	  </table>
-	  <%@ include file="divFooter.jsp"%>
-	
-	<!-- Inicio del Div -->
-<table width="100%"  border="0" cellpadding="0" cellspacing="0">
-  <tr>
-	<td width="11px" height="9px" background="<html:rewrite page='/images/div/top-left.gif'/>"></td>
-	<td height="9px" background="<html:rewrite page='/images/div/top-meddium.gif'/>"></td>
-	<td width="8px" height="9px" background="<html:rewrite page='/images/div/top-right.gif'/>"></td>
-  </tr>
-  <tr>
-	<td width="11px" height="9px" background="<html:rewrite page='/images/div/left-center.gif'/>"></td>
-	<td>
-	<!-- Colocar Contenido Aqui -->	
-	
+	    </UL></h5></div>
+	    
+	    
+  
+  </div>
+
+
+  
+  </div>
+</div>
+
+<br>
+  <div class="panel panel-default">
+  <br>
 	  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	   <tr>
 	   	<td valign="top" width="19%">
@@ -272,7 +263,7 @@ function userElection()
 				   				<td>
 				   					<a href="#" onclick="refreshImage('ani');">
 				   						<div class="texto-acceso2" align="left">Animales</div>
-				   					</a>	
+				   					</a>
 		   						</td>			   					
 				   			</tr>
 				   			<tr><td>&nbsp;</td></tr>
@@ -314,7 +305,9 @@ function userElection()
 	   		</table>
 	   		
 	   	</td>
-	   	<td width="1%" background="<html:rewrite page='/images/div/left-center.gif'/>">&nbsp;</td>	   
+	   	
+	   		<td width="3%">	</td>
+	   
 	    <td width="80%" colspan="2">
 		    <table width="100%" border="0" cellpadding="0">
 			  <tr align="center">
@@ -325,15 +318,17 @@ function userElection()
 							   <tr align="center">
 							</c:if>
 						</c:if>
-						<td width="20">
+						<td width="20%" height="2%" >
 						  <a href="do.SetImage?id=<c:out value='${imagen}'/>">
-						   <img src="do.GetImage?id=<c:out value="${imagen}"/>&img=ch" width="100" height="100" border="0" />
+						   <img class="img-responsive" alt="Responsive image" src="do.GetImage?id=<c:out value="${imagen}"/>&img=ch" width="80px" height="80px" border="0" />
 						   </a>
 						</td>
 					</c:forEach>
 		   </tr>
 		   </table>
 		</td>
+		
+			<td width="5%">&nbsp;</td>
 	   </tr>
 <!-- 	   <tr> -->
 			
@@ -343,26 +338,22 @@ function userElection()
 			   
 <!--   </tr> -->
 		</table>
+		<br>
+		</div>
 		
-		
-		<%@ include file="divFooter.jsp"%>
-		
-	  </form></td></tr>
-	  </table>  
-	  </td>
-  </tr>
-  <tr>
-	<td height="20" valign="middle" class="texto-acceso"></td>
-  </tr>
-</table></div>
-</td></tr></table></td></tr>
-
-
-<tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
+		</form>
+		</div>
 
 
 
-</table></td></tr></table></body></html>
+<br>
+
+<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer>
+
+
+
+</body></html:html>

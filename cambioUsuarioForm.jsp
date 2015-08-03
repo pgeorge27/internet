@@ -180,7 +180,7 @@ window.statusbar=' ';
 
 <html:form method="post"  action="/cambioUsuarioBasico.do">
 
-  	 <header style="padding-top: 20px;">
+  	 <header style="">
 			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
 
@@ -286,11 +286,13 @@ window.statusbar=' ';
 %>
 
 
-<br> 
-<br> 
 
 
 
 
 </html:form>
-</div></div> <br>  <br> </body></html:html>
+</div>  <footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer></body></html:html>

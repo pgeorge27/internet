@@ -229,6 +229,113 @@ function retroceder()
 </script>
 
 <%@ include file="../body.jsp"%>
+
+<div class="container"> 
+	<div class="row">
+
+
+
+<logic:messagesPresent>
+		<div align="center" class="well col-md-4 col-md-offset-4">
+			<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+			<p><b><bean:message key="errors.header"/></b></p>
+			<p class="bienvenida">- <bean:write name="error" /></p>
+			<html:messages id="error">
+				<p class="bienvenida">- <bean:write name="error" /></p>
+			</html:messages>
+		</div>
+		<script type="text/javascript">
+			CONST_Y += document.getElementById('msgError').clientHeight;
+		</script>
+</logic:messagesPresent>
+
+	<div class="col-md-4 col-md-offset-1 ">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<img src="<html:rewrite page='/images/logo_icon.png' />" />
+				<strong>
+					<bean:message key="lbl.firma.transaccion.token.pasos"/>
+				</strong>
+			</div>
+			<div class="panel-body">
+				<ol>
+					<li><bean:message key="lbl.firma.transaccion.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso2" /><img src="<html:rewrite page='/images/TokenOptico.png'/>" height="15"></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso3" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso4" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso5" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso6" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso7" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso8" /></li>
+					<li><bean:message key="lbl.firma.transaccion.token.paso9" /></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<img src="<html:rewrite page='/images/logo_icon.png' />" />
+				<strong>
+					<bean:message key="tit.title.firma.transaccion.token"/>
+				</strong>
+			</div>
+			<div class="panel-body">
+				<!-- Tabla con Formulario -->
+				<html:form method="post" action="/autoriza" enctype="multipart/form-data">
+					<html:hidden styleId="tipos" property="indice" value="1" />
+					<html:hidden styleId="tipos" property="pantalla" value="aprobar" />
+					<%
+						for(int i=0;i<t.size();i++){
+							TransferenciaInternacional obj = (TransferenciaInternacional) t.get(i);
+					%>
+					<%	} %>
+					<html:hidden property="tipo" />
+
+					<bean:message key="lbl.area.transmision.firma.transaccion.token" />
+					<div id="led-wrapper" style="float:right; position:relative">
+						<div id="resize-buttons" style="width:32px;float:left;">
+						<a href="javascript:void(0);" onclick="divResizeUp();"><img src="<html:rewrite page='/images/zoom_in.png'/>" style="width:16px; border:0;"/></a>
+						<a href="javascript:void(0);" onclick="divResizeDn();"><img src="<html:rewrite page='/images/zoom_out.png'/>" style="width:16px; border:0;"/></a>
+						</div>
+						<div name="captorsTransmissionZone" id="captorsTransmissionZone" style="position:relative;height: 60px;float:left;border:0px solid #C00"></div>
+					</div>
+
+
+					<p class="bienvenida"><bean:message key="lbl.tipo.moneda.firma.transaccion.token.masivo" /></p>
+					<p class="bienvenida"><input name="currency" class="form-control" id="currency_id" readonly="readonly" type="text" value="<%=strMonedaISO %>"><b><%=strMoneda%></b></p>
+
+					<p class="bienvenida"><bean:message key="lbl.monto.firma.transaccion.token.masivo" /></p>
+					<p class="bienvenida"><input name="amount" class="form-control" id="amount_id2" readonly="readonly" type="text" value="<%=f.formatMonto(dblMonto)%>"></p>
+
+					<p class="bienvenida"><b><i><bean:message key="lbl.monto.firma.cantidad.token.masivo" />:</i></b></p>
+					<p class="bienvenida"><input name="quantity" class="form-control" id="quantity_id" readonly="readonly" type="text" value="<%=strCantidad%>"></p>
+
+
+					<p>
+						<bean:message key="lbl.firma.transaccion.token.clave"/>
+					</p>
+
+					<p><input type="text" class="form-control" name="clave" maxlength="8" class="botton-acceso"  id="clave"/></p>
+
+					<div align="center">
+						<p><input id="btenviar" type="button" class="btn btn-default" value='<bean:message key="lbl.firma.transaccion.token.validar"/>' onclick="autorizar();"></p>
+						<p><input class="btn btn-default" onclick="retroceder();" type="button" value='<bean:message key="lbl.firma.transaccion.token.cancelar"/>'></p>
+					</div>
+
+					<p><input type="hidden" id="amount_id" value=<%=monto%>></p>
+                </html:form>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+
+
 <logic:messagesPresent>
 <table cellpadding="1" cellspacing="1" width="750" class="tabla-acceso1" id="msgError">
 	<tr>

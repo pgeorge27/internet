@@ -5,6 +5,9 @@
 <%@ page import="com.arango.common.util.StringUtilities"%>
 <%@ page import="com.arango.common.beans.TransferenciaInternacional"%>
 <%@ page import="java.util.Locale" %>
+
+<!DOCTYPE html>
+<html>
 <%!
 com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
 %>
@@ -12,7 +15,7 @@ com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
 String fecha=""; 
 String secuencia= "";
 %>
-
+<head>
 <%@ include file="../head.jsp"%>
 
 <%
@@ -30,7 +33,20 @@ if (session.getAttribute("titulo.recibo") != null){
     titulo = (String)session.getAttribute("titulo.recibo");
 }
 %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <%@ include file="../body.jsp"%>
+
+
+<body>
+
+<div align="center" class="container"> 
+
+
 <html:form method="post" action="/query2">
 <html:hidden property="estado" /> 
 <%
@@ -39,56 +55,160 @@ if (session.getAttribute("titulo.recibo") != null){
 <html:hidden property="cliente" value="<%=strConsultaTrans%>"/>
 </html:form>
 
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="92%">
-				<div align="left" class="login"><bean:message key="<%=titulo%>"/></div></td>
-			<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-		  </tr>
-		</table></td>
-  </tr>
-<tr> 
-	<td class="texto-acceso"></td>
-  </tr>
-  <tr> 
-	<td valign="top">
-        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="2">
+
+
+
+
+<div align="right">&nbsp;
+							<INPUT class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+
+ <div class="row">
+ 
+ <div class="col-md-2"></div>
+
+          <div class="col-md-8"><div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="<%=titulo%>"/></strong></div>
+  <div class="panel-body">
+  
+  
+  
+  
+  
+  
+  
+  <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.fecha"/>:</strong></div>
+    <div class="col-md-4" align="left"><%=f.formatFechaLong(today, locale2)%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+  
+  
+  
+  
+    
+  <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.secuencia"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+  
+  
+  
+  
+  
+    <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.cuenta"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=transf.getCuenta() != null ? f.formatCuenta(transf.getCuenta().getCodigoBanco()) : ""%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+  
+  
+  
+  
+  
+    
+    <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.cantidad"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(transf.getMonto())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+  
+  
+  
+  
+    
+    <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.moneda"/>:</strong></div>
+    <div class="col-md-4" align="left"><%=StringUtilities.getValue(transf.getMoneda())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+
+
+
+
+
+
+
+    
+    <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.transf.inter.cuentaBeneficiario"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=StringUtilities.getValue(transf.getCuentaBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+
+
+
+
+
+
+<div class="prueba visible-lg" align="center"><a href="javascript:printPage2()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+
+<br>
+
+
+<div align="center">
+<INPUT class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+
+ </div>
+
+
+
+
+
+
+<br>
+
+  
+
+
+ </div>
+  </div>
+   </div>
+   
+
+
+
+
+
         
-        
-		  <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.fecha"/></td>
-					<td class="bienvenida" width="70%"><%=f.formatFechaLong(today, locale2)%></td></tr>
-            <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.secuencia"/></td>
-                   <td class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></td></tr>                      
-            <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuenta"/></td>
-                   <td class="bienvenida"><%=transf.getCuenta() != null ? f.formatCuenta(transf.getCuenta().getCodigoBanco()) : ""%></td></tr>
-             <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cantidad"/></td>
-                   <td class="bienvenida"><%=f.formatMonto(transf.getMonto())%></td></tr>     
-             <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.moneda"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getMoneda())%></td></tr>                   
-            <tr valign="middle" class="celda-clave1">
-		           <td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></td></tr>
 
-<tr>
-<td colspan="2" align="center"><br><br>
-
-<div align="center"><a href="javascript:printPage2()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-<tr>
-<td colspan="2" align="center">
-<INPUT class="botton" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+               
+   
+ 
+                 
+           
 
 
-</td></tr></table></td></tr></table></div>
+
+
 
 
 <logic:present name="mensaje.final">
@@ -103,3 +223,7 @@ if (session.getAttribute("titulo.recibo") != null){
 	        </script>        
         </logic:present>
 <%@ include file="../footer.jsp" %>
+ </div>
+</div>
+</body>
+</html>

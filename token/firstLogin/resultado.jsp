@@ -34,21 +34,8 @@ document.onkeypress = function(e)  // FireFox/Others
 
 </head>
 
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="width:254;height:26;background-color:#EFEFEF;"><div  class="bienvenida"></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
+<body>
+
 <%
 
 session.setAttribute("flag","12");
@@ -62,36 +49,69 @@ session.setAttribute("flag","12");
 		
 	}
 %>
-<table>
-	<tr>
-		<td height="26">
-					
-		</td>
-	</tr>
-</table>
-<div align="center"> 
-	<table cellpadding="4" width="30%" border="0" cellspacing="2">        
-	  <tr valign="middle">
-			<td class="bienvenida"><bean:message key="lbl.actualiza.mensaje.resultado"/></td></tr>      
-	  <tr valign="middle">
-	        <td class="bienvenida"><bean:write name="resultado_secuencia"/></td></tr>
-	  <tr valign="middle">
-	        <td class="bienvenida"><bean:write name="resultado_fecha"/></td></tr>
-	  <tr valign="middle">
-	  <td align="center">
-	        <html:form action="/preguntaSeguridad.do">
-                                        <input name="baceptar"  onclick="submit();" type="button" class="botton" value="<bean:message key="btn.confirmar"/>"> 				
-            </html:form >
-	  </td></tr>
-	  </table>
-</div>
-</td>
-</tr>
-<tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-</table></body>
-<%@page import="java.util.ArrayList"%></html>
+
+<div class="container"> 
+    <div class="row">
+
+      <div align="right">
+        <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+      </div>
+      <br>
+      <br>
+      <div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+        <div  class="fuente-principal">
+          <div  class="bienvenida"></div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <logic:present name="msg">
+      <div align="center" class="well col-md-4 col-md-offset-4">
+        <p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+        <p><b><bean:message key="errors.header"/></b></p>
+        <p class="fuente-principal">
+          <%String error = session.getAttribute("msg").toString();%>
+          <bean:message key="<%=error%>"/></p>
+        </div>
+      </logic:present>
+      <%
+      session.removeAttribute("msg");
+      %>
+
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+			<img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+				 <bean:message key="lbl.actualiza.mensaje.resultado"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+
+	         <p><bean:write name="resultado_secuencia"/></p>
+	         <p><bean:write name="resultado_fecha"/></p>
+
+			<div align="center">
+				<html:form action="/preguntaSeguridad.do">
+					<input name="baceptar"  onclick="submit();" type="button" class="btn btn-default" value="<bean:message key="btn.confirmar"/>">
+				</html:form >
+			</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- empieza cinta con derechos reservados -->
+  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
+    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
+  </div>
+
+
+
+</body>
+<%@page import="java.util.ArrayList"%>
+</html>
 
 

@@ -130,7 +130,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 			<br>
 			<br>
 			<logic:present name="msg">
-				<div align="center" class="well col-md-4">
+				<div align="center" class="well col-md-4 col-md-offset-4">
 					<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
 					<p><b><bean:message key="errors.header"/></b></p>
 					<p class="fuente-principal">

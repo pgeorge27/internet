@@ -127,11 +127,11 @@ $(document).ready(function(){
 				<div class="panel-body">
 					<html:form method="post" action="/claveToken.do">
 						<p><bean:message key="lbl.clave.token"/></p>
-						<p><html:text property="claveToken" styleClass="botton-acceso form-control"  maxlength="8" styleId="claveToken"/></p>
+						<p><html:text property="claveToken" styleClass="form-control"  maxlength="8" styleId="claveToken"/></p>
 						<div align="center">
 						<p><input name="button" onclick="send();" type="button" class="btn btn-default" value='<bean:message key="btn.enviar"/>'></p>
 						<p>
-							<div id="teclado" style=" visibility: hidden;">
+							<div id="teclado" style=" display:none; visibility: hidden;">
 								<div id="lower" style="display: none;" ></div>
 								<div id="upper"></div>
 								<div id="cls" align="bo"></div>		

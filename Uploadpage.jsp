@@ -198,7 +198,7 @@ $(document).ready(function()
 </head>
 <body>
 
-<div class="container">
+<div class="container visible-lg">
 
 
  	 <header style="padding-top: 20px;">

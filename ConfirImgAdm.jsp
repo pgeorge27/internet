@@ -210,7 +210,7 @@ function cancelar(){
 
 <div class="container">
 
-		  <div class="row" style="padding-top: 20px;">
+		  <div class="row" style="">
 		<div class="col-md-4 col-md-offset-4">
 		
 				<div class="panel panel-default" >
@@ -322,6 +322,11 @@ function cancelar(){
 										</div>
 
 	</div>
+	<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer>
 	
 </body>
 </html:html> 

@@ -178,7 +178,7 @@ $(document).ready(function()
 
 <%@ include file="body.jsp"  %>
 
-<div class="container">
+<div class="container visible-lg ">
 
 				<logic:present name="msg">
 									<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabla-acceso">

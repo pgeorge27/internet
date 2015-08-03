@@ -20,9 +20,7 @@
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
 
 <script language="javascript">
-function __retornar(){
-	history.back();
-}	
+	
 function __submit()
 {
 	if (document.forms[0].cuenta.value == "")
@@ -55,6 +53,12 @@ function ValidaFechas(date)
 
 
 
+</script>
+
+<SCRIPT language="Javascript">
+function __retornar(){
+	history.back();
+}
 </script>
 
 

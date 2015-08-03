@@ -164,7 +164,7 @@ window.statusbar=' ';
   
   
   
-  
+  <br>
   
   
   
@@ -368,11 +368,12 @@ window.statusbar=' ';
 
 
 
- <div>
-  <div align="center" class="derechos">&copy; 
-        <bean:message key="<%=copyrigth %>"  arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div>
-  </div>
 
 
 
-</div></body></html:html>
+
+</div>
+
+
+    
+    </body></html:html>

@@ -43,86 +43,168 @@ session.setAttribute("asi.session", session.getId());
 
 
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
 <%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+</head>
 <%@ include file="../body.jsp"%>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-    <tr> 
-		<td height="30" class="texto-acceso"><div id=bankdiv align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>"></div></td>
-		<td class="texto-acceso"><div align="right">&nbsp;</div></td>
-	  </tr>
-	  <tr> 
-		<td height="40" colspan="2" valign="bottom"><div align="center"> 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" >
-			  <tr> 
-            <td width="50px"><img src="<html:rewrite page='/images/gancho.gif' />"/></td>	
-				<td width="100%"><div align="left" class="login"><bean:message key="tit.consulta.saldo.cc"/></div></td>
-			  </tr>
-			</table>
-		  </div></td>
-	  </tr>
-	  <tr> 
-		<td valign="top" align="center">
-		<%@ include file="../divHeader.jsp"%>
-			<table width="400" border="0" cellspacing="1" cellpadding="0" >                   
-				<tr align="center"> 
-				  <td width="400" height="20" class="catra-texto" align="center"  colspan="2" >
-					<table width="400" border="0" cellpadding="2" cellspacing="2">
-					  <tr> 
-						<td width="40%" height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cc.fecha"/></div></td>
-						<!-- td width="1%">&nbsp;</td-->
-						<td width="60%" height="15" class="bienvenida" align="right"><%=f.formatFecha(cta.getFecha(), locale)%></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.cc.numero.cuenta"/></div></td>
-						
-						<td align="right"><span class="bienvenida"><%=f.formatCuenta(cta.getNumeroCuenta())%></span></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cc.cliente"/></div></td>
-						
-						<td class="bienvenida" align="right"><%=cta.getNombre()%></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cc.moneda"/></div></td>
-						
-						<td class="bienvenida" align="right" nowrap><%=cta.getMoneda()%></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cc.saldo.total"/></div></td>
-						
-						<td class="bienvenida" align="right"><%=f.formatMonto(cta.getSaldoTotal())%></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.cc.saldo.reserva"/></div></td>
-						
-						<td class="bienvenida" align="right"><%=f.formatMonto(cta.getSaldoReserva())%></td>
-					  </tr>
-					  <tr> 
-						<td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cc.saldo.disponible"/></div></td>
-						
-						<td class="bienvenida" align="right"><%=f.formatMonto(cta.getSaldoDisponible())%></td>
-					  </tr>                         
-                    </table></td>
-                </tr>
-				<tr> 
-					<td colspan="2"  valign="top">&nbsp;</td>
-				</tr>
-				<tr> 
-					<td colspan="2" valign="top" class="texto-acceso"><div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div></td>
-				</tr>
-				<tr> 
-					<td colspan="2"  valign="top">&nbsp;</td>
-				</tr>
-				<tr> 
-					<td valign="top" class="texto-acceso" width="50%"  align="center">
-							<INPUT class="botton" onclick="verMovimientos();" type=button value=<bean:message key="lbl.movimientos"/>>
-					 </td>
-					<td valign="top" class="texto-acceso" width="50%"  align="CENTER">
-							<INPUT class="botton" onclick="retornar()" type=button value="<bean:message key="lbl.retroceder"/>">
-					 </td></tr>
-            </table>
-            <%@ include file="../divFooter.jsp"%>
-</td></tr></table>
+<body>
+
+
+
+<div align="center" class="container"> 
+
+
+
+
+ <div class="row">
+ 
+ <div class="col-md-2"></div>
+
+          <div class="col-md-8"><div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="tit.consulta.saldo.cc"/></strong></div>
+  <div class="panel-body">
+
+
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.fecha"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatFecha(cta.getFecha(), locale)%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.numero.cuenta"/>:</strong></div>
+    <div class="col-md-3" align="left" ><%=f.formatCuenta(cta.getNumeroCuenta())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.cliente"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=cta.getNombre()%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.moneda"/>:</strong></div>
+    <div class="col-md-4" align="left"><%=cta.getMoneda()%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.saldo.total"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getSaldoTotal())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.saldo.reserva"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getSaldoReserva())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.cc.saldo.disponible"/>:</strong></div>
+    <div class="col-md-3" align="left"><%=f.formatMonto(cta.getSaldoDisponible())%></div>
+  <div class="col-md-1"></div>
+
+ </div>
+
+
+
+
+
+	<br> 
+					
+					
+					<div class="visible-lg" align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+	
+
+
+	<br> 
+
+
+
+  	<div align="center">
+	<INPUT class="btn btn-default" style="width: 100px" onclick="verMovimientos();" type=button value=<bean:message key="lbl.movimientos"/>>
+		
+<INPUT class="btn btn-default" style="width: 100px" onclick="retornar()" type=button value="<bean:message key="lbl.retroceder"/>">
+				</div>
+							
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+ </div>
+
+ </div>
+
+ </div>
+
+
+
+
 <SCRIPT language="Javascript">
   function verMovimientos (){
     window.location.href="<html:rewrite page='/servicios/movimiento.jsp?prod=CC&cuenta='/><%=cuentaReq%>&back=1";
@@ -134,4 +216,8 @@ session.setAttribute("asi.session", session.getId());
   
 </script>
 
+
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>

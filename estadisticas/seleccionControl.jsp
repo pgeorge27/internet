@@ -238,7 +238,7 @@ function retornar(){
   <div class="col-md-3"></div>
 
   <div class="col-md-2"><strong><bean:message key="lbl.desde"/>:</strong></div>
-  <div class="col-md-4"><html:text property="desde" styleClass="form-control" size="20" maxlength="12"/></div>
+  <div class="col-md-4"><html:text property="desde"  styleId="desde"  styleClass="form-control" size="20" maxlength="12"/></div>
   <div class="col-md-2"><input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]</div>
 
   </div>
@@ -252,7 +252,7 @@ function retornar(){
   <div class="col-md-3"></div>
 
   <div class="col-md-2"><strong><bean:message key="lbl.hasta"/>:</strong></div>
-  <div class="col-md-4"><html:text property="hasta" styleClass="form-control" size="20" maxlength="12"/></div>
+  <div class="col-md-4"><html:text property="hasta" styleId="hasta" styleClass="form-control" size="20" maxlength="12"/></div>
   <div class="col-md-2"><input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]</div>
 
   </div>

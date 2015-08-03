@@ -16,7 +16,7 @@ String  copyrigth = (session.getAttribute("codigo.servicio").toString().equals("
 <html>
 <head>
 
-<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript"
 	src="<html:rewrite page='/scripts/jquery.min.js'/>"></script>
 <script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>

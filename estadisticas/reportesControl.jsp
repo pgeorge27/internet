@@ -28,6 +28,11 @@ com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
 	session.setAttribute("size6", null);
 	
 %>
+
+<!DOCTYPE html>
+<html:html>
+
+<head>
 <%@ include file="/head.jsp"  %>
 <script language=javascript>
 
@@ -174,33 +179,54 @@ function openwin(url)
 
 }
 </script>
+</head>
 <%@ include file="/body.jsp"%>
+
+
+<body>
+
+<div class="container">
 <html:form action="/dian/elaborar/editar">
 	<html:hidden property="indice"/>
 </html:form>
 
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
-              <tr> 
-                <td height="40" valign="bottom"><div align="left"> 
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-                      <tr> 
-                        <td><div align="left" class="login">Reporte de Control</div></td>
-                        <td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-                      </tr>
-                    </table>
-                  </div></td>
-              </tr>
-            
-		</table>         
-			<table width="100%" border="0" align="center" cellpadding="5" cellspacing="5">     
-              <tr> 
-                <td valign="top">               
+
+
+	<div align="right">
+						<INPUT class="btn btn-default" onclick="__retornar()" type="button" value="<bean:message key="lbl.retroceder"/>">
+						</div>
+
+
+
+<br>
+
+
+<br>
+
+
+
+
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong>Reporte de Control</strong></div>
+
+</div>
+
+<br>
+
+
+
+
+
+
+
+          
 
 
 				<logic:notEmpty name="infoDecImportacion">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+														<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="4">
 							<div align="center" class="texto-acceso">INFORMACIÓN POR DECLARACIÓN DE IMPORTACIÓN</div>
@@ -208,13 +234,13 @@ function openwin(url)
 						<td><a  href="<html:rewrite page='/do.declaimportacion'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="20%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="20%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="20%" align="center">No. Declaración de Importación</td>
-                        <td class="texto-acceso" width="20%" align="center">Año Declaración</td>
-                        <td class="texto-acceso" width="20%" align="center">Valor USD</td>
+                        <td class="texto-acceso" style="width: 8%;" align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">No. Declaración de Importación</td>
+                        <td class="texto-acceso"  align="center">Año Declaración</td>
+                        <td class="texto-acceso"  align="center">Valor USD</td>
                         
-					 </tr>
+					 </tr></thead>
 					 
                      <logic:present name="infoDecImportacion">
                      <logic:iterate name="infoDecImportacion" id="row"
@@ -226,22 +252,23 @@ function openwin(url)
 					    <logic:notEqual name="remainder0" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
-                        <td class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo3"/></td>
-						<td class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="right"><bean:write name="row" property="campo5" format="##,###,###,##0.00"/></td>						
+                        <td data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
+                        <td data-title="No. Declaración de Importación" class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo3"/></td>
+						<td data-title="Año Declaración" class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
+                        <td data-title="Valor USD" class="bienvenida" align="right"><bean:write name="row" property="campo5" format="##,###,###,##0.00"/></td>						
                     </tr>
 					    
                      </logic:iterate>
 					<tr>
 					     
-					    <td colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					    <td data-title="Cantidad de Registros"  colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
 <%-- 					   <td class="bienvenida" align="right"><b><bean:write name="row" property="cantidad" /></b></td> --%>
 						<td class="bienvenida" align="right"><b><%=size1 %></b></td>	
 					 </tr>
                      </logic:present>
 				</table>
+				</div>
 
 			</logic:notEmpty>
 			<tr> 
@@ -249,7 +276,9 @@ function openwin(url)
 			
 			<logic:notEmpty name="infoDocTransporte">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+																	<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="4">
 							<div align="center" class="texto-acceso">INFORMACIÓN POR DOCUMENTO DE TRANSPORTE</div>
@@ -257,12 +286,12 @@ function openwin(url)
 						<td><a  href="<html:rewrite page='/do.docutransporte'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="20%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="20%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="20%" align="center">Documento de Trasporte NO.</td>
-                        <td class="texto-acceso" width="20%" align="center">Fecha documento</td>
-                        <td class="texto-acceso" width="20%" align="center">Valor USD</td>                                                                        
-                     </tr>
+                        <td style="width: 8%;" class="texto-acceso"  align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">Documento de Trasporte NO.</td>
+                        <td class="texto-acceso"  align="center">Fecha documento</td>
+                        <td class="texto-acceso"  align="center">Valor USD</td>                                                                        
+                     </tr></thead>
                      <logic:present name="infoDocTransporte">
                      <logic:iterate name="infoDocTransporte" id="row"
                      type="com.arango.internet.banking.ReportesControlBean" indexId="resultNo">
@@ -273,19 +302,20 @@ function openwin(url)
 					    <logic:notEqual name="remainder1" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
-                        <td class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo1"/></td>
-						<td class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="right"><bean:write name="row" property="campo5" format="##,###,###,##0.00"/></td>
+                        <td data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo2" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
+                        <td data-title="Documento de Transporte NO." class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo1"/></td>
+						<td data-title="Fecha Documento" class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
+                        <td data-title="Valor USD" class="bienvenida" align="right"><bean:write name="row" property="campo5" format="##,###,###,##0.00"/></td>
                     </tr>
                      </logic:iterate>
                      <tr>					     
-					    <td colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					    <td data-title="Cantidad de Registros" colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
 					   <td class="bienvenida" align="right"><b><%=size2 %></b></td>
 					 </tr>
                      </logic:present>
 				</table>
+				</div>
 
 			</logic:notEmpty>
 			<tr> 
@@ -293,7 +323,9 @@ function openwin(url)
 			
 			<logic:notEmpty name="infoDecExportacion">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+																				<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="5">
 							<div align="center" class="texto-acceso">INFORMACIÓN POR DECLARACIÓN DE EXPORTACIÓN</div>
@@ -301,13 +333,13 @@ function openwin(url)
 						<td><a  href="<html:rewrite page='/do.declaexportacion'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="16%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="17%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="16%" align="center">No. Declaración de Exportación</td>
-                        <td class="texto-acceso" width="17%" align="center">Fecha de Exportación</td>
-                        <td class="texto-acceso" width="16%" align="center">Numeral</td>    
-                        <td class="texto-acceso" width="17%" align="center">Valor Reintegrado</td>                                             
-                     </tr>
+                        <td style="width: 8%;" class="texto-acceso"  align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">No. Declaración de Exportación</td>
+                        <td class="texto-acceso"  align="center">Fecha de Exportación</td>
+                        <td class="texto-acceso"  align="center">Numeral</td>    
+                        <td class="texto-acceso"  align="center">Valor Reintegrado</td>                                             
+                     </tr></thead>
                      <logic:present name="infoDecExportacion">
                      <logic:iterate name="infoDecExportacion" id="row"
                      type="com.arango.internet.banking.ReportesControlBean" indexId="resultNo">
@@ -318,20 +350,21 @@ function openwin(url)
 					    <logic:notEqual name="remainder2" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
-                        <td class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo3"/></td>
-						<td class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo5" /></td>
-                        <td class="bienvenida" align="right"><bean:write name="row" property="campo6" format="##,###,###,##0.00" /></td>
+                        <td data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
+                        <td data-title="No. Declaración de Exportación" class="bienvenida" align="left">&nbsp;<bean:write name="row" property="campo3"/></td>
+						<td data-title="Fecha de Exportación" class="bienvenida" align="center"><bean:write name="row" property="campo4" format="dd/mm/yyyy"/></td>
+                        <td data-title="Numeral" class="bienvenida" align="center"><bean:write name="row" property="campo5" /></td>
+                        <td data-title="Valor Reintegrado" class="bienvenida" align="right"><bean:write name="row" property="campo6" format="##,###,###,##0.00" /></td>
                     </tr>
                      </logic:iterate>
                      <tr>					     
-					    <td colspan="5" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					    <td data-title="Cantidad de Registros" colspan="5" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
 					   <td class="bienvenida" align="right"><b><%=size3 %></b></td>
 					 </tr>
                      </logic:present>                     
 				</table>
+				</div>
 			
 			</logic:notEmpty>
 			<tr> 
@@ -339,7 +372,9 @@ function openwin(url)
 			
 			<logic:notEmpty name="infoEndeudamiento">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+																							<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="5">
 							<div align="center" class="texto-acceso">INFORMACIÓN DE ENDEUDAMIENTO</div>
@@ -347,13 +382,13 @@ function openwin(url)
 						<td><a  href="<html:rewrite page='/do.infoendeudamiento'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="17%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="16%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="17%" align="center">No. de Prestamo</td>
-                        <td class="texto-acceso" width="18%" align="center">Nombre del Deudor o Acreedor</td>
-                        <td class="texto-acceso" width="16%" align="center">Numeral</td>    
-                        <td class="texto-acceso" width="17%" align="center">Valor USD</td>                                             
-                     </tr>
+                        <td style="width: 8%;" class="texto-acceso"  align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">No. de Prestamo</td>
+                        <td class="texto-acceso"  align="center">Nombre del Deudor o Acreedor</td>
+                        <td class="texto-acceso" align="center">Numeral</td>    
+                        <td class="texto-acceso" align="center">Valor USD</td>                                             
+                     </tr></thead>
                      <logic:present name="infoEndeudamiento">
                      <logic:iterate name="infoEndeudamiento" id="row"
                      type="com.arango.internet.banking.ReportesControlBean" indexId="resultNo">
@@ -364,20 +399,21 @@ function openwin(url)
 					    <logic:notEqual name="remainder3" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
-						<td class="bienvenida" align="left"><bean:write name="row" property="campo4" /></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo5" /></td>
-                        <td class="bienvenida" align="right"><bean:write name="row" property="campo6" format="##,###,###,##0.00"/></td>
+                        <td style="width: 8%;" data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
+                        <td data-title="No. de Prestamo" class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
+						<td data-title="Nombre del Deudor o Acreedor" class="bienvenida" align="left"><bean:write name="row" property="campo4" /></td>
+                        <td data-title="Numeral" class="bienvenida" align="center"><bean:write name="row" property="campo5" /></td>
+                        <td data-title="Valor USD" class="bienvenida" align="right"><bean:write name="row" property="campo6" format="##,###,###,##0.00"/></td>
                     </tr>
                      </logic:iterate>
                      <tr>					     
-					    <td colspan="5" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
-					   <td class="bienvenida" align="right"><b><%=size4 %></b></td>
+					    <td data-title="Cantidad de Registros" colspan="5" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					   <td  class="bienvenida" align="right"><b><%=size4 %></b></td>
 					 </tr>
                      </logic:present>
                 </table>
+                </div>
 
 			</logic:notEmpty>
 			<tr> 
@@ -385,7 +421,9 @@ function openwin(url)
 			
 			<logic:notEmpty name="infoDatosFaltantes1059">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+																										<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="4">
 							<div align="right" class="texto-acceso">INFORMACIÓN DE DATOS FALTANTES DEL FORMATO 1</div>
@@ -393,12 +431,12 @@ function openwin(url)
 						<td><div align="center"><a  href="<html:rewrite page='/do.datosuno'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></div></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="20%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="10%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="10%" align="center">Numeral</td>
-                        <td class="texto-acceso" width="20%" align="center">Valor USD</td>
-						<td class="texto-acceso" width="30%" align="center">Observaciones</td>
-                     </tr>
+                        <td style="width: 8%;" class="texto-acceso"  align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">Numeral</td>
+                        <td class="texto-acceso" 20%" align="center">Valor USD</td>
+						<td class="texto-acceso"  align="center">Observaciones</td>
+                     </tr></thead>
                      <logic:present name="infoDatosFaltantes1059">
                      <logic:iterate name="infoDatosFaltantes1059" id="row"
                      type="com.arango.internet.banking.ReportesControlBean" indexId="resultNo">
@@ -409,19 +447,20 @@ function openwin(url)
 					    <logic:notEqual name="remainder4" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
-						<td class="bienvenida" align="right"><bean:write name="row" property="campo4" format="##,###,###,##0.00"/></td>
-						<td class="bienvenida" align="left"><bean:write name="row" property="campo7"/></td>
+                        <td style="width: 8%;" data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
+                        <td data-title="Numeral" class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
+						<td data-title="Valor USD" class="bienvenida" align="right"><bean:write name="row" property="campo4" format="##,###,###,##0.00"/></td>
+						<td data-title="Observaciones" class="bienvenida" align="left"><bean:write name="row" property="campo7"/></td>
                     </tr>
                      </logic:iterate>
                      <tr>					     
-					    <td colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					    <td data-title="Cantidad de Registros" colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
 					   <td class="bienvenida" align="right"><b><%=size5 %></b></td>
 					 </tr>
                      </logic:present>
 				</table>
+				 </div>
 	
 			</logic:notEmpty>
 			<tr> 
@@ -429,7 +468,9 @@ function openwin(url)
 			
 			<logic:notEmpty name="infoDatosFaltantes1060">
 				
-				<table width="100%" border="0" cellpadding="1" cellspacing="2" align="center">
+																											<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
 					<tr>
 						<td colspan="4">
 							<div align="right" class="texto-acceso">INFORMACIÓN DE DATOS FALTANTES DEL FORMATO 2</div>
@@ -437,12 +478,12 @@ function openwin(url)
 						<td><div align="center"><a  href="<html:rewrite page='/do.datosdos'/>"><img src="../images/icono_acrobat.gif" border=0><bean:message key="lbl.pdf.download"/></a></div></td>				
 					</tr>
 	                 <tr class="tabla-acceso">
-                        <td class="texto-acceso" width="20%" align="center">Fecha Formulario</td>
-                        <td class="texto-acceso" width="10%" align="center">No. Consecutivo</td>
-                        <td class="texto-acceso" width="10%" align="center">Numeral</td>
-                        <td class="texto-acceso" width="20%" align="center">Valor USD</td>
-						<td class="texto-acceso" width="30%" align="center">Observaciones</td>
-                     </tr>
+                        <td style="width: 8%;" class="texto-acceso"  align="center">Fecha Formulario</td>
+                        <td class="texto-acceso"  align="center">No. Consecutivo</td>
+                        <td class="texto-acceso"  align="center">Numeral</td>
+                        <td class="texto-acceso"  align="center">Valor USD</td>
+						<td class="texto-acceso"  align="center">Observaciones</td>
+                     </tr></thead>
             <logic:present name="infoDatosFaltantes1060">
             	<logic:iterate name="infoDatosFaltantes1060" id="row"
                      type="com.arango.internet.banking.ReportesControlBean" indexId="resultNo">
@@ -453,17 +494,17 @@ function openwin(url)
 					    <logic:notEqual name="remainder5" value="0">
 					       <tr class="celda-clave1">
 					    </logic:notEqual>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
-                        <td class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
-						<td class="bienvenida" align="right"><bean:write name="row" property="campo4" format="##,###,###,##0.00"/></td>
-						<td class="bienvenida" align="left"><bean:write name="row" property="campo7"/></td>
+                        <td data-title="Fecha Formulario" class="bienvenida" align="center"><bean:write name="row" property="campo1" format="dd/mm/yyyy"/></td>
+                        <td data-title="No. Consecutivo" class="bienvenida" align="center"><bean:write name="row" property="campo2"/></td>
+                        <td data-title="Numeral" class="bienvenida" align="center"><bean:write name="row" property="campo3"/></td>
+						<td data-title="Valor USD" class="bienvenida" align="right"><bean:write name="row" property="campo4" format="##,###,###,##0.00"/></td>
+						<td data-title="Observaciones" class="bienvenida" align="left"><bean:write name="row" property="campo7"/></td>
 						
                     </tr>
 					
                      </logic:iterate>
 					 <tr>					     
-					    <td colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
+					    <td data-title="Cantidad de Registros" colspan="4" class="texto-acceso" width="20%" align="right">Cantidad  de Registros:</td>
 					   <td class="bienvenida" align="right"><b><%=size6 %></b></td>
 					 </tr>
                      </logic:present>
@@ -477,6 +518,9 @@ function openwin(url)
 	<tr> 
 		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
 		
-				<INPUT class="botton" onclick="__retornar();" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
+				<INPUT class="btn btn-default" onclick="__retornar();" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
 </table>			
 <%@ include file="/footer.jsp"  %>
+</div>
+</body>
+</html:html>

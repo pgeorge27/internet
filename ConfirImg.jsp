@@ -176,7 +176,7 @@ document.onkeypress = function(e)  // FireFox/Others
 
 
 
-  	 <header style="padding-top: 20px;">
+  	 <header style="">
 			<img border="0" align="right" src="<html:rewrite page='/images/logo.jpg'/>"/>
 		    </header>
 		    
@@ -301,6 +301,12 @@ document.onkeypress = function(e)  // FireFox/Others
 										
 										</div>
 										</div>
+										
+										<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer>
 								
 
 </body>

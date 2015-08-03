@@ -128,16 +128,17 @@ private String getDescEstado(String estado){
     <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.elaborador.por"/></TD>
     <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.estado"/></TD>
     <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.nivel.aprobacion"/></TD>
-    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.comentario"/></TD></TR>
+    <TD class="texto-acceso" ><bean:message key="lbl.transf.inter.comentario"/></TD></TR></thead>
   <TR>
     <TD colspan="8"></TD>
-    <TD class="texto-acceso"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <TD class="texto-acceso"><table class="col-md-12 table-bordered table-striped table-condensed cf">
+    <thead class="cf">
     						  <tr class="tabla-acceso">
     						  	  <td class="texto-acceso" ><bean:message key="lbl.transf.inter.aprobado.por"/></td>
     						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.fecha.aprobacion"/></td>
     						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.tipo.relacion"/></td>
-    						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.estado"/></td></tr>
-    						  </table></td></tr>  </thead>
+    						      <td class="texto-acceso" ><bean:message key="lbl.transf.inter.estado"/></td></tr></thead>
+    						  </table></td></TR>
 <%
 ArrayList data = (ArrayList)session.getAttribute("transferencias");
 String styleClass = "";
@@ -157,13 +158,13 @@ if (data != null){
             buffer.append("<table width=\"100%\">");
             for (int j = 0; j < t.getDetalle().size(); j++){
 	            detalle = (DetalleTransferencia) t.getDetalle().get(j);	 	            
-	            buffer.append("<tr><td class=\"bienvenida\" width=\"30%\">");
+	            buffer.append("<tr><td class=\"bienvenida\">");
 	            buffer.append(detalle.getUsername());
-	            buffer.append("</td><td class=\"bienvenida\" width=\"30%\">");
+	            buffer.append("</td><td class=\"bienvenida\" >");
 	            buffer.append(f.formatFecha(detalle.getFechaAprobacion(), locale));
-	            buffer.append("</td><td class=\"bienvenida\" width=\"10%\">");
+	            buffer.append("</td><td class=\"bienvenida\" >");
 	            buffer.append(detalle.getTipoRelacion());
-	            buffer.append("</td><td class=\"bienvenida\" width=\"30%\" nowrap>");
+	            buffer.append("</td><td class=\"bienvenida\">");
 	            buffer.append(com.arango.internet.tag.TagUtil.getString(pageContext, getNivelAutorizacion(detalle.getEstado())));	            
 	            buffer.append("</td></tr>");
             }
@@ -192,12 +193,17 @@ if (data != null){
 } /* End if */ %>  
 </table>
 <br>
+<br>
 </div>
+<br>
+<br>
 <br>
 <div align="center">
 <br>
 <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/servicios/transferencias.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
 </tr></div></table>
+<br>
+
 
 <%@ include file="../footer.jsp"  %>
 

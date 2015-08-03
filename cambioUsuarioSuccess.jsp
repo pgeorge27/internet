@@ -112,7 +112,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<html:rewrite page='/style/estilo.css'/>" rel="stylesheet" type="text/css">
 </head>
-<body style="padding-top: 20px;">
+<body style="">
 
 <div class="container">
 
@@ -168,5 +168,9 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 	  </html:form>	
 	</div>
-		</body></html:html>
+		<footer class="footer">
+      <div class="container">
+       <%@ include file="footer.jsp" %>
+      </div>
+    </footer></body></html:html>
 

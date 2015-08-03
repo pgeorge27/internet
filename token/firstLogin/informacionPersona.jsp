@@ -349,11 +349,11 @@ function __changeTipoEnvio(__element){
 						<p><bean:message key="lbl.actualiza.leyenda"/></p>
 						<p><b><bean:message key="lbl.actualiza.natural.titulo.2"/></b></p>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<font color="#FF0000">*</font>
 							<bean:message key="lbl.actualiza.natural.nombre"/>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="nombre" name="frmPersona" />
 							</p>
@@ -361,109 +361,497 @@ function __changeTipoEnvio(__element){
 						</div>
 
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<font color="#FF0000">*</font>
 							<bean:message key="lbl.actualiza.natural.primer.apellido"/>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="primerApellido" name="frmPersona"/>
 							</p>
 							<html:hidden property="primerApellido"/>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<bean:message key="lbl.actualiza.natural.segundo.apellido"/>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="segundoApellido" name="frmPersona"/>
 							</p>
 							<html:hidden property="segundoApellido"/>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<p>
 								<bean:message key="lbl.actualiza.natural.apellido.casada"/>
 							</p>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<p>
 								<html:text property="apellidoCasada" styleClass="form-control" maxlength="25"/>
 								<html:hidden property="segundoApellido"/>
 							</p>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<font color="#FF0000">*</font>
 							<bean:message key="lbl.actualiza.natural.identificacion"/>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="identificacion" name="frmPersona"/>
 							</p>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<bean:message key="lbl.actualiza.natural.estado.civil"/>
 						</div>
-						<div class="col-md-9">
-							<html:select property="estadoCivil" styleClass="form-control">
-								<html:option value="">[Seleccione un valor]</html:option>
-								<html:option value="S">Soltero (a)</html:option>
-								<html:option value="C">Casado (a)</html:option>
-								<html:option value="D">Divorciado (a)</html:option>
-								<html:option value="V">Viudo (a)</html:option>
-								<html:option value="U">Unión Libre</html:option>
-							</html:select>
-						</div>
-
-<!-- 						<div class="col-md-3">
-							<font color="#FF0000">*</font>
-							<bean:message key="lbl.actualiza.natural.fecha.nacimiento"/>
-						</div>
-						<div class="col-md-9">
-							<p class="form-control" >
-								<html:select property="year" styleClass="textfield-y" styleId="year" onchange="updateYear(this)">
-								<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
-								<html:option value=""></html:option>
-								<html:options collection="cpYears" property="key" labelProperty="value"/>
+						<div class="col-md-8">
+							<p>
+								<html:select property="estadoCivil" styleClass="form-control">
+									<html:option value="">[Seleccione un valor]</html:option>
+									<html:option value="S">Soltero (a)</html:option>
+									<html:option value="C">Casado (a)</html:option>
+									<html:option value="D">Divorciado (a)</html:option>
+									<html:option value="V">Viudo (a)</html:option>
+									<html:option value="U">Unión Libre</html:option>
 								</html:select>
-
-								<html:select styleClass="textfield-m" styleId="month" property="month" onchange="updateMonth(this)">
-								<html:option value=""></html:option>
-								<html:option value="01">01</html:option>
-								<html:option value="02">02</html:option>
-								<html:option value="03">03</html:option>
-								<html:option value="04">04</html:option>
-								<html:option value="05">05</html:option>
-								<html:option value="06">06</html:option>
-								<html:option value="07">07</html:option>
-								<html:option value="08">08</html:option>
-								<html:option value="09">09</html:option>
-								<html:option value="10">10</html:option>
-								<html:option value="11">11</html:option>
-								<html:option value="12">12</html:option>
-								</html:select>
-
-								<html:select styleClass="textfield-m" styleId="day" property="day" onchange="updateDay(this)">
-								<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
-								<html:option value=""></html:option>
-								<html:options collection="cpDays" property="key" labelProperty="value"/>
-								</html:select>
-
 							</p>
 						</div>
 
-						<div class="col-md-3">
-							Fecha: <span id="selectedDate"></span>
+						<div class="col-md-4">
+								<font color="#FF0000">*</font>
+								<bean:message key="lbl.actualiza.natural.fecha.nacimiento"/>
 						</div>
-						<div class="col-md-9">
-							<p class="form-control" >
+
+						<div class="col-md-8">
+							<p>
+								<div class="col-md-4">
+									<html:select property="year" styleClass="form-control" styleId="year" onchange="updateYear(this)">
+									<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
+									<html:option value=""></html:option>
+									<html:options collection="cpYears" property="key" labelProperty="value"/>
+									</html:select>
+								</div>
+
+								<div class="col-md-4">
+									<html:select styleClass="form-control" styleId="month" property="month" onchange="updateMonth(this)">
+									<html:option value=""></html:option>
+									<html:option value="01">01</html:option>
+									<html:option value="02">02</html:option>
+									<html:option value="03">03</html:option>
+									<html:option value="04">04</html:option>
+									<html:option value="05">05</html:option>
+									<html:option value="06">06</html:option>
+									<html:option value="07">07</html:option>
+									<html:option value="08">08</html:option>
+									<html:option value="09">09</html:option>
+									<html:option value="10">10</html:option>
+									<html:option value="11">11</html:option>
+									<html:option value="12">12</html:option>
+									</html:select>
+								</div>
+
+								<div class="col-md-4">
+									<html:select styleClass="form-control" styleId="day" property="day" onchange="updateDay(this)">
+									<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
+									<html:option value=""></html:option>
+									<html:options collection="cpDays" property="key" labelProperty="value"/>
+									</html:select>
+								</div>
+
+							</p>
+						</div>
+						<div class="col-md-8 col-md-offset-4">
+							<p>
+								Fecha: <span id="selectedDate"></span>
 								<html:hidden property="fechaNacimientoStr" />
 							</p>
-						</div> -->
-						</html:form>
+						</div>
+
+						<logic:messagesPresent name="msg_fechaNacimientoStr">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+								__setChangeColor("fechaNacimientoStr");
+							</script>
+						</logic:messagesPresent>
+
+
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.nacionalidad.1"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="nacionalidad"
+								styleClass="form-control" styleId="nacionalidad">
+								<bean:define id="cp1" scope="session" name="list_nacionalidad" type="java.util.List"/>
+								<html:option value="">[Seleccione un valor]</html:option>
+								<html:options collection="cp1" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_nacionalidad">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+								__setChangeColor("nacionalidad");
+							</script>
+						</logic:messagesPresent>
+
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.nacionalidad.2"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="nacionalidadSecundaria"
+									styleClass="form-control" styleId="nacionalidadSecundaria">
+									<bean:define id="cp11" scope="session" name="list_nacionalidad" type="java.util.List"/>
+									<html:option value="">[Seleccione un valor]</html:option>
+									<html:options collection="cp11" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.actividad.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="actividadLaboral" styleClass="form-control" styleId="actividadLaboral">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp2" scope="session" name="list_actividad_laboral" type="java.util.List"/>
+									<html:options collection="cp2" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+								<bean:message key="lbl.actualiza.natural.profesion"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="profesion" styleClass="form-control" styleId="profesion">
+									<html:option value="">[Seleccione un valor]</html:option>
+									<bean:define id="cp4" scope="session" name="list_profesiones" type="java.util.List"/>
+									<html:options collection="cp4" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<p><b><bean:message key="lbl.actualiza.natural.titulo.3"/></b></p>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.direccion"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:textarea property="direccion" styleId="direccion" cols="45" rows="3" styleClass="form-control" onkeypress="return imposeMaxLength(event, this, 200);" />
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_direccion">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("direccion");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.pais"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="pais" styleClass="form-control" styleId="pais">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp5" scope="session" name="list_paises" type="java.util.List"/>
+									<html:options collection="cp5" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_pais">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("pais");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.departamento"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="departamento"
+								styleClass="form-control" styleId="departamento">
+								<html:option value="0">[Seleccione un valor]</html:option>
+								<bean:define id="cp7" scope="session" name="list_departamentos" type="java.util.List"/>
+								<html:options collection="cp7" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.ciudad"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="ciudad" styleClass="form-control" styleId="ciudad">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp6" scope="session" name="list_ciudades" type="java.util.List"/>
+									<html:options collection="cp6" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.telefono.residencial"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="telefono" styleId="telefono" styleClass="form-control"  maxlength="20"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_telefono">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("telefono");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.telefono.movil"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="celular" styleId="celular" styleClass="form-control" maxlength="20"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_celular">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("celular");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.email.contacto"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="emailContacto" styleId="emailContacto" styleClass="form-control" maxlength="50"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_emailContacto">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("emailContacto");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.confirmar.email.contacto"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="emailContacto2" styleId="emailContacto2" styleClass="form-control" maxlength="50"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_emailContacto2">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("emailContacto2");
+							</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<font color="#FF0000">*</font>
+							<bean:message key="lbl.actualiza.natural.envio.correspondencia"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+							<html:select property="envioCorrespondencia" styleClass="form-control" onchange="__changeTipoEnvio(this)">
+								<html:option value="">[Seleccione un valor]</html:option>
+								<!--<html:option value="D">Dirección Física</html:option>-->
+								<html:option value="C">Correo Electrónico</html:option>
+								<html:option value="R">No Envíar - Consulta Por Internet</html:option>
+							</html:select>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_envioCorrespondencia">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("envioCorrespondencia");
+							</script>
+						</logic:messagesPresent>
+
+						<logic:messagesPresent name="msg_correoElectronico">
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("correoElectronico");
+							</script>
+						</logic:messagesPresent>
+
+						<p><b><bean:message key="lbl.actualiza.natural.titulo.4"/></b></p>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.nombre.empresa"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="nombreEmpresa" styleClass="form-control"  maxlength="120"/>
+							</p>
+						</div>
+
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.cargo"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="cargo" styleClass="form-control"  maxlength="50"/>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.direccion.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:textarea property="direccionEmpresa" cols="45" rows="3" styleClass="form-control" onkeypress="return imposeMaxLength(event, this, 200);" />
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.pais.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="paisEmpresa" styleClass="form-control" styleId="paisEmpresa">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp12" scope="session" name="list_paises" type="java.util.List"/>
+									<html:options collection="cp12" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.departamento.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="departamentoEmpresa" styleClass="form-control" styleId="departamentoEmpresa">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp10" scope="session" name="list_departamentos_emp" type="java.util.List"/>
+									<html:options collection="cp10" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.ciudad.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:select property="ciudadEmpresa" styleClass="form-control" styleId="ciudadEmpresa">
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp9" scope="session" name="list_ciudades_emp" type="java.util.List"/>
+									<html:options collection="cp9" property="key" labelProperty="value"/>
+								</html:select>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.telefono.oficina"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text styleId="telefonoEmpresa" property="telefonoEmpresa" styleClass="form-control" maxlength="20"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_telefonoEmpresa">
+						<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+						<script type="text/javascript">
+						__setChangeColor("telefonoEmpresa");
+						</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.fax"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="faxEmpresa" styleId="faxEmpresa" styleClass="form-control" maxlength="20"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_faxEmpresa">
+						<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+						<script type="text/javascript">
+						__setChangeColor("faxEmpresa");
+						</script>
+						</logic:messagesPresent>
+
+						<div class="col-md-4">
+							<bean:message key="lbl.actualiza.natural.correo.electronico.laboral"/>
+						</div>
+
+						<div class="col-md-8">
+							<p>
+								<html:text property="correoElectronicoEmpresa" styleId="correoElectronicoEmpresa" styleClass="form-control" maxlength="50"/>
+							</p>
+						</div>
+
+						<logic:messagesPresent name="msg_correoElectronicoEmpresa">
+						<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+						<script type="text/javascript">
+						__setChangeColor("correoElectronicoEmpresa");
+						</script>
+						</logic:messagesPresent>
+
+						<div align="center">
+							<input type="button" class="btn btn-default" onclick="__submit();" id='actualizar' value="<bean:message key='lbl.actualiza.boton.actualizar'/>"/>
+						</div>
+
+
+					</html:form> 
+
 				</div>
 			</div>
 		</div>
@@ -476,418 +864,6 @@ function __changeTipoEnvio(__element){
 			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' /></p>
 	</div>
 
-
-<table id="Table_01" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-   <tr> 
-        <td ><br>
-		<table width="100%" border="0" cellpadding="10" cellspacing="0">
-			<tr><td align="right"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"/></td></tr></table>
-			<br></td>
-    <td>&nbsp;</td>
-     
-  </tr>
-  <tr> 
-    <td height="26" width="100%" colspan="2" align="right" style="height:26;background-color:#EFEFEF;"><div  class="fuente-principal"><bean:message key="<%=paso%>"/></div></td>
-  </tr>
-  <tr valign="top"> 
-    <td colspan="4">
-
-	<div align="center">
-	    <html:form action="/salvaInformacionPersona.do">
-	    	 <table class="marco-titulo" border="0" cellspacing="1" cellpadding="1">
-
-
-	    	 </table>
-	    	 <table class="marco" border="0" cellspacing="1" cellpadding="1">
-	    	 	<tr valign="top">	    	 		
-							<td class="celdas"><font color="#FF0000">*</font></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.primer.apellido"/></td>
-							<td class="celdas"><div class="text"><bean:write property="primerApellido" name="frmPersona"/></div>
-								<html:hidden property="primerApellido"/></td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.segundo.apellido"/></td>
-							<td class="celdas"><div class="text"><bean:write property="segundoApellido" name="frmPersona"/></div>
-								<html:hidden property="segundoApellido"/></td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.apellido.casada"/></td>
-							<td class="celdas"><html:text property="apellidoCasada" styleClass="textfield" maxlength="25" size="45"/></td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.identificacion"/></td>
-							<td class="celdas"><div class="text"><bean:write property="identificacion" name="frmPersona"/></div>
-								<html:hidden property="identificacion"/></td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.estado.civil"/></td>
-							<td class="celdas"><html:select property="estadoCivil" styleClass="textfield">
-													<html:option value="">[Seleccione un valor]</html:option>
-													<html:option value="S">Soltero (a)</html:option>
-													<html:option value="C">Casado (a)</html:option>
-													<html:option value="D">Divorciado (a)</html:option>
-													<html:option value="V">Viudo (a)</html:option>
-													<html:option value="U">Unión Libre</html:option>													
-											   </html:select></td>
-								<td>
-							</td></tr>
-						<tr valign="top">
-			    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.fecha.nacimiento"/></td>
-							<td class="celdas"><html:select property="year"
-													styleClass="textfield-y" styleId="year" onchange="updateYear(this)">
-													<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
-													<html:option value=""></html:option>
-									            	<html:options collection="cpYears" property="key" labelProperty="value"/>
-											</html:select>
-						        &nbsp;&nbsp;
-						        <html:select styleClass="textfield-m" styleId="month" property="month" onchange="updateMonth(this)">
-						        	<html:option value=""></html:option>
-						        	<html:option value="01">01</html:option>
-						        	<html:option value="02">02</html:option>
-						        	<html:option value="03">03</html:option>
-						        	<html:option value="04">04</html:option>
-						        	<html:option value="05">05</html:option>
-						        	<html:option value="06">06</html:option>
-						        	<html:option value="07">07</html:option>
-						        	<html:option value="08">08</html:option>
-						        	<html:option value="09">09</html:option>
-						        	<html:option value="10">10</html:option>
-						        	<html:option value="11">11</html:option>
-						        	<html:option value="12">12</html:option>
-						        </html:select>
-						        &nbsp;&nbsp;
-						        <html:select styleClass="textfield-m" styleId="day" property="day" onchange="updateDay(this)">
-						        		<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
-						        		<html:option value=""></html:option>
-									    <html:options collection="cpDays" property="key" labelProperty="value"/>
-						        </html:select>
-						        <br/>
-						        Fecha: <span id="selectedDate"></span>
-						        <html:hidden property="fechaNacimientoStr" />
-							</td>
-							<td>
-								<logic:messagesPresent name="msg_fechaNacimientoStr">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("fechaNacimientoStr");
-									</script>
-								</logic:messagesPresent></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.nacionalidad.1"/></td>
-							<td class="celdas"><html:select property="nacionalidad"
-													styleClass="textfield" styleId="nacionalidad">
-												<bean:define id="cp1" scope="session" name="list_nacionalidad" type="java.util.List"/>
-													<html:option value="">[Seleccione un valor]</html:option>
-									            <html:options collection="cp1" property="key" labelProperty="value"/>
-											</html:select></td>
-											   
-							<td>
-								<logic:messagesPresent name="msg_nacionalidad">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("nacionalidad");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.nacionalidad.2"/></td>
-							<td class="celdas"><html:select property="nacionalidadSecundaria"
-													styleClass="textfield" styleId="nacionalidadSecundaria">
-												<bean:define id="cp11" scope="session" name="list_nacionalidad" type="java.util.List"/>
-													<html:option value="">[Seleccione un valor]</html:option>
-									            <html:options collection="cp11" property="key" labelProperty="value"/>
-											</html:select>
-											</td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td ></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.actividad.laboral"/></td>
-							<td class="celdas"><html:select property="actividadLaboral"
-													styleClass="textfield" styleId="actividadLaboral">
-													<html:option value="0">[Seleccione un valor]</html:option>
-												<bean:define id="cp2" scope="session" name="list_actividad_laboral" type="java.util.List"/>
-									            <html:options collection="cp2" property="key" labelProperty="value"/>
-											</html:select>
-							                </td>
-							<td></td></tr>
-			    	 	<tr valign="top">
-			    	 		<td class="celdas"></td>
-							<td class="celdas-border"><bean:message key="lbl.actualiza.natural.profesion"/></td>
-							<td class="celdas"><html:select property="profesion"
-													styleClass="textfield" styleId="profesion">
-													<html:option value="">[Seleccione un valor]</html:option>
-												<bean:define id="cp4" scope="session" name="list_profesiones" type="java.util.List"/>
-									            <html:options collection="cp4" property="key" labelProperty="value"/>
-											</html:select></td></tr>
-						</table>
-			<%@ include file="/WEB-INF/marco/fin.jsp"%>
-			
-					
-			<table class="marco-titulo" border="0" cellspacing="1" cellpadding="1">
-	    	   <tr>
-					<td height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.actualiza.natural.titulo.3"/></td></tr>
-				</table>
-				
-			<%@ include file="/WEB-INF/marco/inicio.jsp"%>
-			<table class="marco" border="0" cellspacing="1" cellpadding="1">		
-				<tr valign="top">
-	    	 		<td class="celdas" width="5%"><font color="#FF0000">*</font></td>
-					<td class="celdas-border" width="30%"><bean:message key="lbl.actualiza.natural.direccion"/></td>
-					<td class="celdas" width="60%"><html:textarea property="direccion" styleId="direccion" cols="45" rows="3" styleClass="textfield2" onkeypress="return imposeMaxLength(event, this, 200);" /></td>
-					<td align="left" width="5%">
-								<logic:messagesPresent name="msg_direccion">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("direccion");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-													            
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.pais"/></td>
-					<td class="celdas">
-						<html:select property="pais" styleClass="textfield" styleId="pais">
-							<html:option value="0">[Seleccione un valor]</html:option>
-								<bean:define id="cp5" scope="session" name="list_paises" type="java.util.List"/>
-							<html:options collection="cp5" property="key" labelProperty="value"/>
-						</html:select>
-					</td>
-					<td>
-						<logic:messagesPresent name="msg_pais">
-							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-							<script type="text/javascript">
-								__setChangeColor("pais");
-							</script>
-						</logic:messagesPresent>
-					</td>
-				</tr>
-				<tr valign="top">
-	    	 		<td></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.departamento"/></td>
-					<td class="celdas"><html:select property="departamento"
-													styleClass="textfield" styleId="departamento">
-													<html:option value="0">[Seleccione un valor]</html:option>
-												<bean:define id="cp7" scope="session" name="list_departamentos" type="java.util.List"/>
-									            <html:options collection="cp7" property="key" labelProperty="value"/>
-									            </html:select></td>
-							</tr>
-
-				<tr valign="top">
-	    	 		<td></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.ciudad"/></td>
-					<td class="celdas"><html:select property="ciudad"
-													styleClass="textfield" styleId="ciudad">
-													<html:option value="0">[Seleccione un valor]</html:option>
-												<bean:define id="cp6" scope="session" name="list_ciudades" type="java.util.List"/>
-									            <html:options collection="cp6" property="key" labelProperty="value"/>
-											</html:select></td>
-							</tr>							
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.telefono.residencial"/></td>
-					<td class="celdas"><html:text property="telefono" styleId="telefono" styleClass="textfield"  maxlength="20"/></td>
-							<td>
-								<logic:messagesPresent name="msg_telefono">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("telefono");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.telefono.movil"/></td>
-					<td class="celdas"><html:text property="celular" styleId="celular" styleClass="textfield" maxlength="20"/></td>
-					<td>
-								<logic:messagesPresent name="msg_celular">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("celular");
-									</script>
-								</logic:messagesPresent></td>
-				</tr>
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.email.contacto"/></td>
-					<td class="celdas"><html:text property="emailContacto" styleId="emailContacto" styleClass="textfield" maxlength="50"/></td>
-					<td>
-								<logic:messagesPresent name="msg_emailContacto">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("emailContacto");
-									</script>
-								</logic:messagesPresent></td>
-				</tr>
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.confirmar.email.contacto"/></td>
-					<td class="celdas"><html:text property="emailContacto2" styleId="emailContacto2" styleClass="textfield" maxlength="50"/></td>
-					<td>
-								<logic:messagesPresent name="msg_emailContacto2">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("emailContacto2");
-									</script>
-								</logic:messagesPresent>
-					</td>
-				</tr>	
-				<tr valign="top">
-	    	 		<td class="celdas"><font color="#FF0000">*</font></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.envio.correspondencia"/></td>
-					<td class="celdas">
-						<html:select property="envioCorrespondencia" styleClass="textfield" onchange="__changeTipoEnvio(this)">
-							<html:option value="">[Seleccione un valor]</html:option>
-							<!--<html:option value="D">Dirección Física</html:option>-->
-							<html:option value="C">Correo Electrónico</html:option>
-							<html:option value="R">No Envíar - Consulta Por Internet</html:option>
-   					    </html:select>
-					
-					</td>
-					<td>
-						<logic:messagesPresent name="msg_envioCorrespondencia">
-							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-							<script type="text/javascript">
-								__setChangeColor("envioCorrespondencia");
-							</script>
-						</logic:messagesPresent>
-					</td>
-				</tr>
-					<tr><td colspan="4">
-					<html:hidden property="tipoCorreoElectronico" />
-					<html:hidden property="tipoDireccionFisica" />
-					<div id="__correoElectronico" style="display:<bean:write name='frmPersona' property='tipoCorreoElectronico'/>">
-					<table width="100%" border="0" cellspacing="1" cellpadding="1">	
-						<tr valign="top">
-			    	 		<td class="celdas" width="5%"><font color="#FF0000">*</font></td>
-							<td class="celdas-border" width="30%"><bean:message key="lbl.actualiza.natural.correo.electronico"/></td>
-							<td class="celdas" width="60%"><html:text property="correoElectronico" styleId="correoElectronico" styleClass="textfield" maxlength="50"/></td>
-							<td width="5%">
-								<logic:messagesPresent name="msg_correoElectronico">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("correoElectronico");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-						</table>
-					</div>
-					</td></tr>
-				
-				
-				</table>
-			<%@ include file="/WEB-INF/marco/fin.jsp"%>
-			
-			<table class="marco-titulo" border="0" cellspacing="1" cellpadding="1">
-				<tr>
-					<td height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.actualiza.natural.titulo.4"/></td></tr>
-			</table>
-			<%@ include file="/WEB-INF/marco/inicio.jsp"%>
-			<table class="marco" border="0" cellspacing="1" cellpadding="1">
-				<tr valign="top">
-	    	 		<td class="celdas" width="5%"></td>
-					<td class="celdas-border" width="30%"><bean:message key="lbl.actualiza.natural.nombre.empresa"/></td>
-					<td class="celdas" width="60%"><html:text property="nombreEmpresa" styleClass="textfield"  maxlength="120"/></td>
-					<td align="left" width="5%"></td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.cargo"/></td>
-					<td class="celdas">
-					<html:text property="cargo" styleClass="textfield"  maxlength="50"/>
-					</td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.direccion.laboral"/></td>
-					<td class="celdas"><html:textarea property="direccionEmpresa" cols="45" rows="3" styleClass="textfield2" onkeypress="return imposeMaxLength(event, this, 200);" /></td></tr>
-			
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.pais.laboral"/></td>
-					<td class="celdas"><html:select property="paisEmpresa"
-													styleClass="textfield" styleId="paisEmpresa">
-													<html:option value="0">[Seleccione un valor]</html:option>
-													
-												<bean:define id="cp12" scope="session" name="list_paises" type="java.util.List"/>
-									            <html:options collection="cp12" property="key" labelProperty="value"/>
-											</html:select></td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.departamento.laboral"/></td>
-					<td class="celdas"><html:select property="departamentoEmpresa"
-													styleClass="textfield" styleId="departamentoEmpresa">
-													<html:option value="0">[Seleccione un valor]</html:option>
-												<bean:define id="cp10" scope="session" name="list_departamentos_emp" type="java.util.List"/>
-									            <html:options collection="cp10" property="key" labelProperty="value"/>
-									            </html:select></td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.ciudad.laboral"/></td>
-					<td class="celdas"><html:select property="ciudadEmpresa"
-													styleClass="textfield" styleId="ciudadEmpresa">
-													<html:option value="0">[Seleccione un valor]</html:option>
-												<bean:define id="cp9" scope="session" name="list_ciudades_emp" type="java.util.List"/>
-									            <html:options collection="cp9" property="key" labelProperty="value"/>
-									            </html:select></td></tr>
-									            	
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.telefono.oficina"/></td>
-					<td class="celdas"><html:text styleId="telefonoEmpresa" property="telefonoEmpresa" styleClass="textfield" maxlength="20"/></td>
-					<td>
-								<logic:messagesPresent name="msg_telefonoEmpresa">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("telefonoEmpresa");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.fax"/></td>
-					<td class="celdas"><html:text property="faxEmpresa" styleId="faxEmpresa" styleClass="textfield" maxlength="20"/></td>
-					<td>
-								<logic:messagesPresent name="msg_faxEmpresa">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("faxEmpresa");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-				<tr valign="top">
-	    	 		<td class="celdas"></td>
-					<td class="celdas-border"><bean:message key="lbl.actualiza.natural.correo.electronico.laboral"/></td>
-					<td class="celdas"><html:text property="correoElectronicoEmpresa" styleId="correoElectronicoEmpresa" styleClass="textfield" maxlength="50"/></td>
-					<td>
-								<logic:messagesPresent name="msg_correoElectronicoEmpresa">
-									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-									<script type="text/javascript">
-										__setChangeColor("correoElectronicoEmpresa");
-									</script>
-								</logic:messagesPresent>
-							</td></tr>
-				</table>
-				
-				<%@ include file="/WEB-INF/marco/fin.jsp"%>
-				<table class="marco-titulo" border="0" cellspacing="1" cellpadding="1">
-				<tr>
-			       <td align=center><br><br>
-				   <input type="button" class="botton" onclick="__submit();" id='actualizar' value="<bean:message key='lbl.actualiza.boton.actualizar'/>"/>
-				   </td>
-				</tr>
-	    	 	</table>
-	    </html:form> </div>
-	    <tr>
-    <td height="31" colspan="4" style="width:100%;height:31;background-color:#4D4F53;"><div align="center" class="derechos">
-        <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/></div></td>
-  </tr>
-  </table>
 	    <ajax:select    
   baseUrl="${pageContext.request.contextPath}/populate/departamento"
   source="pais"
