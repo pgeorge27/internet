@@ -301,7 +301,7 @@ function __changeTipoEnvio(__element){
 
 
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		<logic:messagesPresent>
 			<div class="well col-md-4 col-md-offset-4">

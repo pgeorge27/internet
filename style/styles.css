@@ -245,6 +245,7 @@
   .flex
    {
       width: 100%;
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -258,6 +259,7 @@
       -ms-align-items: center;
       align-items: center;
       justify-content: center;
+      -webkit-justify-content: center; /* Safari 6.1+ */
    }
    .flex > div
    {
@@ -265,17 +267,20 @@
       flex: 1 1 auto;
    }
    .flex > div:nth-child(1){ 
+    display: -webkit-flex; /* Safari */
     display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
     justify-content: center;
+    -webkit-justify-content: center; /* Safari 6.1+ */
     width: 10%;
     order:1;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   .flex > div:nth-child(2){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -283,10 +288,12 @@
       -ms-align-items: flex-start;
       align-items: flex-start;
       justify-content: flex-start;
+      -webkit-justify-content: flex-start; /* Safari 6.1+ */
       width: 20%;
       order:3;
   }
   .flex > div:nth-child(3){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -409,6 +416,7 @@
   .flex
    {
       width: 100%;
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -421,6 +429,7 @@
       -ms-align-items: center;
       align-items: center;
       justify-content: center;
+      -webkit-justify-content: center; /* Safari 6.1+ */
       padding-right: 10px;
       padding-left: 10px;
    }
@@ -430,24 +439,29 @@
       flex: 1 1 auto;
    }
    .flex > div:nth-child(1){ 
+    display: -webkit-flex; /* Safari */
     display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
     justify-content: flex-start;
+    -webkit-justify-content: flex-start; /* Safari 6.1+ */
     width: 50%;
     order:1;
   }
   .flex > div:nth-child(2){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
       justify-content: flex-end;
+      -webkit-justify-content: flex-end; /* Safari 6.1+ */
       width: 50%;
       order:2;
   }
   .flex > div:nth-child(3){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */

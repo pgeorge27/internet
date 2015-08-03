@@ -43,7 +43,7 @@ var option = "0"; // Solamente teclado numerico
 
 
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		
 			<logic:present name="msg">

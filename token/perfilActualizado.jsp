@@ -115,7 +115,7 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 
 <div class="container">
-  <div class="row">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
     <div align="right">
       <img class="img-responsive" border="0" src="<html:rewrite page='/images/logo.jpg'/>" />

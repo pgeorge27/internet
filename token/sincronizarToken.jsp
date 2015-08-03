@@ -184,7 +184,7 @@
 	<%@ include file="blockDiv.jsp"%>
 
 	<div class="container">
-		<div class="row">
+		<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-default" >

@@ -866,6 +866,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
   .flex
    {
       width: 100%;
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -879,6 +880,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
       -ms-align-items: center;
       align-items: center;
       justify-content: center;
+      -webkit-justify-content: center; /* Safari 6.1+ */
    }
    .flex > div
    {
@@ -886,28 +888,33 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
       flex: 1 1 auto;
    }
    .flex > div:nth-child(1){ 
+    display: -webkit-flex; /* Safari */
     display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
     justify-content: center;
+    -webkit-justify-content: center; /* Safari 6.1+ */
     width: 10%;
     order:1;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   .flex > div:nth-child(2){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-      -ms-align-items: flex-start;
-      align-items: flex-start;
-      justify-content: flex-start;
+      -ms-align-items: flex-end;
+      align-items: flex-end;
+      justify-content: flex-end;
+      -webkit-justify-content: flex-end; /* Safari 6.1+ */
       width: 20%;
       order:3;
   }
   .flex > div:nth-child(3){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -1030,6 +1037,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
   .flex
    {
       width: 100%;
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -1042,6 +1050,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
       -ms-align-items: center;
       align-items: center;
       justify-content: center;
+      -webkit-justify-content: center; /* Safari 6.1+ */
       padding-right: 10px;
       padding-left: 10px;
    }
@@ -1051,24 +1060,29 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
       flex: 1 1 auto;
    }
    .flex > div:nth-child(1){ 
+    display: -webkit-flex; /* Safari */
     display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
     justify-content: flex-start;
+    -webkit-justify-content: flex-start; /* Safari 6.1+ */
     width: 50%;
     order:1;
   }
   .flex > div:nth-child(2){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
       display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
       justify-content: flex-end;
+      -webkit-justify-content: flex-end; /* Safari 6.1+ */
       width: 50%;
       order:2;
   }
   .flex > div:nth-child(3){  
+      display: -webkit-flex; /* Safari */
       display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
       display: -ms-flexbox;  /* TWEENER - IE 10 */
       display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
@@ -1086,6 +1100,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
 }
 
 @media only screen and (max-width: 78em) {
+    
     /* Force table to not be like tables anymore */
   #no-more-tables table, 
   #no-more-tables thead, 
@@ -1114,6 +1129,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
     padding-left: 50%; 
     white-space: normal;
     text-align:right;
+    min-height: 30px;
   }
  
   #no-more-tables td:before { 
