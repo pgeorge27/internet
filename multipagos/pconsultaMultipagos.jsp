@@ -260,7 +260,7 @@ function send(){
 
 							<html:form method="post" action="/multipagos/Consulta/autorizaciones">
 
-								<html:select property="cliente" styleClass="botton-acceso form-control">
+								<html:select property="cliente" styleClass=" form-control">
 								<html:option value="">
 								<bean:message key="lbl.transf.inter.seleccione"/>
 								</html:option>
@@ -276,7 +276,7 @@ function send(){
 									</h5>
 								</label>
 
-								<html:select property="estado" styleClass="botton-acceso form-control">
+								<html:select property="estado" styleClass=" form-control">
 								<html:option value="">
 								<bean:message key="lbl.transf.inter.todos"/>
 								</html:option>
@@ -307,7 +307,7 @@ function send(){
 										</h5>
 									</div>
 									<div class="col-md-5" align="center">
-										<html:text property="desde" styleId="desde" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaInicio%>"/>
+										<html:text property="desde" styleId="desde" styleClass=" form-control" size="20" maxlength="12" value="<%=fechaInicio%>"/>
 									</div>
 									<div class="col-md-5">
 										<input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
@@ -321,7 +321,7 @@ function send(){
 										</h5>
 									</div>
 									<div class="col-md-5" align="center">
-										<html:text property="hasta" styleId="hasta" styleClass="botton-acceso form-control" size="20" maxlength="12" value="<%=fechaFin%>"/>
+										<html:text property="hasta" styleId="hasta" styleClass=" form-control" size="20" maxlength="12" value="<%=fechaFin%>"/>
 									</div>
 									<div class="col-md-5">
 										<input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
@@ -329,9 +329,9 @@ function send(){
 								</div>
 								<br>
 								<div align="center">
-									<input name="botonEnviar" onclick="send();" type="button" class="botton btn btn-default" value="<bean:message key="btn.consultar"/>">
+									<input name="botonEnviar" onclick="send();" type="button" class=" btn btn-default" value="<bean:message key="btn.consultar"/>">
 
-									<html:reset styleClass="botton btn btn-default">
+									<html:reset styleClass=" btn btn-default">
 									<bean:message key="btn.limpiar"/>
 									</html:reset>
 									<h6 style="color:#95A5A6 ">

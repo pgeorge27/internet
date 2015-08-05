@@ -31,76 +31,100 @@ if (session.getAttribute("titulo.recibo") != null){
 }
 %>
 <%@ include file="../body.jsp"%>
-<html:form method="post" action="/multipagos/Consulta/autorizaciones">
-<html:hidden property="estado" value="P" /> 
-<html:hidden property="tipo" value="1" /> 
-<%
-   String strConsultaTrans = session.getAttribute("consulta.transfer.cliente").toString();
- %>
-<html:hidden property="cliente" value="<%=strConsultaTrans%>"/>
-</html:form>
 
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="92%">
-				<div align="left" class="login"><bean:message key="<%=titulo%>"/></div></td>
-			<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-		  </tr>
-		</table></td>
-  </tr>
-<tr> 
-	<td class="texto-acceso"></td>
-  </tr>
-  <tr> 
-	<td valign="top">
-        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="2">
-        
-        
-		  <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.fecha"/></td>
-					<td class="bienvenida" width="70%"><%=f.formatFechaLong(today, locale2)%></td></tr>
+
+<div class="container"> 
+    <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+    <html:form method="post" action="/multipagos/Consulta/autorizaciones">
+      <html:hidden property="estado" value="P" /> 
+      <html:hidden property="tipo" value="1" /> 
+      <%
+        String strConsultaTrans = session.getAttribute("consulta.transfer.cliente").toString();
+      %>
+      <html:hidden property="cliente" value="<%=strConsultaTrans%>"/>
+    </html:form>
+
+      <div align="right">
+        <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
+      </div>
+      <br>
+      <br>
+      <div height="26" width="100%" align="right" style="height:26;background-color:#EFEFEF; padding-right: 15px">
+        <div  class="fuente-principal">
+          <bean:message key="tit.title.atenticacion.paso3"/>
+        </div>
+      </div>
+      <br>
+      <br>
+      <logic:present name="msg">
+      <div align="center" class="well col-md-4">
+        <p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+        <p><b><bean:message key="errors.header"/></b></p>
+        <p class="fuente-principal">
+          <%String error = session.getAttribute("msg").toString();%>
+          <bean:message key="<%=error%>"/></p>
+        </div>
+      </logic:present>
+      <%
+      session.removeAttribute("msg");
+      %>
+
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+             <bean:message key="<%=titulo%>"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+
+            <div align="right">
+              <input class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+            </div>
+
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.fecha"/></p>
+            <p class="bienvenida"><%=f.formatFechaLong(today, locale2)%></p></tr>
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.secuencia"/></p>
+            <p class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></p>
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.cuenta"/></p>
+            <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaAbanks())%></p>
             <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.secuencia"/></td>
-                   <td class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></td></tr>                      
-            <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuenta"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaAbanks())%></td></tr>
-             <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cantidad"/></td>
-                   <td class="bienvenida"><%=f.formatMonto(transf.getMonto())%></td></tr>     
-             <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.moneda"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getMonedaAbanks())%></td></tr>                   
-            <tr valign="middle" class="celda-clave1">
-		           <td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getCuentabancoBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></td></tr>
-
-<tr>
-<td colspan="2" align="center"><br><br>
-
-<div align="center"><a href="javascript:printPage2()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-<tr>
-<td colspan="2" align="center">
-<INPUT class="botton" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.cantidad"/></p>
+            <p class="bienvenida"><%=f.formatMonto(transf.getMonto())%></p>
 
 
-</td></tr></table></td></tr></table></div>
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.moneda"/></p>
+            <p class="bienvenida"><%=StringUtilities.getValue(transf.getMonedaAbanks())%></p>
+            <p class="bienvenida"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></p>
+            <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentabancoBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></p>
 
+            <div align="center">
+              <a href="javascript:printPage2()">
+                <img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0">
+              </a>
+            </div>
 
-<logic:present name="mensaje.final">
-	        <script type="text/javascript">
-	        	alert("<bean:message key='lbl.transf.inter.mensaje.final'/>");
-	        </script>
-        </logic:present>	
-        		
-        <logic:present name="transferencia.pendiente.aprobacion">
-	        <script type="text/javascript">
-	        	alert("<bean:message key='lbl.transf.inter.mensaje.transferencia.pendiente.aprobar'/>");
-	        </script>        
-        </logic:present>
+            <input class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+
+          </div>
+        </div>
+      </div>
+
+      <logic:present name="mensaje.final">
+        <script type="text/javascript">
+          alert("<bean:message key='lbl.transf.inter.mensaje.final'/>");
+        </script>
+      </logic:present>
+
+      <logic:present name="transferencia.pendiente.aprobacion">
+        <script type="text/javascript">
+          alert("<bean:message key='lbl.transf.inter.mensaje.transferencia.pendiente.aprobar'/>");
+        </script>
+      </logic:present>
+
+    </div>
+  </div>
+
 <%@ include file="../footer.jsp" %>

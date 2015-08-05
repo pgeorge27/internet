@@ -230,50 +230,41 @@ function __update(){
 
 	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
-		<div class="table-responsive">
-			<logic:messagesPresent>
-			<table class="table">
-				<tr>
-					<td>
-						<table border="0" cellpadding="1" cellspacing="0" width="100%">
-							<tr valign="top">
-								<td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								<td width="95%" class="msg">
-									<span class="bienvenida"><b><bean:message key="errors.header" /></b></span><br>
-									<span class="bienvenida">
-										<table width="80%">
-											<html:messages id="error">
-											<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-											</html:messages>
-										</table>
-									</span><br>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			</logic:messagesPresent>
-		</div>
 
-		<div class="col-md-12">
-			<p class="bienvenida_1">
-				<img src="<html:rewrite page='/images/gancho.gif'/>" border="0">
-				<strong><bean:message key="lbl.transf.inter.aprobacion" /></strong>
-			</p>
-		</div>
-
-		<div class="col-md-12">
-			<div class="col-md-6">
-				<bean:message key="lbl.transferencias.autorizaciones.nuevas"/>
+	<logic:messagesPresent>
+		<div class="well col-md-4 col-md-offset-4">
+			<div class="well">
+				<img src="<html:rewrite page='/images/warning.gif'/>">
+				<p class="bienvenida">
+				<b><bean:message key="errors.header"/></b>
+				<html:messages id="error">
+					<p class="bienvenida"> - <bean:write name="error" /></p>
+				</html:messages>
 			</div>
-			<div class="col-md-6">
-				<div align="right">&nbsp; <input class="botton btn btn-default" onclick="document.location='/internet/servicios/aprobacion.jsp';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+		</div>
+	</logic:messagesPresent>
+
+	<div class="col-md-12">
+		<div class="panel panel-default" >
+
+			<div class="panel-heading">
+				<img src="<html:rewrite page='/images/logo_icon.png' />" />
+				<strong><bean:message key="lbl.transf.inter.aprobacion" /></strong>
+			</div>
+
+			<div class="panel-body">
+				<div class="col-md-6">
+					<bean:message key="lbl.transferencias.autorizaciones.nuevas"/>
+				</div>
+				<div class="col-md-6">
+					<div align="right">&nbsp; <input class="btn btn-default" onclick="document.location='/internet/servicios/aprobacion.jsp';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+				</div>
+
 			</div>
 		</div>
 	</div>
-	<br>
-	<div class="row">
+
+
 
 		<logic:present name="consulta.clte">
 			<p class="bienvenida"><strong><%=session.getAttribute("consulta.clte")%></strong></p>
@@ -424,45 +415,6 @@ function __update(){
 							%>
 						</tbody>
 
-					<!-- <tbody>
-						<tr>
-							<td data-title="<bean:message key="lbl.transf.inter.secuencia" />" >AAC</td>
-							<td data-title="Fecha Elaboración">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-							<td data-title="Fecha Efectiva">$1.38</td>
-							<td data-title="Cantidad - Amount" class="numeric">-0.01</td>
-							<td data-title="Moneda" class="numeric">-0.36%</td>
-							<td data-title="Numero de cuenta - Account Number" class="numeric">$1.39</td>
-							<td data-title="Numero de cuenta Beneficiario - Beneficiary Account Number" class="numeric">$1.39</td>
-							<td data-title="Elaborado Por">$1.38</td>
-							<td data-title="Estado">9,395</td>
-							<td data-title="Nivel de Autorización">1</td>
-						</tr>
-						<tr>
-							<td data-title="Referencia">AAC</td>
-							<td data-title="Fecha Elaboración">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-							<td data-title="Fecha Efectiva">$1.38</td>
-							<td data-title="Cantidad - Amount" class="numeric">-0.01</td>
-							<td data-title="Moneda" class="numeric">-0.36%</td>
-							<td data-title="Numero de cuenta - Account Number" class="numeric">$1.39</td>
-							<td data-title="Numero de cuenta Beneficiario - Beneficiary Account Number" class="numeric">$1.39</td>
-							<td data-title="Elaborado Por">$1.38</td>
-							<td data-title="Estado">9,395</td>
-							<td data-title="Nivel de Autorización">1</td>
-						</tr>
-						<tr>
-							<td data-title="Referencia">AAC</td>
-							<td data-title="Fecha Elaboración">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-							<td data-title="Fecha Efectiva">$1.38</td>
-							<td data-title="Cantidad - Amount" class="numeric">-0.01</td>
-							<td data-title="Moneda" class="numeric">-0.36%</td>
-							<td data-title="Numero de cuenta - Account Number" class="numeric">$1.39</td>
-							<td data-title="Numero de cuenta Beneficiario - Beneficiary Account Number" class="numeric">$1.39</td>
-							<td data-title="Elaborado Por">$1.38</td>
-							<td data-title="Estado">9,395</td>
-							<td data-title="Nivel de Autorización">1</td>
-						</tr>
-					</tbody> -->
-					
 				</html:form>
 			</table>
 		</div>
@@ -470,9 +422,9 @@ function __update(){
 	<br>
 	<div class="row">
 		<div align="center">
-			<input type="button" class="botton btn btn-default" value="<bean:message key="lbl.transf.inter.autorizar"/>" onclick="set('<%=ITransferencia.APROBADA %>');">
-			<input type="button" class="botton btn btn-default" id="btmRechaza" value="<bean:message  key="lbl.transf.inter.rechazar"/>" onclick="__reject();">
-			<input class="botton btn btn-default" onclick="document.location='<html:rewrite page='/multipagos/consultaAutCan.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>">
+			<input type="button" class="btn btn-default" value="<bean:message key="lbl.transf.inter.autorizar"/>" onclick="set('<%=ITransferencia.APROBADA %>');">
+			<input type="button" class="btn btn-default" id="btmRechaza" value="<bean:message  key="lbl.transf.inter.rechazar"/>" onclick="__reject();">
+			<input class="btn btn-default" onclick="document.location='<html:rewrite page='/multipagos/consultaAutCan.jsp'/>';" type="button" value="<bean:message key="lbl.retroceder"/>">
 			<input type="hidden" />
 		</div>
 	</div>

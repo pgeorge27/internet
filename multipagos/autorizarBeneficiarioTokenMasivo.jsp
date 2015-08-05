@@ -191,152 +191,95 @@ function escribir(A){
 }
 </script>
 
-<logic:messagesPresent>
-<table cellpadding="1" cellspacing="1" width="750" class="tabla-acceso1">
-	<tr>
-		<td>
-			<table border="0" cellpadding="1" cellspacing="0" width="100%">
-				<tr valign="top">
-					<td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-					<td width="95%" class="msg">
-						<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-						<span class="bienvenida">
-							<table width="80%">
-							<html:messages id="error">					
-								<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-							</html:messages>
-							</table>
-						</span><br>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-</logic:messagesPresent>
+<div class="container">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
-<html:form method="post" action="/multipago/autoriza"  >
-<html:hidden styleId="tipos" property="tipo" />
-<html:hidden styleId="tipos" property="indice" value="1" />
-	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
-		<!-- 	Fila de la pantalla -->
-		<tr>
-			<td colspan="2"><div class="fuente-titulo"><bean:message key="lbl.aprobacion.masiva.titulo"/></div></td>
-		</tr>
-		
-		<!-- 	Fila en blanco -->
-		<tr>
-			<td colspan="2"></td>
-		</tr>
-		
-		<!-- 	Fila con las transferencias y los tips -->
-		<tr>
-			<td width="65%">
-				<table width="100%">
-					<tr class="fuente-obligatorio">
-						<td><div><bean:message key="lbl.aprobacion.masiva.col1"/></div></td>
-						<td><div><bean:message key="lbl.aprobacion.masiva.col2"/></div></td>
-						<td><div><bean:message key="lbl.aprobacion.masiva.col3"/></div></td>
-						<td><div><bean:message key="lbl.aprobacion.masiva.col4"/></div></td>
-						<td><div><bean:message key="lbl.aprobacion.masiva.col5"/></div></td>
-					</tr>
-					<%
-					com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
-						for(int i=0;i<t.size();i++){
-						TranferenciaProcesada	 obj = (TranferenciaProcesada) t.get(i);
-							
-					%>
-					<tr class="fuente-principal">
-						<td>
-							<div>
-								<%=StringUtilities.replace(f.formatCuenta(obj.getNumeroDocumento(), "A-S-C"), "-","")%>
-							</div>
-						</td>
-						<td><div><%=obj.getNombreBeneficiario()%></div></td>
-						<td><div><%=obj.getCuentabancoBeneficiario()%></div></td>
-						<td><div><%=obj.getNombreBancoIntermediario()==null?"":obj.getNombreBancoIntermediario()%></div></td>
-						<td><div><%=f.formatMonto(obj.getMonto())%></div></td>
-					</tr>
-					<%
-						}
-					%>
-				</table>
-			</td>
-			<td align="center">
-				<!--  Cuadro de Tips -->
-				<%@ include file="../divHeader.jsp"%>
-			    	<table cellspacing="3" cellpading="3"  width="350">
-	        			<tr valign="top">
-	      	  				<td colspan="2">
-	      	  					<table>
-	      	  						<tr>
-	      	  							<td>
-	      	  								<img src="<html:rewrite page='/images/gancho.gif'/>" border="0">
-	   	  								</td>
-		      							<td>
-		      								<B>
-		      									<p class="bienvenida"><bean:message key="lbl.preg.secreta.observacion"/></p>
-	      									</B>
-	   									</td>
-		      						</tr>
-	      						</table>
-		      				</td>
-		    			</tr>
-		    			<tr>
-		       				<td colspan="2" class="bienvenida">
-			          			<OL>
-			          				<li><bean:message key="lbl.autorizar.beneficiario.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
-						          	<li><bean:message key="lbl.autorizar.beneficiario.token.paso2" /><img src="<html:rewrite page='/images/TokenPin.png'/>" height="15"></li>
-						          	<li><bean:message key="lbl.autorizar.beneficiario.token.paso3" /></li>
-						          	<li><bean:message key="lbl.autorizar.beneficiario.token.paso4" /></li>
-						          	<li><bean:message key="lbl.autorizar.beneficiario.token.paso5" /></li>
-						          	<li><bean:message key="lbl.autorizar.beneficiario.token.paso6" /></li>
-			          			</OL>
-		       				</td>
-		    			</tr>
-		  			</table>	
-	  			<%@ include file="../divFooter.jsp"%>	    
-	   		</td>
-		</tr>
-		
-		<!-- 	Fila en blanco -->
-		<tr>
-			<td colspan="2"></td>
-		</tr>
-		
-		<!-- 	Fila para el campo de texto -->
-		<tr>
-			<td colspan="2">
-				<div align="right" style="width:48%;float:left;" class="texto-acceso">
-					<bean:message key="lbl.clave.token"/>
+		<logic:messagesPresent>
+			<div class="col-md-4 col-md-offset-4">
+				<div align="center" class="well">
+					<p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+					<p><b><bean:message key="errors.header"/></b></p>
+					<html:messages id="error">
+						<p class="bienvenida">- <bean:write name="error" /></p>
+					</html:messages>
 				</div>
-				<div align="left" style="width:48%;float:right">
-					<input type="text" name="clave" maxlength="8" class="botton-acceso"  id="clave" autocomplete="off"/>
+			</div>
+		</logic:messagesPresent>
+		<script type="text/javascript">
+			CONST_Y += document.getElementById('msgError').clientHeight;
+		</script>
+
+		<div class="col-md-4 col-md-offset-1">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.preg.secreta.observacion"/>
+					</strong>
 				</div>
-			</td>
-		</tr>
-		
-		<!-- 	Fila en blanco -->
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		</tr>
-		
-		<!-- 	Fila con los botones -->
-		<tr>
-			<td colspan="2">
-				<div align="right" style="width:48%;float:left;" class="texto-acceso">
-					<input type="button" class="botton" onclick="autorizar();" value="<bean:message key="lbl.transf.inter.autorizar"/>">
+
+				<div class="panel-body">
+					<ol>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso1" /><img src="<html:rewrite page='/images/TokenON.jpg'/>" height="15"></li>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso2" /><img src="<html:rewrite page='/images/TokenPin.png'/>" height="15"></li>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso3" /></li>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso4" /></li>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso5" /></li>
+						<li><bean:message key="lbl.autorizar.beneficiario.token.paso6" /></li>
+					</ol>
 				</div>
-				<div align="left" style="width:48%;float:right">
-					<input type="button" class="botton" onclick="retroceder();" value="<bean:message key="lbl.retroceder"/>">
-				</div>				
-			</td>
-		</tr>
-		
-		<!-- 	Fila en blanco -->
-		<tr>
-			<td colspan="2"></td>
-		</tr>
-	</table>
-</html:form>	
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong>
+						<bean:message key="lbl.aprobacion.masiva.titulo"/>
+					</strong>
+				</div>
+				<div class="panel-body">
+
+					<html:form method="post" action="/multipago/autoriza"  >
+						<html:hidden styleId="tipos" property="tipo" />
+						<html:hidden styleId="tipos" property="indice" value="1" />
+
+						<p><bean:message key="lbl.aprobacion.masiva.col1"/></p>
+						<p><bean:message key="lbl.aprobacion.masiva.col2"/></p>
+						<p><bean:message key="lbl.aprobacion.masiva.col3"/></p>
+						<p><bean:message key="lbl.aprobacion.masiva.col4"/></p>
+						<p><bean:message key="lbl.aprobacion.masiva.col5"/></p>
+
+						<%
+						com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
+							for(int i=0;i<t.size();i++){
+							TranferenciaProcesada obj = (TranferenciaProcesada) t.get(i);
+						%>
+
+						<div>
+							<%=StringUtilities.replace(f.formatCuenta(obj.getNumeroDocumento(), "A-S-C"), "-","")%>
+						</div>
+
+						<div><%=obj.getNombreBeneficiario()%></div>
+						<div><%=obj.getCuentabancoBeneficiario()%></div>
+						<div><%=obj.getNombreBancoIntermediario()==null?"":obj.getNombreBancoIntermediario()%></div>
+						<div><%=f.formatMonto(obj.getMonto())%></div>
+
+						<%
+							}
+						%>
+
+						<div align="center">
+							<p><bean:message key="lbl.clave.token"/></p>
+							<p><input type="text" name="clave" maxlength="8" class="form-control"  id="clave" autocomplete="off"/></p>
+							<p><input type="button" class="botton" onclick="autorizar();" value="<bean:message key="lbl.transf.inter.autorizar"/>"></p>
+							<p><input type="button" class="botton" onclick="retroceder();" value="<bean:message key="lbl.retroceder"/>"></p>
+						</div>
+					</html:form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <%@ include file="../footer.jsp" %>

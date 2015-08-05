@@ -57,70 +57,59 @@ function __continue(){
 </script>
 <%@ include file="../body.jsp"%>
 
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-	<td height="40" valign="bottom">
-	<div align="left"> 
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-		  <tr> 
-			<td width="96%"><div align="left" class="login"><bean:message key="lbl.transf.inter.recibo.modificacion"/></div></td>
-			<td width="4%" align="right"><INPUT class="botton" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>"></td>
-		  </tr>
-		</table>
-	  </div></td>
-  </tr>
-  
-<tr> 
-	<td class="texto-acceso">&nbsp;</td>
-  </tr>
-  <tr> 
-	<td valign="top">       
-        <table width="70%" border="0" align="center" cellpadding="0" cellspacing="2">
-          <tr><td>
-          <html:form method="post" action="/autoriza">   
-				<html:hidden property="tipo" value="<%=ITransferencia.MODIFICADA%>" />
-				<html:hidden property="indice" value="<%=String.valueOf(index)%>"/>
-          <table width="70%" border="0" align="center" cellpadding="0" cellspacing="2">
-		  <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.fecha"/></td>
-					<td class="bienvenida" width="70%"><%=f.formatFechaLong(today, locale2)%></td></tr>
-            <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.secuencia"/></td>
-                   <td class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></td></tr>                      
-            <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuenta"/></td>
-                   <td class="bienvenida"><%=transf.getCuenta() != null ? f.formatCuenta(transf.getCuenta().getCodigoBanco()) : ""%></td></tr>
-             <tr valign="middle" class="celda-clave1">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cantidad"/></td>
-                   <td class="bienvenida"><%=f.formatMonto(transf.getMonto())%></td></tr>     
-             <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.moneda"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getMoneda())%></td></tr>                   
-            <tr valign="middle" class="celda-clave1">
-		           <td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></td>
-                   <td class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></td></tr>
-            <tr valign="middle">
-        			<td class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.motivo"/></td>
-                    <td class="bienvenida" width="70%"><html:textarea property="motivo" styleId="motivo" cols="35" rows="5" onkeypress="validateLength(this, 100)" styleClass="botton-acceso"/></td></tr>
-            </table>    
+<div class="container"> 
+    <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <img src="<html:rewrite page='/images/logo_icon.png' />" />
+            <strong>
+              <bean:message key="lbl.transf.inter.recibo.modificacion"/>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <div align="right">
+              <input class="btn btn-defaukt" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+            </div>
+
+            <html:form method="post" action="/autoriza">   
+              <html:hidden property="tipo" value="<%=ITransferencia.MODIFICADA%>" />
+              <html:hidden property="indice" value="<%=String.valueOf(index)%>"/>
+
+              <p><bean:message key="lbl.transf.inter.fecha"/></p>
+
+              <p class="bienvenida"><%=f.formatFechaLong(today, locale2)%></p>
+
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.secuencia"/></p>
+
+              <p class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></p>
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.cuenta"/></p>
+              <p class="bienvenida"><%=transf.getCuenta() != null ? f.formatCuenta(transf.getCuenta().getCodigoBanco()) : ""%></p>
+
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.cantidad"/></p>
+              <p class="bienvenida"><%=f.formatMonto(transf.getMonto())%></p>
+
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.moneda"/></p>
+              <p class="bienvenida"><%=StringUtilities.getValue(transf.getMoneda())%></p>
+
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></p>
+              <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></p>
+
+              <p class="bienvenida"><bean:message key="lbl.transf.inter.motivo"/></p>
+              <p class="bienvenida"><html:textarea property="motivo" styleId="motivo" cols="35" rows="5" onkeypress="validateLength(this, 100)" styleClass="botton-acceso"/></p>
+
             </html:form>
-<tr>
-<td colspan="2" align="right"><br><br>
 
-<div align="center">
-<input type="button" class="botton" value="<bean:message key="lbl.transf.inter.modificar"/>" onclick="__continue();">
-			
-			
-<INPUT class="botton" onclick="__back()" type="button" value="<bean:message key="lbl.retroceder"/>">
-</div>
-<tr>
-<td colspan="2" align="center"><br><br>
+            <div align="center">
+              <input type="button" class="btn btn-default" value="<bean:message key="lbl.transf.inter.modificar"/>" onclick="__continue();">
+              <input class="btn btn-default" onclick="__back()" type="button" value="<bean:message key="lbl.retroceder"/>">
+            </div>
 
-<div align="center"></div>
-
-</td></tr></table></td></tr></table></div>
-
-
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%@ include file="../footer.jsp" %>
