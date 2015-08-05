@@ -47,7 +47,7 @@ function __retornar(){
 <%@ include file="/body.jsp"%>
 <br>
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 		<div>
 			<div class="panel panel-default" >
 				<div class="panel-heading">

@@ -57,7 +57,7 @@ var option = "0"; // Solamente teclado numerico
 </script>
 <body  onLoad="reset();">
 
-<div class="container"> 
+<div class="container" style="padding-right: 3%; padding-left: 3%;"> 
     <div class="row">
 
       <div align="right">

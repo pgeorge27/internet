@@ -202,7 +202,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 			<div align="right">
 				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
@@ -496,11 +496,6 @@ $(document).ready(function(){
 
 
 
-	<!-- Div que contiene el cintillo de los derechos reservados -->
-	<div id="derechos">
-		<bean:message key="<%=copyrigth %>"
-			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' />
-	</div>
 
 
 </body>

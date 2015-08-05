@@ -218,7 +218,7 @@ function __download(){
 
 
 <div class="row">
-  <div class="col-md-6"><div align="left"" class=""><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div></div>
+  <div class="col-md-6"><div align="left" class="visible-lg"><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div></div>
 
   <div class="col-md-3" align="left"></div>
   <div class="col-md-3" align="left"></div>
@@ -266,8 +266,8 @@ for (int i = 0; i < mov.size(); i++){
 	<%}%>
     align=left><a><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></a></TD>
     <TD data-title="Referencia" class="bienvenida" align=middle ><%=m.getNumeroDocumento()==null?"":m.getNumeroDocumento()%></TD>
-    <TD data-title="Débito" class="bienvenida" align=right ><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD data-title="Crédito" class="bienvenida" align=right ><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD></TR>
+    <TD data-title="Débito" class="bienvenida prueba" align=right ><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Crédito" class="bienvenida prueba" align=right ><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD></TR>
 <%} /* End for - loop*/ %>
 
 </table></div>
@@ -395,16 +395,20 @@ else
 	<input type="hidden" name="lblnombreUsuario" value="<bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/>">
 	<input type="hidden" name="nombreUsuario">
 </form>
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-               <tr> 
-                <td height="30" class="texto-acceso"><div id=bk2 align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>" width="116" height="68"></div></td>
-                <td class="texto-acceso">&nbsp;</td>
-              </tr>
+
+          
+              <div id=bk2 align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>" width="116" height="68"></div>
+
+              		<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.aviso.debito.titulo"/></strong></div>
+  <div class="panel-body" style="padding-right: 3%; padding-left: 3%;">
+
+
               <tr> 
                 <td height="40" colspan="2" valign="bottom"><div align="left"> 
                     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
                       <tr> 
-                        <td width="92%"><div align="left" class="login"><bean:message key="lbl.aviso.debito.titulo"/></div></td>
+                        <td width="92%"><div align="left" class="login"></div></td>
                       <td width="8%"><div align="right">&nbsp;
 							<!-- a href="javascript:ocultarNotas();"><INPUT class="botton" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"> </a --> </div></td>
                       </tr>
@@ -418,53 +422,63 @@ else
 						<SPAN id="tituloNota"> <bean:message key="lbl.aviso.debito.cuenta.corriente"/></SPAN>
 					</div><br></td>
                     </tr>
+                  
                    <tr> 
-                      <td width="15%" height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/></b></td>
-                      <td width="25%" class="bienvenida" align="left"><SPAN id="nombreCuenta"></SPAN></td>
-                    </tr>  
+                      <td height="20"  class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/></b></td>
+                      <td class="bienvenida" align="left"><SPAN id="nombreCuenta"></SPAN></td>
+                    </tr> 
+                  
                     <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/></b></td>
+                      <td height="20"  class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/></b></td>
                       <td class="bienvenida" align="left"><SPAN id="numeroCuenta"></SPAN></td>
                       <td></td>
                       <td></td>
                     </tr> 
+                   
                     <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/></b></td>
+                      <td height="20"  class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/></b></td>
                       <td class="bienvenida" align="left"><SPAN id="fecha"></SPAN></td>
                       <td></td>
                       <td></td>
                     </tr> 
+                  
                     <tr> 
                       <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.4"/></b></td>
                       <td class="bienvenida" align="left"><SPAN id="moneda"></SPAN></td>
-                      <td width="15%" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></b></td>
+                      <td  width="15%" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></b></td>
                       <td width="15%" class="bienvenida" align="right"><SPAN id="importe"></SPAN></td>
-                    </tr>                                         
+                    </tr>      
+                                                   
                     <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/></b></td>
+                      <td height="20"  class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/></b></td>
                       <td class="bienvenida" colspan="3"><SPAN id="concepto"></SPAN></td>
                     </tr> 
+                   
                     <tr> 
                       <td height="20" class="bienvenida" align="left"><b><span id="lblAtt" style="display:none"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/></b></span></td>
                       <td class="bienvenida" align="left"><SPAN id="nombreUsuario" style="display:none"></SPAN></td>
                     </tr>
+                   
                     
                   </table></td>
               </tr>
               <tr> 
                 <td colspan="2" valign="top">&nbsp;</td>
               </tr>
-              <tr>  
-                <td colspan="2" valign="top" class="texto-acceso"><div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a>
+              <tr>
+               <br>  
+                <td colspan="2" valign="top" class="texto-acceso"><div class="visible-lg" align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
                 <br>
-					<a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a>
+					<div  align="center"><a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a> <br>
 					<br></div></td>
 	</tr>
 	<tr> 
+	
 	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="javascript:ocultarNotas();" type=button value="<bean:message key="lbl.retroceder"/>"> </div></td>
+			<INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type=button value="<bean:message key="lbl.retroceder"/>"> </div></td>
 	</tr>
       </table>
+</div>
 </div>
 <!--fin nota-->
 <%@ include file="../footer.jsp"  %>

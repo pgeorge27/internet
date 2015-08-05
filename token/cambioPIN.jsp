@@ -128,7 +128,7 @@ function IsNumeric(input)
 <%@ include file="../body.jsp"%>
 
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		
 			<logic:present name="msg">

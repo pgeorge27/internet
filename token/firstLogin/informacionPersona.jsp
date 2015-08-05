@@ -307,7 +307,7 @@ function __changeTipoEnvio(__element){
 <body>
 
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		<div align="right">
 			<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
@@ -356,8 +356,8 @@ function __changeTipoEnvio(__element){
 						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="nombre" name="frmPersona" />
+								<html:hidden property="nombre"/>
 							</p>
-							<html:hidden property="nombre"/>
 						</div>
 
 
@@ -368,8 +368,8 @@ function __changeTipoEnvio(__element){
 						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="primerApellido" name="frmPersona"/>
+								<html:hidden property="primerApellido"/>
 							</p>
-							<html:hidden property="primerApellido"/>
 						</div>
 
 						<div class="col-md-4">
@@ -378,8 +378,8 @@ function __changeTipoEnvio(__element){
 						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="segundoApellido" name="frmPersona"/>
+								<html:hidden property="segundoApellido"/>
 							</p>
-							<html:hidden property="segundoApellido"/>
 						</div>
 
 						<div class="col-md-4">
@@ -401,6 +401,7 @@ function __changeTipoEnvio(__element){
 						<div class="col-md-8">
 							<p class="form-control" >
 								<bean:write property="identificacion" name="frmPersona"/>
+								<html:hidden property="identificacion"/>
 							</p>
 						</div>
 
@@ -429,35 +430,35 @@ function __changeTipoEnvio(__element){
 							<p>
 								<div class="col-md-4">
 									<html:select property="year" styleClass="form-control" styleId="year" onchange="updateYear(this)">
-									<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
-									<html:option value=""></html:option>
-									<html:options collection="cpYears" property="key" labelProperty="value"/>
+										<bean:define id="cpYears" scope="session" name="list_years" type="java.util.List"/>
+										<html:option value=""></html:option>
+										<html:options collection="cpYears" property="key" labelProperty="value"/>
 									</html:select>
 								</div>
 
 								<div class="col-md-4">
 									<html:select styleClass="form-control" styleId="month" property="month" onchange="updateMonth(this)">
-									<html:option value=""></html:option>
-									<html:option value="01">01</html:option>
-									<html:option value="02">02</html:option>
-									<html:option value="03">03</html:option>
-									<html:option value="04">04</html:option>
-									<html:option value="05">05</html:option>
-									<html:option value="06">06</html:option>
-									<html:option value="07">07</html:option>
-									<html:option value="08">08</html:option>
-									<html:option value="09">09</html:option>
-									<html:option value="10">10</html:option>
-									<html:option value="11">11</html:option>
-									<html:option value="12">12</html:option>
+										<html:option value=""></html:option>
+										<html:option value="01">01</html:option>
+										<html:option value="02">02</html:option>
+										<html:option value="03">03</html:option>
+										<html:option value="04">04</html:option>
+										<html:option value="05">05</html:option>
+										<html:option value="06">06</html:option>
+										<html:option value="07">07</html:option>
+										<html:option value="08">08</html:option>
+										<html:option value="09">09</html:option>
+										<html:option value="10">10</html:option>
+										<html:option value="11">11</html:option>
+										<html:option value="12">12</html:option>
 									</html:select>
 								</div>
 
 								<div class="col-md-4">
 									<html:select styleClass="form-control" styleId="day" property="day" onchange="updateDay(this)">
-									<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
-									<html:option value=""></html:option>
-									<html:options collection="cpDays" property="key" labelProperty="value"/>
+										<bean:define id="cpDays" scope="session" name="list_days" type="java.util.List"/>
+										<html:option value=""></html:option>
+										<html:options collection="cpDays" property="key" labelProperty="value"/>
 									</html:select>
 								</div>
 
@@ -488,9 +489,9 @@ function __changeTipoEnvio(__element){
 							<p>
 								<html:select property="nacionalidad"
 								styleClass="form-control" styleId="nacionalidad">
-								<bean:define id="cp1" scope="session" name="list_nacionalidad" type="java.util.List"/>
-								<html:option value="">[Seleccione un valor]</html:option>
-								<html:options collection="cp1" property="key" labelProperty="value"/>
+									<bean:define id="cp1" scope="session" name="list_nacionalidad" type="java.util.List"/>
+									<html:option value="">[Seleccione un valor]</html:option>
+									<html:options collection="cp1" property="key" labelProperty="value"/>
 								</html:select>
 							</p>
 						</div>
@@ -596,9 +597,9 @@ function __changeTipoEnvio(__element){
 							<p>
 								<html:select property="departamento"
 								styleClass="form-control" styleId="departamento">
-								<html:option value="0">[Seleccione un valor]</html:option>
-								<bean:define id="cp7" scope="session" name="list_departamentos" type="java.util.List"/>
-								<html:options collection="cp7" property="key" labelProperty="value"/>
+									<html:option value="0">[Seleccione un valor]</html:option>
+									<bean:define id="cp7" scope="session" name="list_departamentos" type="java.util.List"/>
+									<html:options collection="cp7" property="key" labelProperty="value"/>
 								</html:select>
 							</p>
 						</div>
@@ -712,12 +713,29 @@ function __changeTipoEnvio(__element){
 							</script>
 						</logic:messagesPresent>
 
-						<logic:messagesPresent name="msg_correoElectronico">
-							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-							<script type="text/javascript">
-							__setChangeColor("correoElectronico");
-							</script>
-						</logic:messagesPresent>
+						<div class="row">
+							<html:hidden property="tipoCorreoElectronico" />
+							<html:hidden property="tipoDireccionFisica" />
+
+							<div id="__correoElectronico" style="display:<bean:write name='frmPersona' property='tipoCorreoElectronico'/>">
+								<div class="col-md-4">
+									<font color="#FF0000">*</font>
+									<bean:message key="lbl.actualiza.natural.correo.electronico"/>
+								</div>
+
+								<div class="col-md-8">
+									<html:text property="correoElectronico" styleId="correoElectronico" styleClass="textfield" maxlength="50"/>
+								</div>
+
+								<logic:messagesPresent name="msg_correoElectronico">
+									<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+									<script type="text/javascript">
+										__setChangeColor("correoElectronico");
+									</script>
+								</logic:messagesPresent>
+
+							</div>
+						</div>
 
 						<p><b><bean:message key="lbl.actualiza.natural.titulo.4"/></b></p>
 
@@ -730,7 +748,6 @@ function __changeTipoEnvio(__element){
 								<html:text property="nombreEmpresa" styleClass="form-control"  maxlength="120"/>
 							</p>
 						</div>
-
 
 						<div class="col-md-4">
 							<bean:message key="lbl.actualiza.natural.cargo"/>
@@ -822,10 +839,10 @@ function __changeTipoEnvio(__element){
 						</div>
 
 						<logic:messagesPresent name="msg_faxEmpresa">
-						<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-						<script type="text/javascript">
-						__setChangeColor("faxEmpresa");
-						</script>
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("faxEmpresa");
+							</script>
 						</logic:messagesPresent>
 
 						<div class="col-md-4">
@@ -839,16 +856,15 @@ function __changeTipoEnvio(__element){
 						</div>
 
 						<logic:messagesPresent name="msg_correoElectronicoEmpresa">
-						<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
-						<script type="text/javascript">
-						__setChangeColor("correoElectronicoEmpresa");
-						</script>
+							<img src="<html:rewrite page='/images/warning_sml.gif'/>"/>
+							<script type="text/javascript">
+							__setChangeColor("correoElectronicoEmpresa");
+							</script>
 						</logic:messagesPresent>
 
 						<div align="center">
 							<input type="button" class="btn btn-default" onclick="__submit();" id='actualizar' value="<bean:message key='lbl.actualiza.boton.actualizar'/>"/>
 						</div>
-
 
 					</html:form> 
 
@@ -857,12 +873,6 @@ function __changeTipoEnvio(__element){
 		</div>
 	</div>
 </div>
-
-<!-- Div que contiene el cintillo de los derechos reservados -->
-	<div align="center" id="derechos" style="width:100%;height:31;background-color:#4D4F53;" ><p style="color:#fff">
-		<bean:message key="<%=copyrigth %>"
-			arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>' /></p>
-	</div>
 
 	    <ajax:select    
   baseUrl="${pageContext.request.contextPath}/populate/departamento"

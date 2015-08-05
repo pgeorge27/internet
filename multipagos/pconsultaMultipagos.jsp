@@ -221,7 +221,7 @@ function send(){
 </script>
 <%@ include file="../body.jsp"%>
 <div class="container">
-	<div class="row">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 		<div class="row">
 
 			<logic:messagesPresent>

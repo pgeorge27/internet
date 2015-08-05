@@ -183,9 +183,5 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 </div>
 
 
-<div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
-	<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-</div>
-
 </body>
 </html>

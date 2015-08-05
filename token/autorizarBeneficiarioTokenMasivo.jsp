@@ -196,7 +196,7 @@ function escribir(A){
 </script>
 
 <div class="container"> 
-    <div class="row">
+    <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
 		<logic:messagesPresent>
 			<div align="center" class="well col-md-6 col-md-offset-3">

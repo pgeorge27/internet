@@ -59,7 +59,7 @@ document.oncontextmenu = protect;}}}
 <body>
 
 <div class="container">
-  <div class="row">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
     <div align="right">
       <img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
@@ -87,9 +87,7 @@ document.oncontextmenu = protect;}}}
     </div>
   </div>
 </div>
-<div align="center" class="derechos">&copy;
-  <bean:message key="msg.derechos.reservados"  arg0='<%=" "+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-</div>
+
 
 </body>
 

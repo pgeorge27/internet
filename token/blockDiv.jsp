@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row" style="padding-right: 3%; padding-left: 3%;">
         <div id="msgExito" style="display:none; cursor: default">
             <img src="<html:rewrite page='/images/gancho02.gif'/>"/>
             <p>Su dispositivo de seguridad se ha registrado exitosamente.</p>

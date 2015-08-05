@@ -114,7 +114,7 @@ document.oncontextmenu = protect;}}}
 <body>
 
 	<div class="container"> 
-		<div class="row">
+		<div class="row" style="padding-right: 3%; padding-left: 3%;">
 			<div align="right">
 				<img border="0" src="<html:rewrite page='/images/logo.jpg'/>" />
 			</div>
@@ -188,11 +188,6 @@ document.oncontextmenu = protect;}}}
 			</div>
 		</div>
 	</div>
-
-
-  <div align="center" class="derechos" style="width:100%;height:31;background-color:#4D4F53;">
-    <bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-  </div>
 
 </body>
 

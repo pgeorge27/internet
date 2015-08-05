@@ -153,10 +153,6 @@ window.open(page,name,"toolbar=no,location=no,directories=no,status=yes,menubar=
 
 	</div>
 </div>
-		<!-- empieza cinta con derechos reservados -->
-<div align="center" class="derechos">
-	<bean:message key="<%=copyrigth %>" arg0='<%=""+java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)%>'/>
-</div>
 
 </body>
 </html>

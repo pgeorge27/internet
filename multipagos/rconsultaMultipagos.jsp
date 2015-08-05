@@ -65,7 +65,7 @@ private String getDescEstado(String estado){
 <%Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);%>
 
 <div class="container"> 
-    <div class="row">
+    <div class="row" style="padding-right: 3%; padding-left: 3%;">
         <div class="table-responsive">
             <div class="col-md-6">
                 <p class="bienvenida_1">

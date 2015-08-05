@@ -10,6 +10,11 @@
 <%@ page import="com.arango.common.beans.DetalleTransferencia"%>
 <%@ page import="com.arango.internet.services.interfaces.ITransferencia"  %>
 
+<!DOCTYPE html>
+<html>
+
+<head>
+
 <%!
 com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
 String format = "dd-MMM-yyyy HH:mm:ss";
@@ -140,7 +145,18 @@ function __print(){
 	__showElement("_printer");
 }
 </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <%@ include file="../body.jsp" %>
+
+<body>
+
+<div class="container">
 
 <table align="center" border="0" cellpadding="1" cellspacing="1" width="100%">
    <tr valign="top">
@@ -160,12 +176,16 @@ function __print(){
 <tr valign="top">
 	<td class="bienvenida" colspan="2">
 	
+
+	
 <table align="center" border="0" width="100%" id="table1">
 	<tr>
-		<td  class="bienvenida" width="40%"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"></td>
-		<td  class="login" width="60%" align="right"><bean:message key="lbl.transf.inter.titulo"/></td>
+		
+		<td  class="login" width="60%" ><bean:message key="lbl.transf.inter.titulo"/></td>
+		<td  class="bienvenida" align="right" width="40%"><img border="0" src="<html:rewrite page='/images/logo.jpg'/>"></td>
 	</tr>
 </table>
+	<br>
 <table align="center" border="0" width="100%" id="table2" cellpadding="0" cellspacing="0" class="tabla-border2">
 	<tr class="celda-clave3">
 		<td colspan="2">&nbsp;</td>
@@ -389,30 +409,37 @@ function __print(){
 		</td>
 	</tr>
 </table>
+<br>
 <div id="_printer" style="display:">
 <table width="100%" cellpadding="5" cellspacing="5">
 	<tr>
       <td align="center">
-		<div align="center">
+      <br>
+		<div class="visible-lg" align="center">
 			<a href="javascript:__print()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
 		<div align="center">
 			<a href="<html:rewrite page='/reciboxml/download'/>" target="_new"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0">&nbsp;Descargar Transferencia de Fondos en formato PDF</a></div>
 		<%if (ITransferencia.PROCESADA.equals(t.getEstado())) {%>	
+		<br>
 		<div align="center">
 			<a href="<html:rewrite page='/swift/download'/>" target="_new"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0">&nbsp;Descargar SWIFT en formato PDF</a></div>
 			<%} %>	
 		</td></tr>
 	<tr>
+	
+	
 		<td align="center">
         <%
         String target = request.getParameter("t");
         if ("1".equals(target)){
         %>
-	        <input type="button" class="botton" onclick="document.location='<html:rewrite page='/transferencias/consulta.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
-	    <%}else if ("3".equals(target)){%>    
-	    	<input type="button" class="botton" onclick="document.location='<html:rewrite page='/transferencias/modificacion.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
+        <br>
+	        <input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/transferencias/consulta.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
+	    <%}else if ("3".equals(target)){%>   
+	 
+	    	<input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/transferencias/modificacion.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
 	    	&nbsp;&nbsp;&nbsp;
-			<input type="button" class="botton" value="<bean:message key="lbl.transf.inter.modificar"/>" onclick="document.forms[0].submit();">
+			<input type="button" class="btn btn-default" value="<bean:message key="lbl.transf.inter.modificar"/>" onclick="document.forms[0].submit();">
 			<html:form method="post" action="/update"> 
 				<html:hidden property="indice" value="<%=String.valueOf(index)%>"/>
 			</html:form>
@@ -420,12 +447,12 @@ function __print(){
         	String tieneToken = (String) session.getAttribute("tieneToken");
         	if(tieneToken != null && tieneToken.equals("S")){
         %>
-            	<input type="button" class=botton onclick="document.location='<html:rewrite page='/transferencias/aprobacionMasiva.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
+            	<input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/transferencias/aprobacionMasiva.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
         <%
         	}
         	else{
         %>
-        		<input type="button" class=botton onclick="document.location='<html:rewrite page='/transferencias/aprobacion.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
+        		<input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/transferencias/aprobacion.jsp'/>'" value="<bean:message key="lbl.retroceder"/>" >
         <%
         	}
         	
@@ -457,16 +484,19 @@ function __print(){
 					document.forms[0].submit();
 				}
 			</script>
-			<input type="button" class="botton" value="<bean:message key="lbl.transf.inter.autorizar"/>" onclick="set();">
+			<input type="button" class="btn btn-default" value="<bean:message key="lbl.transf.inter.autorizar"/>" onclick="set();">
 			&nbsp;&nbsp;&nbsp;
-			<input type="button" class="botton" value="<bean:message key="lbl.transf.inter.rechazar"/>" onclick="__reject();">
+			<input type="button" class="btn btn-default" value="<bean:message key="lbl.transf.inter.rechazar"/>" onclick="__reject();">
         <%}%>
         </td></tr>
 </table>
 </div>
 <!-- Fin. Solicitud -->
 </td></tr></table>
-                        </td></tr></table></td></tr></table></td></tr></table>
+                        </td></tr></table></td></tr></table></td></tr></table></table>
 
 
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html>
