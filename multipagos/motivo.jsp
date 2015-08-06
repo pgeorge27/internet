@@ -89,32 +89,32 @@ function __continue(){
           </div>
           <div class="panel-body">
             <div align="right">
-              <input class="btn btn-defaukt" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+              <input class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
             </div>
 
             <html:form method="post" action="/multipago/autoriza">   
               <html:hidden property="tipo" value="<%=ITransferencia.RECHAZADA%>" />
               <html:hidden property="indice" value="<%=String.valueOf(index)%>"/>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.fecha"/></p>
-              <p class="bienvenida" width="70%"><%=f.formatFechaLong(today, locale2)%></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.fecha"/></p></b>
+              <p class="bienvenida"><b><%=f.formatFechaLong(today, locale2)%></p>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.secuencia"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.secuencia"/></p></b>
               <p class="bienvenida"><%=StringUtilities.replace(f.formatCuenta(transf.getNumeroDocumento(), "A-S-C"), "-", "")%></p>
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuenta"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.cuenta"/></p></b>
               <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaAbanks())%></p>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cantidad"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.cantidad"/></p></b>
               <p class="bienvenida"><%=f.formatMonto(transf.getMonto())%></p>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.moneda"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.moneda"/></p></b>
               <p class="bienvenida"><%=StringUtilities.getValue(transf.getMonedaAbanks())%></p>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.cuentaBeneficiario"/></p></b>
               <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentabancoBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></p>
 
-              <p class="bienvenida" width="30%"><bean:message key="lbl.transf.inter.motivo"/></p>
-              <p class="bienvenida" width="70%"><html:textarea property="motivo" styleId="motivo" cols="35" rows="5"  styleClass="botton-acceso"/></p>
+              <p class="bienvenida"><b><bean:message key="lbl.transf.inter.motivo"/></p>
+              <p class="bienvenida"><b><html:textarea property="motivo" styleId="motivo" cols="35" rows="5"  styleClass="form-control"/></p>
 
             </html:form>
 

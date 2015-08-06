@@ -257,7 +257,7 @@ function __update(){
 					<bean:message key="lbl.transferencias.autorizaciones.nuevas"/>
 				</div>
 				<div class="col-md-6">
-					<div align="right">&nbsp; <input class="btn btn-default" onclick="document.location='/internet/servicios/aprobacion.jsp';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+					<div align="right"><input class="btn btn-default" onclick="document.location='/internet/servicios/aprobacion.jsp';" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
 				</div>
 
 			</div>

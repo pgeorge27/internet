@@ -70,7 +70,7 @@ function __continue(){
           </div>
           <div class="panel-body">
             <div align="right">
-              <input class="btn btn-defaukt" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
+              <input class="btn btn-default" onclick="document.forms[0].submit();" type="button" value="<bean:message key="lbl.retroceder"/>">
             </div>
 
             <html:form method="post" action="/autoriza">   
@@ -97,7 +97,7 @@ function __continue(){
               <p class="bienvenida"><%=StringUtilities.getValue(transf.getCuentaBeneficiario())%> <%=StringUtilities.getValue(transf.getNombreBeneficiario())%></p>
 
               <p class="bienvenida"><bean:message key="lbl.transf.inter.motivo"/></p>
-              <p class="bienvenida"><html:textarea property="motivo" styleId="motivo" cols="35" rows="5" onkeypress="validateLength(this, 100)" styleClass="botton-acceso"/></p>
+              <p class="bienvenida"><html:textarea property="motivo" styleId="motivo" cols="35" rows="5" onkeypress="validateLength(this, 100)" styleClass="form-control"/></p>
 
             </html:form>
 
