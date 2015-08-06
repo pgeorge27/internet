@@ -75,7 +75,7 @@ String cuentas = "";
 <div class="container">
   <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-default" >
         <div class="panel-heading" >
           <img src="<html:rewrite page='/images/logo_icon.png' />" />

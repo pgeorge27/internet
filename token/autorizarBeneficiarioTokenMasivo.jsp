@@ -249,9 +249,36 @@ function escribir(A){
 			<html:hidden property="tipo" />
 			<html:hidden styleId="tipos" property="indice" value="1" />
 
-				<p><bean:message key="lbl.nombre.beneficiario.token" /> <%=StringUtilities.getValue(t.getNombreBeneficiario())%></p>
-				<p><bean:message key="lbl.cuenta.beneficiario.token" /><%=StringUtilities.getValue(t.getCuentaBeneficiario())%></p>
-				<p><bean:message key="lbl.nombre.banco.beneficiario.token" /><%=StringUtilities.getValue(t.getNombreBancoIntermediario())%></p>
+					<%
+						com.arango.common.util.Format f = com.arango.common.util.Format.getFormat();
+						for(int i=0;i<t.size();i++){
+							TransferenciaInternacional obj = (TransferenciaInternacional) t.get(i);
+					%>
+						<p>
+							<b><bean:message key="lbl.aprobacion.masiva.col1"/></b>
+							<%=StringUtilities.replace(f.formatCuenta(obj.getNumeroDocumento(), "A-S-C"), "-","")%>
+						</p>
+
+						<p>
+							<b><bean:message key="lbl.aprobacion.masiva.col2"/></b>
+							<%=obj.getNombreBeneficiario()%>
+						</p>
+						<p>
+							<b><bean:message key="lbl.aprobacion.masiva.col3"/></b>
+							<%=obj.getCuentaBeneficiario()%>
+						</p>
+						<p>
+							<b><bean:message key="lbl.aprobacion.masiva.col4"/></b>
+							<%=obj.getNombreBancoIntermediario()%>
+						</p>
+						<p>
+							<b><bean:message key="lbl.aprobacion.masiva.col5"/></b>
+							<%=f.formatMonto(obj.getMonto())%>
+						</p>
+						<hr>
+					<%
+						}
+					%>
 
 
 				<div align="center">
