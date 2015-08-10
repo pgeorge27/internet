@@ -113,13 +113,13 @@ function retornar(){
 
           <div class="col-md-4">
             <p>
-              <bean:message key="lbl.cuentas"/><span class="form-control"> (<font color="#FF0000">*</font>)</span>
+              <bean:message key="lbl.cuentas"/><span class="texto-acceso"> (<font color="#FF0000">*</font>)</span>
             </p>
           </div>
 
           <div class="col-md-8">
             <p>
-              <html:select property="cuenta" styleClass="lstbox">
+              <html:select property="cuenta" styleClass="form-control">
                 <logic:notEmpty name="cuentasCompensacion">
                   <html:option value="">
                     <bean:message key="lbl.seleccione.una.cuenta"/>
