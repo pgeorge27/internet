@@ -113,7 +113,7 @@ function retornar(){
 
           <div class="col-md-4">
             <p>
-              <bean:message key="lbl.cuentas"/><span class="texto-acceso"> (<font color="#FF0000">*</font>)</span>
+              <bean:message key="lbl.cuentas"/><span class="form-control"> (<font color="#FF0000">*</font>)</span>
             </p>
           </div>
 

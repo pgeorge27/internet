@@ -18,6 +18,139 @@
  Format f = Format.getFormat();
 Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);
 %>
+
+
+
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+
+      <logic:messagesPresent>
+        <div align="center" class="well col-md-4">
+          <p>
+            <img src="<html:rewrite page='/images/warning.gif'/>">
+          </p>
+          <p><b><bean:message key="errors.header"/></b></p>
+          <html:messages id="error">
+            <p class="bienvenida">- <bean:write name="error" /></p>
+          </html:messages>
+        </div>
+      </logic:messagesPresent>
+
+
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+            <p class="login">
+              <%
+              Object obj = session.getAttribute("con.tipo.doc");
+              String tipo = obj == null ? "1" : obj.toString();
+              if ("1".equals(tipo)){%>
+              Consulta Documentos Importacion
+              <%}else if("2".equals(tipo)){%>
+              Consulta Documentos Exportacion
+              <%}%>
+            </p>
+          </strong>
+        </div>
+
+        <div class="panel-body">
+
+<bean:message key="lbl.desde"/>
+<%=f.formatFecha((java.util.Date)session.getAttribute("desde"), locale)%>
+
+<bean:message key="lbl.hasta"/>
+<%=f.formatFecha((java.util.Date)session.getAttribute("hasta"), locale)%>
+
+N° Cuenta
+<%=session.getAttribute("busqueda.resultado.cuenta")%>
+
+Número Documento
+<%=session.getAttribute("busqueda.resultado.Doc")%>
+
+
+          <div class="col-md-4">
+            <p>
+              <bean:message key="lbl.cuentas"/><span class="texto-acceso"> (<font color="#FF0000">*</font>)</span>
+            </p>
+          </div>
+
+          <div class="col-md-8">
+            <p>
+              <html:select property="cuenta" styleClass="lstbox">
+                <logic:notEmpty name="cuentasCompensacion">
+                  <html:option value="">
+                    <bean:message key="lbl.seleccione.una.cuenta"/>
+                  </html:option>
+                  <bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
+                  <html:options collection="cp" property="codigoCSIC" labelProperty="tag"/>
+                </logic:notEmpty>
+                <logic:empty name="cuentasCompensacion">
+                  <html:option value="">
+                  <bean:message key="lbl.seleccione.no.hay.cuentas"/>
+                  </html:option>
+                </logic:empty>
+              </html:select>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p><bean:message key="lbl.desde"/></p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <html:text styleId="desde" property="desde" styleClass="form-control" size="20" maxlength="12"/>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <input type="button" class="calendar2" value=" " id="date_trigger1" onclick="return showCalendar('desde', 'dd-mm-y');" > [<b>dd-mm-yyyy</b>]
+            </p>
+          </div>
+          <div class="row"> </div>
+          <div class="col-md-4">
+            <p>
+              <bean:message key="lbl.hasta"/>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <html:text styleId="hasta" property="hasta" styleClass="form-control" size="20" maxlength="12"/>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
+            </p>
+          </div>
+
+          <div class="row"> </div>
+
+          <div align="center">
+            <input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">
+            <input TYPE="BUTTON" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
+          </div>
+
+          <div align="center">
+            <p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+          </div>
+
+          </html:form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <div id="estcta" align="left">
 <logic:messagesPresent>
 	<table cellpadding="1" cellspacing="1" width="750" align="center" class="tabla-acceso">
