@@ -64,10 +64,10 @@ function openwin(url)
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/all.css'/>">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/bootstrap.js'/>"></script>

@@ -19,7 +19,7 @@ java.util.Calendar cal2 =  java.util.Calendar.getInstance();
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="<html:rewrite page='/scripts/jquery-latest.min.js'/>"></script>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/bootstrap.min.css'/>">
 <script type="text/javascript" src="<html:rewrite page='/scripts/xaramenu.js' />"></script>
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/style/all.css'/>">
