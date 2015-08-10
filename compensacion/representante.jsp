@@ -28,7 +28,117 @@ String calendar = "/calendar/calendar-"+locale.getLanguage()+".js";
 <script type="text/javascript" src="<html:rewrite page='/scripts/calendar-trx.js'/>"></script>
 <%@ include file="../body.jsp" %>
 
-<br>
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+    <logic:messagesPresent>
+    <div align="center" class="well col-md-4 col-md-offset-4">
+      <p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+      <p><b><bean:message key="errors.header"/></b></p>
+      <html:messages id="error">
+      <p class="bienvenida"> - <bean:write name="error" /></p>
+      </html:messages>
+    </div>
+  </logic:messagesPresent>
+
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default" >
+      <div class="panel-heading" >
+        <img src="<html:rewrite page='/images/logo_icon.png' />" />
+        <strong>
+          <bean:message key="lbl.compensacion.parametro.titulo.2" />
+        </strong>
+      </div>
+
+      <div class="panel-body">
+
+        <p><INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/mant/representante.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></p>
+
+        <% String doubleCuote = (String)session.getAttribute("representante.accion.nuevo"); %>
+        <html:form method="post" action="/grabar/representante">
+        <html:hidden styleId="nuevo" property="nuevo" value="<%= doubleCuote%>"/>
+        <html:hidden styleId="numero" property="numero" />
+        <!-- Agrego campo oculto ciu Edgar Sucre => 06/03/2012 -->
+        <html:hidden styleId="numero" property="ciu" />
+
+        <p><bean:message key="lbl.mensaje.campo.requerido" /></p>
+
+
+        <div class="col-md-4">
+          <p>
+            <bean:message key="lbl.compensacion.parametro.cuenta" /><span class="texto-acceso"> (<font color="#FF0000">*</font>)</span>
+          </p>
+        </div>
+
+        <div class="col-md-8">
+          <p>
+            <html:select property="cuenta" styleClass="form-control">
+            <bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
+            <html:options collection="cp" property="codigoCSIC" labelProperty="codigoBanco"/>
+            </html:select>
+          </p>
+        </div>
+
+        <p><bean:message key="lbl.compensacion.parametro.nombre" /></p>
+        <p><html:text property="nombre" size="50" maxlength="150"/></p>
+
+        <p><bean:message key="lbl.compensacion.parametro.identificacion" />(<font color="#FF0000">*</font>)</p>
+        <p>
+          <html:select styleId="tipoIdentificacion" property="tipoIdentificacion" styleClass="form-control">
+          <bean:define id="cp2" scope="session" name="tipos" type="java.util.ArrayList"/>
+          <html:options collection="cp2" property="codigo" labelProperty="descripcion"/>
+          </html:select>
+        </p>
+
+        <p>
+          <html:text property="identificacion" styleClass="form-control" size="25" maxlength="20" />
+        </p>
+        
+        <p>
+          <bean:message key="lbl.compensacion.parametro.direccion" />(<font color="#FF0000">*</font>)
+        </p>
+        <p>
+          <html:text property="direccion" styleClass="form-control" size="50" maxlength="200"/>
+        </p>
+
+        <p>
+          <bean:message key="lbl.compensacion.parametro.ciudad" />(<font color="#FF0000">*</font>)
+        </p>
+        <p> 
+          <html:select property="ciudad" styleClass="form-control">
+          <bean:define id="cp3" scope="session" name="ciudades" type="java.util.ArrayList"/>
+          <html:options collection="cp3" property="codigo" labelProperty="descripcion"/>
+          </html:select>
+        </p>
+
+        <p>
+          <bean:message key="lbl.compensacion.parametro.telefono" />(<font color="#FF0000">*</font>)
+        </p>
+        <p>
+         <html:text property="telefono" styleClass="form-control" size="30" maxlength="30"/>
+       </p>
+
+       <p>
+        <bean:message key="lbl.compensacion.parametro.email" />(<font color="#FF0000">*</font>)
+      </p>
+      <p>
+        <html:text property="email" styleClass="form-control" size="30" maxlength="60"/>
+      </p>
+
+      <div align="center">
+        <html:submit styleClass="btn btn-default">Aceptar</html:submit> 
+
+        <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/mant/representante.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+      </div>
+
+      </html:form>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
 <logic:messagesPresent>
   <table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
 		  <tr><td>

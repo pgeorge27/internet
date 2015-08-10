@@ -117,20 +117,24 @@ div.Section1
 </style>
 </head>
 <body>
-<table width="95%" align="center">
-	<tr>
-		<td><div align="center" id="bankdiv" style="display:"><a href="javascript:printContrato()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-		</td></tr>
-	<tr><td><img src="<html:rewrite page='/images/logo.jpg'/>"></td></tr>	
-	<tr>	
-		<td>
-			<% if ("en".equals(locale.getLanguage())){%>
-				<%@ include file="./agreement_en.htm" %>
-			<%}else{%>
-				<%@ include file="./agreement_es.htm" %>
-			<%}%>
-		</td>
-	</tr>
-</table>
+
+<div class="container">
+	<div class="row" style="padding-right: 3%; padding-left: 3%;">
+		<div align="center" id="bankdiv" style="display:">
+			<a href="javascript:printContrato()">
+				<img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0">
+			</a>
+		</div>
+		
+		<p><img src="<html:rewrite page='/images/logo.jpg'/>"></p>
+		
+		<% if ("en".equals(locale.getLanguage())){%>
+			<%@ include file="./agreement_en.htm" %>
+		<%}else{%>
+			<%@ include file="./agreement_es.htm" %>
+		<%}%>
+	</div>
+</div>
+
 </body>
 </html>
