@@ -128,9 +128,18 @@
 		<load-on-startup />
 	</servlet>
 
-	
-		
-	
+<!-- servlet para weblogic  -->  
+
+<!--
+<servlet>
+    <servlet-name>ServletServlet</servlet-name>
+    <servlet-class>weblogic.servlet.ServletServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletServlet</servlet-name>
+    <url-pattern>servlet/*</url-pattern>
+  </servlet-mapping>
+-->
 	<!-- servlet para DocumentoTransporte  -->	
 	<servlet>
 		<servlet-name>DocumentoTransporte</servlet-name>
