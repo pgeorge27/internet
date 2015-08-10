@@ -98,8 +98,6 @@ function retornar(){
 
 <%@ include file="../body.jsp"%>
 
-
-
 <div class="container">
   <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
@@ -179,7 +177,7 @@ function retornar(){
               <input type="button" class="calendar2" value=" " id="date_trigger2" onclick="return showCalendar('hasta', 'dd-mm-y');"> [<b>dd-mm-yyyy</b>]
             </p>
           </div>
-          
+
           <div class="row"> </div>
 
           <div align="center">
