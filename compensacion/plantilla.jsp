@@ -232,7 +232,7 @@ function _showAlert(field, label){
 		alert("<bean:message key="lbl.nota.transferencias.cuba"/>" + " " + msg);
 	}
 	else{
-		field.className = "botton-acceso";
+		field.className = "form-control";
 	}
 }
 function __validateField1(){
@@ -736,232 +736,7 @@ function __init(){
 
 </html:form>
 
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<logic:messagesPresent>
-	<table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
-		<tr>
-			<td>
-			<table border="0" cellpadding="1" cellspacing="0" width="100%">
-				<tr valign="top">
-					<td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-					<td width="95%" class="msg">
-						<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-						<span class="bienvenida">
-							<table width="80%">
-							<html:messages id="error">					
-								<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-							</html:messages>
-							</table>
-						</span><br>
-					</td>
-				</tr>
-			</table>
-			</td>
-		</tr>
-	</table>
-</logic:messagesPresent>
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr> 
-		<td height="40" valign="bottom">
-		<div align="center"> 
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			  <tr> 
-				<td><div align="left" class="login"><bean:message key="lbl.transf.inter.titulo"/></div></td>
-			  </tr>
-			</table>
-		</div>
-		</td>
-	</tr>
-	<tr> 
-		<td class="texto-acceso">&nbsp;</td>
-	</tr>
-	<tr> 
-		<td valign="top">
-		<html:form method="post" action="/grabar/plantilla" onsubmit="document.forms[0].action.value='validate'">
-		<html:hidden property="descMoneda" />
-		<html:hidden property="action" />
-		<html:hidden property="mode" value="create"/>
-		<html:hidden property="numeroDocumento" />
-		<html:hidden property="secuencia" />
-		<html:hidden property="codigoCliente" />
-
-		<table width="100%" border="0" cellpadding="5" cellspacing="1">
-		<tr>
-			<td height="20" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-		</tr>
-
-		<!-- BANCO INTERMEDIARIO -->
-		<tr valign="middle" class="celda-clave1">
-			<td colspan="2" class="bienvenida">
-				&nbsp;&nbsp;&nbsp;<b><bean:message key="lbl.transf.inter.titulo.nombreBancoIntermediario"/><br>
-				&nbsp;&nbsp;&nbsp;<small>(<bean:message key="lbl.transf.inter.nota.banco.intermediario"/>)</small></b>
-			</td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida">
-				<b>1:</b> <html:radio property="tipoSWIFTBeneficiario" value="SWIFT" styleId="_SWIFT"/>
-			   <bean:message key="lbl.transf.inter.swiftBeneficiario"/>
-			   <html:radio property="tipoSWIFTBeneficiario" value="ABA" styleId="_ABA"/>
-			   <bean:message key="lbl.transf.inter.abaBeneficiario"/>
-			</td>
-		</tr>
-		<tr valign="middle">					   
-			<td class="bienvenida"><html:text property="swiftBeneficiario" styleId="swiftBeneficiario" maxlength="18" styleClass="botton-acceso"/></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>2:</b> <bean:message key="lbl.transf.inter.nombreBancoIntermediario"/></td>
-			<td class="bienvenida"><b>3:</b> <bean:message key="lbl.transf.inter.direccionBancoBeneficiario"/></td>
-		</tr>
-		<tr valign="top">
-			<td class="bienvenida"><html:hidden property="bancoBeneficiario"/><div id="lblBancoBeneficiario" class="textbox"></div></td>
-			<td class="bienvenida"><html:hidden property="direccionBancoBeneficiario"/><div id="lblDireccionBancoBeneficiario" class="textbox2"></div></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>4:</b> <bean:message key="lbl.transf.inter.ciudadBancoBeneficiario"/></td>
-			<td class="bienvenida"><b>5:</b> <bean:message key="lbl.transf.inter.paisBancoBeneficiario"/></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><html:hidden property="ciudadBancoBeneficiario"/><div id="lblCiudadBancoBeneficiario" class="textbox"></div></td>
-			<td class="bienvenida"><html:hidden property="paisBancoBeneficiario"/><div id="lblPaisBancoBeneficiario" class="textbox"></div></td>
-		</tr>
-		<!-- BANCO INTERMEDIARIO -->
-
-		<!-- BANCO BENEFICIARIO -->
-		<tr valign="middle" class="celda-clave1">
-			<td colspan="2" class="bienvenida">&nbsp;&nbsp;&nbsp;<b><bean:message key="lbl.transf.inter.titulo.nombreBancoBeneficiario"/></b></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>6:</b> <bean:message key="lbl.transf.inter.cuentaBancoIntermediario"/></td>
-			<td class="bienvenida"><b>7:</b> 
-				<html:radio property="tipoSWIFTIntermediario" value="SWIFT" styleId="_SWIFT2" onclick="_choseValue('SWIFT');"/>
-			   <bean:message key="lbl.transf.inter.swiftBancoIntermediario"/>
-			   <html:radio property="tipoSWIFTIntermediario" value="ABA" styleId="_ABA2" onclick="_choseValue('ABA');"/>
-			   <bean:message key="lbl.transf.inter.abaBancoIntermediario"/>
-			   <html:radio property="tipoSWIFTIntermediario" value="OTRO" styleId="_OTRO2" onclick="_choseValue('ANOTHER');"/>
-			   <bean:message key="lbl.transf.inter.otroBancoIntermediario"/>
-			</td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><html:text property="cuentaBancoIntermediario" styleId="cuentaBancoIntermediario"  onkeypress="alphabetic();" onblur="_showAlert(this,8);" maxlength="34" size="45" styleClass="botton-acceso"/></td>
-			<td class="bienvenida"><html:text property="swiftBancoIntermediario" styleId="swiftBancoIntermediario" maxlength="18" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>8:</b> <bean:message key="lbl.transf.inter.bancoBeneficiario"/></td>
-			<td class="bienvenida"><b>9:</b> <bean:message key="lbl.transf.inter.direccionBancoIntermediario"/></td>
-		</tr>
-		<tr valign="top">
-			<td class="bienvenida">
-				<div id="lblNombreBancoIntermediario" class="textbox" style="display:"></div>
-				<div id="txtNombreBancoBeneficiario" style="display:none"><html:text property="nombreBancoIntermediario" styleClass="botton-acceso" size="45" maxlength="50" onkeypress="alphanumeric()" onblur="_showAlert(this, 5);"/></div>
-			</td>
-			<td class="bienvenida">
-				<div id="lblDireccionBancoIntermediario" class="textbox2" style="display:"></div>
-				<div id="txtDireccionBancoIntermediario" style="display:none"><html:textarea property="direccionBancoIntermediario" styleClass="botton-acceso" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 50)" onblur="_showAlert(this, 6);" /></div>
-			</td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>10:</b> <bean:message key="lbl.transf.inter.ciudadBancoIntermediario"/></td>
-			<td class="bienvenida"><b>11:</b> <bean:message key="lbl.transf.inter.paisBancoIntermediario"/></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida">
-				<div id="lblCiudadBancoIntermediario" class="textbox" style="display:"></div>
-				<div id="txtCiudadBancoIntermediario" style="display:none"><html:text property="ciudadBancoIntermediario" styleClass="botton-acceso" size="45" maxlength="20" onkeypress="alphabetic()" onblur="_showAlert(this, 7);"/></div>
-			</td>
-			<td class="bienvenida">
-				<div id="lblPaisBancoIntermediario" class="textbox" style="display:"></div>
-				<div id="txtPaisBancoIntermediario" style="display:none">
-					<html:select property="paisBancoIntermediario" styleId="paisBancoIntermediario" styleClass="botton-acceso" onchange="_showAlert(this, 11);">
-						<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
-						<csic:value-list fileName="paises">
-							<%if (codigo != null && codigo.length() > 20){
-								codigo = codigo.substring(0, 19);
-							}%>
-							<html:option value="<%=codigo%>" ><%=valor %></html:option>
-						</csic:value-list>
-					</html:select>
-				</div>
-			</td>
-		</tr>
-		<!-- BANCO BENEFICIARIO -->
-
-		<!-- BENEFICIARIO -->
-		<tr valign="middle" class="celda-clave1">
-			<td colspan="2" class="bienvenida"><b>&nbsp;&nbsp;&nbsp;<bean:message key="lbl.transf.inter.titulo.beneficiario"/></b></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>12:</b> <bean:message key="lbl.transf.inter.nombreBeneficiario"/></td>
-			<td class="bienvenida"><b>13:</b> <bean:message key="lbl.transf.inter.cuentaBeneficiario"/></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida" nowrap><html:text property="nombreBeneficiario" styleId="nombreBeneficiario" maxlength="50" size="65" onkeypress="alphanumeric();" onblur="_showAlert(this, 1);" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-			<td class="bienvenida"><html:text property="cuentaBeneficiario" styleId="cuentaBeneficiario" maxlength="34" size="45" onkeypress="alphabetic();" onblur="_showAlert(this,9);" styleClass="botton-acceso"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>14:</b> <bean:message key="lbl.transf.inter.direccionBeneficiario"/></td>
-			<td class="bienvenida"></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><html:textarea property="direccionBeneficiario" styleId="direccionBeneficiario" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 90)" onblur="_showAlert(this, 2);" styleClass="botton-acceso"/></td>
-			<td class="bienvenida"></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><b>15:</b> <bean:message key="lbl.transf.inter.ciudadBeneficiario"/></td>
-			<td class="bienvenida"><b>16:</b> <bean:message key="lbl.transf.inter.paisBeneficiario"/></td>
-		</tr>
-		<tr valign="middle">
-			<td class="bienvenida"><html:text property="ciudadBeneficiario" styleId="ciudadBeneficiario" size="45" onkeypress="alphabetic()" maxlength="40" onblur="_showAlert(this, 3);" styleClass="botton-acceso"/></td>
-			<td class="bienvenida">
-				<html:select property="paisBeneficiario" styleId="paisBeneficiario" styleClass="botton-acceso" onchange="_showAlert(this, 12);">
-					<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
-					<csic:paises>
-						<%
-							if (codigo != null && codigo.length() > 20)
-							{
-								codigo = codigo.substring(0, 19);
-							}
-							out.println("<option value=\"" + valor + "\"  id=\"" + bloqPais + "\" name=\"listaPaises\">" + valor + "</option>");
-						%>
-					</csic:paises>
-				</html:select>
-			</td>
-		</tr>
-		<!-- BENEFICIARIO -->
-
-		<!-- DETALLE DE PAGO-->
-		<!--
-		<tr valign="middle" class="celda-clave1">
-			<td colspan="2" class="bienvenida"><b>&nbsp;&nbsp;&nbsp;<bean:message key="lbl.transf.inter.detalle"/></b></td>
-		</tr>	
-		<tr valign="middle">
-			<td class="bienvenida"><b>17:</b> <bean:message key="lbl.transf.inter.detalle"/></td>
-			<td class="bienvenida"></td>
-		</tr>
-		<tr valign="top">
-			<td class="bienvenida"><html:textarea property="instrucciones" styleId="detallePago" cols="35" rows="5" onkeypress="alphanumeric();validateLength(this, 130)" onblur="_showAlert(this,4);" styleClass="botton-acceso"/></td>
-			<td class="bienvenida"></td>
-		</tr> -->
-		<!-- DETALLE DE PAGO-->
-
-		<tr>
-			<td colspan="2" align="center"><br><br>
-				<input type="button" class="botton" onclick="send();" value="Aceptar"/>&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" class="botton" onclick="document.location='<html:rewrite page='/mant/plantilla.do'/>'" value="Cancelar"/>	
-			</td>
-		</tr>
-		</table>
-		</html:form>
-		<script>
+<script>
 		function __initialize(){
 			_refresh();
 		}
@@ -987,10 +762,11 @@ function __init(){
 		  parameters="number={swiftBancoIntermediario}, t=2" 
 		  emptyFunction="swiftMessage2"
 		  postFunction="__validateField1"/>
-<!-- Fin. Solicitud -->
-		</td>
-	</tr>
-</table>
+
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <%@ include file="../footer.jsp"  %>
