@@ -10,7 +10,6 @@
 <%@page import="com.arango.internet.banking.Titular" %>
 <%@page import="com.arango.common.util.StringUtilities" %>
 <%@ page import="java.util.Locale" %>
-
 <%! Format f = Format.getFormat();%>
 <%!
 private String getDescripcion(String text){

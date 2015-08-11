@@ -23,36 +23,32 @@ if (locale == null){
 
 <%@ include file="../../body.jsp" %>
 
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+            <bean:message key="lbl.compensacion.menu.reprocesos"/>
+          </strong>
+        </div>
 
-<br><br>
-	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td><div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                             <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                               <tr> 
-                                 <td><div align="center"><img src="<html:rewrite page='/images/warning.gif'/>"></div></td>
-                               </tr>
-                               <tr> 
-                                 <td class="bienvenida" align="center"><%=session.getAttribute("validacion.xml") %></td>
-                               </tr>
-                               <tr>
-                                 <td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-                               </tr>
-                             </table>
-						</td>                                
-                       </tr></table>
-					</td>                           
-                 </tr>
-				</table></td></tr></div></td>
-       </tr>
-     </table>				
-		
+        <div class="panel-body">
+          <div align="center">
+            <img src="<html:rewrite page='/images/warning.gif'/>">
+
+            <p>
+              <%=session.getAttribute("validacion.xml") %>
+            </p>
+
+            <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%@ include file="../../footer.jsp"  %>	

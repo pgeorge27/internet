@@ -33,30 +33,36 @@ function _consulta(cta){
 	document.forms["consultaEstadoForm"].submit();
 }
 </script>
-	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td><div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                       
-                                 <table cellpadding="1" cellspacing="1" width="100%" class="tabla-acceso">
-		  <tr><td>
-			 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-				  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								   <td width="95%" class="bienvenida"><bean:message key="lbl.compensacion.formulario.10.no.disponible"/><br>
-	 Si desea consultar los movimientos pendientes haga CLICK <a href="javascript:_consulta(<%=session.getAttribute("cuenta.formulario10") %>);">Aquí</a>
-								   </td></tr>
-			 </table></td></tr>
-		  </table>
-								 </td>
-                               </tr>
-                             </table>
-						</td>                                
-                       </tr>
-				</table></td></tr></div></td>
-       </tr>
-     </table>
+
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div align="center">
+            <img src="<html:rewrite page='/images/warning.gif'/>">
+
+            <p>
+              <bean:message key="lbl.compensacion.formulario.10.no.disponible"/>
+            </p>
+
+			<p>Si desea consultar los movimientos pendientes haga CLICK <a href="javascript:_consulta(<%=session.getAttribute("cuenta.formulario10") %>);">Aquí</a></p>
+
+            <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%@ include file="../../footer.jsp" %>
