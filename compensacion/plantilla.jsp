@@ -539,7 +539,213 @@ function __init(){
 </script>
 <%@ include file="../body.jsp" %>
 
-<br>
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+    <logic:messagesPresent>
+    <div align="center" class="well col-md-4 col-md-offset-4">
+      <p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
+      <p><b><bean:message key="errors.header"/></b></p>
+      <html:messages id="error">
+      <p class="bienvenida"> - <bean:write name="error" /></p>
+      </html:messages>
+    </div>
+  </logic:messagesPresent>
+
+  <div class="col-md-12">
+    <div class="panel panel-default" >
+      <div class="panel-heading" >
+        <img src="<html:rewrite page='/images/logo_icon.png' />" />
+        <strong>
+          <bean:message key="lbl.transf.inter.titulo"/>
+        </strong>
+      </div>
+
+      <div class="panel-body">
+
+        <html:form method="post" action="/grabar/plantilla" onsubmit="document.forms[0].action.value='validate'">
+        <html:hidden property="descMoneda" />
+        <html:hidden property="action" />
+        <html:hidden property="mode" value="create"/>
+        <html:hidden property="numeroDocumento" />
+        <html:hidden property="secuencia" />
+        <html:hidden property="codigoCliente" />
+        <p><bean:message key="lbl.mensaje.campo.requerido"/></p>
+        <p><b><bean:message key="lbl.transf.inter.titulo.nombreBancoIntermediario"/></b></p>
+        <p><b><small>(<bean:message key="lbl.transf.inter.nota.banco.intermediario"/>)</small></b></p>
+
+
+        <div class="col-md-6">
+          <p>
+            <b>1:</b> 
+            <html:radio property="tipoSWIFTBeneficiario" value="SWIFT" styleId="_SWIFT"/>
+            <bean:message key="lbl.transf.inter.swiftBeneficiario"/>
+            <html:radio property="tipoSWIFTBeneficiario" value="ABA" styleId="_ABA"/>
+            <bean:message key="lbl.transf.inter.abaBeneficiario"/>
+          </p>
+          <p>
+            <html:text property="swiftBeneficiario" styleId="swiftBeneficiario" maxlength="18" styleClass="form-control"/>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <p><b>2:</b> <bean:message key="lbl.transf.inter.nombreBancoIntermediario"/></p>
+          <p><html:hidden property="bancoBeneficiario"/><div id="lblBancoBeneficiario" class="form-control disabled"></div></p>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="col-md-6">
+          <p><b>3:</b> <bean:message key="lbl.transf.inter.direccionBancoBeneficiario"/></p>
+          <p><html:hidden property="direccionBancoBeneficiario"/><div id="lblDireccionBancoBeneficiario" class="form-control"></div></p>
+        </div>
+
+        <div class="col-md-6">
+          <p><b>4:</b> <bean:message key="lbl.transf.inter.ciudadBancoBeneficiario"/></p>
+          <p><html:hidden property="ciudadBancoBeneficiario"/><div id="lblCiudadBancoBeneficiario" class="form-control"></div></p>
+        </div>
+
+		<div class="row"></div>
+
+        <div class="col-md-6">
+          <p><b>5:</b> <bean:message key="lbl.transf.inter.paisBancoBeneficiario"/></p>
+          <p><html:hidden property="paisBancoBeneficiario"/><div id="lblPaisBancoBeneficiario" class="form-control"></div></p>
+        </div>
+
+		<div align="center" class="col-md-12">
+			<p><b><bean:message key="lbl.transf.inter.titulo.nombreBancoBeneficiario"/></b></p>
+		</div>
+
+		<div class="row"></div>
+
+        <div class="col-md-6">
+          <p><b>6:</b> <bean:message key="lbl.transf.inter.cuentaBancoIntermediario"/></p>
+          <p><html:text property="cuentaBancoIntermediario" styleId="cuentaBancoIntermediario"  onkeypress="alphabetic();" onblur="_showAlert(this,8);" maxlength="34" size="45" styleClass="form-control"/></p>
+        </div>
+
+        <div class="col-md-6">
+          <p>
+            <b>7:</b> 
+            
+            <html:radio property="tipoSWIFTIntermediario" value="SWIFT" styleId="_SWIFT2" onclick="_choseValue('SWIFT');"/>
+            <bean:message key="lbl.transf.inter.swiftBancoIntermediario"/>
+            <html:radio property="tipoSWIFTIntermediario" value="ABA" styleId="_ABA2" onclick="_choseValue('ABA');"/>
+            <bean:message key="lbl.transf.inter.abaBancoIntermediario"/>
+            <html:radio property="tipoSWIFTIntermediario" value="OTRO" styleId="_OTRO2" onclick="_choseValue('ANOTHER');"/>
+            <bean:message key="lbl.transf.inter.otroBancoIntermediario"/>
+            <span class="texto-acceso">(<font color="#FF0000">*</font>)</span>
+            </p>
+            <p>
+			<html:text property="swiftBancoIntermediario" styleId="swiftBancoIntermediario" maxlength="18" styleClass="form-control"/>
+			</p>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="col-md-6">
+          <p><b>8:</b> <bean:message key="lbl.transf.inter.bancoBeneficiario"/></p>
+          <div id="lblNombreBancoIntermediario" class="form-control" style="display:"></div>
+          <div id="txtNombreBancoBeneficiario" style="display:none"><html:text property="nombreBancoIntermediario" styleClass="form-control" size="45" maxlength="50" onkeypress="alphanumeric()" onblur="_showAlert(this, 5);"/></div>
+        </div>
+
+        <div class="col-md-6">
+          <p><b>9:</b> <bean:message key="lbl.transf.inter.direccionBancoIntermediario"/></p>
+          <div id="lblDireccionBancoIntermediario" class="form-control" style="display:"></div>
+          <div id="txtDireccionBancoIntermediario" style="display:none"><html:textarea property="direccionBancoIntermediario" styleClass="form-control" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 50)" onblur="_showAlert(this, 6);" /></div>
+        </div>
+
+		<div class="row"></div>
+
+        <div class="col-md-6">
+          <p><b>10:</b> <bean:message key="lbl.transf.inter.ciudadBancoIntermediario"/></p>
+          <p>
+          <div id="lblCiudadBancoIntermediario" class="form-control" style="display:"></div>
+          <div id="txtCiudadBancoIntermediario" style="display:none"><html:text property="ciudadBancoIntermediario" styleClass="form-control" size="45" maxlength="20" onkeypress="alphabetic()" onblur="_showAlert(this, 7);"/></div>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <p><b>11:</b> <bean:message key="lbl.transf.inter.paisBancoIntermediario"/></p>
+          <p><div id="lblPaisBancoIntermediario" class="form-control" style="display:"></div>
+          
+          <div id="txtPaisBancoIntermediario" style="display:none">
+            <html:select property="paisBancoIntermediario" styleId="paisBancoIntermediario" styleClass="form-control" onchange="_showAlert(this, 11);">
+            <html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
+            <csic:value-list fileName="paises">
+            <%if (codigo != null && codigo.length() > 20){
+            codigo = codigo.substring(0, 19);
+          }%>
+          <html:option value="<%=codigo%>" ><%=valor %></html:option>
+        </csic:value-list>
+        </html:select>
+      </div>
+      </p>
+    </div>
+
+    <div align="center" class="col-md-12">
+		<p><b><bean:message key="lbl.transf.inter.titulo.beneficiario"/></b></p>
+	</div>
+
+    <div class="col-md-6">
+      <p><b>12:</b> <bean:message key="lbl.transf.inter.nombreBeneficiario"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></p>
+      <p>
+        <html:text property="nombreBeneficiario" styleId="nombreBeneficiario" maxlength="50" size="65" onkeypress="alphanumeric();" onblur="_showAlert(this, 1);" styleClass="form-control"/>
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <p><b>13:</b> <bean:message key="lbl.transf.inter.cuentaBeneficiario"/><span class="texto-acceso">(<font color="#FF0000">*</font>)</span></p>
+      <p><html:text property="cuentaBeneficiario" styleId="cuentaBeneficiario" maxlength="34" size="45" onkeypress="alphabetic();" onblur="_showAlert(this,9);" styleClass="form-control"/></p>
+    </div>
+
+    <div class="col-md-6">
+      <p><b>14:</b> <bean:message key="lbl.transf.inter.direccionBeneficiario"/></p>
+      <p>
+        <html:textarea property="direccionBeneficiario" styleId="direccionBeneficiario" cols="35" rows="5" onkeypress="alphabetic();validateLength(this, 90)" onblur="_showAlert(this, 2);" styleClass="form-control"/>
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <p><b>15:</b> <bean:message key="lbl.transf.inter.ciudadBeneficiario"/></p>
+      <p><html:text property="ciudadBeneficiario" styleId="ciudadBeneficiario" size="45" onkeypress="alphabetic()" maxlength="40" onblur="_showAlert(this, 3);" styleClass="form-control"/></p>
+    </div>
+
+    <div class="col-md-6">
+      <p><b>16:</b> <bean:message key="lbl.transf.inter.paisBeneficiario"/></p>
+      <p>
+        <html:select property="paisBeneficiario" styleId="paisBeneficiario" styleClass="form-control" onchange="_showAlert(this, 12);">
+        <html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
+        <csic:paises>
+        <%
+        if (codigo != null && codigo.length() > 20)
+          {
+        codigo = codigo.substring(0, 19);
+      }
+      out.println("<option value=\"" + valor + "\"  id=\"" + bloqPais + "\" name=\"listaPaises\">" + valor + "</option>");
+      %>
+    </csic:paises>
+    </html:select>
+  </p>
+</div>
+
+<div align="center" class="col-md-12">
+  <input type="button" class="btn btn-default" onclick="send();" value="Aceptar"/>
+  <input type="button" class="btn btn-default" onclick="document.location='<html:rewrite page='/mant/plantilla.do'/>'" value="Cancelar"/>
+</div>
+
+
+</html:form>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
 <logic:messagesPresent>
 	<table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
 		<tr>
