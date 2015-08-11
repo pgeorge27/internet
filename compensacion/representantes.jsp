@@ -178,8 +178,8 @@ String anoCorto = String.valueOf(ano).substring(2,4);
                 <td data-title="<bean:message key="lbl.compensacion.parametro.email"/>" class="bienvenida"><bean:write name="row" property="email"/></td>
                 <td data-title="<bean:message key="lbl.compensacion.parametro.ciudad"/>" class="bienvenida"><bean:write name="row" property="ciudad"/></td>
                 <td data-title="Code" class="bienvenida">
-                  <input type="button" class="btn btn-default btn-sm" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>
-                  <input type="button" class="btn btn-default" name="btndel" onclick="__delete(<%=resultNo.intValue()%>)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
+                  <input type="button" class="btn btn-default btn-xs" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>
+                  <input type="button" class="btn btn-default btn-xs" name="btndel" onclick="__delete(<%=resultNo.intValue()%>)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
                 </td>
               </logic:iterate>
             </logic:notEmpty>
