@@ -5,6 +5,10 @@
 
 <%@ taglib uri="/tags/asi-internet" prefix="csic" %>
 
+<!DOCTYPE html>
+<html:html>
+
+
 <%@ page import="java.util.Locale"%>
 <%@ page import="java.util.ArrayList"%>
 <%@page import="com.arango.common.util.Format" %>
@@ -13,7 +17,13 @@
 <%@page import="com.arango.internet.banking.Titular" %>
 
 <%! Format f = Format.getFormat();%>
+
+
 <%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 
 <%
@@ -64,9 +74,12 @@ function openwin(url)
 	<html:hidden property="cuenta" value="<%=session.getAttribute("cuenta.csic").toString()%>"/>
 	<html:hidden property="ruta" />
 </html:form>
+<body>
 <%@ include file="../body.jsp" %>
 
-<br>
+<div class="container">
+
+
 <logic:messagesPresent>
   <table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
 		  <tr><td>
@@ -86,161 +99,223 @@ function openwin(url)
 		  </table>
 </logic:messagesPresent>
 
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td	height="40"	valign="bottom">
-		<div align="center">
-		<table width="100%"	border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			<tr>
-				<td>
-				<div align="center"> 
-			<table width="100%" border="0" cellpadding="2" cellspacing="2" class="linea-botton">
-			  <tr> 
-				<td width="92%"><div align="left" class="login">
-					<bean:message key="lbl.compensacion.movimiento.titulo"/>
-					</div></td>
-				<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/compensacion/seleccionsinMovimiento.jsp'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-			  </tr>
-			</table></div>
-				</td>
-			</tr>
-		</table>
-		</div>
-		</td>
-	</tr>
-	<tr>
-		<td class="texto-acceso">&nbsp;</td>
-	</tr>
-</table>	 
-	<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.cuenta"/></div></td>
-          <td align="right" height="15" class="bienvenida"><%=f.formatCuenta(ec.getNumeroCuenta())%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.titular"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=cliente %></td>
-       </tr>	
-</table> 
-<table border="0" cellpadding="0" cellspacing="0" width="595" bgcolor="#FFFFFF">
-			<tr>
-				<td height="45">
-					<center>
-					<font face=arial size=3><b> FORMULARIOS REGIMEN CAMBIARIO </b></font>
-					<table border="1" cellpadding="4" cellspacing="0" width="446" bordercolor="#B1B990" height="159">					
-						<tr>
-							<td width="456" height="14"><font size="1">
+
+
+<div align="right"><INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/compensacion/seleccionsinMovimiento.jsp'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+
+<br>
+
+	<div class="row">
+		<div>
+			<div class="panel panel-default" >
+				<div class="panel-heading">
+					<img src="<html:rewrite page='/images/logo_icon.png' />" />
+					<strong><bean:message key="lbl.compensacion.movimiento.titulo"/></strong>
+				</div>
+
+</div>
+
+</div>
+
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.numero.cuenta"/>:</strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3" align="left"><%=f.formatCuenta(ec.getNumeroCuenta())%></div>
+  <div class="col-md-1"></div>
+</div>	
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3" align="left"><strong><bean:message key="lbl.titular"/>:</strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3" align="left"><%=cliente %></div>
+  <div class="col-md-1"></div>
+</div>	
+
+
+
+<br>
+
+
+
+<div align="center"><b>FORMULARIOS REGIMEN CAMBIARIO</b></div>
+
+<br>
+<br>
+
+
+			 <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>Formulario</th>
+        				<th>Documento</th>
+        			</tr>
+        		</thead>
+        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario3A.pdf');">
 								Formulario No. 3A - Informe de Desembolsos y Pagos de Endeudamiento Externo</a>
 							</font></td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/Instr3A20031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
-								<a  href="javascript:_submit('Formulario6.pdf');">
-								Formulario No. 6 - Información de Endeudamiento Externo otorgado a Residentes</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+        		
+        			</tr>
+			</tbody>
+			
+        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><a  href="javascript:_submit('Formulario6.pdf');">
+								Formulario No. 6 - Información de Endeudamiento Externo otorgado a Residentes</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/InstrF620031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+			        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario7.pdf');">
-								Formulario No. 7 - Información de Endeudamiento Externo otorgado a no Residentes</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 7 - Información de Endeudamiento Externo otorgado a no Residentes</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>"  height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/instr720031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+			
+			
+			
+					        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario8.pdf');">
-								Formulario No. 8 - Registro de Avales y Garantías en Moneda Extranjera</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 8 - Registro de Avales y Garantías en Moneda Extranjera</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/instr820031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+								        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario9.pdf');">
-								Formulario No. 9 - Registro de Cuenta Corriente de Compensación</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 9 - Registro de Cuenta Corriente de Compensación</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/Instr920031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>				
-					    <tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+											        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario11.pdf');">
-								Formulario No. 11 Hoja 1 - Registro de Inversiones Internacionales</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 11 Hoja 1 - Registro de Inversiones Internacionales</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/Instr1120031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+			
+			
+														        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario13.pdf');">
 								Formulario No. 13 - Registro de Inversión Suplementaria al Capital Asignado y 
-								actualizaciond e cuentas patrimoniales - Sucursales del Régimen Especial</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								actualizaciond e cuentas patrimoniales - Sucursales del Régimen Especial</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/Instr1320031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+			
+			
+			
+																	        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario15.pdf');">
-								Formulario No. 15 - Conciliación Patrimonial - Empresas y Sucursales Régimen General</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 15 - Conciliación Patrimonial - Empresas y Sucursales Régimen General</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/instr1520031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-						<tr>
-							<td width="456" height="14"><font size="1">
+        		
+        			</tr>
+			</tbody>
+
+																				        		<tbody>
+        			<tr>
+        				<td data-title="Formulario"><font size="1">
 								<a  href="javascript:_submit('Formulario17.pdf');">
-								Formulario No. 17 - Solicitud de Prórroga para el Registro de Inversiones Internacionales</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+								Formulario No. 17 - Solicitud de Prórroga para el Registro de Inversiones Internacionales</a></td>
+        				<td data-title="Documento"><font size="1">
+								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/instr1720031201.pdf">
 								Instrucciones</a>
 							</font></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+        		
+        			</tr>
+			</tbody>
+			
+		</table>	
+			</div>	
+
 		</div>
+<br>
+<br>
+<div align="center"><INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/compensacion/movimiento.jsp'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div>
 
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
-				<INPUT class="botton" onclick="document.location='<html:rewrite page='/compensacion/movimiento.jsp'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>
-
+<br>
 <%@ include file="../footer.jsp"  %>	
+</div>
+
+</body>
+</html:html>

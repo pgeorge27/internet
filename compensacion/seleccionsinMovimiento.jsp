@@ -6,6 +6,9 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.util.Locale"%>
+<!DOCTYPE html>
+<html:html>
+<head>
 <%
 SimpleDateFormat df = new SimpleDateFormat("yyyy");
 Date pDate = new java.util.Date(System.currentTimeMillis());
@@ -44,6 +47,11 @@ if (request.getParameter("back") != null){
 }
 
 %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+</head>
 <%@ include file="../head.jsp"  %>
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 <script type="text/javascript" src="<html:rewrite page='/calendar/calendar.js'/>"></script>
@@ -81,58 +89,78 @@ function retornar(){
 <script language="javascript" src="<html:rewrite page='/scripts/utilidades.js'/>"></script>
 <script language="javascript" src="<html:rewrite page='/scripts/objetoFecha.js'/>"></script>
 
+<body>
 <%@ include file="../body.jsp"%>
 
-
 <div class="container">
-  <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-default" >
-        <div class="panel-heading" >
-          <img src="<html:rewrite page='/images/logo_icon.png' />" />
-          <strong>
-            <bean:message key="lbl.compensacion.movimiento.titulo"/>
-          </strong>
-        </div>
+		<div class="row">
 
-        <div class="panel-body">
-          <html:form method="post" action="/consulta1">
-            <p>
-              <b><bean:message key="lbl.movimiento.tipos"/></b>
-            </p>
-            <p>
-              <bean:message key="lbl.cuentas"/><span class="texto-acceso"> (<font color="#FF0000">*</font>)</span>
-            </p>
-            <p>
-              <html:select property="cuenta" styleClass="form-control">
-                <logic:notEmpty name="cuentasCompensacion">
-                  <html:option value="">
-                    <bean:message key="lbl.seleccione.una.cuenta"/>
-                  </html:option>
-                  <bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
-                  <html:options collection="cp" property="codigoCSIC" labelProperty="tag"/>
-                </logic:notEmpty>
-                <logic:empty name="cuentasCompensacion">
-                  <html:option value=""><bean:message key="lbl.seleccione.no.hay.cuentas"/></html:option>
-                </logic:empty>
-              </html:select>
-            </p>
-            <p>
+		  <div class="row">
+		<div class="col-md-4 col-md-offset-4">
 
-            </p>
-            <div align="center">
-              <input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">
-              <input TYPE="BUTTON" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()">
-            </div>
-            <div align="center">
-              <p><bean:message key="lbl.mensaje.campo.requerido"/></p>
-            </div>
-          </html:form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.compensacion.movimiento.titulo"/></strong></div>
+					  <div class="panel-body">
+					  
+					  	<html:form method="post" action="/consulta1">
+					  
+					  <div align="center"><strong><bean:message key="lbl.movimiento.tipos"/></strong></div>
+					  <br>
+					  
+							<div>
+						
+						<label style="text-align:left">	<h5><strong>
+				
+						<font color="#FF0000" >*</font>&nbsp;<bean:message key="lbl.cuentas"/>:
+					
+						</strong></h5>
+			</label>
+
+							</div>
+							
+						
+							
+														
+							<div class="row">
+							
+							 <div class="col-md-1"></div>
+
+  <div class="col-md-10"><html:select property="cuenta" styleClass="form-control">
+									<logic:notEmpty name="cuentasCompensacion">
+											<html:option value=""><bean:message key="lbl.seleccione.una.cuenta"/></html:option>
+											<bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
+				                            <html:options collection="cp" property="codigoCSIC" labelProperty="tag"/>
+										   
+									</logic:notEmpty>
+									<logic:empty name="cuentasCompensacion">
+										<html:option value=""><bean:message key="lbl.seleccione.no.hay.cuentas"/></html:option>
+									</logic:empty>							   	 </html:select></div>
+							
+							
+							</div>
+							 <br>
+
+							   <div align="center"><input name="botonEnviar" onclick="send();" type="button" class="btn btn-default" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
+							<input TYPE="BUTTON" class="btn btn-default" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()"></div>
+							
+							
+							 <br>
+						  <div align="center"><bean:message key="lbl.mensaje.campo.requerido"/></div>	
+						  
+						   <br>
+					  
+					  </html:form>
+					  
+					  </div>
+					  
+					 </div>
+					 </div>
+					 </div>
+					 </div>
+
 
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>

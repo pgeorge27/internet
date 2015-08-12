@@ -9,8 +9,16 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Calendar"%>
 
-<%@ include file="../head.jsp"%>
+<!DOCTYPE html>
+<html:html>
 
+<head>
+<%@ include file="../head.jsp"%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+</head>
 <%
 Locale locale = (Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY);
 if (locale == null){
@@ -22,37 +30,42 @@ if (locale == null){
 <script type="text/javascript"></script>
 
 <%@ include file="../body.jsp" %>
+<body>
+<div class="container">
 
 
+   	<div class="row" style="padding-right: 3%; padding-left: 3%;">
 
-<br><br>
-	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td><div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                             <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                               <tr> 
-                                 <td><div align="center"><img src="<html:rewrite page='/images/warning.gif'/>"></div></td>
-                               </tr>
-                               <tr> 
-                                 <td class="bienvenida" align="center"><%=session.getAttribute("validacion.formulario10") %></td>
-                               </tr>
-                               <tr>
-                                 <td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-                               </tr>
-                             </table>
-						</td>                                
-                       </tr></table>
-					</td>                           
-                 </tr>
-				</table></td></tr></div></td>
-       </tr>
-     </table>				
+		  <div class="row">
+		<div class="col-md-4 col-md-offset-4">
 		
+				<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/warning.gif'/>"><strong>Mensaje</strong></div>
+					 
+					 <br>
+					 <div class="row">
+					   <div class="col-md-2"></div>
+  <div class="col-md-8"><%=session.getAttribute("validacion.formulario10") %></div>
+  <div class="col-md-2"></div>
+  
+                        </div>
+					 
+					 
+						 <br>
+						 
+ <div align="center">						 
+<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+<br>
+						
+					</div>
+				
+						</div>
+							</div>
+
+                </div>
+
 
 <%@ include file="../footer.jsp"  %>	
+</div>
+</body>
+</html:html>

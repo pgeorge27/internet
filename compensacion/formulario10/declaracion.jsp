@@ -68,93 +68,92 @@ function openwin(url)
 </html:form>
 <%@ include file="../../body.jsp" %>
 
-<br>
-<logic:messagesPresent>
-  <table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
-		  <tr><td>
-			 <table border="0" cellpadding="1" cellspacing="0" width="100%">
-				  <tr valign="top"><td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
-								   <td width="95%" class="msg">
-									<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
-	<span class="bienvenida">
-		<table width="80%">
-		<html:messages id="error">					
-			<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
-		</html:messages>
-		</table>
-	</span><br>
-								   </td></tr>
-			 </table></td></tr>
-		  </table>
-</logic:messagesPresent>
 
-<div align="center"> 
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td	height="40"	valign="bottom">
-		<div align="center">
-		<table width="100%"	border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-			<tr>
-				<td>
-				<div align="center"> 
-			<table width="100%" border="0" cellpadding="2" cellspacing="2" class="linea-botton">
-			  <tr> 
-				<td width="92%"><div align="left" class="login">
-					<bean:message key="lbl.compensacion.formulario.10.movimiento.titulo"/>
-					</div></td>
-				<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-			  </tr>
-			</table></div>
-				</td>
-			</tr>
-		</table>
+
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+	<logic:messagesPresent>
+		<div align="center" class="well col-md-4 col-md-offset-4">
+			<p><img src="<html:rewrite page='/images/icon_warning_lrg.gif'/>"></p>
+			<p><b><bean:message key="errors.header"/></b></p>
+			<html:messages id="error">
+				<p class="bienvenida"> - <bean:write name="error" /></p>
+			</html:messages>
 		</div>
-		</td>
-	</tr>
-	<tr>
-		<td class="texto-acceso">&nbsp;</td>
-	</tr>
-</table>	 
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.cuenta"/></div></td>
-          <td align="right" height="15" class="bienvenida"><%=f.formatCuenta(ec.getNumeroCuenta())%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.titular"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=cliente %></td>
-       </tr>
-</table>	 
-<table border="0" cellpadding="0" cellspacing="0" width="595" bgcolor="#FFFFFF">
-			<tr>
-				<td height="45">
-					<center>
-					<font face=arial size=3><b> FORMULARIOS REGIMEN CAMBIARIO </b></font>
-					<table border="1" cellpadding="4" cellspacing="0" width="446" bordercolor="#B1B990" height="159">
-						
-						<tr>
-							<td width="456" height="14"><font size="1">
-								<a  href="javascript:_submit('Formulario10.pdf');">
+	</logic:messagesPresent>
+
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+            <bean:message key="lbl.compensacion.formulario.10.movimiento.titulo"/>
+          </strong>
+        </div>
+
+        <div class="panel-body">
+
+			<div align="right">
+				<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+			</div>
+
+          <div class="col-md-4">
+            <p><b>
+              <bean:message key="lbl.numero.cuenta"/>
+            </b></p>
+          </div>
+
+          <div class="col-md-8">
+            <p>
+				<%=f.formatCuenta(ec.getNumeroCuenta())%>
+            </p>
+          </div>
+
+           <div class="col-md-4">
+            <p><b>
+              <bean:message key="lbl.titular"/>
+            </b></p>
+          </div>
+
+          <div class="col-md-8">
+            <p>
+				<%=cliente %>
+            </p>
+          </div>
+
+
+          <div align="center">
+            <h5>
+				<b> FORMULARIOS 2REGIMEN CAMBIARIO </b>
+            </h5>
+          </div>
+		<hr>
+          <div class="col-md-6">
+            <p>
+              <a  href="javascript:_submit('Formulario10.pdf');">
 								Formulario No. 10 - Relación de Operaciones Cuenta Corriente de Compensación</a>
-							</td>
-							<td width="456" height="14"><font size="1">
-								<img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
+            </p>
+          </div>
+
+          <div class="col-md-6">
+            <p>
+              <img src="<html:rewrite page='/images/icono_acrobat.gif'/>" width="16" height="16" hspace="10" vspace="4" border="0" align="absmiddle">
 								<a target="new"  href="https://quimbaya.banrep.gov.co/secinternet/instructivos/Instr1020031201.pdf">
 								Instrucciones</a>
-							</font></td>
-						</tr>
-						
-					</table>
-				</td>
-			</tr>
-		</table>
-		</div>
+            </p>
+          </div>
 
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
-				<INPUT class="botton" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>
+          <div class="col-xs-12" align="center">
+            <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/mant/cuenta.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%@ include file="../../footer.jsp"  %>	

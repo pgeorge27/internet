@@ -12,6 +12,11 @@
 <%@page import="com.arango.common.util.StringUtilities" %>
 <%@ page import="java.util.Locale" %>
 
+<!DOCTYPE html>
+<html:html>
+
+<head>
+
 <%! Format f = Format.getFormat();%>
 <%!
 private String getDescEstado(String estado){
@@ -76,6 +81,13 @@ session.setAttribute("form.back","/consulta/estado");
 %>
 <%@ include file="../head.jsp"%>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
+
 <SCRIPT language=javascript src="<html:rewrite page='/scripts/NotasDebitoCredito.js'/>"></SCRIPT>
 <script language=javascript>
 function __download(){
@@ -105,18 +117,22 @@ function __showHideElement(element){
 <SCRIPT language=javascript src="<html:rewrite page='/scripts/formatDes.js'/>"></SCRIPT>
 <%@ include file="../body.jsp"%>
 
-<div id="estcta" align="left">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	  <tr> 
-		<td height="30" class="texto-acceso"><div id=bankdiv align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>"></div></td>
-		<td class="texto-acceso"><div align="right">&nbsp;</div></td>
-	  </tr>
-	  <tr> 
-		<td height="40" colspan="2" valign="bottom"><div align="center"> 
-			<table width="100%" border="0" cellpadding="2" cellspacing="2" class="linea-botton">
-			  <tr> 
-				<td width="92%"><div align="left" class="login">
-					<bean:message key="lbl.compensacion.consulta.titulo"/> - 
+<body>
+<div class="container">
+
+
+
+
+
+
+<div align="right"><INPUT class="btn btn-default" onclick="__return()" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+
+ <br>
+
+
+        <div class="panel panel-default">
+					 <div class="panel-heading" align="justify" id=bankdiv ><img  src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.compensacion.consulta.titulo"/> - 
 					<%
 					Object obj = session.getAttribute("con.tipo.mov");
 					String tipo = obj == null ? "1" : obj.toString();
@@ -126,62 +142,104 @@ function __showHideElement(element){
 					<bean:message key="tit.title.consulta.movimientos.mes.actual"/>
 					<%}else if ("3".equals(tipo)){%>
 					<bean:message key="tit.title.consulta.movimientos.historico"/>
-					<%}%>
-					</div></td>
-				<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="__return()" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-			  </tr>
-			</table></div></td>
-	  </tr>
-	  <tr> 
-		<td valign="top" align="center">
-			<table width="100%" border="0" cellspacing="1" cellpadding="0">                   
-				<tr> 
-				  <td width="55%" height="20" class="catra-texto" align="center">
+					<%}%></strong></div>
+
+
+</div>
+
+
+<html:form action="/asociar" method="post">
+	<html:hidden property="indice"/>
+</html:form>
+
+
 <%
   if (!mov.isEmpty())
   {
 %>
 <%if (!"1".equals(tipo)){%>
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.desde"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.desde"), locale)%></td>
-          <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.hasta"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.hasta"), locale)%></td>
-       </tr>
-</table>
-
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.desde"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.desde"), locale)%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.hasta"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatFecha((java.util.Date)session.getAttribute("fecha.hasta"), locale)%></div>
+   <div class="col-md-1"></div>
+</div>
 <%}%>
-<html:form action="/asociar" method="post">
-	<html:hidden property="indice"/>
-</html:form>
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.cuenta"/></div></td>
-          <td align="right" height="15" class="bienvenida"><%=f.formatCuenta(ec.getNumeroCuenta())%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.titular"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=cliente%></td>
-       </tr>
-		
-</table>	   
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">	   
-<tr> 
-					  <td height="15" colspan="2" nowrap>
-								<div align="left" class="texto-acceso"><br>
-									<bean:message key="lbl.cc.descripcion.observacion"/><br></div></td></tr>
-</table>
+
+
+
+
+
+
+
+
 <br>
-<table width="100%" border="0" cellpadding="1" cellspacing="2">
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.numero.cuenta"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatCuenta(ec.getNumeroCuenta())%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.titular"/>:</strong></div>
+  <div class="col-md-2"><%=cliente%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+
+
+
+
+
+<br>
+<br>
+
+<div align="center"><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="estcta">
+
+
+<br>
+						<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf"> 
 
 <tr class="tabla-acceso">
-	<td class="texto-acceso" width="10%"><bean:message key="lbl.fecha"/></TD>
-    <td class="texto-acceso" width="40%"><bean:message key="lbl.descripcion"/></TD>
- 	<td class="texto-acceso" width="16%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.debito"/></TD>
-    <td class="texto-acceso" width="17%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.credito"/></TD>
-    <td class="texto-acceso" width="17%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estado Movimiento</TD>
+	<td><bean:message key="lbl.fecha"/></TD>
+    <td ><bean:message key="lbl.descripcion"/></TD>
+ 	<td><bean:message key="lbl.debito"/></TD>
+    <td><bean:message key="lbl.credito"/></TD>
+    <td>Estado Movimiento</TD></tr></thead>
 
 <%
 String styleClass = "";
@@ -195,7 +253,7 @@ for (int i = 0; i < mov.size(); i++){
 %>
 
 <TR valign="top" <%=styleClass%>>
-    <TD class="bienvenida" align=left width="14%">
+    <TD data-title="Fecha" align=left>
     <%if(m.getDetalle()!=null){ %>
     <a href="javascript:__showHideElement('iddeta<%=m.getSecuencia()%>')" title="Ver Detalle">+</a>&nbsp;
     <%} else{%>
@@ -203,40 +261,48 @@ for (int i = 0; i < mov.size(); i++){
     <%} %>
     <%=f.formatFecha(m.getFechaValida(), locale)%></TD>
     <% if (0==m.getTipo()){ // Si tipo == movimiento se utilize el td existente (link actual)%>
-    <TD class="bienvenida" style="color:blue;CURSOR: hand" 
+    <TD data-title="Descripción" class="bienvenida" style="CURSOR: hand" 
     <%if ("D".equals(m.getTipoTransaccion())){%>
     onclick="mostrarNotaDebito(<%=i %>,'<bean:message key="lbl.aviso.debito.cuenta.corriente"/>','<bean:message key="lbl.debitamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
     <%}else{%>
 	onclick="mostrarNotaCredito(<%=i %>,'<bean:message key="lbl.aviso.credito.cuenta.corriente"/>','<bean:message key="lbl.acreditamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
 	<%}%>
-    align=left width="30%"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
+    align=left><SPAN id=desc style="color:blue;hand;font-size:11px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
     <%}
 else{  // si tipo == D se crea Nuevo link %>
-<TD class="bienvenida" 
-    align=left width="30%" style="color:blue;CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
+<TD data-title="Descripción"  class="bienvenida" 
+    align=left style="color:blue;CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:11px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
 <%} %>
-        <TD class="bienvenida" align=right width="16%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD class="bienvenida" align=right width="16%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <td class="bienvenida"><%=m.getEstado()==null?"":m.getEstado() %></td>
+        <TD data-title="Débito" class="bienvenida" align=right width="16%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Crédito"  class="bienvenida" align=right width="16%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <td data-title="Estado"  class="bienvenida"><%=m.getEstado()==null?"":m.getEstado() %></td>
    </TR>
     <tr>
-	    <td colspan="5">
+	    <td colspan="6">
 	    
 	    			<% ArrayList detallemov = m.getDetalle();
 		if (detallemov != null) { 
 			DetalleMovimiento d = null;
 	  %>
            <div id="iddeta<%=m.getSecuencia()%>" sytle="display:none;">
-			  <table align="right" width="95%" border="0" cellpadding="1" cellspacing="2">
-				   <tr class="tabla-acceso">		               
-					   <td class="texto-acceso" width="20%">Valor Total del Formulario</td>					 					   
-					   <td class="texto-acceso" width="10%">Número Declaración</td>
-					   <td class="texto-acceso" width="15%">Estado</td>
-					   <td class="texto-acceso" width="45%">Formulario</td>						   
+
+
+
+
+
+
+									<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf"> 
+				   <tr>		               
+					   <td>Valor Total del Formulario</td>					 					   
+					   <td>Número Declaración</td>
+					   <td >Estado</td>
+					   <td>Formulario</td>						   
 					   
-					   		<td class="texto-acceso" width="10%">Reprocesado</td>
+					   		<td>Reprocesado</td>
 					  
-				 </tr>
+				 </tr></thead>
 					<%for (int j=0; j< detallemov.size(); j++) {
 						d= (DetalleMovimiento)detallemov.get(j);
 						if (j % 2 == 0)
@@ -244,25 +310,25 @@ else{  // si tipo == D se crea Nuevo link %>
 						else
 							styleClass = "class=\"celda-clave1\"";
 						%>		
-				<tr class="tabla-acceso">				   
-				   <td class="bienvenida" align="right"><%=f.formatMonto(d.getValor())%></td>				 				   
-				   <td class="bienvenida" align="center"><%=d.getSecuenciaDeclaracion()%></td>		
-				   <td class="bienvenida"><bean:message key="<%=getDescEstado(d.getEstado())%>"/></td>
-				   <td class="bienvenida"><% if (d.getNombreFormulario() != null){%>
+				<tr>				   
+				   <td data-title="Valor Total del Formulario"><%=f.formatMonto(d.getValor())%></td>				 				   
+				   <td data-title="Numero de Declaración"><%=d.getSecuenciaDeclaracion()%></td>		
+				   <td data-title="Estado"><bean:message key="<%=getDescEstado(d.getEstado())%>"/></td>
+				   <td data-title="Formulario"><% if (d.getNombreFormulario() != null){%>
 						<a  href="javascript:_submit(<%=i%>,<%=j%>);"><%=d.getCodigoFormulario()%>-<%=d.getNombreFormulario()%></a>
 					<%}else{%>
 						&nbsp;
 					<%}%></td>	
 					
 	                      <%if(d.getReproceso().equals("0")){ %>
-			                    <td class="bienvenida"></td>
+			                    <td data-title="Reprocesado"></td>
 			                    <% } else { %>
-			                    <td class="bienvenida"><a href="javascript:_reproceso(<%=i%>,<%=j%>);">Consultar</a></td>
+			                    <td data-title="Reprocesado"><a href="javascript:_reproceso(<%=i%>,<%=j%>);">Consultar</a></td>
 			                    <%} %>
 	                  
 				</tr>
 		<% }  %><!-- cierra llave del ciclo for de j  -->
-     		</table></div>
+     		</table></div></div>
 		<% }  %>
 		
 		
@@ -271,7 +337,7 @@ else{  // si tipo == D se crea Nuevo link %>
 	 </tr>
 <%} /* End for - loop*/ %>
 
-</table>
+</table></div>
 <script>
 function _reproceso( index, index2){
      document.forms['formularioForm2'].indice.value = index;
@@ -304,30 +370,33 @@ function __refresh(){
 	</tr>
 	<tr> 
 		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
-				<INPUT class="botton" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
+				<INPUT class="btn btn-default" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
 </table>					
 <%
 }
 else
 {
 %>
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-  <tr class="tabla-acceso">
-<TD class="texto-acceso" width="15%">
-<bean:message key="msg.sin.movimentos"/></td></tr>
-<tr> 
-	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="document.location='<html:rewrite page='/seleccion/estado.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>
+<br> 
+<div align="center">
+<bean:message key="msg.sin.movimentos"/></div>
+
+<br> 
+
+	<div align="center">
+			<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/seleccion/estado.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div>
+			
+			<br> 
+
 <%
 }
 %>
-</table></div></table></div>
+</div>
     
 <!--fin - estado de cuenta-->
 <div></div>
 <!--nota-->
-<div id="notas" style="display:none" align="center">
+<div id="notas" style="display:none">
 <form name="pdoc" action="<html:rewrite page='/note2.download'/>" target="_new" method="post">
 	<input type="hidden" name="lbltitulo" value="<bean:message key="lbl.aviso.debito.titulo"/>">
 	<input type="hidden" name="lblsubtitulo" value="<bean:message key="lbl.aviso.debito.cuenta.corriente"/>" >
@@ -358,7 +427,7 @@ else
                       <tr> 
                         <td width="92%"><div align="left" class="login"><bean:message key="lbl.aviso.debito.titulo"/></div></td>
                       <td width="8%"><div align="right">&nbsp;
-							<a href="javascript:ocultarNotas();"><INPUT class="botton" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div></td>
+							<a href="javascript:ocultarNotas();"><INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div></td>
                       </tr>
                     </table>
                   </div></td>
@@ -406,16 +475,30 @@ else
               <tr> 
                 <td colspan="2" valign="top">&nbsp;</td>
               </tr>
-              <tr> 
-                <td colspan="2" valign="top" class="texto-acceso"><div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-                <div align="center"><br>
-					<a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a>
-					<br></div></td>
-	</tr>
+
 	<tr> 
-	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="javascript:ocultarNotas();" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
+
       </table>
+      
+      	<br> 
+      
+          <div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+          
+          	<br>
+                <div align="center">
+					<a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a>
+					</div>
+					
+						<br>
+
+      
+    
 </div>
+
+			
+				<br>
 <!--fin nota-->
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>

@@ -8,7 +8,13 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Calendar"%>
 
+<!DOCTYPE html>
+<html>
+
+<head>
+
 <%@ include file="../head.jsp"%>
+
 <link rel="stylesheet" type="text/css" media="all" href="<html:rewrite page='/calendar/calendar-win2k-1.css'/>" title="win2k-1">
 
 <script type="text/javascript" src="<html:rewrite page='/scripts/utilidades.js'/>"></script>
@@ -71,98 +77,133 @@ String anoCorto = String.valueOf(ano).substring(2,4);
 %>
 <script type="text/javascript" src="<html:rewrite page='<%=calendar%>'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/calendar-trx.js'/>"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+</head>
 <%@ include file="../body.jsp" %>
 
-<div class="container">
-  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+<body>
 
-    <logic:messagesPresent>
-      <div align="center" class="well col-md-4 col-md-offset-4">
-        <p><img src="<html:rewrite page='/images/warning.gif'/>"></p>
-        <p><b><bean:message key="errors.header"/></b></p>
-        <html:messages id="error">
-          <p class="bienvenida"> - <bean:write name="error" /></p>
-        </html:messages>
-      </div>
-    </logic:messagesPresent>
+<div class="container"> 
+
+<logic:messagesPresent>
+	<table cellpadding="1" align="center" cellspacing="1" width="80%" class="tabla-acceso">
+		<tr>
+			<td>
+				<table border="0" cellpadding="1" cellspacing="0" width="100%">
+					<tr valign="top">
+						<td width="5%"><img src="<html:rewrite page='/images/warning.gif'/>"></td>
+						<td width="95%" class="msg">
+							<span class="bienvenida"><b><bean:message key="errors.header"/></b></span><br>
+							<span class="bienvenida">
+								<table width="80%">
+								<html:messages id="error">					
+									<tr><td class="bienvenida">- <bean:write name="error" /></td></tr>
+								</html:messages>
+								</table>
+							</span><br>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</logic:messagesPresent>
+
+		<div class="panel panel-default">
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.transf.inter.titulo"/></strong></div>
+  <div class="panel-body">
+
+<html:form method="post" action="/edit/plantilla">
+	<html:hidden property="indice"/>
+	<html:hidden property="secuencia"/>
+
+</html:form>
+<html:form method="post" action="/delete/plantilla">
+	<html:hidden property="indice"/>
+	<html:hidden property="secuencia"/>
+</html:form>
+
+<html:form method="post" action="/mant/plantilla">
 
 
-    <html:form method="post" action="/edit/plantilla">
-      <html:hidden property="indice"/>
-      <html:hidden property="secuencia"/>
-    </html:form>
-
-    <html:form method="post" action="/delete/plantilla">
-      <html:hidden property="indice"/>
-      <html:hidden property="secuencia"/>
-    </html:form>
 
 
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-default" >
-        <div class="panel-heading" >
-          <img src="<html:rewrite page='/images/logo_icon.png' />" />
-          <strong>
-            <bean:message key="lbl.transf.inter.plantilla" />
-          </strong>
-        </div>
 
-        <div class="panel-body">
-          <html:form method="post" action="/mant/plantilla">
 
-          <div class="col-md-4">
-            <p>
-              <bean:message key="lbl.transf.inter.cliente" /> (<font color="#FF0000">*</font>)
-            </p>
-          </div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-2"><strong><font color="#FF0000" >*</font>&nbsp;<bean:message key="lbl.transf.inter.cliente" />:</strong></div>
 
-          <div class="col-md-8">
-            <p>
-              <html:select property="cliente" styleClass="btn btn-default" onchange="__submit();">
-                <logic:notEmpty name="clientes.plantillas">
-                  <html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
-                  <bean:define id="cp" scope="session" name="clientes.plantillas" type="java.util.ArrayList"/>
-                  <html:options collection="cp" property="codigo" labelProperty="nombre"/>
-                </logic:notEmpty>
-                <logic:empty name="clientes.plantillas">
-                  <html:option value=""><bean:message key="lbl.seleccione.no.hay.clientes"/></html:option>
-                </logic:empty>
-              </html:select>
-            </p>
-          </div>
-          </div>
-          </div>
-          </div>
+  <div class="col-md-3"><html:select property="cliente" styleClass="form-control" onchange="__submit();">
+							<logic:notEmpty name="clientes.plantillas">
+								<html:option value=""><bean:message key="lbl.transf.inter.seleccione"/></html:option>
+								<bean:define id="cp" scope="session" name="clientes.plantillas" type="java.util.ArrayList"/>
+								<html:options collection="cp" property="codigo" labelProperty="nombre"/>
+							</logic:notEmpty>
+							<logic:empty name="clientes.plantillas">
+								<html:option value=""><bean:message key="lbl.seleccione.no.hay.clientes"/></html:option>
+							</logic:empty>
+						</html:select></div>
 
-        <table class="table" width="100%" border="0" cellpadding="1" cellspacing="2">
-          <tr class="tabla-acceso">
-            <td class="texto-acceso" width="85%" nowrap><bean:message key="lbl.transf.inter.plantilla"/></td>
-            <td class="texto-acceso" width="15%"></td>
-          </tr>
-          <logic:notEmpty name="plantillas">
-            <logic:iterate name="plantillas" id="row" type="com.arango.common.beans.TransferenciaInternacional" indexId="resultNo" >
-              <bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>
-              <logic:equal name="remainder" value="0">
-                 <tr>
-              </logic:equal>
-              <logic:notEqual name="remainder" value="0">
-                 <tr class="celda-clave1">
-              </logic:notEqual>
-              <td class="bienvenida"><bean:write name="row" property="nombreEmisor" />&nbsp;/&nbsp;<bean:write name="row" property="nombreBeneficiario" /></td>
-              <td class="bienvenida">
-              <p>
-                <input type="button" class="btn btn-default btn-xs" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>&nbsp;
-                <input type="button" class="btn btn-default btn-xs" name="btndel" onclick="__delete(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
-                </p>
-              </td>
-            </tr>
-            </logic:iterate>
-          </logic:notEmpty>
-        </table>
 
-      </html:form>
 
-  </div>
 </div>
 
+
+
+<br>
+
+
+						<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf">  
+				<tr class="tabla-acceso">
+					<td class="texto-acceso">EMISOR</td>
+					<td class="texto-acceso">OPCIONES</td>
+				</tr></thead>
+				<logic:notEmpty name="plantillas">
+					<logic:iterate name="plantillas" id="row" type="com.arango.common.beans.TransferenciaInternacional" indexId="resultNo" >
+						<bean:define id="remainder" value="<%=Integer.toString(resultNo.intValue() % 2) %>"/>			
+						<logic:equal name="remainder" value="0">
+						   <tr>
+						</logic:equal>
+						<logic:notEqual name="remainder" value="0">
+						   <tr class="celda-clave1">
+						</logic:notEqual>
+						<td data-title="Nombre Emisor"  class="bienvenida" ><bean:write name="row" property="nombreEmisor" />&nbsp;/&nbsp;<bean:write name="row" property="nombreBeneficiario" /></td>
+						<td class="bienvenida">
+							<input type="button" class="btn btn-default" name="btnedit" onclick="__edit(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.editar' />"/>&nbsp;
+							<input type="button" class="btn btn-default" name="btndel" onclick="__delete(<%=resultNo.intValue()%>, <bean:write name="row" property="secuencia" />)" value="<bean:message key='lbl.compensacion.parametro.eliminar' />"/>
+						</td>
+					</tr>
+					</logic:iterate>
+				</logic:notEmpty>
+			</table>
+			</div>
+
+
+</html:form>
+
+
+</div>
+
+
 <%@ include file="../footer.jsp"  %>
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>

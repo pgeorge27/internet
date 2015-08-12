@@ -14,6 +14,9 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 
+<!DOCTYPE html>
+<html:html>
+
 <%! Format f = Format.getFormat();%>
 <%!
 private String getDescEstado(String estado){
@@ -145,89 +148,135 @@ function __refresh(){
 }
 </script>
 <SCRIPT language=javascript src="<html:rewrite page='/scripts/formatDes.js'/>"></SCRIPT>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script language="JavaScript" src="<html:rewrite page='/scripts/bootstrap.min.js'/>"></script>
+<link href="<html:rewrite page='/style/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <%@ include file="../body.jsp"%>
+<body>
 
-<div id="estcta" align="left">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	  <tr> 
-		<td height="30" class="texto-acceso"><div id=bankdiv align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>"></div></td>
-		<td class="texto-acceso"><div align="right">&nbsp;</div></td>
-	  </tr>
-	  <tr> 
-		<td height="40" colspan="2" valign="bottom"><div align="center"> 
-			<table width="100%" border="0" cellpadding="2" cellspacing="2" class="linea-botton">
-			  <tr> 
-				<td width="92%"><div align="left" class="login">
-					<bean:message key="lbl.compensacion.autorizar.titulo"/> 
-					</div></td>
-				<td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="__return()" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-			  </tr>
-			</table></div></td>
-	  </tr>
-	  <tr> 
-		<td valign="top" align="center">
-			<table width="100%" border="0" cellspacing="1" cellpadding="0">                   
-				<tr> 
-				  <td width="55%" height="20" class="catra-texto" align="center">
+<div class="container">
+
+
+
+
+<div align="right"><INPUT class="btn btn-default" onclick="__return()" type="button" value="<bean:message key="lbl.retroceder"/>"></div>
+
+<br>
+
+
+
+		
+
+
+	<div class="panel panel-default" >
+					 <div class="panel-heading" align="justify" ><img src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.compensacion.autorizar.titulo"/> </strong></div>
+
+</div>
+
+
+
+<div id="estcta" >
+
+
+				
 <%
   if (!mov.isEmpty())
   {
 %>
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.desde"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha(desde, locale)%></td>
-          <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.hasta"/></div></td>
-          <td height="15" class="bienvenida" align="right"><%=f.formatFecha(hasta, locale)%></td>
-       </tr>
-</table>
 
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">
-		<tr> 
-		  <td height="15" class="celda-clave1" nowrap><div align="right" class="texto-acceso"><bean:message key="lbl.numero.cuenta"/></div></td>
-          <td align="right" height="15" class="bienvenida"><%=f.formatCuenta(ec.getNumeroCuenta())%></td>
-       </tr>
-		<tr> 
-		  <td height="15" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.titular"/></div></td>
-          <td height="15" align="right" class="bienvenida"><%=cliente%></td>
-       </tr>
-		
-</table>	   
-<table width="40%" border="0" cellpadding="0" cellspacing="2" align="center">	   
-<tr> 
-					  <td height="15" colspan="2" nowrap>
-								<div align="left" class="texto-acceso"><br>
-									<bean:message key="lbl.cc.descripcion.observacion"/><br></div></td></tr>
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.desde"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatFecha(desde, locale)%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.hasta"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatFecha(hasta, locale)%></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+
+
+
+<br>
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.numero.cuenta"/>:</strong></div>
+  <div class="col-md-2"><%=f.formatCuenta(ec.getNumeroCuenta())%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+<br>
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><strong><bean:message key="lbl.titular"/>:</strong></div>
+  <div class="col-md-2"><%=cliente%></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+
+<br>
+
+
+
+             
+			
+
+<br>
+
+								<div align="center"><strong>
+									<bean:message key="lbl.cc.descripcion.observacion"/></strong></div>
 
 					
-</table>
+
 <br>
 <html:form action="/compensacion/autorizar/multiple" method="post">
 <html:hidden property="cuenta" value="<%=session.getAttribute("cuenta.csic").toString()%>"/>
 
-<table width="100%" border="0" cellpadding="1" cellspacing="2">
-	<tr>
-  <td>
-      <div align="left"><br><input type="button" class="botton" value="<bean:message key="lbl.compensacion.autorizar"/>" onclick="__submit();">
-			  						&nbsp;&nbsp;
-			  <input type="button" class="botton" name="btnedit" onclick="__rechazar()" value="Rechazar"/>
-			  									  &nbsp;&nbsp;
-			  <input type="button" class="botton" value="<bean:message key="lbl.compensacion.refrescar"/>" onclick="__refresh();"></div>
+
+      <div align="left"><input type="button" class="btn btn-default" value="<bean:message key="lbl.compensacion.autorizar"/>" onclick="__submit();">
+			  						
+			  <input type="button" class="btn btn-default" name="btnedit" onclick="__rechazar()" value="Rechazar"/>
+			  									
+			  <input type="button" class="btn btn-default" value="<bean:message key="lbl.compensacion.refrescar"/>" onclick="__refresh();"></div>
 			  
-  </td>
-</tr>
-<tr><td>&nbsp;</td></tr>
-	<tr><td><input type="checkbox" name="_all" onclick="__checkAll(this);">&nbsp;<bean:message key="lbl.compensacion.autorizar.seleccionar.todos"/></td></tr>
-</table>
-<table width="100%" border="0" cellpadding="1" cellspacing="2">
+<br>
+
+
+<div align="left"><input type="checkbox" name="_all" onclick="__checkAll(this);"><bean:message key="lbl.compensacion.autorizar.seleccionar.todos"/></div>
+
+<br>
+
+						<div id="no-more-tables">
+<table class="col-md-12 table-bordered table-striped table-condensed cf">
+  <thead class="cf"> 
 
 <tr class="tabla-acceso">
-	<td class="texto-acceso" width="20%"><bean:message key="lbl.fecha"/></TD>
-    <td class="texto-acceso" width="40%"><bean:message key="lbl.descripcion"/></TD>
- 	<td class="texto-acceso" width="20%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.debito"/></TD>
-    <td class="texto-acceso" width="20%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<bean:message key="lbl.credito"/></TD>
-</tr>
+	<td ><bean:message key="lbl.fecha"/></TD>
+    <td ><bean:message key="lbl.descripcion"/></TD>
+ 	<td><bean:message key="lbl.debito"/></TD>
+    <td><bean:message key="lbl.credito"/></TD>
+</tr></thead>
   
 <%
 String styleClass = "";
@@ -241,27 +290,27 @@ for (int i = 0; i < mov.size(); i++){
 %>
 
 <TR valign="top" <%=styleClass%>>
-    <TD class="bienvenida" align=left width="14%">
+    <TD  data-title="Fecha" align=left>
     <%if (m.getDetalle()!=null) {%>
     <a href="javascript:__showHideElement('iddeta<%=m.getSecuencia()%>')" title="Ver Detalle">+</a>&nbsp;
     <% } %>
     <html:checkbox property="indice" value="<%=""+i %>"/><%=f.formatFecha(m.getFechaValida(), locale)%></TD>
     <% if (0==m.getTipo()){ // Si tipo == movimiento se utilize el td existente (link actual)%>
-    <TD class="bienvenida" style="color:blue;CURSOR: hand" 
+    <TD  data-title="Descripción" style="color:blue;CURSOR: hand" 
     <%if ("D".equals(m.getTipoTransaccion())){%>
     onclick="mostrarNotaDebito(<%=i %>,'<bean:message key="lbl.aviso.debito.cuenta.corriente"/>','<bean:message key="lbl.debitamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
     <%}else{%>
 	onclick="mostrarNotaCredito(<%=i %>,'<bean:message key="lbl.aviso.credito.cuenta.corriente"/>','<bean:message key="lbl.acreditamos.cuenta.corriente.concepto"/>','<%=f.formatFecha(m.getFechaValida(),locale)%>','<%=getDescripcion(m.getDescripcion())%>','<%=f.formatMonto(m.getMonto())%>','<%=f.formatCuenta(ec.getNumeroCuenta(), "C")%>','<%=getDescripcion(cliente)%>','<%=getDescripcion(m.getDireccion())%>','<%=getDescripcion(m.getPais())%>','<%=getDescripcion(m.getUsuario())%>', '<%=ec.getMoneda() %>');" 
 	<%}%>
-    align=left width="30%"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
+    align=left><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
     <%}
 else{  // si tipo == D se crea Nuevo link %>
 <TD class="bienvenida" 
-    align=left width="30%" style="color:blue;CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
+    align=left  style="color:blue;CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
 <%} %>
     
-        <TD class="bienvenida" align=right width="16%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD class="bienvenida" align=right width="16%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+        <TD  data-title="Débito" align=right><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD  data-title="Crédito" align=right><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
 </TR>
     <tr>
 	    <td colspan="6">
@@ -270,15 +319,18 @@ else{  // si tipo == D se crea Nuevo link %>
 		if (detallemov != null) { 
 			DetalleMovimiento d = null;
 	  %>
+	  
+	  <div id="no-more-tables">
            <div id="iddeta<%=m.getSecuencia()%>" sytle="display:none;">
-			  <table align="right" width="95%" border="0" cellpadding="1" cellspacing="2">
+			 <table class="col-md-12 table-bordered table-striped table-condensed cf">
+			  <thead class="cf">  
 				   <tr class="tabla-acceso">		               
-					   <td class="texto-acceso" width="20%">Valor Total del Formulario</td>					 					   
-					   <td class="texto-acceso" width="10%">Número Declaración</td>
-					   <td class="texto-acceso" width="20%">Estado</td>
-					   <td class="texto-acceso" width="50%">Formulario</td>						   
+					   <td >Valor Total del Formulario</td>					 					   
+					   <td >Número Declaración</td>
+					   <td >Estado</td>
+					   <td >Formulario</td>						   
 					   
-				 </tr>
+				 </tr></thead>
 					<%for (int j=0; j< detallemov.size(); j++) {
 						d= (DetalleMovimiento)detallemov.get(j);
 						if (j % 2 == 0)
@@ -287,17 +339,17 @@ else{  // si tipo == D se crea Nuevo link %>
 							styleClass = "class=\"celda-clave1\"";
 						%>		
 				<tr class="tabla-acceso">				   
-				   <td class="bienvenida" align="right"><%=f.formatMonto(d.getValor())%></td>				 				   
-				   <td class="bienvenida" align="center"><%=d.getSecuenciaDeclaracion()%></td>		
-				   <td class="bienvenida"><bean:message key="<%=getDescEstado(d.getEstado())%>"/></td>
-				   <td class="bienvenida"><% if (d.getNombreFormulario() != null){%>
+				   <td data-title="Monto Total del Formulario"  align="right"><%=f.formatMonto(d.getValor())%></td>				 				   
+				   <td data-title="Número Declaración"  align="center"><%=d.getSecuenciaDeclaracion()%></td>		
+				   <td data-title="Estado"class="bienvenida"><bean:message key="<%=getDescEstado(d.getEstado())%>"/></td>
+				   <td data-title="Formulario"><% if (d.getNombreFormulario() != null){%>
 						<a  href="javascript:_submit(<%=i%>,<%=j%>);"><%=d.getCodigoFormulario()%>-<%=d.getNombreFormulario()%></a>
 					<%}else{%>
 						&nbsp;
 					<%}%></td>						   				  
 				</tr>
 		<% }  %>
-     		</table></div>
+     		</table></div></div>
 		<% }  %>
 		
 		
@@ -306,7 +358,7 @@ else{  // si tipo == D se crea Nuevo link %>
 	 </tr>
 <%} /* End for - loop*/ %>
 
-</table>
+</table></div>
 </html:form>
 <script>
 function __checkAll(element)
@@ -374,33 +426,37 @@ function _submit(index, index2){
 <html:hidden property="hasta" value="<%=strFechaHasta%>"/>
 
 </html:form>
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div></td>
-	</tr>
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
+
+<br>
+
+<div class="visible-lg" align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div>
+	<br>
+<div align="center">
 		
-					  &nbsp;&nbsp;
-				<INPUT class="botton" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>					
+				
+				<INPUT class="btn btn-default" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div>
+				
+				<br>
+				
 <%
 }
 else
 {
 %>
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-  <tr class="tabla-acceso">
-<TD class="texto-acceso" width="15%">
-<bean:message key="msg.sin.movimentos"/></td></tr>
-<tr> 
-	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="document.location='<html:rewrite page='/compensacion/contrato.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>
+<br>
+<div align="center">
+<bean:message key="msg.sin.movimentos"/></div>
+
+<br>
+
+<div align="center">
+			<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/compensacion/contrato.do'/>'" type=button value="<bean:message key="lbl.retroceder"/>"></div>
+			<br>
+
 <%
 }
 %>
-</table></div></table></div>
+</div>
     
 <!--fin - estado de cuenta-->
 <div></div>
@@ -424,76 +480,129 @@ else
 	<input type="hidden" name="lblnombreUsuario" value="<bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/>">
 	<input type="hidden" name="nombreUsuario">
 </form>
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-               <tr> 
-                <td height="30" class="texto-acceso"><div id=bk2 align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>" width="260" height="68"></div></td>
-                <td class="texto-acceso"><div align="right">
-					</div></td>
-              </tr>
-              <tr> 
-                <td height="40" colspan="2" valign="bottom"><div align="left"> 
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-                      <tr> 
-                        <td width="92%"><div align="left" class="login"><bean:message key="lbl.aviso.debito.titulo"/></div></td>
-                      <td width="8%"><div align="right">&nbsp;
-							<a href="javascript:ocultarNotas();"><INPUT class="botton" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div></td>
-                      </tr>
-                    </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td colspan="2" valign="top"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                    <tr> 
-                      <td colspan="4"><div align="center" class="subtitulos"><br>
-						<SPAN id="tituloNota"> <bean:message key="lbl.aviso.debito.cuenta.corriente"/></SPAN>
-					</div><br></td>
-                    </tr>
-                   <tr> 
-                      <td width="15%" height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/></b></td>
-                      <td width="25%" class="bienvenida" align="left"><SPAN id="nombreCuenta"></SPAN></td>
-                    </tr>  
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="numeroCuenta"></SPAN></td>
-                      <td></td>
-                      <td></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="fecha"></SPAN></td>
-                      <td></td>
-                      <td></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.4"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="moneda"></SPAN></td>
-                      <td width="15%" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></b></td>
-                      <td width="15%" class="bienvenida" align="right"><SPAN id="importe"></SPAN></td>
-                    </tr>                                         
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/></b></td>
-                      <td class="bienvenida" colspan="3"><SPAN id="concepto"></SPAN></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><span id="lblAtt" style="display:none"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/></b></span></td>
-                      <td class="bienvenida" align="left"><SPAN id="nombreUsuario" style="display:none"></SPAN></td>
-                    </tr>
+
+      <br>     
+<div align="left"><strong><bean:message key="lbl.aviso.debito.titulo"/></strong></div>
+<div align="right">
+<a href="javascript:ocultarNotas();"><INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div>
+              
+              <br> 
+              
+              
+              
+              
+             <div align="center">
+						<strong><SPAN id="tituloNota"> <bean:message key="lbl.aviso.debito.cuenta.corriente"/></SPAN></strong>
+					</div> 
+              
+              
+              
+              <br>
+               <br>   
+              
+              
+              
+  <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><SPAN id="nombreCuenta"></SPAN></div>
+  <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>         
+              
+              
+              
+              
+              
+              
+              
+              
+  <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><SPAN id="numeroCuenta"></SPAN></div>
+  <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>         
                     
-                  </table></td>
-              </tr>
-              <tr> 
-                <td colspan="2" valign="top">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td colspan="2" valign="top" class="texto-acceso"><div align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
-                <div align="center"><br>
+  
+              
+              
+                            
+                <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><SPAN id="fecha"></SPAN></div>
+  <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>   
+              
+          
+                                        
+                <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.4"/></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><SPAN id="moneda"></SPAN></div>
+  <div class="col-md-1"></div>
+   <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></strong></div>
+    <div class="col-md-1"></div>
+        <div class="col-md-1" align="left"><SPAN id="importe"></SPAN></div>
+         <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>   
+      
+      
+      
+                      <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3" align="left"><SPAN id="concepto"></SPAN></div>
+  <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>   
+              
+              
+                                   <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><span id="lblAtt" style="display:none"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/></span></strong></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><SPAN id="nombreUsuario" style="display:none"></SPAN></div>
+  <div class="col-md-1"></div>
+
+  </div>
+              
+      <br>                                       
+               
+               
+                    
+   <div class="visible-lg" align="center"><a href="javascript:printPage3()"><img src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32" border="0"></a></div>
+                <div align="center">
 					<a href="javascript:__download()"><img src="<html:rewrite page='/images/icono_acrobat.gif'/>" border="0"><bean:message key="lbl.descargar.pdf"/></a>
-					<br></div></td>
-	</tr>
-	<tr> 
-	<td valign="top" class="texto-acceso"><div align="center"><br>
-			<INPUT class="botton" onclick="javascript:ocultarNotas();" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-      </table>
+					</div>
+					<br> 
+	 
+	<div align="center">
+			<INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type=button value="<bean:message key="lbl.retroceder"/>"></div>
+    
+    <br> 
 </div>
 <!--fin nota-->
 <%@ include file="../footer.jsp"  %>
+</div>
+</body>
+</html:html>
