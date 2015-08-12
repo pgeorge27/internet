@@ -1100,7 +1100,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
 }
 
 @media only screen and (max-width: 78em) {
-    
+
     /* Force table to not be like tables anymore */
   #no-more-tables table, 
   #no-more-tables thead, 
@@ -1111,7 +1111,11 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
     display: block;
     border: 0;
   }
- 
+
+   #no-more-tables td { 
+    padding-top: 15% !important;
+  }
+
   /* Hide table headers (but not display: none;, for accessibility) */
   #no-more-tables thead tr { 
     position: absolute;
@@ -1153,6 +1157,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
 		text-align: left !important;
 	}
 
+
   /*
   Label the data
   */
@@ -1161,7 +1166,53 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
   .table-responsive {
     border:0 !important;
   }
+
+
 }
+
+@media only screen and (min-width: 320px) {
+
+ #no-more-tables td { 
+    padding-top: 10% !important;
+  }
+
+}
+
+
+@media only screen and (min-width: 480px) {
+
+ #no-more-tables td { 
+    padding-top: 5% !important;
+  }
+
+}
+
+
+@media only screen and (min-width: 600px) {
+
+ #no-more-tables td { 
+    padding-top: 5% !important;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+ #no-more-tables td { 
+    padding-top: 3% !important;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+ #no-more-tables td { 
+    padding-top: 1% !important;
+  }
+
+}
+
+
 
 /*fin de styles.css*/
 
