@@ -98,7 +98,7 @@ function retornar(){
 
         <div class="panel-body">
 
-        <div align="center" >
+        <div class="col-xs-12" align="right" >
           <INPUT class="btn btn-default" onclick="retornar()" type="button" value="<bean:message key="lbl.retroceder"/>">
         </div>
 
@@ -124,6 +124,8 @@ function retornar(){
         </span>
             </p>
           </div>
+
+           <div class="row"></div>
 
           <div class="col-md-4">
             <p>
@@ -180,78 +182,5 @@ function retornar(){
     </div>
   </div>
 </div>
-
-<table width="80%" border="0" align="center" cellpadding="5" cellspacing="5">
-              <tr> 
-                <td height="40" valign="bottom"><div align="center"> 
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-                      <tr> 
-                     
-                        <td width="50px"> <img src="<html:rewrite page='/images/gancho.gif'/>" border="0"></td>
-                        <td><div align="left" class="login"><bean:message key="lbl.compensacion.generar.xml"/></div></td>
-                        <td width="8%"><div align="right">&nbsp;
-							<INPUT class="botton" onclick="retornar()" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-                      </tr>
-                    </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td height="40" class="texto-acceso">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td valign="top" align="center">
-				<html:form method="post" action="/formulario10/consulta/generar/xml">
-					<html:hidden property="estado" value="XML"/>
-                   <%@ include file="../../divHeader.jsp"%>
-                    <table width="80%" border="0" align="center" cellpadding="5" cellspacing="5">
-                      <tr> 
-                        <td colspan="2"><div align="center" class="subtitulos"><bean:message key="lbl.movimiento.tipos"/></div></td>
-                      </tr>
-                      <tr> 
-                        <td colspan="2"><table width="80%" border="0" align="center" cellpadding="5" cellspacing="5">
-                            <tr> 
-                              <td width="50%"><html:radio property="tipo" styleId="TipoOperacion" value="2" onclick="setValue(2);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.mes"/></span></td>
-                              <td width="50%"><html:radio property="tipo" styleId="TipoOperacion" value="3" onclick="setValue(3);"/>
-                                <span class="texto-acceso"><bean:message key="lbl.movimientos.historicos"/></span></td>
-                            </tr>
-                          </table></td>
-                      </tr>
-                      <tr> 
-                        <td width="41%" class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.cuentas"/></div></td>
-                        <td width="59%">
-                            <html:select property="cuenta" styleClass="lstbox">
-									<logic:notEmpty name="cuentasCompensacion">
-											<html:option value=""><bean:message key="lbl.seleccione.una.cuenta"/></html:option>
-											<bean:define id="cp" scope="session" name="cuentasCompensacion" type="java.util.ArrayList"/>
-				                            <html:options collection="cp" property="codigoCSIC" labelProperty="tag"/>
-										   
-									</logic:notEmpty>
-									<logic:empty name="cuentasCompensacion">
-										<html:option value=""><bean:message key="lbl.seleccione.no.hay.cuentas"/></html:option>
-									</logic:empty>
-							   	 </html:select>	 <span class="texto-acceso">(<font color="#FF0000">*</font>)</span></td>
-                      </tr>
-                      
-                      <tr> 
-                        <td class="celda-clave1"><div align="right" class="texto-acceso"><bean:message key="lbl.periodo"/></div></td>
-                        <td><html:select property="mes">
-									<bean:define id="cp1" scope="session" name="mes.formulario.10" type="java.util.ArrayList"/>
-		                            <html:options collection="cp1" property="codigo" labelProperty="descripcion"/>
-							   	 </html:select></td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;<br><br></td>
-                        <td><input name="botonEnviar" onclick="send();" type="button" class="botton" value="<bean:message key="btn.consultar"/>">&nbsp;&nbsp;&nbsp;&nbsp; 
-							<input TYPE="BUTTON" class="botton" VALUE="<bean:message key="lbl.retroceder"/>" onclick="retornar()"></td>
-                      </tr>
-                    </table>
-                       <%@ include file="../../divFooter.jsp"%>
-                  </html:form></td>
-              </tr>
-              <tr>
-                <td height="25" align="center" valign="middle" class="texto-acceso"><bean:message key="lbl.mensaje.campo.requerido"/></td>
-              </tr>
-            </table>
 
 <%@ include file="../../footer.jsp"  %>

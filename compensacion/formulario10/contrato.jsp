@@ -96,9 +96,9 @@ if (locale == null){
   <tr> 
 		<td align="center"><br>
 		<div id="bankdiv" style="display:">
-			<html:submit styleClass="botton"><bean:message key="lbl.aceptar.contrato"/></html:submit>
+			<html:submit styleClass="btn btn-default"><bean:message key="lbl.aceptar.contrato"/></html:submit>
 			
-			<input type="button" class="botton" name="foo" value="<bean:message key="lbl.no.aceptar.contrato"/>" onclick="document.location='<html:rewrite page='/start.jsp'/>'">
+			<input type="button" class="btn btn-default" name="foo" value="<bean:message key="lbl.no.aceptar.contrato"/>" onclick="document.location='<html:rewrite page='/start.jsp'/>'">
 		</div></td>
   </tr>
 
