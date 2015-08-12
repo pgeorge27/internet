@@ -273,12 +273,12 @@ else{  // si tipo == D se crea Nuevo link %>
 <TD data-title="Descripción"  class="bienvenida" 
     align=left style="color:blue;CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:11px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
 <%} %>
-        <TD data-title="Débito" class="bienvenida" align=right width="16%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD data-title="Crédito"  class="bienvenida" align=right width="16%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+        <TD data-title="Débito" class="bienvenida prueba" align=right width="16%"><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Crédito"  class="bienvenida prueba" align=right width="16%"><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
     <td data-title="Estado"  class="bienvenida"><%=m.getEstado()==null?"":m.getEstado() %></td>
    </TR>
     <tr>
-	    <td colspan="6">
+	    <td colspan="6" style="padding-left: 0%;">
 	    
 	    			<% ArrayList detallemov = m.getDetalle();
 		if (detallemov != null) { 
