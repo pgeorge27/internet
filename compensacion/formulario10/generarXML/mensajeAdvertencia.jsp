@@ -23,40 +23,25 @@ if (locale == null){
 
 <%@ include file="/body.jsp" %>
 
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
 
+    <div class="col-md-6 col-md-offset-3">
 
-<br><br>
-	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-       <tr> 
-         <td>
-            <div align="center">                     
-               <table width="400" height="200" border="0" cellpadding="0" cellspacing="0" class="tabla-acceso">
-                 <tr> 
-                   <td height="0"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                       <tr> 
-                         <td width="46%" rowspan="2"><div align="center"> 
-                             <table width="100%" border="0" cellspacing="2" cellpadding="2">
-                               <tr> 
-                                 <td><div align="center"><img src="<html:rewrite page='/images/warning.gif'/>"></div></td>
-                               </tr>
-	                               <tr> 
-	                                 <td class="bienvenida" align="center"><bean:message key="lbl.compensacion.formulario10.no.aprobado.no.genera.xml"/></td>
-	                               </tr> 
-                             </table>
-						</td>                                
-                       </tr>
-                       
-					</td>                           
-                 </tr>
-				</table>
-			</div>
-		   </td>		 
-       </tr>      
-     </table>				
-	<table>
-	   <tr>
-	         <td align="center"><INPUT class="botton" onclick="document.location='<html:rewrite page='/formulario10/generar/xml/consulta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>"></div></td>
-      </tr>
-	</table>
+        <div class="well">
+          <div align="center">
+            <p>
+              <img src="<html:rewrite page='/images/warning.gif'/>">
+            </p>
+            <p><bean:message key="lbl.compensacion.formulario10.no.aprobado.no.genera.xml"/></p>
+            <p>
+              <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/generar/xml/consulta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <%@ include file="/footer.jsp"  %>	

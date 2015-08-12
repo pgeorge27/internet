@@ -22,16 +22,26 @@ if (locale == null){
 <script type="text/javascript"></script>
 
 <%@ include file="/body.jsp" %>
-    <div align="center" style="width:400px; height:200px;" class="tabla-acceso"> 
-        <div align="center" style="margin:10%">
-            <div>
-            	<img alt="Error" src="<html:rewrite page='/images/warning.gif'/>">
-            </div>
+
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+    <div class="col-md-6 col-md-offset-3">
+
+        <div class="well">
+          <div align="center">
+            <p>
+              <img src="<html:rewrite page='/images/warning.gif'/>">
+            </p>
             <p><bean:message key="lbl.compensacion.formulario10.no.aprobado.no.genera.xml"/></p>
+            <p>
+              <INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/generar/xml/consulta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+            </p>
+          </div>
         </div>
-    </div><br/><br/>
-	<div>
-		<INPUT class="botton" onclick="document.location='<html:rewrite page='/formulario10/generar/xml/consulta.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
-	</div>
+    </div>
+  </div>
+</div>
+
 
 <%@ include file="/footer.jsp"  %>	
