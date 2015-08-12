@@ -71,6 +71,36 @@ function __asociar(index){
 <SCRIPT language=javascript src="<html:rewrite page='/scripts/formatDes.js'/>"></SCRIPT>
 <%@ include file="../../body.jsp"%>
 
+<div class="container">
+  <div class="row" style="padding-right: 3%; padding-left: 3%;">
+
+  	<div id=bankdiv align="left" style="display:none">
+  		<img src="<html:rewrite page='/images/logo.jpg'/>">
+  	</div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <img src="<html:rewrite page='/images/logo_icon.png' />" />
+          <strong>
+            <bean:message key="lbl.compensacion.formulario.10.modificar.titulo"/> 
+          </strong>
+        </div>
+
+        <div class="panel-body">
+
+        <div align="right">
+        	<INPUT class="btn btn-default" onclick="document.location='<html:rewrite page='/formulario10/mant/modificar.do'/>'" type="button" value="<bean:message key="lbl.retroceder"/>">
+        </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="estcta" align="left">
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	  <tr> 
