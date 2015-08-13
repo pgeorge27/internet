@@ -213,7 +213,7 @@ function __showHideElement(element){
 <br>
 <br>
 
-<div align="center"><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div>
+
 
 
 
@@ -227,7 +227,7 @@ function __showHideElement(element){
 
 
 <div id="estcta">
-
+<div align="center"><strong><bean:message key="lbl.cc.descripcion.observacion"/></strong></div>
 
 <br>
 						<div id="no-more-tables">
@@ -278,7 +278,7 @@ else{  // si tipo == D se crea Nuevo link %>
     <td data-title="Estado"  class="bienvenida"><%=m.getEstado()==null?"":m.getEstado() %></td>
    </TR>
     <tr>
-	    <td colspan="6" style="padding-left: 0%;">
+	    <td colspan="6" class="paddingCero">
 	    
 	    			<% ArrayList detallemov = m.getDetalle();
 		if (detallemov != null) { 
@@ -364,14 +364,12 @@ function __refresh(){
 	<html:hidden property="indice2"/>
 	<html:hidden property="cuenta" value="<%=session.getAttribute("cuenta.csic").toString()%>"/>
 </html:form>
-<table width="80%" border="0" cellpadding="0" cellspacing="2">
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div></td>
-	</tr>
-	<tr> 
-		<td valign="top" class="texto-acceso" colspan="2"><div align="center"><br>
-				<INPUT class="btn btn-default" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div></td></tr>
-</table>					
+
+<div align="center"><input type="image" onclick="printPage3()" src="<html:rewrite page='/images/printer2.jpg'/>" width="37" height="32"></div>
+
+<div align="center"><br>
+				<INPUT class="btn btn-default" onclick="__return()" type=button value="<bean:message key="lbl.retroceder"/>"></div>		
+							
 <%
 }
 else
@@ -415,70 +413,141 @@ else
 	<input type="hidden" name="lblnombreUsuario" value="<bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/>">
 	<input type="hidden" name="nombreUsuario">
 </form>
-<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
-               <tr> 
-                <td height="30" class="texto-acceso"><div id=bk2 align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>" width="260" height="68"></div></td>
-                <td class="texto-acceso"><div align="right">
-					</div></td>
-              </tr>
-              <tr> 
-                <td height="40" colspan="2" valign="bottom"><div align="left"> 
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="linea-botton">
-                      <tr> 
-                        <td width="92%"><div align="left" class="login"><bean:message key="lbl.aviso.debito.titulo"/></div></td>
-                      <td width="8%"><div align="right">&nbsp;
-							<a href="javascript:ocultarNotas();"><INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div></td>
-                      </tr>
-                    </table>
-                  </div></td>
-              </tr>
-              <tr> 
-                <td colspan="2" valign="top"><table width="100%" border="0" cellspacing="2" cellpadding="2">
-                    <tr> 
-                      <td colspan="4"><div align="center" class="subtitulos"><br>
-						<SPAN id="tituloNota"> <bean:message key="lbl.aviso.debito.cuenta.corriente"/></SPAN>
-					</div><br></td>
-                    </tr>
-                   <tr> 
-                      <td width="15%" height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/></b></td>
-                      <td width="25%" class="bienvenida" align="left"><SPAN id="nombreCuenta"></SPAN></td>
-                    </tr>  
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="numeroCuenta"></SPAN></td>
-                      <td></td>
-                      <td></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="fecha"></SPAN></td>
-                      <td></td>
-                      <td></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.4"/></b></td>
-                      <td class="bienvenida" align="left"><SPAN id="moneda"></SPAN></td>
-                      <td width="15%" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></b></td>
-                      <td width="15%" class="bienvenida" align="right"><SPAN id="importe"></SPAN></td>
-                    </tr>                                         
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/></b></td>
-                      <td class="bienvenida" colspan="3"><SPAN id="concepto"></SPAN></td>
-                    </tr> 
-                    <tr> 
-                      <td height="20" class="bienvenida" align="left"><b><span id="lblAtt" style="display:none"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/></b></span></td>
-                      <td class="bienvenida" align="left"><SPAN id="nombreUsuario" style="display:none"></SPAN></td>
-                    </tr>
-                    
-                  </table></td>
-              </tr>
-              <tr> 
-                <td colspan="2" valign="top">&nbsp;</td>
-              </tr>
+<div>
+<div id=bk2 align="left" style="display:none"><img src="<html:rewrite page='/images/logo.jpg'/>" width="260" height="68"></div>
 
-	<tr> 
 
-      </table>
+
+
+
+        <div class="panel panel-default">
+					 <div class="panel-heading" align="left"><img  src="<html:rewrite page='/images/logo_icon.png' />" /><strong><bean:message key="lbl.aviso.debito.titulo"/></strong></div>
+
+
+</div>
+
+
+<br>
+
+
+<div align="right"><a href="javascript:ocultarNotas();"><INPUT class="btn btn-default" onclick="javascript:ocultarNotas();" type="button" value="<bean:message key="lbl.retroceder"/>"></a></div>
+
+
+
+
+
+<br>
+
+
+
+
+<div align="center" class="subtitulos"><SPAN id="tituloNota"><bean:message key="lbl.aviso.debito.cuenta.corriente"/></SPAN></div>
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.1"/>:</strong></div>
+  <div class="col-md-2" align="left"><SPAN id="nombreCuenta"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+
+
+<br>
+                  
+                  
+                  
+                  
+                  
+  
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.2"/>:</strong></div>
+  <div class="col-md-2" align="left"><SPAN id="numeroCuenta"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>
+                  
+                  
+         <br>      
+         
+         
+         
+         
+         <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.3"/>:</strong></div>
+  <div class="col-md-2" align="left"><SPAN id="fecha"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>   
+                  
+                  
+              <br>      
+         
+         
+         
+         
+         <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.4"/>:</strong></div>
+  <div class="col-md-3" align="left"><SPAN id="moneda"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.5"/></div>
+  <div class="col-md-2"><SPAN id="importe"></SPAN></div>
+   <div class="col-md-1"></div>
+</div>   
+                        
+              <br>      
+         
+         
+         
+         
+         <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.6"/>:</strong></div>
+  <div class="col-md-3" align="left"><SPAN id="concepto"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>   
+
+
+              <br>      
+         
+         
+         
+         
+         <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2" align="left"><strong><span id="lblAtt" style="display:none"><bean:message key="lbl.aviso.db.cr.cuenta.corriente.linea.7"/></b></span></strong></div>
+  <div class="col-md-2" align="left"><SPAN id="nombreUsuario" style="display:none"></SPAN></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+   <div class="col-md-1"></div>
+</div>   
+  
+
+
+      </div>
       
       	<br> 
       

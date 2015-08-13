@@ -91,7 +91,7 @@ function retornar(){
         <div class="panel-heading" >
           <img src="<html:rewrite page='/images/logo_icon.png' />" />
           <strong>
-            <p>Consulta de Relación de Operaciones de Cuentas de Compensación</p>
+            Consulta de Relación de Operaciones de Cuentas de Compensación
           </strong>
         </div>
 

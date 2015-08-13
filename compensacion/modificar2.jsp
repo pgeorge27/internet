@@ -289,13 +289,13 @@ for (int i = 0; i < mov.size(); i++){
 	<TD data-title="Descripción"
     align=left  style="CURSOR: hand" onclick="location.href='<%=request.getContextPath() %>/detalles/movimiento.do?secuencia=<%=m.getSecuencia() %>'"><SPAN id=desc style="color:blue;hand;font-size:11px;font-family: Verdana, Arial, Helvetica, sans-serif;"><%=m.getDescripcion()%></SPAN></TD>
 	<%} %>
-    <TD data-title="Débito" align=right ><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
-    <TD data-title="Crédito" align=right ><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Débito" align=right class="prueba" ><%="D".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
+    <TD data-title="Crédito" align=right class="prueba" ><%="C".equals(m.getTipoTransaccion())?f.formatMonto(m.getMonto()):"&nbsp;"%></TD>
     </TR>
     
 
     <tr>
-	    <td colspan="6" >
+	    <td colspan="6" class="paddingCero">
 		<% ArrayList detallemov = m.getDetalle();
 		if (detallemov != null) {
 			DetalleMovimiento d = null;

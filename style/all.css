@@ -1199,7 +1199,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
 @media only screen and (min-width: 768px) {
 
  #no-more-tables td { 
-    padding-top: 3% !important;
+    padding-top: 5% !important;
   }
 
 }
@@ -1207,11 +1207,14 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
 @media only screen and (min-width: 1024px) {
 
  #no-more-tables td { 
-    padding-top: 1% !important;
+    padding-top: 2% !important;
   }
 
 }
 
+.paddingCero{
+	padding-left: 0 !important;
+}
 
 
 /*fin de styles.css*/
