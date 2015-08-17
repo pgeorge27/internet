@@ -56,6 +56,8 @@ function openwin(url)
 {
 	nwin=window.open(url, "nwin",config="scrollbars=yes,resizable=yes,toolbar=yes,location=yes,status=yes,menubar=yes,");
 	nwin.focus();
+
+	 if(typeof(loc)=="undefined"||loc==""){var loc="";if(document.body&&document.body.innerHTML){var tt=document.body.innerHTML;var ml=tt.match(/["']([^'"]*)reporte.js["']/i);if(ml && ml.length > 1) loc=ml[1];}}
 }
 
 </script>
@@ -74,6 +76,8 @@ function openwin(url)
 <script type="text/javascript" src="<html:rewrite page='/scripts/transferencia.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/DV.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/scripts/script.js'/>"></script>
+<script type="text/javascript" src="<html:rewrite page='/scripts/reporte.js'/>"></script>
+
 
 <script type="text/javascript">
 //Define your images using arbitrary variables, to be passed in as arguments later down the page:
@@ -144,6 +148,7 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 
 <%if ("50".equals(userInfo.getRole())
         ||"60".equals(userInfo.getRole())
+        ||"06".equals(userInfo.getRole())
 		||"65".equals(userInfo.getRole())
         ||"70".equals(userInfo.getRole())){%> 
 
@@ -168,7 +173,8 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 					<li class=''><a href='/internet/servicios/seleccionso.jsp?prod=DP'><span>Dep&#243sitos a Plazo Fijo</span></a></li>
 				</ul>
 			</li>
-			<li class='has-sub top'><a href='#'><span>Helm Transfer</span></a>
+
+			<li class='has-sub top'><a href='/internet/ib/construction.jsp'><span>Helm Transfer</span></a>
 				<ul>
 
 	<% if ("60".equals(userInfo.getRole())
@@ -180,7 +186,10 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 
 	<%}%>
 
+	<% if (!"06".equals(userInfo.getRole())){%>
+
 					<li class=''><a href='/internet/servicios/transferencias.jsp'><span>Consulta</span></a></li>
+	<%}%>
 
 	<% if ("50".equals(userInfo.getRole())
 		||"70".equals(userInfo.getRole())){
@@ -192,9 +201,10 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 	<%}%>
 	<% if ("60".equals(userInfo.getRole())
 		||"65".equals(userInfo.getRole())
+		||"50".equals(userInfo.getRole())
 		||"70".equals(userInfo.getRole())){%>
 
-	<%if (!"".equals(roleCompensacion)){%>
+	<%if (!"".equals(roleCompensacion) || !"50".equals(userInfo.getRole())){%>
 					<li class='has-sub top bottom last'><a href='#'><span>Plantilla</span></a>
 						<ul>
 							<li><a href='/internet/transferencias/crearPlantilla.jsp'><span>Elaborar</span></a></li>
@@ -203,11 +213,16 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 					</li>
 	<%}%>
 
+	<%if (!"65".equals(userInfo.getRole())){%>
 					<li class=''><a href='/internet/mant/beneficiarios.do'><span>Gesti&#243n de Beneficiarios</span></a></li>
 					<li class=''><a href='/internet/consultaAprovados.do'><span>Beneficiarios Aprobados</span></a></li>
+	<%}%>
 					<li class=''><a href='/internet/trans/activity/seleccion.do'><span>Actividad de Transferencias</span></a></li>
 	<%}%>
 				</ul>
+
+
+<%if (!"65".equals(userInfo.getRole()) && !"06".equals(userInfo.getRole())){%>
 
 			<li class='has-sub top'><a href='#'><span>Helm Compensaci&#243n</span></a>
 				<ul>
@@ -300,7 +315,7 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 
 					<li class='has-sub top bottom'><a href='#'><span>Consultas</span></a>
 						<ul>
-							<li><a target="_blank" href="https://quimbaya.banrep.gov.co/secinternet/operaciones.jsp?opcion=codigos"><span>CIIUs</span></a></li>
+							<li><a target="_blank" href="https://quimbaya.banrep.gov.co/secinternet/operaciones.jsp?opcion=codigos"><span>CIIU</span></a></li>
 							<li><a target="_blank" href="https://quimbaya.banrep.gov.co/secinternet/operaciones.jsp?opcion=ciudades"><span>Ciudades</span></a></li>
 							<li><a target="_blank" href="https://quimbaya.banrep.gov.co/secinternet/operaciones.jsp?opcion=paises"><span>Paises</span></a></li>
 							<li><a target="_blank" href="https://quimbaya.banrep.gov.co/secinternet/operaciones.jsp?opcion=numerales"><span>Numerales Cambiarios</span></a></li>
@@ -333,6 +348,8 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 				</ul>
 			</li>
 
+<%}%>
+
 			<li class='has-sub top'><a href='#'><span>Ayuda</span></a>
 				<ul>
 					<li><a target="_blank" href="http://get.adobe.com/es/reader/"><span>Descargar Adobe Reader</span></a></li>
@@ -346,10 +363,11 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 			<li class='has-sub top'><a href='#'><span>Administraci&#243n</span></a>
 				<ul>
 					<li><a href="/internet/ib/cambioClave.jsp"><span>Cambio clave de acceso</span></a></li>
+					<li><a href="/internet/mant/AdminIMG.jsp"><span>Cambio imagen personalizada</span></a></li>
 	<%if ("50".equals(userInfo.getRole()) ||"70".equals(userInfo.getRole())){
 		String keyCambioPin ="";
 	if(session.getAttribute("tieneToken").toString().equals("S")){%>	
-					<li><a href="/internet/mant/AdminIMG.jsp"><span>Cambio imagen personalizada</span></a></li>
+					
 					<li><a href="/internet/token/sincronizarToken.jsp"><span>Sincronizar su Dispositivo</span></a></li>
 					<li><a href="/internet/token/cambioPIN.jsp"><span>Cambio del PIN de su Dispositivo</span></a></li>
 	<% } else if(session.getAttribute("tieneToken").toString().equals("N")) { %>
@@ -396,5 +414,17 @@ var usersecurity = 	'<img src="<html:rewrite page='/do.GetImage'/>" width="270px
 	</td></tr> 
 </table>
 </div>
+
+<div id="printHeader1" style="display:visible;">
+<table id="Table_01" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="10"> 
+    <td width="100%" height="10" ><br>
+
+		</td>
+  </tr>
+  </table>
+  </div>
+
+
 </body>
 </html>

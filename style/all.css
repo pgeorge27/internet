@@ -845,7 +845,7 @@ A:hover {text-decoration:none;color:#993300;font-family:Verdana, Arial, Helvetic
   border-bottom: 1px solid #A7A7A6;
 }
 #cssmenu > ul > li > ul > li a:hover {
-  background: #D1CECB;
+  background: #A7A5A2;
 }
 #cssmenu > ul > li > ul > li > a:before{
   color:#d35400;
